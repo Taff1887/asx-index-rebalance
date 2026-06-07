@@ -1,0 +1,21 @@
+# Transaction cost assumptions used by the backtest. All costs are in basis points
+# unless otherwise stated. Borrow cost is annualised.
+
+costs:
+  brokerage_bps: 5
+  half_spread_bps: 5
+  slippage_bps: 10
+  borrow_cost_annual_bps: 300
+
+  market_impact:
+    enabled: true
+    coefficient: 0.10
+    exponent: 0.5
+    reference_adv_days: 20
+
+  hard_borrow:
+    exclude_if_unborrowable: true
+    hard_to_borrow_list_path: data/raw/manual/hard_to_borrow.csv
+
+  stamp_duty_bps: 0                  # No stamp duty for ordinary ASX trades; kept for completeness.
+  exchange_fees_bps: 0.5

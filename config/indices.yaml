@@ -1,0 +1,56 @@
+# Index definitions for the S&P/ASX family.
+# Buffers reflect commonly cited ranges from the S&P/ASX Australian Indices methodology
+# and should be updated by the user if the official methodology changes.
+
+indices:
+  ASX20:
+    target_count: 20
+    rebalance_frequency: quarterly
+    parent_index: ASX50
+    addition_rank_buffer: null
+    deletion_rank_buffer: null
+    notes: "Top-20 by float-adjusted market cap drawn from the ASX 50. Optional extension."
+  ASX50:
+    target_count: 50
+    rebalance_frequency: quarterly
+    parent_index: ASX100
+    addition_rank_buffer: null
+    deletion_rank_buffer: null
+    notes: "Top-50 by float-adjusted market cap. Methodology buffers are committee-driven."
+  ASX100:
+    target_count: 100
+    rebalance_frequency: quarterly
+    parent_index: ASX200
+    addition_rank_buffer: null
+    deletion_rank_buffer: null
+    notes: "Top-100 by float-adjusted market cap. Methodology buffers are committee-driven."
+  ASX200:
+    target_count: 200
+    rebalance_frequency: quarterly
+    parent_index: ASX300
+    addition_rank_buffer: 179
+    deletion_rank_buffer: 221
+    notes: |
+      Standard rank buffers used in the rules-based model:
+      a non-constituent must rank inside the addition buffer to be added,
+      a current constituent must fall outside the deletion buffer to be removed.
+  ASX300:
+    target_count: 300
+    rebalance_frequency: semi-annual
+    parent_index: AllOrdinaries
+    addition_rank_buffer: null
+    deletion_rank_buffer: null
+    notes: "Optional extension index."
+  AllOrdinaries:
+    target_count: 500
+    rebalance_frequency: quarterly
+    parent_index: null
+    addition_rank_buffer: null
+    deletion_rank_buffer: null
+    notes: "Optional extension index."
+
+# Primary indices forecast by the model in this repo.
+primary_indices: [ASX50, ASX100, ASX200]
+
+# Optional secondary indices supported by the same engine.
+extension_indices: [ASX20, ASX300, AllOrdinaries]

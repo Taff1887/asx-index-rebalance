@@ -1,0 +1,51 @@
+# Trading strategy configuration. The backtest engine reads these settings.
+
+strategy:
+  entry_timing:
+    pre_announcement_days: 5
+    announcement_close: true
+  exit_timing:
+    effective_close: true
+    days_after_effective: 0
+  position_sizing:
+    method: equal_weight               # equal_weight | confidence_weighted | flow_weighted | vol_scaled
+    max_position_weight: 0.10
+    max_gross_exposure: 1.00
+    max_net_exposure: 0.20
+  filters:
+    min_hybrid_probability: 0.65
+    min_flow_to_ADV: 0.25
+    trade_only_high_conviction: true
+    exclude_data_quality_high_severity: true
+  top_k:
+    enabled: false
+    k: 5
+  market_neutral:
+    enabled: false
+    hedge_with_benchmark: true
+    hedge_ticker: STW.AX
+
+benchmark:
+  ticker: STW.AX
+  fallback: ASX200_INDEX
+
+# Passive AUM tracking each index (AUD). Placeholders only.
+passive_aum:
+  ASX50: 10_000_000_000
+  ASX100: 15_000_000_000
+  ASX200: 40_000_000_000
+
+# Variant strategies built into the backtest CLI.
+variants:
+  - id: announcement_long_short
+    description: "Long predicted additions/promotions, short predicted removals/demotions. Hold announcement -> effective."
+  - id: pre_announcement
+    description: "Enter `pre_announcement_days` days before announcement using only ex-ante information."
+  - id: additions_only
+    description: "Long-only predicted additions/promotions; benchmark-neutral comparison."
+  - id: market_neutral
+    description: "Long/short with explicit beta hedge using benchmark ETF."
+  - id: flow_pressure
+    description: "Trade only when expected passive_flow_to_ADV exceeds the threshold."
+  - id: top_k
+    description: "Each rebalance trade only the top-k highest hybrid_probability events."

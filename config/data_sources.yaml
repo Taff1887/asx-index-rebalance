@@ -1,0 +1,37 @@
+# Data source configuration. Loaders read these settings at runtime.
+
+primary: fmp
+secondary: yahoo
+
+fmp:
+  base_url: https://financialmodelingprep.com/api/v3
+  rate_limit_per_minute: 300
+  cache_dir: data/raw/fmp
+  ticker_suffix: ".AX"                  # FMP uses .AX for ASX listings.
+  retries: 3
+  retry_backoff_seconds: 2
+
+yahoo:
+  cache_dir: data/raw/yahoo
+  ticker_suffix: ".AX"
+  retries: 3
+  retry_backoff_seconds: 2
+  auto_adjust: false                    # Keep raw close and adjusted close separate.
+
+csv_loader:
+  prices_path: data/raw/manual/prices.csv
+  shares_path: data/raw/manual/shares.csv
+  iwf_path: data/raw/manual/iwf.csv
+
+paid_data_placeholder:
+  enabled: false
+  vendor: null                          # bloomberg | factset | refinitiv | sp_global
+  endpoint: null
+  credentials_env: null
+
+benchmark:
+  primary: STW.AX
+  fallbacks: [IOZ.AX, A200.AX]
+  csv_fallback_path: data/processed/benchmark/asx200_benchmark.csv
+
+ticker_master_path: data/processed/reconciled/ticker_master.csv

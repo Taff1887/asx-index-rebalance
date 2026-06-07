@@ -1,0 +1,48 @@
+# S&P/ASX Australian Indices methodology assumptions used by the rules engine.
+# All values are configurable. The committee retains discretion in practice; the rules
+# engine produces a deterministic shadow ranking that approximates the committee's decisions.
+
+calendar:
+  rebalance_months: [3, 6, 9, 12]
+  announcement_weekday: friday          # First Friday of the rebalance month.
+  announcement_week_of_month: 1
+  effective_weekday: friday             # After-close on third Friday of the rebalance month.
+  effective_week_of_month: 3
+  reference_date_offset_weeks: -2       # Two Fridays before announcement (roughly second-last Friday prior).
+  holiday_calendar: AU                  # Placeholder for an exchange holiday calendar.
+
+eligibility:
+  domiciled_in_australia: true
+  listed_on_asx: true
+  minimum_history_days: 0               # The methodology has no formal minimum, but a single trading day is required.
+  exclude_etf: true
+  exclude_lic_lit: true
+  exclude_stapled_securities: false
+  exclude_foreign_dual_listed: false
+
+float_adjusted_market_cap:
+  lookback_business_days: 63            # Approximately three months of price history.
+  reference_price_field: adjusted_close
+  reference_price_method: last          # Use price on the reference date; alternatives: average.
+  shares_field: shares_outstanding
+  iwf_field: iwf
+  iwf_fallback: 1.0
+
+liquidity:
+  lookback_business_days: 63
+  value_traded_method: median           # median of daily close * volume.
+  market_liquidity_weights: float_adjusted_market_cap
+  minimum_relative_liquidity: 0.50      # Liquidity pass threshold relative to market liquidity.
+  minimum_absolute_daily_value_aud: 250000
+
+ranking:
+  primary_metric: avg_float_market_cap
+  tie_breaker: median_daily_value_traded
+  ascending: false
+
+rules_engine:
+  use_rank_buffers: true
+  respect_index_hierarchy: true
+  pair_additions_and_deletions: true    # Maintain the target_count per index.
+  promotion_demotion_enabled: true
+  unknown_iwf_action: warn              # warn | drop | assume_one

@@ -1,0 +1,35 @@
+# Thresholds used by the FMP vs Yahoo validation layer.
+# A discrepancy is classified by the most severe threshold it crosses.
+
+validation:
+  price_diff_threshold_pct_low: 0.5
+  price_diff_threshold_pct_medium: 2.0
+  price_diff_threshold_pct_high: 5.0
+
+  volume_diff_threshold_pct_low: 10.0
+  volume_diff_threshold_pct_medium: 25.0
+  volume_diff_threshold_pct_high: 50.0
+
+  stale_price_days: 5
+  suspicious_daily_return_pct: 25.0
+
+  min_required_source_coverage_pct: 95.0
+
+  market_cap_diff_threshold_pct: 5.0
+  shares_diff_threshold_pct: 2.0
+
+reconciliation:
+  prefer_adjusted_close_source: yahoo   # yahoo | fmp | best_coverage
+  prefer_close_source: fmp              # which source wins for raw close
+  prefer_volume_source: fmp
+  prefer_market_cap_source: fmp
+  drop_severity: high                   # high | medium | low | none -- drop obs at or above this severity
+  flag_severity: medium                 # report obs at or above this severity
+
+reports:
+  data_quality_summary: outputs/data_quality_summary.csv
+  data_quality_issues: outputs/data_quality_issues.csv
+  fmp_vs_yahoo_price_differences: outputs/fmp_vs_yahoo_price_differences.csv
+  fmp_vs_yahoo_volume_differences: outputs/fmp_vs_yahoo_volume_differences.csv
+  missing_data_report: outputs/missing_data_report.csv
+  reconciliation_summary: outputs/reconciliation_summary.csv
