@@ -7,6 +7,11 @@ strategy:
   exit_timing:
     effective_close: true
     days_after_effective: 0
+    # Offset (business days) from the effective date used as the actual exit.
+    # Negative values exit before effective close — empirically the bulk of the
+    # passive flow is priced in by t-2 to t-1, so closing early can lock in
+    # gains and reduce post-effective reversion drag. 0 keeps the textbook exit.
+    exit_offset_days: 0
   position_sizing:
     method: equal_weight               # equal_weight | confidence_weighted | flow_weighted | vol_scaled
     max_position_weight: 0.10

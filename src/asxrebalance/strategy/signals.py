@@ -9,13 +9,21 @@ import pandas as pd
 
 
 def build_event_signals(forecast: pd.DataFrame,
-                        variant: str = "announcement_long_short") -> pd.DataFrame:
+                        variant: str = "announcement_long_short",
+                        exit_offset_days: int = 0) -> pd.DataFrame:
     """Convert a forecast frame into long/short signals with entry and exit dates.
 
     Required columns on `forecast`:
         ticker, index, predicted_action, hybrid_probability,
         announcement_date, effective_date, passive_flow_to_ADV_20d.
     Optional column: confidence_bucket.
+
+    Parameters
+    ----------
+    exit_offset_days
+        Business-day offset applied to the effective date to derive the exit.
+        Negative values exit before the effective close, positive values hold
+        past it. Set in ``config/strategy.yaml::exit_timing.exit_offset_days``.
     """
     df = forecast.copy()
     df["side"] = df["predicted_action"].map({
@@ -28,25 +36,20 @@ def build_event_signals(forecast: pd.DataFrame,
 
     if variant == "pre_announcement":
         df["entry_date"] = df["announcement_date"] - pd.Timedelta(days=5)
-        df["exit_date"] = df["effective_date"]
     elif variant == "additions_only":
         df = df[df["side"] == "long"].copy()
         df["entry_date"] = df["announcement_date"]
-        df["exit_date"] = df["effective_date"]
-    elif variant == "market_neutral":
-        df["entry_date"] = df["announcement_date"]
-        df["exit_date"] = df["effective_date"]
     elif variant == "flow_pressure":
         df = df[df["passive_flow_to_ADV_20d"].fillna(0).abs() >= 0.5].copy()
         df["entry_date"] = df["announcement_date"]
-        df["exit_date"] = df["effective_date"]
-    elif variant == "top_k":
-        # Caller is expected to pre-filter top-k. We just set the dates.
+    else:
         df["entry_date"] = df["announcement_date"]
-        df["exit_date"] = df["effective_date"]
-    else:  # announcement_long_short
-        df["entry_date"] = df["announcement_date"]
-        df["exit_date"] = df["effective_date"]
+
+    df["exit_date"] = df["effective_date"]
+    if exit_offset_days:
+        df["exit_date"] = df["effective_date"] + pd.tseries.offsets.BDay(exit_offset_days)
+        # Never exit before entry — clamp.
+        df["exit_date"] = df[["entry_date", "exit_date"]].max(axis=1)
 
     df["variant"] = variant
     return df.reset_index(drop=True)

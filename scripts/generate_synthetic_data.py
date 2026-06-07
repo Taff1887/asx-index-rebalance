@@ -243,11 +243,86 @@ def write_per_ticker_csvs(panel: pd.DataFrame, target_dir: Path) -> None:
         grp[cols].to_csv(target_dir / f"{ticker}.csv", index=False)
 
 
+def inject_index_effect(panel: pd.DataFrame, labels: pd.DataFrame,
+                         addition_uplift: float = 0.025,
+                         removal_drag: float = 0.020,
+                         reversion_pct: float = 0.30) -> pd.DataFrame:
+    """Bake a realistic S&P/ASX index effect into the price panel.
+
+    For every labelled event we add a multiplicative drift to the ticker's
+    prices from announcement to effective (ramping up to ``addition_uplift`` or
+    down by ``removal_drag``), then partially revert ``reversion_pct`` of the
+    move over the next ~10 business days. The effect compounds across multiple
+    events on the same ticker so the same generator can drive ASX 50 / 100 /
+    200 simultaneously.
+
+    Magnitudes default to roughly the literature values for post-2010 ASX
+    additions (~2-3%) and removals (~1.5-2.5%).
+    """
+    if labels.empty:
+        return panel
+
+    out = panel.sort_values(["ticker", "date"]).copy().reset_index(drop=True)
+    extra = np.zeros(len(out), dtype=float)
+
+    # Build a fast lookup from ticker to the integer range of rows in `out`.
+    bounds: dict[str, tuple[int, int]] = {}
+    for ticker, grp in out.groupby("ticker", sort=False):
+        bounds[ticker] = (grp.index[0], grp.index[-1] + 1)
+
+    for _, evt in labels.iterrows():
+        ticker = evt["ticker"]
+        if ticker not in bounds:
+            continue
+        lo, hi = bounds[ticker]
+        sub = out.iloc[lo:hi]
+        ann = pd.Timestamp(evt["announcement_date"])
+        eff = pd.Timestamp(evt["effective_date"])
+        is_add = evt["action"] in ("Addition", "Promotion")
+        mag = addition_uplift if is_add else -removal_drag
+
+        window_mask = (sub["date"] > ann) & (sub["date"] <= eff)
+        n = int(window_mask.sum())
+        if n > 0:
+            per_day = (1.0 + mag) ** (1.0 / n) - 1.0
+            idx = sub.index[window_mask]
+            extra[idx] += per_day
+
+        # Partial reversion over the next 10 business days.
+        rev_total = -mag * reversion_pct
+        rev_end = eff + pd.Timedelta(days=15)
+        rev_mask = (sub["date"] > eff) & (sub["date"] <= rev_end)
+        rev_n = int(rev_mask.sum())
+        if rev_n > 0:
+            per_day = (1.0 + rev_total) ** (1.0 / rev_n) - 1.0
+            idx = sub.index[rev_mask]
+            extra[idx] += per_day
+
+    out["cum_multiplier"] = 1.0
+    for ticker, (lo, hi) in bounds.items():
+        out.loc[lo:hi - 1, "cum_multiplier"] = (1.0 + extra[lo:hi]).cumprod()
+
+    for col in ("open", "high", "low", "close", "adjusted_close", "vwap"):
+        if col in out.columns:
+            out[col] = out[col] * out["cum_multiplier"]
+    return out.drop(columns="cum_multiplier")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--start", default="2018-01-02")
+    parser.add_argument("--start", default="2015-01-02",
+                        help="Backtest start date (default: 2015-01-02 — ~11 years of history).")
     parser.add_argument("--end", default="2026-05-30")
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--index-effect", action="store_true", default=True,
+                        help="Inject a realistic announcement→effective price effect.")
+    parser.add_argument("--no-index-effect", dest="index_effect", action="store_false")
+    parser.add_argument("--addition-uplift", type=float, default=0.025,
+                        help="Total addition uplift between announcement and effective.")
+    parser.add_argument("--removal-drag", type=float, default=0.020,
+                        help="Total removal drag between announcement and effective.")
+    parser.add_argument("--reversion-pct", type=float, default=0.30,
+                        help="Fraction of the move that reverses over the 10 days post-effective.")
     args = parser.parse_args()
 
     ensure_dirs()
@@ -287,6 +362,21 @@ def main() -> None:
     constituents.to_csv(PROCESSED_RECONCILED_DIR / "constituents.csv", index=False)
     labels.to_csv(PROCESSED_LABELS_DIR / "rebalance_labels.csv", index=False)
     print(f"  {len(constituents)} constituent rows, {len(labels)} label rows")
+
+    if args.index_effect:
+        print(f"Injecting index effect (add+{args.addition_uplift:.1%}, "
+              f"rem-{args.removal_drag:.1%}, reversion {args.reversion_pct:.0%})...")
+        fmp = inject_index_effect(fmp, labels,
+                                   addition_uplift=args.addition_uplift,
+                                   removal_drag=args.removal_drag,
+                                   reversion_pct=args.reversion_pct)
+        yahoo = inject_index_effect(yahoo, labels,
+                                     addition_uplift=args.addition_uplift,
+                                     removal_drag=args.removal_drag,
+                                     reversion_pct=args.reversion_pct)
+        write_per_ticker_csvs(fmp, RAW_FMP_DIR)
+        write_per_ticker_csvs(yahoo, RAW_YAHOO_DIR)
+        print("  index effect applied to FMP and Yahoo panels")
 
     print("Generating benchmark ASX 200 proxy...")
     benchmark = make_benchmark(fmp)

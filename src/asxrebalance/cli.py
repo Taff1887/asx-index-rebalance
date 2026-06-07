@@ -455,7 +455,11 @@ def cmd_backtest_strategy(args: argparse.Namespace) -> None:
 
     cfg = load_strategy_config()["strategy"]
     variant = args.strategy.replace("-", "_")
-    signals = build_event_signals(forecast, variant=variant)
+    exit_offset_days = int(args.exit_offset_days
+                           if args.exit_offset_days is not None
+                           else cfg["exit_timing"].get("exit_offset_days", 0))
+    signals = build_event_signals(forecast, variant=variant,
+                                   exit_offset_days=exit_offset_days)
     signals = apply_filters(signals,
                             min_prob=float(cfg["filters"]["min_hybrid_probability"]),
                             min_flow_to_adv=float(cfg["filters"]["min_flow_to_ADV"]),
@@ -480,6 +484,18 @@ def cmd_backtest_strategy(args: argparse.Namespace) -> None:
         daily["return"].set_axis(daily["date"]),
         bench_returns.set_index("date")["benchmark_return"] if not bench_returns.empty else None,
     )
+    # Stand-alone benchmark metrics so the report can quote exact numbers.
+    if not bench_returns.empty:
+        bench_series = bench_returns.set_index("date")["benchmark_return"].dropna()
+        bench_metrics = summary_metrics(bench_series)
+        metrics["benchmark_cagr"] = bench_metrics["cagr"]
+        metrics["benchmark_vol"] = bench_metrics["vol"]
+        metrics["benchmark_sharpe"] = bench_metrics["sharpe"]
+        metrics["benchmark_sortino"] = bench_metrics["sortino"]
+        metrics["benchmark_max_drawdown"] = bench_metrics["max_drawdown"]
+        metrics["benchmark_calmar"] = bench_metrics["calmar"]
+        metrics["benchmark_hit_rate"] = bench_metrics["hit_rate"]
+    metrics["exit_offset_days"] = exit_offset_days
     tag = variant
     # Variant-tagged outputs so multiple strategies can coexist.
     write_csv(daily, OUTPUTS_DIR / f"strategy_returns_{tag}.csv")
@@ -585,6 +601,9 @@ def build_parser() -> argparse.ArgumentParser:
     c.add_argument("--start")
     c.add_argument("--end")
     c.add_argument("--benchmark", default="STW.AX")
+    c.add_argument("--exit-offset-days", type=int, default=None,
+                   help="Business-day offset from the effective date used as the "
+                        "exit. Negative = exit early. Overrides strategy.yaml.")
     c.set_defaults(func=cmd_backtest_strategy)
 
     c = sub.add_parser("compare-benchmark")
