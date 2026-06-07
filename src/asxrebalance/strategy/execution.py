@@ -98,6 +98,16 @@ def backtest_positions(positions: pd.DataFrame, prices: pd.DataFrame,
     daily = daily.join(cost_series.rename("cost"), how="left")
     daily["cost"] = daily["cost"].fillna(0)
     daily["pnl"] = daily["gross_pnl"] + daily["cost"]
+
+    # Re-index onto the full business-day calendar spanning the backtest so
+    # idle days contribute zero return. Without this, len(daily)/252 is much
+    # smaller than the calendar span and CAGR / Sharpe are overstated.
+    start_d = pd.Timestamp(positions["announcement_date"].min()).normalize()
+    end_d = pd.Timestamp(positions["effective_date"].max()).normalize()
+    full_index = pd.bdate_range(start_d, end_d)
+    daily.index = pd.to_datetime(daily.index)
+    daily = daily.reindex(full_index, fill_value=0.0)
+    daily.index.name = "date"
     daily["return"] = daily["pnl"] / capital
     daily["cum_return"] = (1 + daily["return"]).cumprod() - 1
     daily = daily.reset_index()

@@ -479,15 +479,29 @@ def cmd_backtest_strategy(args: argparse.Namespace) -> None:
         bench_returns = pd.DataFrame(columns=["date", "benchmark_return"])
     else:
         bench_returns = benchmark_daily_returns(bench)
+    # Compute benchmark metrics on its OWN full daily series — buy-and-hold is
+    # invested every day, so its Sharpe/vol must use every day, not the subset
+    # of days the strategy happened to trade.
+    if not bench_returns.empty:
+        bench_full = bench_returns.copy()
+        bench_full["date"] = pd.to_datetime(bench_full["date"])
+        bench_window = bench_full[
+            (bench_full["date"] >= pd.Timestamp(start))
+            & (bench_full["date"] <= pd.Timestamp(end))
+        ]
+        bench_series = bench_window.set_index("date")["benchmark_return"].dropna()
+    else:
+        bench_series = pd.Series(dtype=float)
+
     merged = daily.merge(bench_returns, on="date", how="left")
     metrics = summary_metrics(
         daily["return"].set_axis(daily["date"]),
-        bench_returns.set_index("date")["benchmark_return"] if not bench_returns.empty else None,
+        bench_series if not bench_series.empty else None,
     )
     # Stand-alone benchmark metrics so the report can quote exact numbers.
-    if not bench_returns.empty:
-        bench_series = bench_returns.set_index("date")["benchmark_return"].dropna()
+    if not bench_series.empty:
         bench_metrics = summary_metrics(bench_series)
+        metrics["benchmark_total_return"] = float((1 + bench_series).prod() - 1)
         metrics["benchmark_cagr"] = bench_metrics["cagr"]
         metrics["benchmark_vol"] = bench_metrics["vol"]
         metrics["benchmark_sharpe"] = bench_metrics["sharpe"]
@@ -495,6 +509,9 @@ def cmd_backtest_strategy(args: argparse.Namespace) -> None:
         metrics["benchmark_max_drawdown"] = bench_metrics["max_drawdown"]
         metrics["benchmark_calmar"] = bench_metrics["calmar"]
         metrics["benchmark_hit_rate"] = bench_metrics["hit_rate"]
+    metrics["strategy_total_return"] = float(
+        (1 + daily["return"].fillna(0)).prod() - 1
+    )
     metrics["exit_offset_days"] = exit_offset_days
     tag = variant
     # Variant-tagged outputs so multiple strategies can coexist.

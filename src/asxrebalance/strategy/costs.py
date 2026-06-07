@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import numpy as np
-import pandas as pd
 
 from ..config import load_costs_config
 
@@ -24,11 +23,19 @@ def fixed_costs_bps() -> float:
 
 
 def market_impact_bps(trade_value_aud: float, adv_aud: float) -> float:
-    """Simple square-root market-impact model: coef * (trade/ADV)^exponent (bps)."""
+    """Simple square-root market-impact model: coef * (trade/ADV)^exponent (bps).
+
+    Falls back to zero when ADV is missing (NaN / None / non-positive) so that
+    a missing ADV doesn't poison the trade ledger with NaN costs.
+    """
     cfg = load_costs_config()["costs"].get("market_impact", {})
     if not cfg.get("enabled", True):
         return 0.0
-    if adv_aud is None or adv_aud <= 0 or trade_value_aud is None or trade_value_aud <= 0:
+    if adv_aud is None or trade_value_aud is None:
+        return 0.0
+    if not np.isfinite(adv_aud) or adv_aud <= 0:
+        return 0.0
+    if not np.isfinite(trade_value_aud) or trade_value_aud <= 0:
         return 0.0
     coef = float(cfg.get("coefficient", 0.1))
     expo = float(cfg.get("exponent", 0.5))

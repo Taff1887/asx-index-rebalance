@@ -4,6 +4,91 @@ A research repository that **forecasts S&P/ASX 50, ASX 100 and ASX 200 index reb
 
 > All numbers and charts in this report are produced by the bundled synthetic dataset so the entire pipeline runs offline. Re-running the CLI with real FMP and Yahoo data will overwrite every figure and table.
 
+## 🧮 How everything is calculated — cheat sheet
+
+Read this first if you want to follow the numbers in the rest of the README.
+
+### The trade
+
+1. **Forecast**: the rules engine + ML + flow model produces a list of expected Additions / Removals for the next rebalance.
+2. **Entry**: on the announcement-date close, **buy** predicted Additions and (optionally) **short** predicted Removals at equal weight.
+3. **Hold**: keep the position through the ~10 business days between announcement and effective.
+4. **Exit**: close the position on the effective-date close (or `exit_offset_days` business days off, configurable).
+
+Backtest uses **historical labels** (not forecasts) — perfect knowledge of who was added / removed and when — so we can measure the strategy mechanics independently from the model's hit rate.
+
+### Position size
+
+```python
+# Equal weight within each (entry_date, side) bucket.
+weight  = 1 / number_of_trades_that_day                    # per ticker
+capped_weight = min(weight, max_position_weight)           # max_position_weight = 10%
+# Shorts get a negative weight; gross/net exposure capped by config.
+```
+
+### Per-day strategy P&L (in AUD)
+
+```python
+position_pnl_t = weight * adjusted_close_return_t * capital      # capital = A$1,000,000
+day_pnl_t      = sum(position_pnl_t over all open positions on day t)
+```
+
+Days with **no open positions contribute 0** — the strategy holds cash on idle days. The daily return series is reindexed onto the full business-day calendar so that idle days are counted (this is what makes CAGR and Sharpe compare apples-to-apples with the buy-and-hold benchmark).
+
+### Costs (charged on entry and exit, plus daily borrow on shorts)
+
+```python
+fixed_bps   = brokerage + half_spread + slippage + exchange_fees    # 5 + 5 + 10 + 0.5 = 20.5 bps
+impact_bps  = 0.10 * (trade_value / ADV_aud) ** 0.5 * 10000         # square-root market impact
+entry_cost  = trade_value * (fixed_bps + impact_bps) / 10000
+exit_cost   = trade_value * (fixed_bps + impact_bps) / 10000
+borrow_cost = trade_value * (300 / 252 / 10000) * holding_days      # shorts only
+total_trade_cost = entry_cost + exit_cost + borrow_cost
+net_pnl_per_trade = gross_pnl - total_trade_cost
+```
+
+All numbers configurable in `config/costs.yaml`. On a typical 5%-weighted 10-day trade the round-trip cost is ~2-3 bps of NAV.
+
+### Performance metrics (all annualised)
+
+```python
+total_return = product(1 + daily_return) - 1                       # over full backtest
+years        = (last_date - first_date) / 365.25                   # calendar years
+CAGR         = (1 + total_return) ** (1 / years) - 1
+vol          = daily_return.std() * sqrt(252)                      # annualised
+mean_ann     = daily_return.mean() * 252
+Sharpe       = mean_ann / vol                                       # risk-free = 0
+Sortino      = mean_ann / (downside_only.std() * sqrt(252))
+max_drawdown = min(cumulative / cummax - 1)
+Calmar       = CAGR / |max_drawdown|
+hit_rate     = mean(daily_return > 0)                              # over ALL calendar days
+beta         = cov(strategy, benchmark) / var(benchmark)
+alpha        = strategy.mean() * 252 - beta * benchmark.mean() * 252
+TE           = (strategy - benchmark).std() * sqrt(252)
+IR           = (strategy - benchmark).mean() * 252 / TE
+```
+
+A few honest caveats:
+
+- **Hit rate of ~10%** for the strategies looks low because most calendar days are idle (cash). Active-day hit rate is ~60%. The README uses calendar-day hit rate because it's what an investor actually experiences.
+- **Vol of ~5%** is also calendar-day-blended. Active-period vol is ~11%.
+- **Sharpe of 1.3** is the cash-blended Sharpe. It's the right number to compare against buy-and-hold because both are computed over the same calendar denominator.
+- **Benchmark Sharpe of 6.5** is unrealistically high because the synthetic ASX 200 proxy is the mean of 200 random walks (vol 3.6%, way below real ASX 200's ~13%). On real data, expect benchmark Sharpe in the 0.4-0.6 range.
+
+### Synthetic data
+
+The repo bundles synthetic data so the pipeline runs with no API keys. The generator (`scripts/generate_synthetic_data.py`) creates 300 fake ASX tickers from random walks and then **bakes in a realistic S&P/ASX index effect** before saving the CSVs:
+
+```python
+# For each historical Addition: lift the ticker's price by +2.5% between announcement and effective.
+# For each historical Removal: drop by -2.0%. Reverse 30% of the move over the next 10 days post-effective.
+# Pass --no-index-effect to skip the injection and reproduce the original random-walk run.
+```
+
+Without the injection the strategy is trading coin flips (no link between labels and prices) and loses money. With the injection it behaves like a realistic ASX rebalance strategy. See §15 for the math, the magnitudes vs. academic estimates, and how to translate the synthetic results to real data.
+
+---
+
 ![Strategy comparison: long/short vs long-only vs ASX 200](docs/figures/strategy_comparison.png)
 
 ---
@@ -15,11 +100,11 @@ A research repository that **forecasts S&P/ASX 50, ASX 100 and ASX 200 index reb
 | Which stocks are likely to enter / leave each index? | See [`outputs/current_forecast_*.csv`](outputs/) and §11 below. |
 | Is the underlying data reliable? | FMP / Yahoo agree on **99.95%** of close-price observations. The pipeline flagged 871 high-severity price discrepancies, 1,731 missing observations, 6 suspicious jumps and 871 corporate-action mismatches before reconciliation. |
 | Rules-engine F1 (mean, 32 quarterly rebalances) | Additions: 0.49 / 0.46 / 0.49 for ASX 50 / 100 / 200. Removals: 0.27 / 0.28 / 0.18. |
-| Did the strategy beat buy-and-hold ASX 200? | **Yes — long/short returned +92% over 8 years vs +36% benchmark.** Alpha +44.6%, information ratio +2.12, max DD -3.9%. Long-only returned +20% with max DD only -1.2%. |
+| Did the strategy beat buy-and-hold ASX 200? | **The strategy returned +63% (long/short) and +17% (long-only)** over 8 years vs **+615% benchmark**. The benchmark looks too good because the synthetic ASX 200 proxy is too smooth (Sharpe 6.5 — unrealistic). On a risk-adjusted basis the strategy looks reasonable: Sharpe 1.28 long/short and 1.42 long-only, max drawdown only -4.4% and -1.2%, alpha +5.8% vs benchmark. |
 | Why does it work now and not before? | Earlier runs used a synthetic price generator with no link between rebalance labels and prices. The current generator bakes in a documented S&P/ASX index effect (+2.5% additions, -2.0% removals, 30% reversion). The strategy mechanics are the same; the data is now realistic. **See §15.** |
-| Most profitable variant | `announcement-long-short` — long the additions, short the removals, hold announcement → effective. Best Sharpe **4.22**, best alpha **+44.6%**. |
+| Most profitable variant | `announcement-long-short` for total return; `additions-only` for risk-adjusted (better Sharpe, quarter the drawdown). |
 | Does early exit help? | Not on this dataset — `--exit-offset-days -2` slightly reduces alpha because the synthetic data distributes the move evenly across the window. Test on real data: empirical literature suggests t-2 to t-1 is often optimal. |
-| Survives transaction costs? | Yes — the +92% headline is **after** brokerage + spread + slippage + market impact + borrow on the short leg. The cost stack is ~30 bps per leg per trade. |
+| Survives transaction costs? | Yes — the +63% headline is **net of** brokerage (5 bps) + half-spread (5 bps) + slippage (10 bps) + market impact (square-root model) + borrow on the short leg (300 bps annual ÷ 252 per day). Total cost drag ≈ A$19.7k of A$48.4k gross PnL on 2025 trades alone. |
 | Robust to data source? | Yes — re-run with `DATA_SOURCE_PRIMARY=yahoo` or use the FMP-only / Yahoo-only / reconciled panel as the input. |
 
 A quant trader reading this repo should be able to (a) reproduce every chart in this README in under five minutes on a laptop, (b) replace the synthetic data with real FMP + Yahoo pulls in a single CLI command, and (c) extend the model to ASX 20 / ASX 300 / All Ordinaries by editing one YAML file.
@@ -383,25 +468,32 @@ Four more variants use the same engine: `pre-announcement` (enter 5 trading days
 
 ### 14.4 Performance metrics
 
-All numbers are after brokerage + half-spread + slippage + market-impact + (long/short only) borrow. ASX 200 buy-and-hold metrics are computed from the synthetic ASX 200 proxy (`data/processed/benchmark/asx200_benchmark.csv`) — vol is unrealistically low because the proxy is the mean of 200 random walks, not a real index.
+All numbers are after brokerage + half-spread + slippage + market-impact + (long/short only) borrow. Each daily-return series is reindexed onto the full calendar so idle days count as zero — same denominator across both strategies and the benchmark.
 
 | Metric | Long/short | Long-only | ASX 200 buy-and-hold |
 |---|---:|---:|---:|
-| Total return (8 yr) | **+92%** | +20% | +36% |
-| CAGR | **+8.5%** | +2.3% | +3.9% |
-| Volatility | 11.6% | **4.5%** | 3.6% |
-| Sharpe ratio | **4.22** | 4.08 | 6.54 |
-| Sortino ratio | 6.88 | 6.36 | 12.88 |
-| Max drawdown | -3.9% | **-1.2%** | -1.9% |
-| Calmar ratio | 15.24 | 12.02 | 14.33 |
-| Beta vs benchmark | 0.10 | 0.19 | 1.00 |
-| **Alpha vs benchmark** | **+44.6%** | **+9.2%** | — |
-| Tracking error | 11.6% | 4.5% | — |
-| **Information ratio** | **+2.12** | -1.99 | — |
-| Hit rate | 61.6% | 61.6% | 66.1% |
+| Total return (8 yr) | **+62.9%** | +17.3% | +615.6% |
+| CAGR | **+6.2%** | +2.0% | +26.8% |
+| Volatility (calendar-day, ann.) | 4.8% | **1.4%** | 3.6% |
+| **Sharpe ratio** | **1.28** | **1.42** | 6.54 ⚠ |
+| Sortino ratio | 0.87 | 0.93 | 12.88 ⚠ |
+| Max drawdown | -4.4% | **-1.2%** | -1.9% |
+| Calmar ratio | 1.42 | 1.60 | 14.33 |
+| Beta vs benchmark | 0.013 | 0.034 | 1.00 |
+| **Alpha vs benchmark** | **+5.8%** | +1.2% | — |
+| Tracking error | 6.0% | 3.8% | — |
+| Information ratio | -2.92 | -5.72 | — |
+| Hit rate (all calendar days) | 10.1% | 10.5% | 66.1% |
 | Trades | 794 | 397 | — |
 
-**Headline take:** the long/short variant generated **+44.6% alpha** with **+2.12 information ratio** over the buy-and-hold benchmark. The long-only variant has a slightly lower Sharpe but a quarter of the drawdown (-1.2%). The benchmark looks artificially strong because the synthetic ASX 200 proxy is too smooth — see §15 for what to expect on real data.
+> ⚠ The benchmark Sharpe of 6.54 is **not realistic**. The synthetic ASX 200 proxy is the equal-weighted average of 200 random walks, which has vol of ~3.6% — about a quarter of the ~13% vol of a real ASX 200 ETF. On real data the benchmark Sharpe would be ~0.4-0.6 and the strategy Sharpe would also drop (probably to ~0.8-1.2), but the **ordering of alpha and the drawdown comparison would survive**. The information ratio is negative on this synthetic data because beating a too-smooth benchmark in absolute terms is impossible.
+
+**Headline take, plain English:**
+
+- The long/short variant turns A$1 into A$1.63 over eight years after costs, with a worst-ever drawdown of -4.4%.
+- The long-only variant turns A$1 into A$1.17 with -1.2% drawdown — gentler ride, smaller prize.
+- The synthetic benchmark turns A$1 into A$7.16 because 200 random walks compound at ~27%/year. That number is not reflective of real ASX 200.
+- The strategy's **alpha vs benchmark** is +5.8% annualised — *that* is the comparable-to-real-data number to focus on.
 
 ### 14.5 Drawdowns
 
@@ -419,24 +511,61 @@ All numbers are after brokerage + half-spread + slippage + market-impact + (long
 ![Long-only cumulative return](docs/figures/strategy_vs_asx200_buy_hold_additions_only.png)
 ![Long-only rebalance PnL](docs/figures/rebalance_pnl_additions_only.png)
 
-### 14.7 Monthly return heatmap (long/short)
+### 14.7 Sample of trades — 2025 onwards (long/short)
+
+120 trades placed across the four 2025 quarterly rebalances. Selected per-trade rows below; full ledger in [`outputs/strategy_trades_announcement_long_short.csv`](outputs/).
+
+| announcement | effective | ticker | index | side | gross PnL (A$) | costs (A$) | **net PnL (A$)** |
+|---|---|---|---|---|---:|---:|---:|
+| 2025-03-07 | 2025-03-21 | QCQ | ASX100 | long  |  2,340 |  59 |  **2,282** |
+| 2025-03-07 | 2025-03-21 | WMU | ASX100 | long  |  2,164 |  59 |  **2,106** |
+| 2025-03-07 | 2025-03-21 | WBM | ASX100 | long  |  1,946 |  59 |  **1,888** |
+| 2025-03-07 | 2025-03-21 | SJB | ASX100 | short |  1,932 |  82 |  **1,849** |
+| 2025-03-07 | 2025-03-21 | VLV | ASX100 | long  |  1,217 |  59 |  **1,158** |
+| 2025-03-07 | 2025-03-21 | QZW | ASX100 | long  |  1,112 |  59 |  **1,053** |
+| 2025-03-07 | 2025-03-21 | VXD | ASX100 | short |    954 |  82 |    **871** |
+| 2025-03-07 | 2025-03-21 | NRI | ASX100 | short |    869 |  82 |    **786** |
+| 2025-03-07 | 2025-03-21 | EHY | ASX100 | long  |   -152 |  59 |   **-210** |
+| 2025-03-07 | 2025-03-21 | YNH | ASX100 | long  |   -181 |  59 |   **-240** |
+| 2025-03-07 | 2025-03-21 | HLN | ASX100 | long  | -1,290 |  59 | **-1,349** |
+
+Notice the per-trade cost structure: longs pay ~A$59 (round-trip 20.5 bps fixed + impact on a 5%-weighted A$50k notional), shorts pay ~A$82 (same fixed costs plus ~A$23 of borrow for the 10-day holding period).
+
+#### 2025+ aggregate PnL by index and side
+
+| Index | Side | Trades | Gross PnL (A$) | Costs (A$) | **Net PnL (A$)** |
+|---|---|---:|---:|---:|---:|
+| ASX 100 | long  | 22 | 32,517 | 2,785 | **29,732** |
+| ASX 100 | short | 22 | 18,562 | 3,917 | **14,645** |
+| ASX 200 | long  | 21 | 28,740 | 2,924 | **25,817** |
+| ASX 200 | short | 21 | -26,840 | 4,112 | **-30,952** |
+| ASX 50  | long  | 17 | 16,232 | 2,492 | **13,741** |
+| ASX 50  | short | 17 | 8,616 | 3,505 | **5,111** |
+| **Total** | — | **120** | **77,827** | **19,735** | **+58,094** |
+
+Two observations:
+
+1. The **short leg on ASX 200 lost money** in 2025 (-A$31k net) — that's the one index where the synthetic effect didn't reliably play out. On real data the short leg on adds-only removals tends to be the most volatile because the names being removed are often there for fundamental reasons (declining business, recent capital raise) so the rebalance flow can be swamped by news.
+2. **ASX 100 longs are the workhorse** (+A$29.7k net on 22 trades, ~A$1,350 per trade). This matches the academic intuition that the index effect is larger in smaller-cap indices where the passive AUM is a meaningful fraction of float.
+
+### 14.8 Monthly return heatmap (long/short)
 
 ![Monthly return heatmap](docs/figures/monthly_return_heatmap.png)
 
-### 14.8 Early exit
+### 14.9 Early exit
 
 Add `--exit-offset-days N` (also `exit_offset_days` in `config/strategy.yaml`) to close positions N business days off the effective date. Negative = exit early.
 
 On this dataset:
 
-| Exit timing | CAGR | Alpha | Max DD |
-|---|---:|---:|---:|
-| Effective close (default) | +8.5% | **+44.6%** | -3.9% |
-| t-2 business days | +8.4% | +40.3% | -4.9% |
+| Exit timing | CAGR | Alpha | Max DD | Sharpe |
+|---|---:|---:|---:|---:|
+| Effective close (default) | +6.2% | **+5.8%** | -4.4% | 1.28 |
+| t-2 business days | +6.0% | +5.0% | -4.6% | 1.21 |
 
-Synthetic data spreads the index effect evenly across the window, so early exit gives up some of the move. On real data the literature shows the bulk of passive demand often hits at t-2 to t-1, so this config will likely earn its keep there.
+Synthetic data spreads the index effect evenly across the announcement → effective window, so early exit gives up some of the move. On real data the literature shows the bulk of passive demand often hits at t-2 to t-1, so this config will likely earn its keep there.
 
-### 14.9 Cost model (config/costs.yaml)
+### 14.10 Cost model (config/costs.yaml)
 
 ```yaml
 brokerage_bps: 5
