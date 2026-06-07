@@ -238,15 +238,19 @@ def _attach_flow(forecast: pd.DataFrame, rank_panel: pd.DataFrame,
     for index_name in load_indices_config()["primary_indices"]:
         target = load_indices_config()["indices"][index_name]["target_count"]
         ew = expected_index_weights(rank_panel, index_name, target)
+        # `forecast` already carries avg_float_market_cap from the rules engine;
+        # drop the duplicate from `ew` so we don't end up with _x/_y suffixes.
+        ew_keep = ew.drop(columns=[c for c in ("avg_float_market_cap",) if c in ew.columns])
         idx_df = forecast[forecast["index"] == index_name].merge(
-            ew, on=["ticker", "index"], how="left"
+            ew_keep, on=["ticker", "index"], how="left"
         )
         idx_df["prior_weight"] = idx_df["current_member"].astype(float) * idx_df["expected_weight"].fillna(0)
-        flow = passive_flow(idx_df.assign(expected_weight=idx_df["expected_weight"]),
-                            passive_aum_by_index=cfg)
+        flow = passive_flow(idx_df, passive_aum_by_index=cfg)
         flow = flow.merge(ref, on="ticker", how="left")
         adv_panel = rank_panel[["ticker", "ADV_20d", "ADV_60d"]]
-        flow = flow_to_adv(flow, adv_panel, price_col="ref_price")
+        # Same collision avoidance for the ADV merge.
+        flow_ready = flow.drop(columns=[c for c in ("ADV_20d", "ADV_60d") if c in flow.columns])
+        flow = flow_to_adv(flow_ready, adv_panel, price_col="ref_price")
         out_frames.append(flow)
     return pd.concat(out_frames, ignore_index=True)
 
@@ -339,7 +343,14 @@ def cmd_backtest_rules(args: argparse.Namespace) -> None:
             "removals_tp": len(pred_del & truth_del),
         })
     out = pd.DataFrame(rows)
-    write_csv(out, OUTPUTS_DIR / "rules_engine_accuracy.csv")
+    write_csv(out, OUTPUTS_DIR / f"rules_engine_accuracy_{args.index}.csv")
+    # Combined file so the dashboard / report tooling can read one path.
+    combined_path = OUTPUTS_DIR / "rules_engine_accuracy.csv"
+    if combined_path.exists():
+        existing = pd.read_csv(combined_path)
+        existing = existing[existing["index"] != args.index]
+        out = pd.concat([existing, out], ignore_index=True)
+    write_csv(out, combined_path)
     print(out.to_string(index=False))
 
 
