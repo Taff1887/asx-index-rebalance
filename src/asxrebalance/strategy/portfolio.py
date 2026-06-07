@@ -48,6 +48,14 @@ def size_positions(signals: pd.DataFrame) -> pd.DataFrame:
 
 
 def enforce_exposure(weights: pd.DataFrame) -> pd.DataFrame:
+    """Cap gross and net exposure per `strategy.yaml::position_sizing`.
+
+    The net-exposure cap only applies when both long and short sides are
+    represented on the day. A one-sided book (long-only or short-only) is
+    intentionally directional and would be crushed by a 20% net cap —
+    `enforce_exposure` skips the net cap in that case and lets the gross
+    cap do the heavy lifting.
+    """
     cfg = load_strategy_config()["strategy"]["position_sizing"]
     gross_cap = float(cfg.get("max_gross_exposure", 1.0))
     net_cap = float(cfg.get("max_net_exposure", 0.20))
@@ -58,8 +66,11 @@ def enforce_exposure(weights: pd.DataFrame) -> pd.DataFrame:
         gross = g["weight"].abs().sum()
         if gross > gross_cap and gross > 0:
             g["weight"] *= gross_cap / gross
+
+        sides = set(g["side"].unique()) if "side" in g.columns else set()
+        is_two_sided = ("long" in sides) and ("short" in sides)
         net = g["weight"].sum()
-        if abs(net) > net_cap and abs(net) > 0:
+        if is_two_sided and abs(net) > net_cap and abs(net) > 0:
             shift = (abs(net) - net_cap) * np.sign(net)
             g["weight"] -= shift / len(g)
         out_frames.append(g)

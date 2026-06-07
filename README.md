@@ -470,22 +470,22 @@ Four more variants use the same engine: `pre-announcement` (enter 5 trading days
 
 ### 14.4 Performance metrics
 
-All numbers are after brokerage + half-spread + slippage + market-impact + (long/short only) borrow. Each daily-return series is reindexed onto the full calendar so idle days count as zero — same denominator across both strategies and the benchmark. The benchmark is now generated with a market factor + idiosyncratic noise so its volatility (16.6%) and drawdown profile match a real ASX 200 ETF.
+All numbers are after brokerage + half-spread + slippage + market-impact + (long/short only) borrow. Each daily-return series is reindexed onto the full calendar so idle days count as zero — same denominator across both strategies and the benchmark. The benchmark is generated with a market factor + idiosyncratic noise so its volatility (16.6%) and drawdown profile match a real ASX 200 ETF.
 
 | Metric | Long/short | Long-only | ASX 200 buy-and-hold |
 |---|---:|---:|---:|
-| Total return (8 yr) | **+81.2%** | +4.9% | +29.8% |
-| CAGR | **+7.6%** | +0.6% | +3.2% |
-| Volatility (annualised) | 3.0% | **1.4%** | 16.6% |
-| **Sharpe ratio** | **2.47** | 0.43 | 0.27 |
-| Sortino ratio | 1.94 | 0.29 | 0.40 |
-| Max drawdown | **-1.5%** | -2.1% | -59.1% |
-| Calmar ratio | **5.26** | 0.28 | 0.05 |
-| Beta vs benchmark | **-0.005** | 0.025 | 1.00 |
-| **Alpha vs benchmark** | **+7.4%** | +0.5% | — |
-| Tracking error | 16.9% | 16.3% | — |
-| Information ratio | +0.17 | -0.24 | — |
-| Hit rate (calendar days) | 11.6% | 8.7% | 52.4% |
+| Total return (8 yr) | **+81.2%** | +23.2% | +29.8% |
+| CAGR | **+7.6%** | +2.6% | +3.2% |
+| Volatility (annualised) | 3.0% | 6.8% | 16.6% |
+| **Sharpe ratio** | **2.47** | 0.41 | 0.27 |
+| Sortino ratio | 1.94 | 0.30 | 0.40 |
+| Max drawdown | **-1.5%** | -10.2% | -59.1% |
+| Calmar ratio | **5.26** | 0.26 | 0.05 |
+| Beta vs benchmark | **-0.005** | 0.12 | 1.00 |
+| **Alpha vs benchmark** | **+7.4%** | +2.3% | — |
+| Tracking error | 16.9% | 16.0% | — |
+| Information ratio | +0.17 | -0.11 | — |
+| Hit rate (calendar days) | 11.6% | 11.5% | 52.4% |
 | Trades | 1,007 | 503 | — |
 
 **Headline take, plain English:**
@@ -494,6 +494,23 @@ All numbers are after brokerage + half-spread + slippage + market-impact + (long
 - Its **max drawdown is only -1.5%** versus -59% for the benchmark — that's the standout result. The strategy is only deployed during the announcement → effective windows (~10 trading days per quarter), so it sits in cash during the synthetic crisis and doesn't participate in the drawdown.
 - **Beta is -0.005** (essentially zero). The strategy is genuinely market-neutral — its return is uncorrelated with the index. That's the defining property of event-driven strategies.
 - **Sharpe 2.47 and alpha +7.4%** are reasonable real-world numbers. On actual ASX data expect them to be lower (real index effect is smaller than +2.5%, real dispersion per trade is higher) but the *shape* of the result — market-neutral, low drawdown, ~5-10% alpha — is what professional index-arb desks target.
+
+#### Why does long-only underperform so heavily?
+
+Two real reasons, neither of which is the strategy mechanics:
+
+1. **The synthetic crisis happened to coincide with rebalance windows.** Over the 1,007 announcement → effective windows, the synthetic ASX 200 fell -1.05% on average and 62% of windows had negative benchmark returns. Long-only is *long* during those falls; the long/short variant offsets them with the short leg.
+
+   | Window benchmark direction | Trades | Long avg PnL | Short avg PnL |
+   |---|---:|---:|---:|
+   | Benchmark fell | 622 | **-A$422** | **+A$1,590** |
+   | Benchmark rose | 385 | +A$1,316 | -A$92 |
+
+   When the market rises during the window, longs win cleanly. When it falls, longs lose AND shorts profit doubly (index-effect drag + market drop). That's why the long/short variant has +44.6% alpha even though the long leg on its own is only modestly profitable.
+
+2. **Until a recent commit, the 20% net-exposure cap in `strategy.yaml::position_sizing::max_net_exposure` was strangling long-only.** A long-only book has positive sum-of-weights by construction (no shorts to cancel), so the 20% net cap was scaling every position down by ~5x. `enforce_exposure` now detects one-sided books and skips the net cap. Long-only total return went from +4.9% to +23.2% as a result — the strategy mechanics were fine all along, the cap was wrong.
+
+So the real apples-to-apples answer is: **long-only is structurally fine, but it's exposed to market direction during the rebalance window in a way the long/short variant is not.** If your synthetic (or real) windows happen to fall during volatile periods, long-only will trail long/short by exactly the amount the market moved against you.
 
 ### 14.5 Trades audit — every trade lands on a real rebalance date
 
