@@ -39,6 +39,9 @@ def build_event_signals(forecast: pd.DataFrame,
     elif variant == "additions_only":
         df = df[df["side"] == "long"].copy()
         df["entry_date"] = df["announcement_date"]
+    elif variant == "removals_only":
+        df = df[df["side"] == "short"].copy()
+        df["entry_date"] = df["announcement_date"]
     elif variant == "flow_pressure":
         df = df[df["passive_flow_to_ADV_20d"].fillna(0).abs() >= 0.5].copy()
         df["entry_date"] = df["announcement_date"]

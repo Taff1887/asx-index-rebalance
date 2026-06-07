@@ -48,6 +48,8 @@ variants:
     description: "Enter `pre_announcement_days` days before announcement using only ex-ante information."
   - id: additions_only
     description: "Long-only predicted additions/promotions; benchmark-neutral comparison."
+  - id: removals_only
+    description: "Short-only predicted removals/demotions; isolates the removal-side index effect."
   - id: market_neutral
     description: "Long/short with explicit beta hedge using benchmark ETF."
   - id: flow_pressure

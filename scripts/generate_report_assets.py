@@ -398,52 +398,54 @@ def strategy_summary_chart() -> None:
 # Step 9: Calibration chart (skip silently if no ML probabilities available)
 # ---------------------------------------------------------------------------
 def strategy_comparison_chart() -> None:
-    """Plot long/short, long-only, and benchmark cumulative return on one figure."""
-    long_short = OUTPUTS_DIR / "strategy_vs_benchmark_announcement_long_short.csv"
-    long_only = OUTPUTS_DIR / "strategy_vs_benchmark_additions_only.csv"
-    if not long_short.exists() or not long_only.exists():
-        print("  skipping combined comparison (run both variants first)")
+    """Plot all available strategy variants vs the benchmark on one figure."""
+    variants = [
+        ("announcement_long_short", "Long/short (additions & removals)", PALETTE["strategy"]),
+        ("additions_only", "Long-only (additions)", PALETTE["addition"]),
+        ("removals_only", "Short-only (removals)", PALETTE["removal"]),
+    ]
+    loaded = []
+    for slug, label, color in variants:
+        f = OUTPUTS_DIR / f"strategy_vs_benchmark_{slug}.csv"
+        if f.exists():
+            df = pd.read_csv(f, parse_dates=["date"]).sort_values("date")
+            loaded.append((df, label, color))
+
+    if not loaded:
+        print("  skipping combined comparison (no variants run yet)")
         return
 
-    ls = pd.read_csv(long_short, parse_dates=["date"]).sort_values("date")
-    lo = pd.read_csv(long_only, parse_dates=["date"]).sort_values("date")
-
+    # Cumulative return.
     fig, ax = plt.subplots(figsize=FIGSIZE)
-    if "return" in ls.columns:
-        cum = (1 + ls["return"].fillna(0)).cumprod() - 1
-        ax.plot(ls["date"], cum * 100, color=PALETTE["strategy"], linewidth=2,
-                label="Long/short (additions & removals)")
-    if "return" in lo.columns:
-        cum = (1 + lo["return"].fillna(0)).cumprod() - 1
-        ax.plot(lo["date"], cum * 100, color=PALETTE["addition"], linewidth=2,
-                label="Long-only (additions)")
-    if "benchmark_return" in ls.columns:
-        cum_b = (1 + ls["benchmark_return"].fillna(0)).cumprod() - 1
-        ax.plot(ls["date"], cum_b * 100, color=PALETTE["benchmark"], linewidth=2,
+    for df, label, color in loaded:
+        if "return" in df.columns:
+            cum = (1 + df["return"].fillna(0)).cumprod() - 1
+            ax.plot(df["date"], cum * 100, color=color, linewidth=2, label=label)
+    bench = loaded[0][0]
+    if "benchmark_return" in bench.columns:
+        cum_b = (1 + bench["benchmark_return"].fillna(0)).cumprod() - 1
+        ax.plot(bench["date"], cum_b * 100, color=PALETTE["benchmark"], linewidth=2,
                 linestyle="--", label="ASX 200 buy-and-hold")
-    ax.set_title("Strategy comparison: long/short vs long-only vs ASX 200")
+    ax.set_title("Strategy comparison: long/short vs long-only vs short-only vs ASX 200")
     ax.set_ylabel("Cumulative return (%)")
     ax.legend()
     ax.grid(True, alpha=0.3)
     _save(fig, "strategy_comparison.png")
 
-    # Side-by-side drawdowns.
+    # Drawdowns.
     fig, ax = plt.subplots(figsize=FIGSIZE)
-    for df, color, label in (
-        (ls, PALETTE["strategy"], "Long/short"),
-        (lo, PALETTE["addition"], "Long-only"),
-    ):
+    for df, label, color in loaded:
         if "return" not in df.columns:
             continue
         cum = (1 + df["return"].fillna(0)).cumprod()
         dd = (cum / cum.cummax() - 1) * 100
         ax.plot(df["date"], dd, color=color, linewidth=2, label=label)
-    if "benchmark_return" in ls.columns:
-        cum_b = (1 + ls["benchmark_return"].fillna(0)).cumprod()
+    if "benchmark_return" in bench.columns:
+        cum_b = (1 + bench["benchmark_return"].fillna(0)).cumprod()
         dd_b = (cum_b / cum_b.cummax() - 1) * 100
-        ax.plot(ls["date"], dd_b, color=PALETTE["benchmark"],
+        ax.plot(bench["date"], dd_b, color=PALETTE["benchmark"],
                 linestyle="--", label="ASX 200")
-    ax.set_title("Drawdowns: long/short vs long-only vs ASX 200")
+    ax.set_title("Drawdowns: long/short vs long-only vs short-only vs ASX 200")
     ax.set_ylabel("Drawdown (%)")
     ax.legend()
     ax.grid(True, alpha=0.3)

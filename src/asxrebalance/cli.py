@@ -613,8 +613,8 @@ def build_parser() -> argparse.ArgumentParser:
     c = sub.add_parser("backtest-strategy")
     c.add_argument("--strategy", default="announcement-long-short",
                    choices=("announcement-long-short", "pre-announcement",
-                            "additions-only", "market-neutral",
-                            "flow-pressure", "top-k"))
+                            "additions-only", "removals-only",
+                            "market-neutral", "flow-pressure", "top-k"))
     c.add_argument("--start")
     c.add_argument("--end")
     c.add_argument("--benchmark", default="STW.AX")

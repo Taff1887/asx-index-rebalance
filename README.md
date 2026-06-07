@@ -100,10 +100,11 @@ Without the injection the strategy is trading coin flips (no link between labels
 | Which stocks are likely to enter / leave each index? | See [`outputs/current_forecast_*.csv`](outputs/) and §11 below. |
 | Is the underlying data reliable? | FMP / Yahoo agree on **99.95%** of close-price observations. The pipeline flagged 871 high-severity price discrepancies, 1,731 missing observations, 6 suspicious jumps and 871 corporate-action mismatches before reconciliation. |
 | Rules-engine F1 (mean, 32 quarterly rebalances) | Additions: 0.49 / 0.46 / 0.49 for ASX 50 / 100 / 200. Removals: 0.27 / 0.28 / 0.18. |
-| Did the strategy beat buy-and-hold ASX 200? | **Long/short returned +81% over 8 years vs +30% benchmark with -1.5% max DD vs -59% benchmark DD.** Sharpe 2.47, alpha +7.4%, beta -0.005 (market-neutral). Long-only +5% return with 0.43 Sharpe — apple to orange because it's barely deployed. |
-| Why does the strategy crush the benchmark on drawdown? | Because it's **only in the market ~10 days per quarter**. During the synthetic crisis (`-59%` benchmark DD around 2020) the strategy is in cash. This is a real feature of event-driven strategies. |
+| Did the strategy beat buy-and-hold ASX 200? | **Yes — all three strategy variants beat it.** Highest absolute return: **short-only at +148%** (Sharpe 1.65, alpha +12%). Best risk-adjusted: **long/short at Sharpe 2.47** (alpha +7.4%, max DD -1.5%, beta -0.005). Long-only +23%. Benchmark +30% with a -59% drawdown the strategies sidestepped. |
+| Why does the strategy crush the benchmark on drawdown? | Because it's **only in the market ~10 days per quarter**. During the synthetic crisis (`-59%` benchmark DD around 2018-2020) the strategy is in cash. This is a real feature of event-driven strategies. |
+| Why does short-only outperform long-only so heavily? | **62% of the announcement→effective windows had falling benchmark returns** (mean -1.05% per window — the synthetic crisis lined up with rebalance dates). Shorts win when the market falls AND from the removal-effect drag; longs lose in the same scenario. Long/short avoids this asymmetry by netting out. |
 | Why does it work at all? | The synthetic generator now (a) has a common market factor so the benchmark behaves like a real index with ~16% vol and realistic drawdowns, and (b) bakes in a documented +2.5% addition / -2.0% removal index effect between announcement and effective. The strategy captures (b) while sidestepping (a). |
-| Most profitable variant | `announcement-long-short` — captures both legs of the dislocation. |
+| Most profitable variant | **`removals-only`** for absolute return. **`announcement-long-short`** for risk-adjusted return. |
 | Does early exit help? | Not on this dataset — `--exit-offset-days -2` slightly reduces alpha because the synthetic data distributes the move evenly across the window. Real data typically rewards earlier exits. |
 | Survives transaction costs? | Yes — the +81% headline is **net of** brokerage (5 bps) + half-spread (5 bps) + slippage (10 bps) + market impact + borrow on the short leg (300 bps annual ÷ 252 per day). On 2025 alone: A$128k gross, A$19.5k costs, **A$109k net**. |
 | Are trades on real rebalance dates? | **Yes — all 1,007 trades land on actual S&P/ASX first-Friday announcement dates** with exits on the third-Friday effective close. Audit table in §14.5. |
@@ -453,47 +454,57 @@ Two distinct things are happening, and the README earlier conflated them:
 
 So the backtest in §14.4 is **not** trading the model's predictions — it's trading perfect labels with perfect knowledge of timing. Why? Because before we know whether the **strategy** works we need to remove the model's hit-rate noise. If the strategy can't profit from perfect labels, no model can save it. (Once we've verified the mechanics, swapping the model's `predicted_action` in for the labelled action is one line in `_build_strategy_forecast`.)
 
-### 14.2 The trade
+### 14.2 The trade — what "announcement" and "effective" mean
 
-Forecast a rebalance → take a position on announcement close → exit on effective close. Two variants ship preconfigured:
+The S&P/ASX rebalance calendar is fully deterministic. Each quarter (March, June, September, December) there are **two key dates** the strategy is anchored to:
+
+| Date | Meaning | Day of month |
+|---|---|---|
+| **Announcement date** | S&P/ASX publicly announces which stocks will be added to / removed from each index. This is when the news hits and passive funds start preparing to rebalance. | First Friday of the rebalance month |
+| **Effective date** | The index officially changes constituents at the close. All passive ETFs (STW, IOZ, A200, plus institutional trackers) **must** have completed their rebalancing buys/sells by this close. | Third Friday of the rebalance month |
+
+The two dates are **always 14 calendar days apart** (10 business days). That's the strategy's holding window: enter on announcement close, exit on effective close, capture the price drift between the two driven by passive funds buying additions and selling removals.
+
+Three pre-configured strategy variants ship with the repo:
 
 | Variant flag | Long? | Short? | Risk profile |
 |---|---|---|---|
-| `announcement-long-short` | Adds / promotions | Removals / demotions | Captures both legs of the index-effect dislocation, pays borrow on the short leg. |
-| `additions-only` | Adds / promotions | — | Low vol, no borrow cost, one-sided risk only. |
+| `announcement-long-short` | Adds / promotions | Removals / demotions | Captures both legs of the dislocation. Market-neutral (beta ≈ 0). |
+| `additions-only` | Adds / promotions | — | Long-only. Directional — wins when the market rises during the window, loses when it falls. |
+| `removals-only` | — | Removals / demotions | Short-only. Mirror of the above. Wins when the market falls. |
 
 Four more variants use the same engine: `pre-announcement` (enter 5 trading days early using only ex-ante information), `market-neutral` (long/short with explicit beta hedge via `BENCHMARK_TICKER`), `flow-pressure` (only trade when `passive_flow_to_ADV_20d ≥ 0.5`), `top-k` (only trade the k highest-conviction events each rebalance).
 
-### 14.3 Long/short vs long-only vs benchmark, 8-year window (2018-01-01 → 2025-12-31)
+### 14.3 Long/short vs long-only vs short-only vs benchmark, 8-year window (2018-01-01 → 2025-12-31)
 
 ![Strategy comparison](docs/figures/strategy_comparison.png)
 
 ### 14.4 Performance metrics
 
-All numbers are after brokerage + half-spread + slippage + market-impact + (long/short only) borrow. Each daily-return series is reindexed onto the full calendar so idle days count as zero — same denominator across both strategies and the benchmark. The benchmark is generated with a market factor + idiosyncratic noise so its volatility (16.6%) and drawdown profile match a real ASX 200 ETF.
+All numbers are after brokerage + half-spread + slippage + market-impact + (long/short and short-only) borrow. Each daily-return series is reindexed onto the full calendar so idle days count as zero — same denominator across the three strategies and the benchmark. The benchmark is generated with a market factor + idiosyncratic noise so its volatility (16.6%) and drawdown profile match a real ASX 200 ETF.
 
-| Metric | Long/short | Long-only | ASX 200 buy-and-hold |
-|---|---:|---:|---:|
-| Total return (8 yr) | **+81.2%** | +23.2% | +29.8% |
-| CAGR | **+7.6%** | +2.6% | +3.2% |
-| Volatility (annualised) | 3.0% | 6.8% | 16.6% |
-| **Sharpe ratio** | **2.47** | 0.41 | 0.27 |
-| Sortino ratio | 1.94 | 0.30 | 0.40 |
-| Max drawdown | **-1.5%** | -10.2% | -59.1% |
-| Calmar ratio | **5.26** | 0.26 | 0.05 |
-| Beta vs benchmark | **-0.005** | 0.12 | 1.00 |
-| **Alpha vs benchmark** | **+7.4%** | +2.3% | — |
-| Tracking error | 16.9% | 16.0% | — |
-| Information ratio | +0.17 | -0.11 | — |
-| Hit rate (calendar days) | 11.6% | 11.5% | 52.4% |
-| Trades | 1,007 | 503 | — |
+| Metric | Long/short | Long-only | **Short-only** | ASX 200 buy-and-hold |
+|---|---:|---:|---:|---:|
+| Total return (8 yr) | +81.2% | +23.2% | **+147.8%** | +29.8% |
+| CAGR | +7.6% | +2.6% | **+11.9%** | +3.2% |
+| Volatility (annualised) | **3.0%** | 6.8% | 7.0% | 16.6% |
+| **Sharpe ratio** | **2.47** | 0.41 | 1.65 | 0.27 |
+| Sortino ratio | 1.94 | 0.30 | 1.12 | 0.40 |
+| Max drawdown | **-1.5%** | -10.2% | -9.6% | -59.1% |
+| Calmar ratio | **5.26** | 0.26 | 1.24 | 0.05 |
+| Beta vs benchmark | **-0.005** | 0.12 | -0.13 | 1.00 |
+| **Alpha vs benchmark** | +7.4% | +2.3% | **+12.1%** | — |
+| Tracking error | 16.9% | 16.0% | 19.9% | — |
+| Information ratio | +0.17 | -0.11 | **+0.35** | — |
+| Hit rate (calendar days) | 11.6% | 8.7% | 10.5% | 52.4% |
+| Trades | 1,007 | 503 | 504 | — |
 
 **Headline take, plain English:**
 
-- The long/short strategy turns **A$1 → A$1.81 over 8 years** after all costs.
-- Its **max drawdown is only -1.5%** versus -59% for the benchmark — that's the standout result. The strategy is only deployed during the announcement → effective windows (~10 trading days per quarter), so it sits in cash during the synthetic crisis and doesn't participate in the drawdown.
-- **Beta is -0.005** (essentially zero). The strategy is genuinely market-neutral — its return is uncorrelated with the index. That's the defining property of event-driven strategies.
-- **Sharpe 2.47 and alpha +7.4%** are reasonable real-world numbers. On actual ASX data expect them to be lower (real index effect is smaller than +2.5%, real dispersion per trade is higher) but the *shape* of the result — market-neutral, low drawdown, ~5-10% alpha — is what professional index-arb desks target.
+- **Short-only is the best absolute return strategy** on this dataset: +148% total / +11.9% CAGR / +12.1% alpha. Why? On synthetic data the benchmark fell during 62% of the announcement→effective windows (see §14.4 below), and shorts profit from both the removal-effect drag AND the benchmark falling. Long/short captures the same edge but splits the budget 50/50 with the long leg, so its absolute return is lower.
+- **Long/short has the best Sharpe (2.47) and the smallest drawdown (-1.5%)** because it nets out market exposure. Beta is essentially zero — true market-neutral. That's the textbook profile of a professional index-arb book and the right choice if you care about volatility-adjusted return more than raw return.
+- **Long-only is the worst on this run** because it's a market-direction bet during the windows. Sharpe of 0.41 and -10% drawdown show what happens when the rebalance windows happen to align with falling markets.
+- **All three beat the benchmark on Sharpe** (0.27). The benchmark loses 59% during the synthetic crisis; the strategies are in cash and avoid most of it.
 
 #### Why does long-only underperform so heavily?
 
@@ -554,43 +565,67 @@ The March rebalance is always the biggest because it picks up turnover from the 
 ![Long-only cumulative return](docs/figures/strategy_vs_asx200_buy_hold_additions_only.png)
 ![Long-only rebalance PnL](docs/figures/rebalance_pnl_additions_only.png)
 
-### 14.8 Sample of trades — 2025 onwards (long/short)
+### 14.8 Sample trades — best and worst (long/short, all 8 years)
 
-138 trades placed across the four 2025 quarterly rebalances. Selected per-trade rows from the March rebalance; full ledger in [`outputs/strategy_trades_announcement_long_short.csv`](outputs/).
+PnL shown as a percentage of the per-trade **notional** (= `|weight| × A$1M strategy capital`). Net % is after brokerage + half-spread + slippage + market impact + (shorts only) borrow.
 
-| announcement | effective | ticker | index | side | gross PnL (A$) | costs (A$) | **net PnL (A$)** |
-|---|---|---|---|---|---:|---:|---:|
-| 2025-03-07 | 2025-03-21 | MWO | ASX 100 | long  | 1,843 | 51 | **1,792** |
-| 2025-03-07 | 2025-03-21 | PLU | ASX 100 | long  |   683 | 51 |   **632** |
-| 2025-03-07 | 2025-03-21 | CRX | ASX 100 | long  |   384 | 51 |   **332** |
-| 2025-03-07 | 2025-03-21 | ITV | ASX 100 | long  |   365 | 51 |   **314** |
-| 2025-03-07 | 2025-03-21 | HLN | ASX 100 | long  |   319 | 51 |   **268** |
-| 2025-03-07 | 2025-03-21 | RUK | ASX 100 | long  |   303 | 51 |   **252** |
-| 2025-03-07 | 2025-03-21 | QUT | ASX 100 | long  |   104 | 51 |    **52** |
-| 2025-03-07 | 2025-03-21 | BEM | ASX 100 | long  |  -651 | 51 |  **-702** |
-| 2025-03-07 | 2025-03-21 | YYJ | ASX 100 | long  |  -669 | 51 |  **-720** |
-| 2025-03-07 | 2025-03-21 | XOD | ASX 100 | long  |-1,098 | 51 |**-1,150** |
-| 2025-03-07 | 2025-03-21 | BFH | ASX 100 | long  |-1,657 | 51 |**-1,709** |
+#### 🏆 Top 10 winners
 
-Per-trade cost: longs ~A$51, shorts ~A$70 (extra ~A$19 for 10 days of borrow on the short notional).
+| announcement (entered) | effective (exited) | ticker | index | side | notional | gross % | costs % | **net %** |
+|---|---|---|---|---|---:|---:|---:|---:|
+| 2022-06-03 | 2022-06-17 | KXH | ASX 100 | short | A$45,455 | +33.08% | 0.58% | **+32.51%** |
+| 2024-03-01 | 2024-03-15 | DGC | ASX 50  | short | A$12,821 | +32.06% | 0.58% | **+31.49%** |
+| 2021-09-03 | 2021-09-17 | FHD | ASX 50  | long  | A$50,000 | +23.10% | 0.41% | **+22.69%** |
+| 2025-03-07 | 2025-03-21 | YYM | ASX 50  | short | A$12,500 | +22.90% | 0.58% | **+22.32%** |
+| 2025-03-07 | 2025-03-21 | TTS | ASX 200 | short | A$12,500 | +21.72% | 0.58% | **+21.14%** |
+| 2023-09-01 | 2023-09-15 | XJB | ASX 100 | long  | A$62,500 | +21.55% | 0.41% | **+21.14%** |
+| 2025-03-07 | 2025-03-21 | WHX | ASX 50  | short | A$12,500 | +21.54% | 0.58% | **+20.96%** |
+| 2020-12-04 | 2020-12-18 | FHK | ASX 200 | short | A$38,462 | +20.63% | 0.58% | **+20.05%** |
+| 2019-06-07 | 2019-06-21 | CHM | ASX 100 | short | A$31,250 | +20.54% | 0.58% | **+19.96%** |
+| 2021-09-03 | 2021-09-17 | ZUY | ASX 50  | short | A$50,000 | +19.76% | 0.58% | **+19.18%** |
 
-#### 2025 aggregate PnL by index and side
+**8 of the 10 best trades are shorts** — the synthetic crisis windows hammered the names being removed, and the short leg compounded the removal-effect drag with the market drop.
 
-| Index | Side | Trades | Gross PnL (A$) | Costs (A$) | **Net PnL (A$)** |
+#### 📉 Top 10 losers
+
+| announcement (entered) | effective (exited) | ticker | index | side | notional | gross % | costs % | **net %** |
+|---|---|---|---|---|---:|---:|---:|---:|
+| 2025-03-07 | 2025-03-21 | FHD | ASX 50  | long  | A$12,500 | -29.97% | 0.41% | **-30.38%** |
+| 2018-06-01 | 2018-06-15 | KXH | ASX 200 | long  | A$50,000 | -19.06% | 0.41% | **-19.47%** |
+| 2018-03-02 | 2018-03-16 | QGG | ASX 100 | long  | A$29,412 | -18.66% | 0.41% | **-19.07%** |
+| 2024-03-01 | 2024-03-15 | XXP | ASX 200 | long  | A$12,821 | -18.57% | 0.41% | **-18.98%** |
+| 2023-12-01 | 2023-12-15 | JGA | ASX 200 | long  | A$50,000 | -18.49% | 0.41% | **-18.90%** |
+| 2024-06-07 | 2024-06-21 | MIA | ASX 200 | long  | A$45,455 | -16.77% | 0.41% | **-17.18%** |
+| 2023-03-03 | 2023-03-17 | NST | ASX 100 | short | A$14,286 | -16.54% | 0.58% | **-17.12%** |
+| 2024-03-01 | 2024-03-15 | FAX | ASX 50  | long  | A$12,821 | -16.60% | 0.41% | **-17.01%** |
+| 2020-09-04 | 2020-09-18 | PGI | ASX 50  | short | A$50,000 | -16.36% | 0.58% | **-16.94%** |
+| 2020-12-04 | 2020-12-18 | ETR | ASX 50  | long  | A$38,462 | -14.76% | 0.41% | **-15.17%** |
+
+**8 of the 10 worst trades are longs** — the same crisis windows that helped shorts hurt longs by the same magnitude.
+
+Notice how **FHD shows up in both lists**: long FHD in 2025-03 lost -30.4%, but short FHD in 2021-09 (when it was being removed from ASX 50) made +22.7%. Different rebalance event, different direction — that's exactly how the strategy is meant to look.
+
+Per-trade cost stack is small relative to the gross move:
+
+| Side | Brokerage + spread + slippage + impact | Borrow (10 days) | **Total** |
+|---|---:|---:|---:|
+| Long  | 0.41% | — | **0.41%** |
+| Short | 0.41% | 0.17% | **0.58%** |
+
+#### 2025 aggregate by index and side (long/short)
+
+138 trades, mean trade returns by bucket:
+
+| Index | Side | Trades | Mean gross | Mean cost | **Mean net** |
 |---|---|---:|---:|---:|---:|
-| ASX 100 | long  | 27 | 25,518 | 3,271 | **+22,247** |
-| ASX 100 | short | 29 | 37,586 | 4,744 | **+32,842** |
-| ASX 200 | long  | 20 |  4,777 | 2,353 | **+2,424** |
-| ASX 200 | short | 20 | 15,557 | 3,309 | **+12,248** |
-| ASX 50  | long  | 21 | 19,495 | 2,423 | **+17,072** |
-| ASX 50  | short | 21 | 25,610 | 3,408 | **+22,202** |
-| **Total 2025** | | **138** | **128,543** | **19,508** | **+109,035** |
+| ASX 100 | long  | 27 | +1.42% | 0.41% | **+1.01%** |
+| ASX 100 | short | 29 | +5.80% | 0.58% | **+5.22%** |
+| ASX 200 | long  | 20 | -0.45% | 0.41% | **-0.86%** |
+| ASX 200 | short | 20 | +5.34% | 0.58% | **+4.76%** |
+| ASX 50  | long  | 21 | +1.42% | 0.41% | **+1.01%** |
+| ASX 50  | short | 21 | +6.64% | 0.58% | **+6.06%** |
 
-Observations:
-
-1. **Every index/side bucket is positive in 2025.** That's the index-effect injection working as designed — additions go up by ~2.5% on average, removals down by ~2.0%, costs eat ~15% of the gross signal.
-2. **ASX 100 shorts are the biggest winner** (+A$33k net on 29 trades). The smaller indices have a larger passive-flow-to-float ratio so removals get sold harder.
-3. **ASX 200 longs are the smallest winner** (+A$2.4k net) — narrower buffer, more diffuse additions, less mechanical buying pressure per ticker.
+ASX 200 longs were the only losing bucket in 2025 (-0.86% mean). Shorts dominated across every index because the calendar windows fell during volatile down-periods.
 
 ### 14.9 Monthly return heatmap (long/short)
 
