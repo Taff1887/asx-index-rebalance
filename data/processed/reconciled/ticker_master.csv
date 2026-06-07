@@ -1,301 +1,301 @@
 canonical_ticker,yahoo_ticker,fmp_ticker,company_name,sector,industry,first_seen_date,last_seen_date,active_flag,notes
-AAA,AAA.AX,AAA.AX,AAA Holdings Ltd,Energy,Retail,2010-01-01,2026-06-07,True,synthetic
-ABF,ABF.AX,ABF.AX,ABF Holdings Ltd,Communication Services,Software,2010-01-01,2026-06-07,True,synthetic
-ACL,ACL.AX,ACL.AX,ACL Holdings Ltd,Healthcare,REITs,2010-01-01,2026-06-07,True,synthetic
-ADB,ADB.AX,ADB.AX,ADB Holdings Ltd,Communication Services,Utilities,2010-01-01,2026-06-07,True,synthetic
-ADO,ADO.AX,ADO.AX,ADO Holdings Ltd,Financials,Oil,2010-01-01,2026-06-07,True,synthetic
-AHC,AHC.AX,AHC.AX,AHC Holdings Ltd,Financials,Retail,2010-01-01,2026-06-07,True,synthetic
-APO,APO.AX,APO.AX,APO Holdings Ltd,Information Technology,Retail,2010-01-01,2026-06-07,True,synthetic
-ARC,ARC.AX,ARC.AX,ARC Holdings Ltd,Financials,Oil,2010-01-01,2026-06-07,True,synthetic
-ARO,ARO.AX,ARO.AX,ARO Holdings Ltd,Financials,Mining,2010-01-01,2026-06-07,True,synthetic
-ARZ,ARZ.AX,ARZ.AX,ARZ Holdings Ltd,Utilities,REITs,2010-01-01,2026-06-07,True,synthetic
-BAJ,BAJ.AX,BAJ.AX,BAJ Holdings Ltd,Consumer Staples,Mining,2010-01-01,2026-06-07,True,synthetic
-BBQ,BBQ.AX,BBQ.AX,BBQ Holdings Ltd,Industrials,REITs,2010-01-01,2026-06-07,True,synthetic
-BCR,BCR.AX,BCR.AX,BCR Holdings Ltd,Energy,Mining,2010-01-01,2026-06-07,True,synthetic
-BDL,BDL.AX,BDL.AX,BDL Holdings Ltd,Energy,Mining,2010-01-01,2026-06-07,True,synthetic
-BEM,BEM.AX,BEM.AX,BEM Holdings Ltd,Real Estate,Oil,2010-01-01,2026-06-07,True,synthetic
-BFH,BFH.AX,BFH.AX,BFH Holdings Ltd,Real Estate,Oil,2010-01-01,2026-06-07,True,synthetic
-BHL,BHL.AX,BHL.AX,BHL Holdings Ltd,Consumer Staples,Utilities,2010-01-01,2026-06-07,True,synthetic
-BME,BME.AX,BME.AX,BME Holdings Ltd,Financials,REITs,2010-01-01,2026-06-07,True,synthetic
-BWR,BWR.AX,BWR.AX,BWR Holdings Ltd,Consumer Discretionary,Telecom,2010-01-01,2026-06-07,True,synthetic
-CBK,CBK.AX,CBK.AX,CBK Holdings Ltd,Financials,Telecom,2010-01-01,2026-06-07,True,synthetic
-CCL,CCL.AX,CCL.AX,CCL Holdings Ltd,Real Estate,Telecom,2010-01-01,2026-06-07,True,synthetic
-CCV,CCV.AX,CCV.AX,CCV Holdings Ltd,Consumer Staples,REITs,2010-01-01,2026-06-07,True,synthetic
-CHM,CHM.AX,CHM.AX,CHM Holdings Ltd,Materials,Retail,2010-01-01,2026-06-07,True,synthetic
-CID,CID.AX,CID.AX,CID Holdings Ltd,Industrials,Utilities,2010-01-01,2026-06-07,True,synthetic
-CKZ,CKZ.AX,CKZ.AX,CKZ Holdings Ltd,Industrials,Utilities,2010-01-01,2026-06-07,True,synthetic
-CNQ,CNQ.AX,CNQ.AX,CNQ Holdings Ltd,Consumer Discretionary,Oil,2010-01-01,2026-06-07,True,synthetic
-CNZ,CNZ.AX,CNZ.AX,CNZ Holdings Ltd,Utilities,Utilities,2010-01-01,2026-06-07,True,synthetic
-COU,COU.AX,COU.AX,COU Holdings Ltd,Materials,Retail,2010-01-01,2026-06-07,True,synthetic
-CPX,CPX.AX,CPX.AX,CPX Holdings Ltd,Information Technology,Oil,2010-01-01,2026-06-07,True,synthetic
-CRR,CRR.AX,CRR.AX,CRR Holdings Ltd,Consumer Discretionary,Telecom,2010-01-01,2026-06-07,True,synthetic
-CRX,CRX.AX,CRX.AX,CRX Holdings Ltd,Energy,Software,2010-01-01,2026-06-07,True,synthetic
-CSD,CSD.AX,CSD.AX,CSD Holdings Ltd,Healthcare,Retail,2010-01-01,2026-06-07,True,synthetic
-CSF,CSF.AX,CSF.AX,CSF Holdings Ltd,Industrials,Retail,2010-01-01,2026-06-07,True,synthetic
-CTO,CTO.AX,CTO.AX,CTO Holdings Ltd,Consumer Discretionary,Oil,2010-01-01,2026-06-07,True,synthetic
-CTT,CTT.AX,CTT.AX,CTT Holdings Ltd,Consumer Discretionary,Oil,2010-01-01,2026-06-07,True,synthetic
-CUR,CUR.AX,CUR.AX,CUR Holdings Ltd,Information Technology,Software,2010-01-01,2026-06-07,True,synthetic
-CUS,CUS.AX,CUS.AX,CUS Holdings Ltd,Energy,Software,2010-01-01,2026-06-07,True,synthetic
-DGC,DGC.AX,DGC.AX,DGC Holdings Ltd,Consumer Discretionary,Retail,2010-01-01,2026-06-07,True,synthetic
-DHG,DHG.AX,DHG.AX,DHG Holdings Ltd,Materials,Banks,2010-01-01,2026-06-07,True,synthetic
-DHN,DHN.AX,DHN.AX,DHN Holdings Ltd,Consumer Discretionary,Mining,2010-01-01,2026-06-07,True,synthetic
-DHW,DHW.AX,DHW.AX,DHW Holdings Ltd,Consumer Discretionary,Telecom,2010-01-01,2026-06-07,True,synthetic
-DJQ,DJQ.AX,DJQ.AX,DJQ Holdings Ltd,Materials,Telecom,2010-01-01,2026-06-07,True,synthetic
-DMP,DMP.AX,DMP.AX,DMP Holdings Ltd,Real Estate,Telecom,2010-01-01,2026-06-07,True,synthetic
-DOA,DOA.AX,DOA.AX,DOA Holdings Ltd,Financials,Oil,2010-01-01,2026-06-07,True,synthetic
-DON,DON.AX,DON.AX,DON Holdings Ltd,Consumer Staples,Oil,2010-01-01,2026-06-07,True,synthetic
-DOY,DOY.AX,DOY.AX,DOY Holdings Ltd,Materials,Banks,2010-01-01,2026-06-07,True,synthetic
-DPC,DPC.AX,DPC.AX,DPC Holdings Ltd,Healthcare,Mining,2010-01-01,2026-06-07,True,synthetic
-DQQ,DQQ.AX,DQQ.AX,DQQ Holdings Ltd,Real Estate,Software,2010-01-01,2026-06-07,True,synthetic
-DQV,DQV.AX,DQV.AX,DQV Holdings Ltd,Consumer Discretionary,Telecom,2010-01-01,2026-06-07,True,synthetic
-DRC,DRC.AX,DRC.AX,DRC Holdings Ltd,Financials,Utilities,2010-01-01,2026-06-07,True,synthetic
-DSN,DSN.AX,DSN.AX,DSN Holdings Ltd,Consumer Discretionary,Utilities,2010-01-01,2026-06-07,True,synthetic
-DUD,DUD.AX,DUD.AX,DUD Holdings Ltd,Information Technology,Software,2010-01-01,2026-06-07,True,synthetic
-DVF,DVF.AX,DVF.AX,DVF Holdings Ltd,Consumer Discretionary,Software,2010-01-01,2026-06-07,True,synthetic
-DVN,DVN.AX,DVN.AX,DVN Holdings Ltd,Energy,REITs,2010-01-01,2026-06-07,True,synthetic
-DYP,DYP.AX,DYP.AX,DYP Holdings Ltd,Real Estate,Telecom,2010-01-01,2026-06-07,True,synthetic
-DYV,DYV.AX,DYV.AX,DYV Holdings Ltd,Materials,Utilities,2010-01-01,2026-06-07,True,synthetic
-DYY,DYY.AX,DYY.AX,DYY Holdings Ltd,Healthcare,Software,2010-01-01,2026-06-07,True,synthetic
-EBV,EBV.AX,EBV.AX,EBV Holdings Ltd,Consumer Discretionary,Telecom,2010-01-01,2026-06-07,True,synthetic
-EED,EED.AX,EED.AX,EED Holdings Ltd,Consumer Staples,Mining,2010-01-01,2026-06-07,True,synthetic
-EEH,EEH.AX,EEH.AX,EEH Holdings Ltd,Financials,Utilities,2010-01-01,2026-06-07,True,synthetic
-EEN,EEN.AX,EEN.AX,EEN Holdings Ltd,Healthcare,Utilities,2010-01-01,2026-06-07,True,synthetic
-EHY,EHY.AX,EHY.AX,EHY Holdings Ltd,Financials,Software,2010-01-01,2026-06-07,True,synthetic
-EIR,EIR.AX,EIR.AX,EIR Holdings Ltd,Communication Services,Software,2010-01-01,2026-06-07,True,synthetic
-EJG,EJG.AX,EJG.AX,EJG Holdings Ltd,Healthcare,REITs,2010-01-01,2026-06-07,True,synthetic
-EPU,EPU.AX,EPU.AX,EPU Holdings Ltd,Real Estate,Mining,2010-01-01,2026-06-07,True,synthetic
-ETA,ETA.AX,ETA.AX,ETA Holdings Ltd,Materials,Banks,2010-01-01,2026-06-07,True,synthetic
-ETR,ETR.AX,ETR.AX,ETR Holdings Ltd,Real Estate,Software,2010-01-01,2026-06-07,True,synthetic
-EUK,EUK.AX,EUK.AX,EUK Holdings Ltd,Utilities,Oil,2010-01-01,2026-06-07,True,synthetic
-EVB,EVB.AX,EVB.AX,EVB Holdings Ltd,Industrials,Retail,2010-01-01,2026-06-07,True,synthetic
-EVI,EVI.AX,EVI.AX,EVI Holdings Ltd,Industrials,Utilities,2010-01-01,2026-06-07,True,synthetic
-EXN,EXN.AX,EXN.AX,EXN Holdings Ltd,Information Technology,Banks,2010-01-01,2026-06-07,True,synthetic
-EYT,EYT.AX,EYT.AX,EYT Holdings Ltd,Consumer Discretionary,Mining,2010-01-01,2026-06-07,True,synthetic
-FAX,FAX.AX,FAX.AX,FAX Holdings Ltd,Consumer Staples,Mining,2010-01-01,2026-06-07,True,synthetic
-FHD,FHD.AX,FHD.AX,FHD Holdings Ltd,Healthcare,Banks,2010-01-01,2026-06-07,True,synthetic
-FHK,FHK.AX,FHK.AX,FHK Holdings Ltd,Real Estate,REITs,2010-01-01,2026-06-07,True,synthetic
-FJM,FJM.AX,FJM.AX,FJM Holdings Ltd,Industrials,Oil,2010-01-01,2026-06-07,True,synthetic
-FPS,FPS.AX,FPS.AX,FPS Holdings Ltd,Consumer Staples,Oil,2010-01-01,2026-06-07,True,synthetic
-GGG,GGG.AX,GGG.AX,GGG Holdings Ltd,Consumer Discretionary,REITs,2010-01-01,2026-06-07,True,synthetic
-GHU,GHU.AX,GHU.AX,GHU Holdings Ltd,Consumer Discretionary,Oil,2010-01-01,2026-06-07,True,synthetic
-GLD,GLD.AX,GLD.AX,GLD Holdings Ltd,Consumer Discretionary,Oil,2010-01-01,2026-06-07,True,synthetic
-GQO,GQO.AX,GQO.AX,GQO Holdings Ltd,Information Technology,REITs,2010-01-01,2026-06-07,True,synthetic
-GRQ,GRQ.AX,GRQ.AX,GRQ Holdings Ltd,Healthcare,Telecom,2010-01-01,2026-06-07,True,synthetic
-GSU,GSU.AX,GSU.AX,GSU Holdings Ltd,Communication Services,Software,2010-01-01,2026-06-07,True,synthetic
-GVB,GVB.AX,GVB.AX,GVB Holdings Ltd,Consumer Discretionary,Utilities,2010-01-01,2026-06-07,True,synthetic
-GYI,GYI.AX,GYI.AX,GYI Holdings Ltd,Communication Services,Software,2010-01-01,2026-06-07,True,synthetic
-GZY,GZY.AX,GZY.AX,GZY Holdings Ltd,Communication Services,Telecom,2010-01-01,2026-06-07,True,synthetic
-HAD,HAD.AX,HAD.AX,HAD Holdings Ltd,Consumer Discretionary,Retail,2010-01-01,2026-06-07,True,synthetic
-HDM,HDM.AX,HDM.AX,HDM Holdings Ltd,Industrials,Oil,2010-01-01,2026-06-07,True,synthetic
-HLN,HLN.AX,HLN.AX,HLN Holdings Ltd,Real Estate,Oil,2010-01-01,2026-06-07,True,synthetic
-HLR,HLR.AX,HLR.AX,HLR Holdings Ltd,Consumer Staples,Telecom,2010-01-01,2026-06-07,True,synthetic
-HNX,HNX.AX,HNX.AX,HNX Holdings Ltd,Energy,Banks,2010-01-01,2026-06-07,True,synthetic
-HOI,HOI.AX,HOI.AX,HOI Holdings Ltd,Materials,Retail,2010-01-01,2026-06-07,True,synthetic
-HPA,HPA.AX,HPA.AX,HPA Holdings Ltd,Energy,Software,2010-01-01,2026-06-07,True,synthetic
-HRQ,HRQ.AX,HRQ.AX,HRQ Holdings Ltd,Materials,Oil,2010-01-01,2026-06-07,True,synthetic
-HRX,HRX.AX,HRX.AX,HRX Holdings Ltd,Industrials,Software,2010-01-01,2026-06-07,True,synthetic
-HUV,HUV.AX,HUV.AX,HUV Holdings Ltd,Industrials,REITs,2010-01-01,2026-06-07,True,synthetic
-HVG,HVG.AX,HVG.AX,HVG Holdings Ltd,Utilities,Retail,2010-01-01,2026-06-07,True,synthetic
-HVP,HVP.AX,HVP.AX,HVP Holdings Ltd,Materials,Mining,2010-01-01,2026-06-07,True,synthetic
-HZL,HZL.AX,HZL.AX,HZL Holdings Ltd,Communication Services,Banks,2010-01-01,2026-06-07,True,synthetic
-IAC,IAC.AX,IAC.AX,IAC Holdings Ltd,Industrials,Banks,2010-01-01,2026-06-07,True,synthetic
-IIE,IIE.AX,IIE.AX,IIE Holdings Ltd,Real Estate,Software,2010-01-01,2026-06-07,True,synthetic
-ILA,ILA.AX,ILA.AX,ILA Holdings Ltd,Real Estate,Utilities,2010-01-01,2026-06-07,True,synthetic
-ILN,ILN.AX,ILN.AX,ILN Holdings Ltd,Consumer Discretionary,Oil,2010-01-01,2026-06-07,True,synthetic
-INT,INT.AX,INT.AX,INT Holdings Ltd,Consumer Discretionary,REITs,2010-01-01,2026-06-07,True,synthetic
-INZ,INZ.AX,INZ.AX,INZ Holdings Ltd,Financials,Mining,2010-01-01,2026-06-07,True,synthetic
-ITV,ITV.AX,ITV.AX,ITV Holdings Ltd,Industrials,Utilities,2010-01-01,2026-06-07,True,synthetic
-IUP,IUP.AX,IUP.AX,IUP Holdings Ltd,Materials,Banks,2010-01-01,2026-06-07,True,synthetic
-IYD,IYD.AX,IYD.AX,IYD Holdings Ltd,Energy,Utilities,2010-01-01,2026-06-07,True,synthetic
-IZJ,IZJ.AX,IZJ.AX,IZJ Holdings Ltd,Utilities,Utilities,2010-01-01,2026-06-07,True,synthetic
-IZM,IZM.AX,IZM.AX,IZM Holdings Ltd,Consumer Staples,REITs,2010-01-01,2026-06-07,True,synthetic
-IZU,IZU.AX,IZU.AX,IZU Holdings Ltd,Healthcare,REITs,2010-01-01,2026-06-07,True,synthetic
-JER,JER.AX,JER.AX,JER Holdings Ltd,Energy,Mining,2010-01-01,2026-06-07,True,synthetic
-JEY,JEY.AX,JEY.AX,JEY Holdings Ltd,Financials,Mining,2010-01-01,2026-06-07,True,synthetic
-JGA,JGA.AX,JGA.AX,JGA Holdings Ltd,Consumer Discretionary,Software,2010-01-01,2026-06-07,True,synthetic
-JLZ,JLZ.AX,JLZ.AX,JLZ Holdings Ltd,Utilities,Utilities,2010-01-01,2026-06-07,True,synthetic
-JNJ,JNJ.AX,JNJ.AX,JNJ Holdings Ltd,Materials,Utilities,2010-01-01,2026-06-07,True,synthetic
-JPP,JPP.AX,JPP.AX,JPP Holdings Ltd,Energy,Retail,2010-01-01,2026-06-07,True,synthetic
-JVA,JVA.AX,JVA.AX,JVA Holdings Ltd,Energy,Banks,2010-01-01,2026-06-07,True,synthetic
-KDJ,KDJ.AX,KDJ.AX,KDJ Holdings Ltd,Healthcare,Telecom,2010-01-01,2026-06-07,True,synthetic
-KEJ,KEJ.AX,KEJ.AX,KEJ Holdings Ltd,Real Estate,Telecom,2010-01-01,2026-06-07,True,synthetic
-KJX,KJX.AX,KJX.AX,KJX Holdings Ltd,Utilities,Banks,2010-01-01,2026-06-07,True,synthetic
-KKK,KKK.AX,KKK.AX,KKK Holdings Ltd,Consumer Discretionary,REITs,2010-01-01,2026-06-07,True,synthetic
-KXH,KXH.AX,KXH.AX,KXH Holdings Ltd,Consumer Discretionary,Software,2010-01-01,2026-06-07,True,synthetic
-LEV,LEV.AX,LEV.AX,LEV Holdings Ltd,Communication Services,Telecom,2010-01-01,2026-06-07,True,synthetic
-LFC,LFC.AX,LFC.AX,LFC Holdings Ltd,Financials,Mining,2010-01-01,2026-06-07,True,synthetic
-LGT,LGT.AX,LGT.AX,LGT Holdings Ltd,Healthcare,REITs,2010-01-01,2026-06-07,True,synthetic
-LHA,LHA.AX,LHA.AX,LHA Holdings Ltd,Financials,Mining,2010-01-01,2026-06-07,True,synthetic
-LIQ,LIQ.AX,LIQ.AX,LIQ Holdings Ltd,Real Estate,Telecom,2010-01-01,2026-06-07,True,synthetic
-LLW,LLW.AX,LLW.AX,LLW Holdings Ltd,Utilities,Software,2010-01-01,2026-06-07,True,synthetic
-LPN,LPN.AX,LPN.AX,LPN Holdings Ltd,Communication Services,Banks,2010-01-01,2026-06-07,True,synthetic
-LRR,LRR.AX,LRR.AX,LRR Holdings Ltd,Information Technology,Mining,2010-01-01,2026-06-07,True,synthetic
-LTH,LTH.AX,LTH.AX,LTH Holdings Ltd,Utilities,Mining,2010-01-01,2026-06-07,True,synthetic
-LUV,LUV.AX,LUV.AX,LUV Holdings Ltd,Real Estate,Retail,2010-01-01,2026-06-07,True,synthetic
-MBO,MBO.AX,MBO.AX,MBO Holdings Ltd,Consumer Staples,Software,2010-01-01,2026-06-07,True,synthetic
-MDR,MDR.AX,MDR.AX,MDR Holdings Ltd,Consumer Discretionary,Banks,2010-01-01,2026-06-07,True,synthetic
-MEK,MEK.AX,MEK.AX,MEK Holdings Ltd,Healthcare,REITs,2010-01-01,2026-06-07,True,synthetic
-MGP,MGP.AX,MGP.AX,MGP Holdings Ltd,Real Estate,Software,2010-01-01,2026-06-07,True,synthetic
-MIA,MIA.AX,MIA.AX,MIA Holdings Ltd,Real Estate,Utilities,2010-01-01,2026-06-07,True,synthetic
-MIF,MIF.AX,MIF.AX,MIF Holdings Ltd,Information Technology,REITs,2010-01-01,2026-06-07,True,synthetic
-MMR,MMR.AX,MMR.AX,MMR Holdings Ltd,Real Estate,Banks,2010-01-01,2026-06-07,True,synthetic
-MSH,MSH.AX,MSH.AX,MSH Holdings Ltd,Consumer Staples,Software,2010-01-01,2026-06-07,True,synthetic
-MSR,MSR.AX,MSR.AX,MSR Holdings Ltd,Consumer Discretionary,REITs,2010-01-01,2026-06-07,True,synthetic
-MUB,MUB.AX,MUB.AX,MUB Holdings Ltd,Real Estate,Mining,2010-01-01,2026-06-07,True,synthetic
-MUE,MUE.AX,MUE.AX,MUE Holdings Ltd,Consumer Discretionary,Utilities,2010-01-01,2026-06-07,True,synthetic
-MWO,MWO.AX,MWO.AX,MWO Holdings Ltd,Consumer Discretionary,Telecom,2010-01-01,2026-06-07,True,synthetic
-NLD,NLD.AX,NLD.AX,NLD Holdings Ltd,Materials,Mining,2010-01-01,2026-06-07,True,synthetic
-NOA,NOA.AX,NOA.AX,NOA Holdings Ltd,Energy,Telecom,2010-01-01,2026-06-07,True,synthetic
-NRI,NRI.AX,NRI.AX,NRI Holdings Ltd,Healthcare,Utilities,2010-01-01,2026-06-07,True,synthetic
-NST,NST.AX,NST.AX,NST Holdings Ltd,Materials,Mining,2010-01-01,2026-06-07,True,synthetic
-NTW,NTW.AX,NTW.AX,NTW Holdings Ltd,Healthcare,Utilities,2010-01-01,2026-06-07,True,synthetic
-NWX,NWX.AX,NWX.AX,NWX Holdings Ltd,Communication Services,Software,2010-01-01,2026-06-07,True,synthetic
-NYS,NYS.AX,NYS.AX,NYS Holdings Ltd,Real Estate,Retail,2010-01-01,2026-06-07,True,synthetic
-OAO,OAO.AX,OAO.AX,OAO Holdings Ltd,Consumer Staples,Telecom,2010-01-01,2026-06-07,True,synthetic
-OEM,OEM.AX,OEM.AX,OEM Holdings Ltd,Consumer Staples,Banks,2010-01-01,2026-06-07,True,synthetic
-OJI,OJI.AX,OJI.AX,OJI Holdings Ltd,Healthcare,Utilities,2010-01-01,2026-06-07,True,synthetic
-OMU,OMU.AX,OMU.AX,OMU Holdings Ltd,Utilities,Banks,2010-01-01,2026-06-07,True,synthetic
-ONT,ONT.AX,ONT.AX,ONT Holdings Ltd,Industrials,Software,2010-01-01,2026-06-07,True,synthetic
-ONW,ONW.AX,ONW.AX,ONW Holdings Ltd,Consumer Discretionary,Oil,2010-01-01,2026-06-07,True,synthetic
-ORY,ORY.AX,ORY.AX,ORY Holdings Ltd,Utilities,Telecom,2010-01-01,2026-06-07,True,synthetic
-OTO,OTO.AX,OTO.AX,OTO Holdings Ltd,Industrials,Software,2010-01-01,2026-06-07,True,synthetic
-OXB,OXB.AX,OXB.AX,OXB Holdings Ltd,Consumer Discretionary,Utilities,2010-01-01,2026-06-07,True,synthetic
-PDL,PDL.AX,PDL.AX,PDL Holdings Ltd,Real Estate,Mining,2010-01-01,2026-06-07,True,synthetic
-PGI,PGI.AX,PGI.AX,PGI Holdings Ltd,Consumer Discretionary,Software,2010-01-01,2026-06-07,True,synthetic
-PJD,PJD.AX,PJD.AX,PJD Holdings Ltd,Consumer Staples,Utilities,2010-01-01,2026-06-07,True,synthetic
-PJY,PJY.AX,PJY.AX,PJY Holdings Ltd,Consumer Discretionary,Retail,2010-01-01,2026-06-07,True,synthetic
-PKF,PKF.AX,PKF.AX,PKF Holdings Ltd,Utilities,Retail,2010-01-01,2026-06-07,True,synthetic
-PLU,PLU.AX,PLU.AX,PLU Holdings Ltd,Healthcare,Software,2010-01-01,2026-06-07,True,synthetic
-PSW,PSW.AX,PSW.AX,PSW Holdings Ltd,Energy,REITs,2010-01-01,2026-06-07,True,synthetic
-PYW,PYW.AX,PYW.AX,PYW Holdings Ltd,Industrials,Banks,2010-01-01,2026-06-07,True,synthetic
-PZU,PZU.AX,PZU.AX,PZU Holdings Ltd,Communication Services,Banks,2010-01-01,2026-06-07,True,synthetic
-QBH,QBH.AX,QBH.AX,QBH Holdings Ltd,Communication Services,REITs,2010-01-01,2026-06-07,True,synthetic
-QCQ,QCQ.AX,QCQ.AX,QCQ Holdings Ltd,Utilities,Retail,2010-01-01,2026-06-07,True,synthetic
-QCW,QCW.AX,QCW.AX,QCW Holdings Ltd,Healthcare,Retail,2010-01-01,2026-06-07,True,synthetic
-QET,QET.AX,QET.AX,QET Holdings Ltd,Energy,Mining,2010-01-01,2026-06-07,True,synthetic
-QFU,QFU.AX,QFU.AX,QFU Holdings Ltd,Utilities,Oil,2010-01-01,2026-06-07,True,synthetic
-QGG,QGG.AX,QGG.AX,QGG Holdings Ltd,Communication Services,Oil,2010-01-01,2026-06-07,True,synthetic
-QNX,QNX.AX,QNX.AX,QNX Holdings Ltd,Energy,Retail,2010-01-01,2026-06-07,True,synthetic
-QOO,QOO.AX,QOO.AX,QOO Holdings Ltd,Consumer Discretionary,Mining,2010-01-01,2026-06-07,True,synthetic
-QQC,QQC.AX,QQC.AX,QQC Holdings Ltd,Healthcare,REITs,2010-01-01,2026-06-07,True,synthetic
-QSC,QSC.AX,QSC.AX,QSC Holdings Ltd,Industrials,REITs,2010-01-01,2026-06-07,True,synthetic
-QUT,QUT.AX,QUT.AX,QUT Holdings Ltd,Materials,Banks,2010-01-01,2026-06-07,True,synthetic
-QUW,QUW.AX,QUW.AX,QUW Holdings Ltd,Utilities,Retail,2010-01-01,2026-06-07,True,synthetic
-QZW,QZW.AX,QZW.AX,QZW Holdings Ltd,Consumer Staples,Oil,2010-01-01,2026-06-07,True,synthetic
-RML,RML.AX,RML.AX,RML Holdings Ltd,Consumer Staples,Mining,2010-01-01,2026-06-07,True,synthetic
-RSI,RSI.AX,RSI.AX,RSI Holdings Ltd,Communication Services,Banks,2010-01-01,2026-06-07,True,synthetic
-RSK,RSK.AX,RSK.AX,RSK Holdings Ltd,Healthcare,Utilities,2010-01-01,2026-06-07,True,synthetic
-RSS,RSS.AX,RSS.AX,RSS Holdings Ltd,Healthcare,Mining,2010-01-01,2026-06-07,True,synthetic
-RUK,RUK.AX,RUK.AX,RUK Holdings Ltd,Industrials,Mining,2010-01-01,2026-06-07,True,synthetic
-RUT,RUT.AX,RUT.AX,RUT Holdings Ltd,Energy,Mining,2010-01-01,2026-06-07,True,synthetic
-RUZ,RUZ.AX,RUZ.AX,RUZ Holdings Ltd,Utilities,Banks,2010-01-01,2026-06-07,True,synthetic
-SBF,SBF.AX,SBF.AX,SBF Holdings Ltd,Energy,Banks,2010-01-01,2026-06-07,True,synthetic
-SCM,SCM.AX,SCM.AX,SCM Holdings Ltd,Utilities,Utilities,2010-01-01,2026-06-07,True,synthetic
-SCT,SCT.AX,SCT.AX,SCT Holdings Ltd,Financials,Retail,2010-01-01,2026-06-07,True,synthetic
-SEO,SEO.AX,SEO.AX,SEO Holdings Ltd,Communication Services,Banks,2010-01-01,2026-06-07,True,synthetic
-SFS,SFS.AX,SFS.AX,SFS Holdings Ltd,Consumer Staples,Banks,2010-01-01,2026-06-07,True,synthetic
-SJB,SJB.AX,SJB.AX,SJB Holdings Ltd,Financials,Software,2010-01-01,2026-06-07,True,synthetic
-SML,SML.AX,SML.AX,SML Holdings Ltd,Real Estate,Utilities,2010-01-01,2026-06-07,True,synthetic
-SMS,SMS.AX,SMS.AX,SMS Holdings Ltd,Financials,Software,2010-01-01,2026-06-07,True,synthetic
-SNZ,SNZ.AX,SNZ.AX,SNZ Holdings Ltd,Industrials,Telecom,2010-01-01,2026-06-07,True,synthetic
-SPB,SPB.AX,SPB.AX,SPB Holdings Ltd,Energy,Retail,2010-01-01,2026-06-07,True,synthetic
-SPC,SPC.AX,SPC.AX,SPC Holdings Ltd,Materials,Utilities,2010-01-01,2026-06-07,True,synthetic
-SVL,SVL.AX,SVL.AX,SVL Holdings Ltd,Healthcare,Mining,2010-01-01,2026-06-07,True,synthetic
-TBF,TBF.AX,TBF.AX,TBF Holdings Ltd,Information Technology,Telecom,2010-01-01,2026-06-07,True,synthetic
-TEJ,TEJ.AX,TEJ.AX,TEJ Holdings Ltd,Industrials,Mining,2010-01-01,2026-06-07,True,synthetic
-TIL,TIL.AX,TIL.AX,TIL Holdings Ltd,Real Estate,REITs,2010-01-01,2026-06-07,True,synthetic
-TJD,TJD.AX,TJD.AX,TJD Holdings Ltd,Healthcare,Oil,2010-01-01,2026-06-07,True,synthetic
-TKA,TKA.AX,TKA.AX,TKA Holdings Ltd,Industrials,REITs,2010-01-01,2026-06-07,True,synthetic
-TKU,TKU.AX,TKU.AX,TKU Holdings Ltd,Consumer Discretionary,Oil,2010-01-01,2026-06-07,True,synthetic
-TPH,TPH.AX,TPH.AX,TPH Holdings Ltd,Information Technology,Utilities,2010-01-01,2026-06-07,True,synthetic
-TPN,TPN.AX,TPN.AX,TPN Holdings Ltd,Healthcare,Telecom,2010-01-01,2026-06-07,True,synthetic
-TQH,TQH.AX,TQH.AX,TQH Holdings Ltd,Real Estate,Mining,2010-01-01,2026-06-07,True,synthetic
-TTS,TTS.AX,TTS.AX,TTS Holdings Ltd,Consumer Staples,Software,2010-01-01,2026-06-07,True,synthetic
-TUO,TUO.AX,TUO.AX,TUO Holdings Ltd,Energy,REITs,2010-01-01,2026-06-07,True,synthetic
-TXV,TXV.AX,TXV.AX,TXV Holdings Ltd,Industrials,Banks,2010-01-01,2026-06-07,True,synthetic
-UAU,UAU.AX,UAU.AX,UAU Holdings Ltd,Financials,Software,2010-01-01,2026-06-07,True,synthetic
-UIR,UIR.AX,UIR.AX,UIR Holdings Ltd,Materials,Retail,2010-01-01,2026-06-07,True,synthetic
-UJN,UJN.AX,UJN.AX,UJN Holdings Ltd,Industrials,Telecom,2010-01-01,2026-06-07,True,synthetic
-UKR,UKR.AX,UKR.AX,UKR Holdings Ltd,Utilities,Banks,2010-01-01,2026-06-07,True,synthetic
-ULM,ULM.AX,ULM.AX,ULM Holdings Ltd,Communication Services,Software,2010-01-01,2026-06-07,True,synthetic
-UMG,UMG.AX,UMG.AX,UMG Holdings Ltd,Utilities,Oil,2010-01-01,2026-06-07,True,synthetic
-UND,UND.AX,UND.AX,UND Holdings Ltd,Real Estate,Utilities,2010-01-01,2026-06-07,True,synthetic
-UOL,UOL.AX,UOL.AX,UOL Holdings Ltd,Energy,Oil,2010-01-01,2026-06-07,True,synthetic
-UPM,UPM.AX,UPM.AX,UPM Holdings Ltd,Information Technology,Banks,2010-01-01,2026-06-07,True,synthetic
-UQK,UQK.AX,UQK.AX,UQK Holdings Ltd,Healthcare,Oil,2010-01-01,2026-06-07,True,synthetic
-UQQ,UQQ.AX,UQQ.AX,UQQ Holdings Ltd,Information Technology,Oil,2010-01-01,2026-06-07,True,synthetic
-UUR,UUR.AX,UUR.AX,UUR Holdings Ltd,Information Technology,Telecom,2010-01-01,2026-06-07,True,synthetic
-UWN,UWN.AX,UWN.AX,UWN Holdings Ltd,Materials,Retail,2010-01-01,2026-06-07,True,synthetic
-UZR,UZR.AX,UZR.AX,UZR Holdings Ltd,Real Estate,Oil,2010-01-01,2026-06-07,True,synthetic
-VDL,VDL.AX,VDL.AX,VDL Holdings Ltd,Real Estate,Oil,2010-01-01,2026-06-07,True,synthetic
-VIE,VIE.AX,VIE.AX,VIE Holdings Ltd,Industrials,Retail,2010-01-01,2026-06-07,True,synthetic
-VIZ,VIZ.AX,VIZ.AX,VIZ Holdings Ltd,Utilities,Banks,2010-01-01,2026-06-07,True,synthetic
-VLB,VLB.AX,VLB.AX,VLB Holdings Ltd,Industrials,Oil,2010-01-01,2026-06-07,True,synthetic
-VLN,VLN.AX,VLN.AX,VLN Holdings Ltd,Real Estate,Mining,2010-01-01,2026-06-07,True,synthetic
-VLV,VLV.AX,VLV.AX,VLV Holdings Ltd,Consumer Staples,Banks,2010-01-01,2026-06-07,True,synthetic
-VOL,VOL.AX,VOL.AX,VOL Holdings Ltd,Consumer Discretionary,Retail,2010-01-01,2026-06-07,True,synthetic
-VSV,VSV.AX,VSV.AX,VSV Holdings Ltd,Consumer Discretionary,Software,2010-01-01,2026-06-07,True,synthetic
-VVU,VVU.AX,VVU.AX,VVU Holdings Ltd,Information Technology,Telecom,2010-01-01,2026-06-07,True,synthetic
-VXD,VXD.AX,VXD.AX,VXD Holdings Ltd,Healthcare,Mining,2010-01-01,2026-06-07,True,synthetic
-VXF,VXF.AX,VXF.AX,VXF Holdings Ltd,Consumer Discretionary,Software,2010-01-01,2026-06-07,True,synthetic
-VYC,VYC.AX,VYC.AX,VYC Holdings Ltd,Real Estate,REITs,2010-01-01,2026-06-07,True,synthetic
-WAG,WAG.AX,WAG.AX,WAG Holdings Ltd,Materials,Utilities,2010-01-01,2026-06-07,True,synthetic
-WAT,WAT.AX,WAT.AX,WAT Holdings Ltd,Industrials,Software,2010-01-01,2026-06-07,True,synthetic
-WBM,WBM.AX,WBM.AX,WBM Holdings Ltd,Industrials,Utilities,2010-01-01,2026-06-07,True,synthetic
-WGB,WGB.AX,WGB.AX,WGB Holdings Ltd,Real Estate,Oil,2010-01-01,2026-06-07,True,synthetic
-WHX,WHX.AX,WHX.AX,WHX Holdings Ltd,Consumer Staples,Retail,2010-01-01,2026-06-07,True,synthetic
-WLS,WLS.AX,WLS.AX,WLS Holdings Ltd,Consumer Discretionary,REITs,2010-01-01,2026-06-07,True,synthetic
-WMU,WMU.AX,WMU.AX,WMU Holdings Ltd,Utilities,Mining,2010-01-01,2026-06-07,True,synthetic
-WQD,WQD.AX,WQD.AX,WQD Holdings Ltd,Communication Services,Oil,2010-01-01,2026-06-07,True,synthetic
-WUA,WUA.AX,WUA.AX,WUA Holdings Ltd,Consumer Staples,Mining,2010-01-01,2026-06-07,True,synthetic
-WUV,WUV.AX,WUV.AX,WUV Holdings Ltd,Healthcare,Mining,2010-01-01,2026-06-07,True,synthetic
-WVH,WVH.AX,WVH.AX,WVH Holdings Ltd,Industrials,REITs,2010-01-01,2026-06-07,True,synthetic
-WVM,WVM.AX,WVM.AX,WVM Holdings Ltd,Energy,Telecom,2010-01-01,2026-06-07,True,synthetic
-WYL,WYL.AX,WYL.AX,WYL Holdings Ltd,Industrials,Oil,2010-01-01,2026-06-07,True,synthetic
-XCT,XCT.AX,XCT.AX,XCT Holdings Ltd,Real Estate,Banks,2010-01-01,2026-06-07,True,synthetic
-XDL,XDL.AX,XDL.AX,XDL Holdings Ltd,Communication Services,Mining,2010-01-01,2026-06-07,True,synthetic
-XDN,XDN.AX,XDN.AX,XDN Holdings Ltd,Information Technology,Mining,2010-01-01,2026-06-07,True,synthetic
-XGF,XGF.AX,XGF.AX,XGF Holdings Ltd,Financials,Mining,2010-01-01,2026-06-07,True,synthetic
-XGZ,XGZ.AX,XGZ.AX,XGZ Holdings Ltd,Materials,Mining,2010-01-01,2026-06-07,True,synthetic
-XJB,XJB.AX,XJB.AX,XJB Holdings Ltd,Communication Services,REITs,2010-01-01,2026-06-07,True,synthetic
-XMS,XMS.AX,XMS.AX,XMS Holdings Ltd,Industrials,Mining,2010-01-01,2026-06-07,True,synthetic
-XOD,XOD.AX,XOD.AX,XOD Holdings Ltd,Communication Services,Oil,2010-01-01,2026-06-07,True,synthetic
-XTJ,XTJ.AX,XTJ.AX,XTJ Holdings Ltd,Consumer Staples,Oil,2010-01-01,2026-06-07,True,synthetic
-XUF,XUF.AX,XUF.AX,XUF Holdings Ltd,Real Estate,Software,2010-01-01,2026-06-07,True,synthetic
-XUN,XUN.AX,XUN.AX,XUN Holdings Ltd,Consumer Staples,Oil,2010-01-01,2026-06-07,True,synthetic
-XXP,XXP.AX,XXP.AX,XXP Holdings Ltd,Energy,REITs,2010-01-01,2026-06-07,True,synthetic
-YAE,YAE.AX,YAE.AX,YAE Holdings Ltd,Utilities,Mining,2010-01-01,2026-06-07,True,synthetic
-YCG,YCG.AX,YCG.AX,YCG Holdings Ltd,Industrials,Oil,2010-01-01,2026-06-07,True,synthetic
-YDC,YDC.AX,YDC.AX,YDC Holdings Ltd,Energy,Software,2010-01-01,2026-06-07,True,synthetic
-YDM,YDM.AX,YDM.AX,YDM Holdings Ltd,Energy,Banks,2010-01-01,2026-06-07,True,synthetic
-YDU,YDU.AX,YDU.AX,YDU Holdings Ltd,Consumer Discretionary,Utilities,2010-01-01,2026-06-07,True,synthetic
-YEO,YEO.AX,YEO.AX,YEO Holdings Ltd,Information Technology,Retail,2010-01-01,2026-06-07,True,synthetic
-YKH,YKH.AX,YKH.AX,YKH Holdings Ltd,Communication Services,Telecom,2010-01-01,2026-06-07,True,synthetic
-YKM,YKM.AX,YKM.AX,YKM Holdings Ltd,Industrials,Mining,2010-01-01,2026-06-07,True,synthetic
-YLC,YLC.AX,YLC.AX,YLC Holdings Ltd,Energy,Telecom,2010-01-01,2026-06-07,True,synthetic
-YNH,YNH.AX,YNH.AX,YNH Holdings Ltd,Utilities,Telecom,2010-01-01,2026-06-07,True,synthetic
-YNX,YNX.AX,YNX.AX,YNX Holdings Ltd,Utilities,REITs,2010-01-01,2026-06-07,True,synthetic
-YOL,YOL.AX,YOL.AX,YOL Holdings Ltd,Energy,Banks,2010-01-01,2026-06-07,True,synthetic
-YQH,YQH.AX,YQH.AX,YQH Holdings Ltd,Healthcare,Software,2010-01-01,2026-06-07,True,synthetic
-YRC,YRC.AX,YRC.AX,YRC Holdings Ltd,Utilities,Retail,2010-01-01,2026-06-07,True,synthetic
-YRX,YRX.AX,YRX.AX,YRX Holdings Ltd,Information Technology,Banks,2010-01-01,2026-06-07,True,synthetic
-YST,YST.AX,YST.AX,YST Holdings Ltd,Industrials,Mining,2010-01-01,2026-06-07,True,synthetic
-YTI,YTI.AX,YTI.AX,YTI Holdings Ltd,Consumer Discretionary,Mining,2010-01-01,2026-06-07,True,synthetic
-YWM,YWM.AX,YWM.AX,YWM Holdings Ltd,Energy,Oil,2010-01-01,2026-06-07,True,synthetic
-YYG,YYG.AX,YYG.AX,YYG Holdings Ltd,Healthcare,Banks,2010-01-01,2026-06-07,True,synthetic
-YYJ,YYJ.AX,YYJ.AX,YYJ Holdings Ltd,Information Technology,Mining,2010-01-01,2026-06-07,True,synthetic
-YYM,YYM.AX,YYM.AX,YYM Holdings Ltd,Communication Services,Utilities,2010-01-01,2026-06-07,True,synthetic
-ZAR,ZAR.AX,ZAR.AX,ZAR Holdings Ltd,Real Estate,Banks,2010-01-01,2026-06-07,True,synthetic
-ZAS,ZAS.AX,ZAS.AX,ZAS Holdings Ltd,Consumer Staples,Oil,2010-01-01,2026-06-07,True,synthetic
-ZEP,ZEP.AX,ZEP.AX,ZEP Holdings Ltd,Consumer Discretionary,Banks,2010-01-01,2026-06-07,True,synthetic
-ZFG,ZFG.AX,ZFG.AX,ZFG Holdings Ltd,Healthcare,Mining,2010-01-01,2026-06-07,True,synthetic
-ZGH,ZGH.AX,ZGH.AX,ZGH Holdings Ltd,Financials,Mining,2010-01-01,2026-06-07,True,synthetic
-ZGU,ZGU.AX,ZGU.AX,ZGU Holdings Ltd,Materials,Mining,2010-01-01,2026-06-07,True,synthetic
-ZIF,ZIF.AX,ZIF.AX,ZIF Holdings Ltd,Consumer Staples,Software,2010-01-01,2026-06-07,True,synthetic
-ZKI,ZKI.AX,ZKI.AX,ZKI Holdings Ltd,Energy,Oil,2010-01-01,2026-06-07,True,synthetic
-ZLX,ZLX.AX,ZLX.AX,ZLX Holdings Ltd,Financials,Telecom,2010-01-01,2026-06-07,True,synthetic
-ZPL,ZPL.AX,ZPL.AX,ZPL Holdings Ltd,Energy,Telecom,2010-01-01,2026-06-07,True,synthetic
-ZTV,ZTV.AX,ZTV.AX,ZTV Holdings Ltd,Healthcare,Utilities,2010-01-01,2026-06-07,True,synthetic
-ZUY,ZUY.AX,ZUY.AX,ZUY Holdings Ltd,Consumer Staples,Banks,2010-01-01,2026-06-07,True,synthetic
-ZWA,ZWA.AX,ZWA.AX,ZWA Holdings Ltd,Materials,Utilities,2010-01-01,2026-06-07,True,synthetic
-ZZD,ZZD.AX,ZZD.AX,ZZD Holdings Ltd,Consumer Discretionary,Banks,2010-01-01,2026-06-07,True,synthetic
+AAA,AAA.AX,AAA.AX,AAA Holdings Ltd,Industrials,Retail,2010-01-01,2026-06-07,True,synthetic
+ABF,ABF.AX,ABF.AX,ABF Holdings Ltd,Consumer Staples,Software,2010-01-01,2026-06-07,True,synthetic
+ACL,ACL.AX,ACL.AX,ACL Holdings Ltd,Financials,Software,2010-01-01,2026-06-07,True,synthetic
+ADB,ADB.AX,ADB.AX,ADB Holdings Ltd,Consumer Discretionary,Utilities,2010-01-01,2026-06-07,True,synthetic
+ADO,ADO.AX,ADO.AX,ADO Holdings Ltd,Real Estate,Mining,2010-01-01,2026-06-07,True,synthetic
+AHC,AHC.AX,AHC.AX,AHC Holdings Ltd,Consumer Discretionary,Software,2010-01-01,2026-06-07,True,synthetic
+APO,APO.AX,APO.AX,APO Holdings Ltd,Real Estate,Telecom,2010-01-01,2026-06-07,True,synthetic
+ARC,ARC.AX,ARC.AX,ARC Holdings Ltd,Consumer Discretionary,Telecom,2010-01-01,2026-06-07,True,synthetic
+ARO,ARO.AX,ARO.AX,ARO Holdings Ltd,Communication Services,Telecom,2010-01-01,2026-06-07,True,synthetic
+ARZ,ARZ.AX,ARZ.AX,ARZ Holdings Ltd,Utilities,Utilities,2010-01-01,2026-06-07,True,synthetic
+BAJ,BAJ.AX,BAJ.AX,BAJ Holdings Ltd,Real Estate,Oil,2010-01-01,2026-06-07,True,synthetic
+BBQ,BBQ.AX,BBQ.AX,BBQ Holdings Ltd,Real Estate,REITs,2010-01-01,2026-06-07,True,synthetic
+BCR,BCR.AX,BCR.AX,BCR Holdings Ltd,Communication Services,Utilities,2010-01-01,2026-06-07,True,synthetic
+BDL,BDL.AX,BDL.AX,BDL Holdings Ltd,Healthcare,Retail,2010-01-01,2026-06-07,True,synthetic
+BEM,BEM.AX,BEM.AX,BEM Holdings Ltd,Energy,REITs,2010-01-01,2026-06-07,True,synthetic
+BFH,BFH.AX,BFH.AX,BFH Holdings Ltd,Consumer Staples,REITs,2010-01-01,2026-06-07,True,synthetic
+BHL,BHL.AX,BHL.AX,BHL Holdings Ltd,Information Technology,Utilities,2010-01-01,2026-06-07,True,synthetic
+BME,BME.AX,BME.AX,BME Holdings Ltd,Real Estate,Software,2010-01-01,2026-06-07,True,synthetic
+BWR,BWR.AX,BWR.AX,BWR Holdings Ltd,Energy,Banks,2010-01-01,2026-06-07,True,synthetic
+CBK,CBK.AX,CBK.AX,CBK Holdings Ltd,Communication Services,Retail,2010-01-01,2026-06-07,True,synthetic
+CCL,CCL.AX,CCL.AX,CCL Holdings Ltd,Industrials,Retail,2010-01-01,2026-06-07,True,synthetic
+CCV,CCV.AX,CCV.AX,CCV Holdings Ltd,Consumer Discretionary,REITs,2010-01-01,2026-06-07,True,synthetic
+CHM,CHM.AX,CHM.AX,CHM Holdings Ltd,Consumer Staples,Mining,2010-01-01,2026-06-07,True,synthetic
+CID,CID.AX,CID.AX,CID Holdings Ltd,Energy,Retail,2010-01-01,2026-06-07,True,synthetic
+CKZ,CKZ.AX,CKZ.AX,CKZ Holdings Ltd,Financials,Banks,2010-01-01,2026-06-07,True,synthetic
+CNQ,CNQ.AX,CNQ.AX,CNQ Holdings Ltd,Consumer Staples,Banks,2010-01-01,2026-06-07,True,synthetic
+CNZ,CNZ.AX,CNZ.AX,CNZ Holdings Ltd,Industrials,Banks,2010-01-01,2026-06-07,True,synthetic
+COU,COU.AX,COU.AX,COU Holdings Ltd,Utilities,Utilities,2010-01-01,2026-06-07,True,synthetic
+CPX,CPX.AX,CPX.AX,CPX Holdings Ltd,Consumer Discretionary,Retail,2010-01-01,2026-06-07,True,synthetic
+CRR,CRR.AX,CRR.AX,CRR Holdings Ltd,Consumer Staples,Banks,2010-01-01,2026-06-07,True,synthetic
+CRX,CRX.AX,CRX.AX,CRX Holdings Ltd,Communication Services,REITs,2010-01-01,2026-06-07,True,synthetic
+CSD,CSD.AX,CSD.AX,CSD Holdings Ltd,Consumer Discretionary,Utilities,2010-01-01,2026-06-07,True,synthetic
+CSF,CSF.AX,CSF.AX,CSF Holdings Ltd,Real Estate,Software,2010-01-01,2026-06-07,True,synthetic
+CTO,CTO.AX,CTO.AX,CTO Holdings Ltd,Communication Services,Software,2010-01-01,2026-06-07,True,synthetic
+CTT,CTT.AX,CTT.AX,CTT Holdings Ltd,Real Estate,Banks,2010-01-01,2026-06-07,True,synthetic
+CUR,CUR.AX,CUR.AX,CUR Holdings Ltd,Financials,Utilities,2010-01-01,2026-06-07,True,synthetic
+CUS,CUS.AX,CUS.AX,CUS Holdings Ltd,Healthcare,REITs,2010-01-01,2026-06-07,True,synthetic
+DGC,DGC.AX,DGC.AX,DGC Holdings Ltd,Materials,Retail,2010-01-01,2026-06-07,True,synthetic
+DHG,DHG.AX,DHG.AX,DHG Holdings Ltd,Materials,Oil,2010-01-01,2026-06-07,True,synthetic
+DHN,DHN.AX,DHN.AX,DHN Holdings Ltd,Industrials,Software,2010-01-01,2026-06-07,True,synthetic
+DHW,DHW.AX,DHW.AX,DHW Holdings Ltd,Healthcare,Oil,2010-01-01,2026-06-07,True,synthetic
+DJQ,DJQ.AX,DJQ.AX,DJQ Holdings Ltd,Materials,Mining,2010-01-01,2026-06-07,True,synthetic
+DMP,DMP.AX,DMP.AX,DMP Holdings Ltd,Consumer Staples,Software,2010-01-01,2026-06-07,True,synthetic
+DOA,DOA.AX,DOA.AX,DOA Holdings Ltd,Financials,Mining,2010-01-01,2026-06-07,True,synthetic
+DON,DON.AX,DON.AX,DON Holdings Ltd,Materials,Mining,2010-01-01,2026-06-07,True,synthetic
+DOY,DOY.AX,DOY.AX,DOY Holdings Ltd,Consumer Staples,Banks,2010-01-01,2026-06-07,True,synthetic
+DPC,DPC.AX,DPC.AX,DPC Holdings Ltd,Materials,Software,2010-01-01,2026-06-07,True,synthetic
+DQQ,DQQ.AX,DQQ.AX,DQQ Holdings Ltd,Real Estate,Banks,2010-01-01,2026-06-07,True,synthetic
+DQV,DQV.AX,DQV.AX,DQV Holdings Ltd,Energy,Software,2010-01-01,2026-06-07,True,synthetic
+DRC,DRC.AX,DRC.AX,DRC Holdings Ltd,Healthcare,Utilities,2010-01-01,2026-06-07,True,synthetic
+DSN,DSN.AX,DSN.AX,DSN Holdings Ltd,Energy,Banks,2010-01-01,2026-06-07,True,synthetic
+DUD,DUD.AX,DUD.AX,DUD Holdings Ltd,Communication Services,Utilities,2010-01-01,2026-06-07,True,synthetic
+DVF,DVF.AX,DVF.AX,DVF Holdings Ltd,Utilities,Utilities,2010-01-01,2026-06-07,True,synthetic
+DVN,DVN.AX,DVN.AX,DVN Holdings Ltd,Information Technology,Retail,2010-01-01,2026-06-07,True,synthetic
+DYP,DYP.AX,DYP.AX,DYP Holdings Ltd,Consumer Staples,REITs,2010-01-01,2026-06-07,True,synthetic
+DYV,DYV.AX,DYV.AX,DYV Holdings Ltd,Healthcare,Telecom,2010-01-01,2026-06-07,True,synthetic
+DYY,DYY.AX,DYY.AX,DYY Holdings Ltd,Real Estate,Banks,2010-01-01,2026-06-07,True,synthetic
+EBV,EBV.AX,EBV.AX,EBV Holdings Ltd,Utilities,Oil,2010-01-01,2026-06-07,True,synthetic
+EED,EED.AX,EED.AX,EED Holdings Ltd,Utilities,Utilities,2010-01-01,2026-06-07,True,synthetic
+EEH,EEH.AX,EEH.AX,EEH Holdings Ltd,Energy,Oil,2010-01-01,2026-06-07,True,synthetic
+EEN,EEN.AX,EEN.AX,EEN Holdings Ltd,Consumer Staples,Retail,2010-01-01,2026-06-07,True,synthetic
+EHY,EHY.AX,EHY.AX,EHY Holdings Ltd,Industrials,Mining,2010-01-01,2026-06-07,True,synthetic
+EIR,EIR.AX,EIR.AX,EIR Holdings Ltd,Materials,Retail,2010-01-01,2026-06-07,True,synthetic
+EJG,EJG.AX,EJG.AX,EJG Holdings Ltd,Healthcare,Software,2010-01-01,2026-06-07,True,synthetic
+EPU,EPU.AX,EPU.AX,EPU Holdings Ltd,Consumer Discretionary,Banks,2010-01-01,2026-06-07,True,synthetic
+ETA,ETA.AX,ETA.AX,ETA Holdings Ltd,Communication Services,Oil,2010-01-01,2026-06-07,True,synthetic
+ETR,ETR.AX,ETR.AX,ETR Holdings Ltd,Real Estate,Banks,2010-01-01,2026-06-07,True,synthetic
+EUK,EUK.AX,EUK.AX,EUK Holdings Ltd,Utilities,Retail,2010-01-01,2026-06-07,True,synthetic
+EVB,EVB.AX,EVB.AX,EVB Holdings Ltd,Communication Services,Mining,2010-01-01,2026-06-07,True,synthetic
+EVI,EVI.AX,EVI.AX,EVI Holdings Ltd,Financials,Retail,2010-01-01,2026-06-07,True,synthetic
+EXN,EXN.AX,EXN.AX,EXN Holdings Ltd,Utilities,Banks,2010-01-01,2026-06-07,True,synthetic
+EYT,EYT.AX,EYT.AX,EYT Holdings Ltd,Energy,Telecom,2010-01-01,2026-06-07,True,synthetic
+FAX,FAX.AX,FAX.AX,FAX Holdings Ltd,Consumer Discretionary,Oil,2010-01-01,2026-06-07,True,synthetic
+FHD,FHD.AX,FHD.AX,FHD Holdings Ltd,Energy,Software,2010-01-01,2026-06-07,True,synthetic
+FHK,FHK.AX,FHK.AX,FHK Holdings Ltd,Communication Services,Mining,2010-01-01,2026-06-07,True,synthetic
+FJM,FJM.AX,FJM.AX,FJM Holdings Ltd,Materials,REITs,2010-01-01,2026-06-07,True,synthetic
+FPS,FPS.AX,FPS.AX,FPS Holdings Ltd,Real Estate,Oil,2010-01-01,2026-06-07,True,synthetic
+GGG,GGG.AX,GGG.AX,GGG Holdings Ltd,Information Technology,REITs,2010-01-01,2026-06-07,True,synthetic
+GHU,GHU.AX,GHU.AX,GHU Holdings Ltd,Materials,Telecom,2010-01-01,2026-06-07,True,synthetic
+GLD,GLD.AX,GLD.AX,GLD Holdings Ltd,Financials,Software,2010-01-01,2026-06-07,True,synthetic
+GQO,GQO.AX,GQO.AX,GQO Holdings Ltd,Energy,Utilities,2010-01-01,2026-06-07,True,synthetic
+GRQ,GRQ.AX,GRQ.AX,GRQ Holdings Ltd,Financials,Retail,2010-01-01,2026-06-07,True,synthetic
+GSU,GSU.AX,GSU.AX,GSU Holdings Ltd,Financials,REITs,2010-01-01,2026-06-07,True,synthetic
+GVB,GVB.AX,GVB.AX,GVB Holdings Ltd,Utilities,Banks,2010-01-01,2026-06-07,True,synthetic
+GYI,GYI.AX,GYI.AX,GYI Holdings Ltd,Communication Services,Mining,2010-01-01,2026-06-07,True,synthetic
+GZY,GZY.AX,GZY.AX,GZY Holdings Ltd,Consumer Staples,REITs,2010-01-01,2026-06-07,True,synthetic
+HAD,HAD.AX,HAD.AX,HAD Holdings Ltd,Healthcare,Retail,2010-01-01,2026-06-07,True,synthetic
+HDM,HDM.AX,HDM.AX,HDM Holdings Ltd,Information Technology,Software,2010-01-01,2026-06-07,True,synthetic
+HLN,HLN.AX,HLN.AX,HLN Holdings Ltd,Healthcare,REITs,2010-01-01,2026-06-07,True,synthetic
+HLR,HLR.AX,HLR.AX,HLR Holdings Ltd,Real Estate,Utilities,2010-01-01,2026-06-07,True,synthetic
+HNX,HNX.AX,HNX.AX,HNX Holdings Ltd,Industrials,Telecom,2010-01-01,2026-06-07,True,synthetic
+HOI,HOI.AX,HOI.AX,HOI Holdings Ltd,Consumer Discretionary,Mining,2010-01-01,2026-06-07,True,synthetic
+HPA,HPA.AX,HPA.AX,HPA Holdings Ltd,Real Estate,Retail,2010-01-01,2026-06-07,True,synthetic
+HRQ,HRQ.AX,HRQ.AX,HRQ Holdings Ltd,Information Technology,REITs,2010-01-01,2026-06-07,True,synthetic
+HRX,HRX.AX,HRX.AX,HRX Holdings Ltd,Consumer Staples,Oil,2010-01-01,2026-06-07,True,synthetic
+HUV,HUV.AX,HUV.AX,HUV Holdings Ltd,Materials,Telecom,2010-01-01,2026-06-07,True,synthetic
+HVG,HVG.AX,HVG.AX,HVG Holdings Ltd,Financials,Banks,2010-01-01,2026-06-07,True,synthetic
+HVP,HVP.AX,HVP.AX,HVP Holdings Ltd,Consumer Discretionary,Telecom,2010-01-01,2026-06-07,True,synthetic
+HZL,HZL.AX,HZL.AX,HZL Holdings Ltd,Real Estate,Retail,2010-01-01,2026-06-07,True,synthetic
+IAC,IAC.AX,IAC.AX,IAC Holdings Ltd,Healthcare,Telecom,2010-01-01,2026-06-07,True,synthetic
+IIE,IIE.AX,IIE.AX,IIE Holdings Ltd,Materials,Banks,2010-01-01,2026-06-07,True,synthetic
+ILA,ILA.AX,ILA.AX,ILA Holdings Ltd,Healthcare,REITs,2010-01-01,2026-06-07,True,synthetic
+ILN,ILN.AX,ILN.AX,ILN Holdings Ltd,Consumer Discretionary,Retail,2010-01-01,2026-06-07,True,synthetic
+INT,INT.AX,INT.AX,INT Holdings Ltd,Communication Services,Retail,2010-01-01,2026-06-07,True,synthetic
+INZ,INZ.AX,INZ.AX,INZ Holdings Ltd,Consumer Staples,REITs,2010-01-01,2026-06-07,True,synthetic
+ITV,ITV.AX,ITV.AX,ITV Holdings Ltd,Information Technology,Oil,2010-01-01,2026-06-07,True,synthetic
+IUP,IUP.AX,IUP.AX,IUP Holdings Ltd,Healthcare,Retail,2010-01-01,2026-06-07,True,synthetic
+IYD,IYD.AX,IYD.AX,IYD Holdings Ltd,Healthcare,Oil,2010-01-01,2026-06-07,True,synthetic
+IZJ,IZJ.AX,IZJ.AX,IZJ Holdings Ltd,Information Technology,Retail,2010-01-01,2026-06-07,True,synthetic
+IZM,IZM.AX,IZM.AX,IZM Holdings Ltd,Materials,Retail,2010-01-01,2026-06-07,True,synthetic
+IZU,IZU.AX,IZU.AX,IZU Holdings Ltd,Consumer Staples,REITs,2010-01-01,2026-06-07,True,synthetic
+JER,JER.AX,JER.AX,JER Holdings Ltd,Industrials,REITs,2010-01-01,2026-06-07,True,synthetic
+JEY,JEY.AX,JEY.AX,JEY Holdings Ltd,Communication Services,Telecom,2010-01-01,2026-06-07,True,synthetic
+JGA,JGA.AX,JGA.AX,JGA Holdings Ltd,Materials,Oil,2010-01-01,2026-06-07,True,synthetic
+JLZ,JLZ.AX,JLZ.AX,JLZ Holdings Ltd,Energy,Banks,2010-01-01,2026-06-07,True,synthetic
+JNJ,JNJ.AX,JNJ.AX,JNJ Holdings Ltd,Industrials,Software,2010-01-01,2026-06-07,True,synthetic
+JPP,JPP.AX,JPP.AX,JPP Holdings Ltd,Consumer Discretionary,Retail,2010-01-01,2026-06-07,True,synthetic
+JVA,JVA.AX,JVA.AX,JVA Holdings Ltd,Real Estate,REITs,2010-01-01,2026-06-07,True,synthetic
+KDJ,KDJ.AX,KDJ.AX,KDJ Holdings Ltd,Consumer Discretionary,REITs,2010-01-01,2026-06-07,True,synthetic
+KEJ,KEJ.AX,KEJ.AX,KEJ Holdings Ltd,Healthcare,Telecom,2010-01-01,2026-06-07,True,synthetic
+KJX,KJX.AX,KJX.AX,KJX Holdings Ltd,Industrials,Telecom,2010-01-01,2026-06-07,True,synthetic
+KKK,KKK.AX,KKK.AX,KKK Holdings Ltd,Utilities,Telecom,2010-01-01,2026-06-07,True,synthetic
+KXH,KXH.AX,KXH.AX,KXH Holdings Ltd,Energy,REITs,2010-01-01,2026-06-07,True,synthetic
+LEV,LEV.AX,LEV.AX,LEV Holdings Ltd,Consumer Discretionary,Utilities,2010-01-01,2026-06-07,True,synthetic
+LFC,LFC.AX,LFC.AX,LFC Holdings Ltd,Healthcare,Retail,2010-01-01,2026-06-07,True,synthetic
+LGT,LGT.AX,LGT.AX,LGT Holdings Ltd,Utilities,Telecom,2010-01-01,2026-06-07,True,synthetic
+LHA,LHA.AX,LHA.AX,LHA Holdings Ltd,Consumer Discretionary,Telecom,2010-01-01,2026-06-07,True,synthetic
+LIQ,LIQ.AX,LIQ.AX,LIQ Holdings Ltd,Consumer Discretionary,Telecom,2010-01-01,2026-06-07,True,synthetic
+LLW,LLW.AX,LLW.AX,LLW Holdings Ltd,Industrials,Mining,2010-01-01,2026-06-07,True,synthetic
+LPN,LPN.AX,LPN.AX,LPN Holdings Ltd,Consumer Staples,Utilities,2010-01-01,2026-06-07,True,synthetic
+LRR,LRR.AX,LRR.AX,LRR Holdings Ltd,Consumer Discretionary,REITs,2010-01-01,2026-06-07,True,synthetic
+LTH,LTH.AX,LTH.AX,LTH Holdings Ltd,Utilities,Utilities,2010-01-01,2026-06-07,True,synthetic
+LUV,LUV.AX,LUV.AX,LUV Holdings Ltd,Energy,Telecom,2010-01-01,2026-06-07,True,synthetic
+MBO,MBO.AX,MBO.AX,MBO Holdings Ltd,Consumer Discretionary,Oil,2010-01-01,2026-06-07,True,synthetic
+MDR,MDR.AX,MDR.AX,MDR Holdings Ltd,Communication Services,REITs,2010-01-01,2026-06-07,True,synthetic
+MEK,MEK.AX,MEK.AX,MEK Holdings Ltd,Communication Services,Mining,2010-01-01,2026-06-07,True,synthetic
+MGP,MGP.AX,MGP.AX,MGP Holdings Ltd,Consumer Discretionary,Mining,2010-01-01,2026-06-07,True,synthetic
+MIA,MIA.AX,MIA.AX,MIA Holdings Ltd,Industrials,Mining,2010-01-01,2026-06-07,True,synthetic
+MIF,MIF.AX,MIF.AX,MIF Holdings Ltd,Consumer Discretionary,Retail,2010-01-01,2026-06-07,True,synthetic
+MMR,MMR.AX,MMR.AX,MMR Holdings Ltd,Materials,Banks,2010-01-01,2026-06-07,True,synthetic
+MSH,MSH.AX,MSH.AX,MSH Holdings Ltd,Information Technology,Mining,2010-01-01,2026-06-07,True,synthetic
+MSR,MSR.AX,MSR.AX,MSR Holdings Ltd,Consumer Staples,Telecom,2010-01-01,2026-06-07,True,synthetic
+MUB,MUB.AX,MUB.AX,MUB Holdings Ltd,Industrials,Utilities,2010-01-01,2026-06-07,True,synthetic
+MUE,MUE.AX,MUE.AX,MUE Holdings Ltd,Energy,REITs,2010-01-01,2026-06-07,True,synthetic
+MWO,MWO.AX,MWO.AX,MWO Holdings Ltd,Communication Services,Mining,2010-01-01,2026-06-07,True,synthetic
+NLD,NLD.AX,NLD.AX,NLD Holdings Ltd,Financials,REITs,2010-01-01,2026-06-07,True,synthetic
+NOA,NOA.AX,NOA.AX,NOA Holdings Ltd,Communication Services,Retail,2010-01-01,2026-06-07,True,synthetic
+NRI,NRI.AX,NRI.AX,NRI Holdings Ltd,Financials,Mining,2010-01-01,2026-06-07,True,synthetic
+NST,NST.AX,NST.AX,NST Holdings Ltd,Industrials,Banks,2010-01-01,2026-06-07,True,synthetic
+NTW,NTW.AX,NTW.AX,NTW Holdings Ltd,Financials,Mining,2010-01-01,2026-06-07,True,synthetic
+NWX,NWX.AX,NWX.AX,NWX Holdings Ltd,Materials,REITs,2010-01-01,2026-06-07,True,synthetic
+NYS,NYS.AX,NYS.AX,NYS Holdings Ltd,Consumer Staples,Oil,2010-01-01,2026-06-07,True,synthetic
+OAO,OAO.AX,OAO.AX,OAO Holdings Ltd,Utilities,Banks,2010-01-01,2026-06-07,True,synthetic
+OEM,OEM.AX,OEM.AX,OEM Holdings Ltd,Healthcare,Software,2010-01-01,2026-06-07,True,synthetic
+OJI,OJI.AX,OJI.AX,OJI Holdings Ltd,Industrials,Banks,2010-01-01,2026-06-07,True,synthetic
+OMU,OMU.AX,OMU.AX,OMU Holdings Ltd,Consumer Staples,Software,2010-01-01,2026-06-07,True,synthetic
+ONT,ONT.AX,ONT.AX,ONT Holdings Ltd,Utilities,Utilities,2010-01-01,2026-06-07,True,synthetic
+ONW,ONW.AX,ONW.AX,ONW Holdings Ltd,Energy,Telecom,2010-01-01,2026-06-07,True,synthetic
+ORY,ORY.AX,ORY.AX,ORY Holdings Ltd,Real Estate,Mining,2010-01-01,2026-06-07,True,synthetic
+OTO,OTO.AX,OTO.AX,OTO Holdings Ltd,Communication Services,REITs,2010-01-01,2026-06-07,True,synthetic
+OXB,OXB.AX,OXB.AX,OXB Holdings Ltd,Information Technology,Retail,2010-01-01,2026-06-07,True,synthetic
+PDL,PDL.AX,PDL.AX,PDL Holdings Ltd,Consumer Staples,Utilities,2010-01-01,2026-06-07,True,synthetic
+PGI,PGI.AX,PGI.AX,PGI Holdings Ltd,Industrials,Oil,2010-01-01,2026-06-07,True,synthetic
+PJD,PJD.AX,PJD.AX,PJD Holdings Ltd,Real Estate,Telecom,2010-01-01,2026-06-07,True,synthetic
+PJY,PJY.AX,PJY.AX,PJY Holdings Ltd,Healthcare,Telecom,2010-01-01,2026-06-07,True,synthetic
+PKF,PKF.AX,PKF.AX,PKF Holdings Ltd,Consumer Discretionary,Mining,2010-01-01,2026-06-07,True,synthetic
+PLU,PLU.AX,PLU.AX,PLU Holdings Ltd,Energy,Software,2010-01-01,2026-06-07,True,synthetic
+PSW,PSW.AX,PSW.AX,PSW Holdings Ltd,Consumer Staples,Retail,2010-01-01,2026-06-07,True,synthetic
+PYW,PYW.AX,PYW.AX,PYW Holdings Ltd,Consumer Discretionary,Software,2010-01-01,2026-06-07,True,synthetic
+PZU,PZU.AX,PZU.AX,PZU Holdings Ltd,Financials,Banks,2010-01-01,2026-06-07,True,synthetic
+QBH,QBH.AX,QBH.AX,QBH Holdings Ltd,Utilities,Retail,2010-01-01,2026-06-07,True,synthetic
+QCQ,QCQ.AX,QCQ.AX,QCQ Holdings Ltd,Real Estate,Mining,2010-01-01,2026-06-07,True,synthetic
+QCW,QCW.AX,QCW.AX,QCW Holdings Ltd,Utilities,Utilities,2010-01-01,2026-06-07,True,synthetic
+QET,QET.AX,QET.AX,QET Holdings Ltd,Utilities,Utilities,2010-01-01,2026-06-07,True,synthetic
+QFU,QFU.AX,QFU.AX,QFU Holdings Ltd,Communication Services,Software,2010-01-01,2026-06-07,True,synthetic
+QGG,QGG.AX,QGG.AX,QGG Holdings Ltd,Energy,Utilities,2010-01-01,2026-06-07,True,synthetic
+QNX,QNX.AX,QNX.AX,QNX Holdings Ltd,Consumer Discretionary,Telecom,2010-01-01,2026-06-07,True,synthetic
+QOO,QOO.AX,QOO.AX,QOO Holdings Ltd,Real Estate,Telecom,2010-01-01,2026-06-07,True,synthetic
+QQC,QQC.AX,QQC.AX,QQC Holdings Ltd,Communication Services,Oil,2010-01-01,2026-06-07,True,synthetic
+QSC,QSC.AX,QSC.AX,QSC Holdings Ltd,Information Technology,Utilities,2010-01-01,2026-06-07,True,synthetic
+QUT,QUT.AX,QUT.AX,QUT Holdings Ltd,Information Technology,REITs,2010-01-01,2026-06-07,True,synthetic
+QUW,QUW.AX,QUW.AX,QUW Holdings Ltd,Materials,Retail,2010-01-01,2026-06-07,True,synthetic
+QZW,QZW.AX,QZW.AX,QZW Holdings Ltd,Consumer Discretionary,Oil,2010-01-01,2026-06-07,True,synthetic
+RML,RML.AX,RML.AX,RML Holdings Ltd,Industrials,Retail,2010-01-01,2026-06-07,True,synthetic
+RSI,RSI.AX,RSI.AX,RSI Holdings Ltd,Industrials,Oil,2010-01-01,2026-06-07,True,synthetic
+RSK,RSK.AX,RSK.AX,RSK Holdings Ltd,Energy,Oil,2010-01-01,2026-06-07,True,synthetic
+RSS,RSS.AX,RSS.AX,RSS Holdings Ltd,Information Technology,Oil,2010-01-01,2026-06-07,True,synthetic
+RUK,RUK.AX,RUK.AX,RUK Holdings Ltd,Materials,Banks,2010-01-01,2026-06-07,True,synthetic
+RUT,RUT.AX,RUT.AX,RUT Holdings Ltd,Industrials,Oil,2010-01-01,2026-06-07,True,synthetic
+RUZ,RUZ.AX,RUZ.AX,RUZ Holdings Ltd,Information Technology,Software,2010-01-01,2026-06-07,True,synthetic
+SBF,SBF.AX,SBF.AX,SBF Holdings Ltd,Real Estate,Retail,2010-01-01,2026-06-07,True,synthetic
+SCM,SCM.AX,SCM.AX,SCM Holdings Ltd,Consumer Discretionary,REITs,2010-01-01,2026-06-07,True,synthetic
+SCT,SCT.AX,SCT.AX,SCT Holdings Ltd,Real Estate,REITs,2010-01-01,2026-06-07,True,synthetic
+SEO,SEO.AX,SEO.AX,SEO Holdings Ltd,Industrials,REITs,2010-01-01,2026-06-07,True,synthetic
+SFS,SFS.AX,SFS.AX,SFS Holdings Ltd,Energy,Software,2010-01-01,2026-06-07,True,synthetic
+SJB,SJB.AX,SJB.AX,SJB Holdings Ltd,Communication Services,Oil,2010-01-01,2026-06-07,True,synthetic
+SML,SML.AX,SML.AX,SML Holdings Ltd,Communication Services,REITs,2010-01-01,2026-06-07,True,synthetic
+SMS,SMS.AX,SMS.AX,SMS Holdings Ltd,Information Technology,Telecom,2010-01-01,2026-06-07,True,synthetic
+SNZ,SNZ.AX,SNZ.AX,SNZ Holdings Ltd,Consumer Staples,Mining,2010-01-01,2026-06-07,True,synthetic
+SPB,SPB.AX,SPB.AX,SPB Holdings Ltd,Information Technology,Retail,2010-01-01,2026-06-07,True,synthetic
+SPC,SPC.AX,SPC.AX,SPC Holdings Ltd,Materials,Software,2010-01-01,2026-06-07,True,synthetic
+SVL,SVL.AX,SVL.AX,SVL Holdings Ltd,Industrials,Mining,2010-01-01,2026-06-07,True,synthetic
+TBF,TBF.AX,TBF.AX,TBF Holdings Ltd,Consumer Staples,Mining,2010-01-01,2026-06-07,True,synthetic
+TEJ,TEJ.AX,TEJ.AX,TEJ Holdings Ltd,Utilities,Retail,2010-01-01,2026-06-07,True,synthetic
+TIL,TIL.AX,TIL.AX,TIL Holdings Ltd,Consumer Staples,Mining,2010-01-01,2026-06-07,True,synthetic
+TJD,TJD.AX,TJD.AX,TJD Holdings Ltd,Industrials,Retail,2010-01-01,2026-06-07,True,synthetic
+TKA,TKA.AX,TKA.AX,TKA Holdings Ltd,Consumer Discretionary,Mining,2010-01-01,2026-06-07,True,synthetic
+TKU,TKU.AX,TKU.AX,TKU Holdings Ltd,Real Estate,Oil,2010-01-01,2026-06-07,True,synthetic
+TPH,TPH.AX,TPH.AX,TPH Holdings Ltd,Information Technology,Telecom,2010-01-01,2026-06-07,True,synthetic
+TPN,TPN.AX,TPN.AX,TPN Holdings Ltd,Information Technology,Retail,2010-01-01,2026-06-07,True,synthetic
+TQH,TQH.AX,TQH.AX,TQH Holdings Ltd,Consumer Discretionary,Mining,2010-01-01,2026-06-07,True,synthetic
+TTS,TTS.AX,TTS.AX,TTS Holdings Ltd,Information Technology,Utilities,2010-01-01,2026-06-07,True,synthetic
+TUO,TUO.AX,TUO.AX,TUO Holdings Ltd,Industrials,Utilities,2010-01-01,2026-06-07,True,synthetic
+TXV,TXV.AX,TXV.AX,TXV Holdings Ltd,Materials,Retail,2010-01-01,2026-06-07,True,synthetic
+UAU,UAU.AX,UAU.AX,UAU Holdings Ltd,Communication Services,REITs,2010-01-01,2026-06-07,True,synthetic
+UIR,UIR.AX,UIR.AX,UIR Holdings Ltd,Consumer Staples,Retail,2010-01-01,2026-06-07,True,synthetic
+UJN,UJN.AX,UJN.AX,UJN Holdings Ltd,Information Technology,Mining,2010-01-01,2026-06-07,True,synthetic
+UKR,UKR.AX,UKR.AX,UKR Holdings Ltd,Materials,Software,2010-01-01,2026-06-07,True,synthetic
+ULM,ULM.AX,ULM.AX,ULM Holdings Ltd,Real Estate,REITs,2010-01-01,2026-06-07,True,synthetic
+UMG,UMG.AX,UMG.AX,UMG Holdings Ltd,Healthcare,REITs,2010-01-01,2026-06-07,True,synthetic
+UND,UND.AX,UND.AX,UND Holdings Ltd,Information Technology,Oil,2010-01-01,2026-06-07,True,synthetic
+UOL,UOL.AX,UOL.AX,UOL Holdings Ltd,Real Estate,Mining,2010-01-01,2026-06-07,True,synthetic
+UPM,UPM.AX,UPM.AX,UPM Holdings Ltd,Healthcare,REITs,2010-01-01,2026-06-07,True,synthetic
+UQK,UQK.AX,UQK.AX,UQK Holdings Ltd,Healthcare,Software,2010-01-01,2026-06-07,True,synthetic
+UQQ,UQQ.AX,UQQ.AX,UQQ Holdings Ltd,Materials,Utilities,2010-01-01,2026-06-07,True,synthetic
+UUR,UUR.AX,UUR.AX,UUR Holdings Ltd,Healthcare,Utilities,2010-01-01,2026-06-07,True,synthetic
+UWN,UWN.AX,UWN.AX,UWN Holdings Ltd,Healthcare,Oil,2010-01-01,2026-06-07,True,synthetic
+UZR,UZR.AX,UZR.AX,UZR Holdings Ltd,Consumer Discretionary,Retail,2010-01-01,2026-06-07,True,synthetic
+VDL,VDL.AX,VDL.AX,VDL Holdings Ltd,Consumer Staples,Banks,2010-01-01,2026-06-07,True,synthetic
+VIE,VIE.AX,VIE.AX,VIE Holdings Ltd,Industrials,Oil,2010-01-01,2026-06-07,True,synthetic
+VIZ,VIZ.AX,VIZ.AX,VIZ Holdings Ltd,Real Estate,Oil,2010-01-01,2026-06-07,True,synthetic
+VLB,VLB.AX,VLB.AX,VLB Holdings Ltd,Information Technology,Banks,2010-01-01,2026-06-07,True,synthetic
+VLN,VLN.AX,VLN.AX,VLN Holdings Ltd,Materials,Software,2010-01-01,2026-06-07,True,synthetic
+VLV,VLV.AX,VLV.AX,VLV Holdings Ltd,Utilities,REITs,2010-01-01,2026-06-07,True,synthetic
+VOL,VOL.AX,VOL.AX,VOL Holdings Ltd,Real Estate,Retail,2010-01-01,2026-06-07,True,synthetic
+VSV,VSV.AX,VSV.AX,VSV Holdings Ltd,Information Technology,Retail,2010-01-01,2026-06-07,True,synthetic
+VVU,VVU.AX,VVU.AX,VVU Holdings Ltd,Consumer Staples,Retail,2010-01-01,2026-06-07,True,synthetic
+VXD,VXD.AX,VXD.AX,VXD Holdings Ltd,Healthcare,Telecom,2010-01-01,2026-06-07,True,synthetic
+VXF,VXF.AX,VXF.AX,VXF Holdings Ltd,Real Estate,Mining,2010-01-01,2026-06-07,True,synthetic
+VYC,VYC.AX,VYC.AX,VYC Holdings Ltd,Utilities,Oil,2010-01-01,2026-06-07,True,synthetic
+WAG,WAG.AX,WAG.AX,WAG Holdings Ltd,Financials,Telecom,2010-01-01,2026-06-07,True,synthetic
+WAT,WAT.AX,WAT.AX,WAT Holdings Ltd,Real Estate,Software,2010-01-01,2026-06-07,True,synthetic
+WBM,WBM.AX,WBM.AX,WBM Holdings Ltd,Materials,Retail,2010-01-01,2026-06-07,True,synthetic
+WGB,WGB.AX,WGB.AX,WGB Holdings Ltd,Utilities,Retail,2010-01-01,2026-06-07,True,synthetic
+WHX,WHX.AX,WHX.AX,WHX Holdings Ltd,Consumer Staples,REITs,2010-01-01,2026-06-07,True,synthetic
+WLS,WLS.AX,WLS.AX,WLS Holdings Ltd,Communication Services,Retail,2010-01-01,2026-06-07,True,synthetic
+WMU,WMU.AX,WMU.AX,WMU Holdings Ltd,Healthcare,Software,2010-01-01,2026-06-07,True,synthetic
+WQD,WQD.AX,WQD.AX,WQD Holdings Ltd,Materials,Mining,2010-01-01,2026-06-07,True,synthetic
+WUA,WUA.AX,WUA.AX,WUA Holdings Ltd,Materials,Telecom,2010-01-01,2026-06-07,True,synthetic
+WUV,WUV.AX,WUV.AX,WUV Holdings Ltd,Communication Services,Mining,2010-01-01,2026-06-07,True,synthetic
+WVH,WVH.AX,WVH.AX,WVH Holdings Ltd,Financials,Mining,2010-01-01,2026-06-07,True,synthetic
+WVM,WVM.AX,WVM.AX,WVM Holdings Ltd,Materials,Mining,2010-01-01,2026-06-07,True,synthetic
+WYL,WYL.AX,WYL.AX,WYL Holdings Ltd,Industrials,Retail,2010-01-01,2026-06-07,True,synthetic
+XCT,XCT.AX,XCT.AX,XCT Holdings Ltd,Financials,Mining,2010-01-01,2026-06-07,True,synthetic
+XDL,XDL.AX,XDL.AX,XDL Holdings Ltd,Information Technology,Telecom,2010-01-01,2026-06-07,True,synthetic
+XDN,XDN.AX,XDN.AX,XDN Holdings Ltd,Communication Services,Software,2010-01-01,2026-06-07,True,synthetic
+XGF,XGF.AX,XGF.AX,XGF Holdings Ltd,Utilities,REITs,2010-01-01,2026-06-07,True,synthetic
+XGZ,XGZ.AX,XGZ.AX,XGZ Holdings Ltd,Real Estate,Software,2010-01-01,2026-06-07,True,synthetic
+XJB,XJB.AX,XJB.AX,XJB Holdings Ltd,Industrials,Utilities,2010-01-01,2026-06-07,True,synthetic
+XMS,XMS.AX,XMS.AX,XMS Holdings Ltd,Healthcare,Utilities,2010-01-01,2026-06-07,True,synthetic
+XOD,XOD.AX,XOD.AX,XOD Holdings Ltd,Consumer Staples,Utilities,2010-01-01,2026-06-07,True,synthetic
+XTJ,XTJ.AX,XTJ.AX,XTJ Holdings Ltd,Consumer Discretionary,Telecom,2010-01-01,2026-06-07,True,synthetic
+XUF,XUF.AX,XUF.AX,XUF Holdings Ltd,Utilities,Retail,2010-01-01,2026-06-07,True,synthetic
+XUN,XUN.AX,XUN.AX,XUN Holdings Ltd,Industrials,Utilities,2010-01-01,2026-06-07,True,synthetic
+XXP,XXP.AX,XXP.AX,XXP Holdings Ltd,Consumer Discretionary,Software,2010-01-01,2026-06-07,True,synthetic
+YAE,YAE.AX,YAE.AX,YAE Holdings Ltd,Consumer Staples,Telecom,2010-01-01,2026-06-07,True,synthetic
+YCG,YCG.AX,YCG.AX,YCG Holdings Ltd,Healthcare,Banks,2010-01-01,2026-06-07,True,synthetic
+YDC,YDC.AX,YDC.AX,YDC Holdings Ltd,Industrials,Software,2010-01-01,2026-06-07,True,synthetic
+YDM,YDM.AX,YDM.AX,YDM Holdings Ltd,Healthcare,REITs,2010-01-01,2026-06-07,True,synthetic
+YDU,YDU.AX,YDU.AX,YDU Holdings Ltd,Financials,Telecom,2010-01-01,2026-06-07,True,synthetic
+YEO,YEO.AX,YEO.AX,YEO Holdings Ltd,Real Estate,Telecom,2010-01-01,2026-06-07,True,synthetic
+YKH,YKH.AX,YKH.AX,YKH Holdings Ltd,Financials,Software,2010-01-01,2026-06-07,True,synthetic
+YKM,YKM.AX,YKM.AX,YKM Holdings Ltd,Financials,Software,2010-01-01,2026-06-07,True,synthetic
+YLC,YLC.AX,YLC.AX,YLC Holdings Ltd,Utilities,Retail,2010-01-01,2026-06-07,True,synthetic
+YNH,YNH.AX,YNH.AX,YNH Holdings Ltd,Financials,Retail,2010-01-01,2026-06-07,True,synthetic
+YNX,YNX.AX,YNX.AX,YNX Holdings Ltd,Communication Services,Banks,2010-01-01,2026-06-07,True,synthetic
+YOL,YOL.AX,YOL.AX,YOL Holdings Ltd,Financials,Software,2010-01-01,2026-06-07,True,synthetic
+YQH,YQH.AX,YQH.AX,YQH Holdings Ltd,Energy,Mining,2010-01-01,2026-06-07,True,synthetic
+YRC,YRC.AX,YRC.AX,YRC Holdings Ltd,Real Estate,Telecom,2010-01-01,2026-06-07,True,synthetic
+YRX,YRX.AX,YRX.AX,YRX Holdings Ltd,Energy,Mining,2010-01-01,2026-06-07,True,synthetic
+YST,YST.AX,YST.AX,YST Holdings Ltd,Consumer Staples,Mining,2010-01-01,2026-06-07,True,synthetic
+YTI,YTI.AX,YTI.AX,YTI Holdings Ltd,Energy,Software,2010-01-01,2026-06-07,True,synthetic
+YWM,YWM.AX,YWM.AX,YWM Holdings Ltd,Industrials,Retail,2010-01-01,2026-06-07,True,synthetic
+YYG,YYG.AX,YYG.AX,YYG Holdings Ltd,Financials,REITs,2010-01-01,2026-06-07,True,synthetic
+YYJ,YYJ.AX,YYJ.AX,YYJ Holdings Ltd,Healthcare,REITs,2010-01-01,2026-06-07,True,synthetic
+YYM,YYM.AX,YYM.AX,YYM Holdings Ltd,Materials,Retail,2010-01-01,2026-06-07,True,synthetic
+ZAR,ZAR.AX,ZAR.AX,ZAR Holdings Ltd,Real Estate,Oil,2010-01-01,2026-06-07,True,synthetic
+ZAS,ZAS.AX,ZAS.AX,ZAS Holdings Ltd,Financials,Utilities,2010-01-01,2026-06-07,True,synthetic
+ZEP,ZEP.AX,ZEP.AX,ZEP Holdings Ltd,Materials,Telecom,2010-01-01,2026-06-07,True,synthetic
+ZFG,ZFG.AX,ZFG.AX,ZFG Holdings Ltd,Utilities,Oil,2010-01-01,2026-06-07,True,synthetic
+ZGH,ZGH.AX,ZGH.AX,ZGH Holdings Ltd,Consumer Staples,Mining,2010-01-01,2026-06-07,True,synthetic
+ZGU,ZGU.AX,ZGU.AX,ZGU Holdings Ltd,Healthcare,Oil,2010-01-01,2026-06-07,True,synthetic
+ZIF,ZIF.AX,ZIF.AX,ZIF Holdings Ltd,Consumer Staples,Telecom,2010-01-01,2026-06-07,True,synthetic
+ZKI,ZKI.AX,ZKI.AX,ZKI Holdings Ltd,Real Estate,Utilities,2010-01-01,2026-06-07,True,synthetic
+ZLX,ZLX.AX,ZLX.AX,ZLX Holdings Ltd,Information Technology,Mining,2010-01-01,2026-06-07,True,synthetic
+ZPL,ZPL.AX,ZPL.AX,ZPL Holdings Ltd,Communication Services,Telecom,2010-01-01,2026-06-07,True,synthetic
+ZTV,ZTV.AX,ZTV.AX,ZTV Holdings Ltd,Healthcare,Software,2010-01-01,2026-06-07,True,synthetic
+ZUY,ZUY.AX,ZUY.AX,ZUY Holdings Ltd,Information Technology,Retail,2010-01-01,2026-06-07,True,synthetic
+ZWA,ZWA.AX,ZWA.AX,ZWA Holdings Ltd,Communication Services,Software,2010-01-01,2026-06-07,True,synthetic
+ZZD,ZZD.AX,ZZD.AX,ZZD Holdings Ltd,Utilities,Telecom,2010-01-01,2026-06-07,True,synthetic

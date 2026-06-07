@@ -55,20 +55,49 @@ def make_tickers(n: int) -> list[str]:
 
 def make_prices(tickers: list[str], start: date, end: date,
                 rng: np.random.Generator) -> pd.DataFrame:
+    """Generate prices with a common market factor + per-stock idiosyncratic noise.
+
+    Single-stock daily return = beta_i * market_eps + idio_eps_i. This produces:
+      * Realistic single-stock vol (~25-35% annualised).
+      * Positive cross-stock correlation (~0.3-0.5) — without it the
+        equal-weighted index is too smooth.
+      * Equal-weighted index vol ≈ mean(beta) * market_vol when there are
+        many names, so the synthetic ASX 200 proxy has ~14% vol and real
+        drawdowns instead of the 3.6% vol of an average of independent walks.
+    """
     dates = pd.bdate_range(start, end)
     n_days = len(dates)
-    # Per-ticker base parameters: starting price, drift, vol, share count.
+
+    # ---- Market factor (drives the ASX 200 proxy) ----------------------------
+    market_drift = 0.00028          # ~7% annualised expected drift
+    market_vol = 0.0088              # ~14% annualised vol
+    market_eps = rng.normal(market_drift, market_vol, size=n_days)
+    # Inject a few crisis-style shocks so the benchmark has tail risk.
+    n_crises = max(1, n_days // 700)
+    for _ in range(n_crises):
+        idx = int(rng.integers(low=60, high=n_days - 60))
+        shock_days = int(rng.integers(low=10, high=30))
+        end_shock = min(n_days, idx + shock_days)
+        # Negative drift cluster: -0.5% to -1.5% per day over the cluster.
+        cluster_mean = -float(rng.uniform(0.003, 0.012))
+        cluster_vol = market_vol * 2.5
+        market_eps[idx:end_shock] += rng.normal(cluster_mean, cluster_vol,
+                                                 size=end_shock - idx)
+
+    # ---- Per-stock parameters ------------------------------------------------
     base_prices = rng.uniform(0.5, 80.0, size=len(tickers))
-    drifts = rng.normal(0.0001, 0.0003, size=len(tickers))
-    vols = rng.uniform(0.012, 0.05, size=len(tickers))
+    betas = rng.uniform(0.3, 1.8, size=len(tickers))
+    idio_drifts = rng.normal(0.0, 0.00008, size=len(tickers))
+    idio_vols = rng.uniform(0.010, 0.025, size=len(tickers))
 
     frames = []
     for i, t in enumerate(tickers):
-        eps = rng.normal(drifts[i], vols[i], size=n_days)
-        # A few jumps to exercise suspicious-jump detection.
+        idio_eps = rng.normal(idio_drifts[i], idio_vols[i], size=n_days)
+        eps = betas[i] * market_eps + idio_eps
+        # Single-stock jumps so the validation layer has something to flag.
         if i % 47 == 0:
-            jump_day = rng.integers(low=50, high=n_days - 50)
-            eps[jump_day] += rng.choice([-0.3, 0.3])
+            jump_day = int(rng.integers(low=50, high=n_days - 50))
+            eps[jump_day] += float(rng.choice([-0.3, 0.3]))
         prices = base_prices[i] * np.exp(np.cumsum(eps))
         volume = rng.lognormal(mean=12.5, sigma=0.6, size=n_days)
         # Sprinkle zero-volume days.
@@ -81,7 +110,7 @@ def make_prices(tickers: list[str], start: date, end: date,
             "high": prices * (1 + np.abs(rng.normal(0, 0.005, size=n_days))),
             "low":  prices * (1 - np.abs(rng.normal(0, 0.005, size=n_days))),
             "close": prices,
-            "adjusted_close": prices,  # no synthetic CA for the FMP series
+            "adjusted_close": prices,
             "volume": volume,
             "vwap": prices,
         })
