@@ -397,6 +397,72 @@ def strategy_summary_chart() -> None:
 # ---------------------------------------------------------------------------
 # Step 9: Calibration chart (skip silently if no ML probabilities available)
 # ---------------------------------------------------------------------------
+def strategy_comparison_chart() -> None:
+    """Plot long/short, long-only, and benchmark cumulative return on one figure."""
+    long_short = OUTPUTS_DIR / "strategy_vs_benchmark_announcement_long_short.csv"
+    long_only = OUTPUTS_DIR / "strategy_vs_benchmark_additions_only.csv"
+    if not long_short.exists() or not long_only.exists():
+        print("  skipping combined comparison (run both variants first)")
+        return
+
+    ls = pd.read_csv(long_short, parse_dates=["date"]).sort_values("date")
+    lo = pd.read_csv(long_only, parse_dates=["date"]).sort_values("date")
+
+    fig, ax = plt.subplots(figsize=FIGSIZE)
+    if "return" in ls.columns:
+        cum = (1 + ls["return"].fillna(0)).cumprod() - 1
+        ax.plot(ls["date"], cum * 100, color=PALETTE["strategy"], linewidth=2,
+                label="Long/short (additions & removals)")
+    if "return" in lo.columns:
+        cum = (1 + lo["return"].fillna(0)).cumprod() - 1
+        ax.plot(lo["date"], cum * 100, color=PALETTE["addition"], linewidth=2,
+                label="Long-only (additions)")
+    if "benchmark_return" in ls.columns:
+        cum_b = (1 + ls["benchmark_return"].fillna(0)).cumprod() - 1
+        ax.plot(ls["date"], cum_b * 100, color=PALETTE["benchmark"], linewidth=2,
+                linestyle="--", label="ASX 200 buy-and-hold")
+    ax.set_title("Strategy comparison: long/short vs long-only vs ASX 200")
+    ax.set_ylabel("Cumulative return (%)")
+    ax.legend()
+    ax.grid(True, alpha=0.3)
+    _save(fig, "strategy_comparison.png")
+
+    # Side-by-side drawdowns.
+    fig, ax = plt.subplots(figsize=FIGSIZE)
+    for df, color, label in (
+        (ls, PALETTE["strategy"], "Long/short"),
+        (lo, PALETTE["addition"], "Long-only"),
+    ):
+        if "return" not in df.columns:
+            continue
+        cum = (1 + df["return"].fillna(0)).cumprod()
+        dd = (cum / cum.cummax() - 1) * 100
+        ax.plot(df["date"], dd, color=color, linewidth=2, label=label)
+    if "benchmark_return" in ls.columns:
+        cum_b = (1 + ls["benchmark_return"].fillna(0)).cumprod()
+        dd_b = (cum_b / cum_b.cummax() - 1) * 100
+        ax.plot(ls["date"], dd_b, color=PALETTE["benchmark"],
+                linestyle="--", label="ASX 200")
+    ax.set_title("Drawdowns: long/short vs long-only vs ASX 200")
+    ax.set_ylabel("Drawdown (%)")
+    ax.legend()
+    ax.grid(True, alpha=0.3)
+    _save(fig, "strategy_comparison_drawdown.png")
+
+
+def copy_variant_charts() -> None:
+    """Copy per-variant strategy charts from outputs/figures into docs/figures."""
+    for src in FIGURES_DIR.glob("strategy_vs_asx200_buy_hold_*.png"):
+        shutil.copy2(src, DOCS_FIGURES / src.name)
+        print(f"  copied {src.name}")
+    for src in FIGURES_DIR.glob("strategy_drawdown_vs_asx200_*.png"):
+        shutil.copy2(src, DOCS_FIGURES / src.name)
+        print(f"  copied {src.name}")
+    for src in FIGURES_DIR.glob("rebalance_pnl_*.png"):
+        shutil.copy2(src, DOCS_FIGURES / src.name)
+        print(f"  copied {src.name}")
+
+
 def calibration_placeholder() -> None:
     # Calibration requires probabilities + labels which the synthetic pipeline
     # does not produce by default — render an explanatory placeholder so the
@@ -436,6 +502,10 @@ def main() -> None:
     monthly_heatmap_chart()
     print("Re-rendering strategy charts to docs/...")
     strategy_summary_chart()
+    print("Generating strategy comparison chart...")
+    strategy_comparison_chart()
+    print("Copying per-variant strategy charts...")
+    copy_variant_charts()
     print("Generating calibration placeholder...")
     calibration_placeholder()
     print("Done.")

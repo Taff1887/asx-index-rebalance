@@ -480,10 +480,23 @@ def cmd_backtest_strategy(args: argparse.Namespace) -> None:
         daily["return"].set_axis(daily["date"]),
         bench_returns.set_index("date")["benchmark_return"] if not bench_returns.empty else None,
     )
+    tag = variant
+    # Variant-tagged outputs so multiple strategies can coexist.
+    write_csv(daily, OUTPUTS_DIR / f"strategy_returns_{tag}.csv")
+    write_csv(trades, OUTPUTS_DIR / f"strategy_trades_{tag}.csv")
+    write_csv(merged, OUTPUTS_DIR / f"strategy_vs_benchmark_{tag}.csv")
+    write_csv(pd.DataFrame([metrics]),
+              OUTPUTS_DIR / f"strategy_performance_summary_{tag}.csv")
+    # Latest-run aliases for the dashboard and back-compat.
     write_csv(daily, OUTPUTS_DIR / "strategy_returns.csv")
     write_csv(trades, OUTPUTS_DIR / "strategy_trades.csv")
     write_csv(merged, OUTPUTS_DIR / "strategy_vs_benchmark.csv")
     write_csv(pd.DataFrame([metrics]), OUTPUTS_DIR / "strategy_performance_summary.csv")
+    cumulative_return_chart(daily, bench_returns,
+                            FIGURES_DIR / f"strategy_vs_asx200_buy_hold_{tag}.png")
+    drawdown_chart(daily, bench_returns,
+                   FIGURES_DIR / f"strategy_drawdown_vs_asx200_{tag}.png")
+    rebalance_pnl_chart(trades, FIGURES_DIR / f"rebalance_pnl_{tag}.png")
     cumulative_return_chart(daily, bench_returns, FIGURES_DIR / "strategy_vs_asx200_buy_hold.png")
     drawdown_chart(daily, bench_returns, FIGURES_DIR / "strategy_drawdown_vs_asx200.png")
     rebalance_pnl_chart(trades, FIGURES_DIR / "rebalance_pnl.png")

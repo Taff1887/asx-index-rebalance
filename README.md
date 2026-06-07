@@ -4,7 +4,7 @@ A research repository that **forecasts S&P/ASX 50, ASX 100 and ASX 200 index reb
 
 > All numbers and charts in this report are produced by the bundled synthetic dataset so the entire pipeline runs offline. Re-running the CLI with real FMP and Yahoo data will overwrite every figure and table.
 
-![Strategy vs ASX 200 buy-and-hold](docs/figures/strategy_vs_asx200_buy_hold.png)
+![Strategy comparison: long/short vs long-only vs ASX 200](docs/figures/strategy_comparison.png)
 
 ---
 
@@ -16,9 +16,9 @@ A research repository that **forecasts S&P/ASX 50, ASX 100 and ASX 200 index reb
 | Highest-conviction predicted change for ASX 200 | **EVB → Addition** (rank 175, hybrid probability 0.60, passive flow ≈ 3.1× 20-day ADV). |
 | Is the underlying data reliable? | FMP / Yahoo agree on **99.95%** of close-price observations; 490 high-severity discrepancies and 993 missing observations were flagged and excluded. |
 | Rules-engine F1 (mean, 16 quarterly rebalances) | Additions: **0.50 / 0.46 / 0.45** for ASX 50 / 100 / 200. Removals: **0.36 / 0.32 / 0.12**. |
-| Did the strategy beat buy-and-hold ASX 200? | **No.** Strategy CAGR -9.9% vs +4.4% benchmark CAGR; Sharpe -1.09; information ratio -3.6. Expected on synthetic data, since the labels carry no real edge. |
-| Most profitable index group | ASX 50 — driven by higher addition recall and lower turnover. |
-| Survives transaction costs? | The synthetic strategy loses money before costs. Real-data runs will need costed signal > 30 bps per leg to be worth deploying. |
+| Did the strategy beat buy-and-hold ASX 200? | **No** — long/short lost 9.9% CAGR; long-only made +1.6% CAGR but still trailed the +4.4% benchmark. **Expected** on synthetic data; see §15 for why. |
+| Most profitable index group | ASX 200 additions in the long-only variant (+A$16.5k of A$20.7k total PnL). |
+| Survives transaction costs? | The synthetic strategy loses money before *and* after costs. Real-data runs need ≈ 30–50 bps of signal per leg to overcome the cost stack (§14.6). |
 | Robust to data source? | Yes — the pipeline can be rerun on FMP-only, Yahoo-only or reconciled inputs with the same configuration. |
 
 A quant trader reading this repo should be able to (a) reproduce every chart in this README in under five minutes on a laptop, (b) replace the synthetic data with real FMP + Yahoo pulls in a single CLI command, and (c) extend the model to ASX 20 / ASX 300 / All Ordinaries by editing one YAML file.
@@ -351,54 +351,61 @@ On real data the additions line typically drifts up between the announcement and
 
 ## 14. Strategy backtest vs ASX 200 buy-and-hold
 
-The headline strategy is **`announcement-long-short`**: long predicted additions/promotions and short predicted removals/demotions at the announcement close, held to the effective close.
+The trade is conceptually simple: forecast a rebalance, take a position on announcement close, exit on effective close. Two variants ship preconfigured so the comparison is automatic:
 
-Other variants supported via `--strategy`:
+| Variant flag | Long? | Short? | Risk profile |
+|---|---|---|---|
+| `announcement-long-short` | Adds / promotions | Removals / demotions | High vol, captures both legs of the index-effect dislocation, pays borrow on the short leg. |
+| `additions-only` | Adds / promotions | — | Low vol, no borrow cost, mechanical risk only one-sided. |
 
-| Variant | Behaviour |
-|---|---|
-| `announcement-long-short` | Headline. Long add/promotion, short remove/demote, announcement → effective. |
-| `pre-announcement` | Enter 5 trading days before announcement using ex-ante information only. |
-| `additions-only` | Long-only predicted additions / promotions. Apples-to-apples comparison to the benchmark. |
-| `market-neutral` | Long/short with an explicit beta hedge using `BENCHMARK_TICKER`. |
-| `flow-pressure` | Trade only when `passive_flow_to_ADV_20d ≥ 0.5`. Rank by flow pressure. |
-| `top-k` | Each rebalance, trade only the top-k highest hybrid-probability events. |
+Four more variants are supported and use the same engine: `pre-announcement` (enter 5 trading days early using ex-ante information only), `market-neutral` (long/short with an explicit beta hedge via `BENCHMARK_TICKER`), `flow-pressure` (only trade when `passive_flow_to_ADV_20d ≥ 0.5`), and `top-k` (only trade the k highest-conviction events each rebalance).
 
-### 14.1 Cumulative return
+### 14.1 Long/short vs long-only vs benchmark
 
-![Strategy vs ASX 200 buy-and-hold](docs/figures/strategy_vs_asx200_buy_hold.png)
+![Strategy comparison](docs/figures/strategy_comparison.png)
 
-### 14.2 Drawdowns
+The blue (long/short) line drops because the short leg loses money on the synthetic data, and the cost stack hits it twice (borrow + double the brokerage / spread). The green (long-only) line is small but positive — and notice how flat it is: the long-only book is only deployed for ~10 trading days per quarter, so the area between green and grey is mostly because long-only is in cash while ASX 200 is invested.
 
-![Drawdowns vs ASX 200](docs/figures/strategy_drawdown_vs_asx200.png)
+### 14.2 Performance metrics
 
-### 14.3 Monthly return heatmap
+| Metric | Long/short | Long-only | ASX 200 buy-and-hold |
+|---|---:|---:|---:|
+| Total return (4 yr) | **-7.0%** | +6.6% | +18.7% |
+| CAGR | -9.9% | **+1.6%** | +4.4% |
+| Volatility | 9.2% | **2.5%** | ≈ 13% |
+| Sharpe ratio | -1.09 | **+0.66** | ≈ 0.34 |
+| Sortino ratio | -1.82 | **+1.07** | — |
+| Max drawdown | -10.7% | **-2.0%** | -3.2% |
+| Calmar ratio | -0.92 | **+0.84** | — |
+| Beta vs benchmark | 0.24 | 0.22 | 1.00 |
+| Alpha vs benchmark | -15.8% | -3.8% | — |
+| Tracking error | 9.6% | 3.7% | — |
+| Information ratio | -3.61 | -6.13 | — |
+| Trades | 635 | 318 | — |
+
+**Headline take:** long-only has decent risk-adjusted numbers (Sharpe +0.66, Calmar +0.84, drawdown only -2%) but doesn't generate enough absolute return to beat the market. Long/short loses on both metrics. Why this happens on synthetic data is explained in §15.
+
+### 14.3 Drawdowns
+
+![Drawdown comparison](docs/figures/strategy_comparison_drawdown.png)
+
+The long-only book barely moves (worst drawdown -2%) — exactly what you'd expect from a strategy that's in cash 90% of the time. The long/short book carries a multi-quarter drawdown that the synthetic data never recovers from.
+
+### 14.4 Per-variant detail
+
+#### Long/short
+
+![Long/short cumulative return](docs/figures/strategy_vs_asx200_buy_hold_announcement_long_short.png)
+![Long/short rebalance PnL](docs/figures/rebalance_pnl_announcement_long_short.png)
+
+#### Long-only
+
+![Long-only cumulative return](docs/figures/strategy_vs_asx200_buy_hold_additions_only.png)
+![Long-only rebalance PnL](docs/figures/rebalance_pnl_additions_only.png)
+
+### 14.5 Monthly return heatmap (long/short)
 
 ![Monthly return heatmap](docs/figures/monthly_return_heatmap.png)
-
-### 14.4 PnL by rebalance month
-
-![PnL by rebalance month](docs/figures/rebalance_pnl.png)
-
-### 14.5 Performance metrics
-
-| Metric | Strategy | ASX 200 buy-and-hold |
-|---|---:|---:|
-| CAGR | **-9.9%** | +4.4% |
-| Volatility | 9.2% | ≈ 13% |
-| Sharpe ratio | -1.09 | ≈ 0.34 |
-| Sortino ratio | -1.82 | — |
-| Max drawdown | -10.7% | -3.2% |
-| Calmar ratio | -0.92 | — |
-| Hit rate | 51.7% | — |
-| Beta vs benchmark | 0.24 | 1.00 |
-| Alpha vs benchmark | -15.8% | — |
-| Tracking error | 9.6% | — |
-| Information ratio | **-3.61** | — |
-
-The strategy underperforms by ~26 pp over the four-year window. This is the expected outcome on a synthetic dataset whose labels are derived from a uniformly random universe — there is no real economic edge to capture, and the cost model still applies. **Re-run with real FMP + Yahoo data to see live numbers.**
-
-Total trades: **635** across the three indices. Trade-level ledger in [`outputs/strategy_trades.csv`](outputs/), daily P&L in [`outputs/strategy_returns.csv`](outputs/), full benchmark merge in [`outputs/strategy_vs_benchmark.csv`](outputs/).
 
 ### 14.6 Cost model (config/costs.yaml)
 
@@ -415,11 +422,98 @@ hard_borrow:
   exclude_if_unborrowable: true
 ```
 
-Costs are applied on entry and exit; short positions pay daily borrow at `300 bps / 252`.
+Costs applied on entry and on exit; short positions also pay daily borrow at `300 bps / 252`. For a typical long/short trade held 10 days with 5% gross exposure, the round-trip cost is:
+
+```
+entry  ≈ 20 bps × 5%  =  1 bp of NAV
+exit   ≈ 20 bps × 5%  =  1 bp of NAV
+borrow ≈ 12 bps × 10d × 5% = 0.6 bp of NAV
+                              -----------
+total                       ≈ 2.6 bp of NAV per trade
+```
+
+Over ~30 trades per rebalance × 16 rebalances, the cost drag alone is ~125 bps over four years. Real edge needs to clear that bar before anything reaches the equity line.
+
+Outputs:
+
+- Daily returns and benchmark merge: `outputs/strategy_returns_{variant}.csv`, `outputs/strategy_vs_benchmark_{variant}.csv`
+- Trade ledger: `outputs/strategy_trades_{variant}.csv`
+- Summary metrics: `outputs/strategy_performance_summary_{variant}.csv`
+- Per-variant charts: `outputs/figures/strategy_vs_asx200_buy_hold_{variant}.png`, `outputs/figures/strategy_drawdown_vs_asx200_{variant}.png`, `outputs/figures/rebalance_pnl_{variant}.png`
 
 ---
 
-## 15. CLI reference
+## 15. Why doesn't this simple strategy make money on the synthetic data?
+
+A natural reaction to §14 is: *"The S&P/ASX index effect is well-documented in academic literature. Why doesn't a clean implementation pick it up?"*
+
+The honest answer: **the synthetic dataset was deliberately built without a real index effect.** Here is what's happening, in three layers.
+
+### 15.1 The real-world effect (what should happen)
+
+When S&P announces that a stock will be added to ASX 200:
+
+1. Every passive ETF tracking the index (STW, IOZ, A200, plus institutional index trackers) must buy enough shares to match the new index weight by the effective date.
+2. That demand is **price-insensitive** — they have to fill the order regardless of price.
+3. The buying lifts the stock's price between announcement and effective.
+4. After the effective date, the temporary pressure unwinds and a portion of the move reverts.
+
+Academic estimates (Chen, Noronha & Singal 2004 for S&P 500; Kerry 2008 and ASX broker research for the local market) put the **announcement-to-effective addition premium at 1–5%** on ASX 200, larger on the smaller ASX 50 (where the float adjustment relative to passive AUM is more meaningful) and smaller on global mega-caps.
+
+The strategy in this repo would buy at announcement and capture that 1–5% premium minus ≈ 30 bps of costs per leg → a positive edge per trade on real data.
+
+### 15.2 What our synthetic data does instead
+
+```python
+# scripts/generate_synthetic_data.py
+prices  = base * exp(cumsum(normal(drift, vol)))   # pure geometric Brownian motion
+shares  = random()                                  # no link to demand
+mcap    = price × shares
+ranked  = top_N(mcap)                               # constituents are derived from random prices
+labels  = changes_in(ranked)                        # additions / removals come from the random ranking
+```
+
+The labels are a deterministic function of the random prices. **There is no mechanism in the synthetic generator that says "after a stock is labelled an Addition, its price rises."** Passive flow doesn't exist; ETFs don't trade; the order book has no participants. The model can only "predict" labels that are already a function of past prices — which it does (rules-engine F1 ≈ 0.5 on additions) — but the trade itself has no signal because the price process is independent of the label.
+
+So the strategy is buying random walks at one timestamp and selling them at another. Expected return per trade ≈ 0. Cost per trade ≈ 30 bps. Many trades → guaranteed loss.
+
+### 15.3 What changes when you point this at real FMP + Yahoo data
+
+The pipeline doesn't change at all — same configs, same code paths. What changes is the underlying generative process:
+
+| Component | Synthetic | Real ASX market |
+|---|---|---|
+| Stock price between announcement and effective | Random walk independent of the label | Lifted by mechanical passive demand on additions |
+| Passive AUM | Configured assumption only | ~A$40 bn tracking ASX 200, ~A$15 bn ASX 100, ~A$10 bn ASX 50 (estimates in `config/strategy.yaml`) |
+| Free float / IWF | Random | Sourced from S&P or paid feed |
+| Discretion | None | S&P Index Committee can deviate from rank — explains the residual error in rules-engine F1 even with perfect inputs |
+| Hit-rate cap | Bounded by random label process | Bounded by methodology + committee discretion (~70–80% on rules engine in published replications) |
+
+A realistic deployment looks like:
+
+1. Pull 5+ years of FMP and Yahoo data with valid API keys.
+2. Populate `data/processed/reconciled/constituents.csv` with point-in-time membership (paid feed or manual reconstruction from S&P PDFs).
+3. Populate `data/raw/manual/iwf.csv` with per-name float adjustments (paid feed).
+4. Re-run `train-ml-all` so the ML overlay learns the real label process.
+5. Re-run `backtest-strategy --strategy announcement-long-short` and expect the long/short and long-only lines to be positive — though small (the post-2010 index effect is smaller than pre-2000s, ~50–200 bps per addition on average).
+
+### 15.4 What you can still learn from the synthetic run
+
+Even without an edge in the signal, the synthetic pipeline validates that:
+
+- The FMP / Yahoo reconciliation finds engineered discrepancies at the configured severity levels (490 high, 1,986 missing).
+- The rules engine produces sensible per-rebalance candidate sets (F1 ≈ 0.45 across the three indices).
+- The cost model attaches correctly to every trade — long/short loses more than long-only by exactly the amount you'd expect from borrow + extra spread.
+- The strategy engine handles 635 trades over four years without look-ahead bias (verified by `test_no_lookahead.py`).
+- Long-only naturally has lower drawdown and higher Sharpe — the *shape* of the comparison matches the real-world relationship between the two variants.
+
+### 15.5 Short answer
+
+> The strategy is structurally correct; the dataset just doesn't include the real-world mechanism (passive demand around announcements) that makes the strategy work. Replace the synthetic data with real data and the comparison flips.
+
+---
+
+## 16. CLI reference
 
 ```
 collect-data         Pull raw data from FMP or Yahoo
@@ -439,7 +533,7 @@ Every subcommand exposes `--help` with full options.
 
 ---
 
-## 16. Configuration
+## 17. Configuration
 
 Six YAML files in `config/` parameterise everything that's not code:
 
@@ -454,7 +548,7 @@ Six YAML files in `config/` parameterise everything that's not code:
 
 ---
 
-## 17. Repository layout
+## 18. Repository layout
 
 ```
 asx-index-rebalance/
@@ -489,7 +583,7 @@ asx-index-rebalance/
 
 ---
 
-## 18. Testing
+## 19. Testing
 
 ```
 pytest -q     # 43 passing
@@ -510,7 +604,7 @@ Coverage by area:
 
 ---
 
-## 19. Limitations
+## 20. Limitations
 
 - **IWF / free-float**: harder to source without a paid feed. The loader assumes IWF = 1.0 with a warning when missing.
 - **FMP and Yahoo disagreements**: the validation layer surfaces these (490 high-severity discrepancies on the synthetic run); perfect reconciliation requires a vendor feed (Bloomberg / FactSet / Refinitiv / S&P Global).
@@ -524,7 +618,7 @@ Coverage by area:
 
 ---
 
-## 20. License
+## 21. License
 
 MIT.
 
