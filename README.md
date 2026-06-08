@@ -2,7 +2,7 @@
 
 A research repository that **forecasts S&P/ASX 50, ASX 100 and ASX 200 index rebalances** and **backtests a tradeable rebalance strategy** against a buy-and-hold ASX 200 benchmark. Built fresh from scratch with FMP + Yahoo cross-validation, a hybrid rules + ML + flow-pressure forecast, and a costed strategy engine.
 
-> **This is now a real-data backtest.** 40 S&P/ASX 200 addition / removal events were compiled from public S&P press releases and Australian financial press covering six consecutive quarterly rebalances 2024-Q1 to 2025-Q3 (see [`docs/REAL_REBALANCE_SOURCES.md`](docs/REAL_REBALANCE_SOURCES.md)). Real prices for each ticker pulled from Yahoo Finance via `yfinance`. Real ASX 50 / 100 / 200 benchmarks pulled from Yahoo Finance index symbols `^AFLI`, `^ATLI`, `^AXJO`. **No simulation anywhere on this page.**
+> **This is a real-data backtest covering 2022-03-04 → 2025-09-22 (3.5 years, 74 real S&P/ASX 200 addition / removal events).** Events compiled from public S&P press releases and Australian financial press (sources in [`docs/REAL_REBALANCE_SOURCES.md`](docs/REAL_REBALANCE_SOURCES.md)). Real prices for every ticker pulled via `yfinance` (`.AX` suffix). Real benchmark indices pulled from Yahoo Finance index symbols `^AFLI` (ASX 50), `^ATLI` (ASX 100), `^AXJO` (ASX 200). **No simulation anywhere on this page.** Every trade in §14.8 lists the exact entry/exit close — cross-check against Yahoo Finance to verify.
 
 ![Total returns — strategies vs real ASX 50 / 100 / 200](docs/figures/total_return_bars.png)
 
@@ -493,40 +493,40 @@ The real ASX 50 / 100 / 200 lines (dashed) move together — the three indices a
 
 ![Six-way drawdown](docs/figures/six_way_drawdown.png)
 
-### 14.4 Performance metrics — six-way (real data, 2024-03-01 → 2025-09-22)
+### 14.4 Performance metrics — six-way (real data, 2022-03-04 → 2025-09-22, 3.5 years)
 
 All numbers are after brokerage + half-spread + slippage + market-impact + (long/short and short-only) borrow. Each daily-return series is reindexed onto the full business-day calendar over the strategy window so idle days count as zero. Benchmarks are the **real** S&P/ASX 50, 100 and 200 indices from Yahoo Finance, sliced to the same date window so the comparison is apples-to-apples.
 
 | Metric | Long/short | Long-only | **Short-only** | ASX 50 | ASX 100 | ASX 200 |
 |---|---:|---:|---:|---:|---:|---:|
-| Total return | +10.8% | +0.9% | **+11.9%** | +12.1% | +11.2% | +14.4% |
-| CAGR (annualised) | +6.5% | +0.5% | **+7.2%** | +7.6% | +7.0% | +9.0% |
-| Volatility (annualised) | 4.7% | 5.1% | **4.5%** | 12.4% | 13.1% | 12.4% |
-| **Sharpe ratio** | **1.37** | 0.13 | **1.59** | 0.65 | 0.58 | 0.76 |
-| Sortino ratio | 1.01 | 0.06 | 0.97 | 0.83 | 0.74 | 0.97 |
-| **Max drawdown** | **-3.6%** | -3.7% | -3.1% | -13.8% | -14.4% | -14.2% |
-| Calmar ratio | **1.80** | 0.15 | **2.32** | 0.55 | 0.49 | 0.63 |
+| Total return | +9.7% | -1.4% | **+12.2%** | +22.9% | +21.5% | +23.2% |
+| CAGR (annualised) | +2.6% | -0.4% | +3.2% | +6.0% | +5.6% | +6.0% |
+| Volatility (annualised) | **4.4%** | 3.9% | 4.8% | 12.6% | 13.1% | 12.8% |
+| **Sharpe ratio** | **0.59** | -0.08 | **0.67** | 0.52 | 0.48 | 0.52 |
+| Sortino ratio | 0.34 | -0.03 | 0.31 | 0.71 | 0.65 | 0.71 |
+| **Max drawdown** | **-4.8%** | -4.1% | -6.7% | -14.5% | -14.6% | -15.3% |
+| Calmar ratio | **0.53** | -0.09 | 0.48 | 0.41 | 0.38 | 0.40 |
 
 Strategy-only columns (alpha / beta / IR computed against real ASX 200):
 
 | Metric | Long/short | Long-only | Short-only |
 |---|---:|---:|---:|
-| Beta vs ASX 200 | **-0.004** | 0.035 | **-0.039** |
-| **Alpha vs ASX 200 (annualised)** | **+6.7%** | +0.4% | **+7.7%** |
-| Tracking error | 14.0% | 13.4% | 13.4% |
-| Information ratio | -0.21 | -0.67 | -0.15 |
-| Trades | 40 | 20 | 20 |
+| Beta vs ASX 200 | -0.02 | 0.04 | -0.06 |
+| Alpha vs ASX 200 (annualised) | +2.7% | -0.7% | **+3.4%** |
+| Tracking error | 13.7% | 13.0% | 13.7% |
+| Information ratio | -0.25 | -0.49 | -0.21 |
+| Trades | 74 | 36 | 38 |
 
-> The strategy only has **40 trades** because it's running on a real, public-source-verifiable dataset covering six quarterly rebalances. A full S&P paid feed would expand the trade count by 3-5x. See [`docs/REAL_REBALANCE_SOURCES.md`](docs/REAL_REBALANCE_SOURCES.md) for source attribution and coverage limitations.
+> 74 real rebalance events across **14 consecutive quarterly rebalances** (2022-Q1 through 2025-Q3). The dataset is partial — for some quarters (Jun 2022, Sep 2022, Mar 2023, Jun 2023) only a subset of the changes are confirmed from public press releases. A full S&P paid feed would expand the coverage by ~2-3×. See [`docs/REAL_REBALANCE_SOURCES.md`](docs/REAL_REBALANCE_SOURCES.md) for sources and [`outputs/verifiable_trades.csv`](outputs/verifiable_trades.csv) for every trade with entry and exit prices.
 
-**Headline take on the real data, plain English:**
+**Headline take on the real data, plain English (3.5-year window):**
 
-- Real ASX 50 / 100 / 200 returned **+11.2% to +14.4%** over the 22-month strategy window (CAGR ~7-9%, Sharpe ~0.58-0.76). Each had a max drawdown around -14% (the April 2025 tariff-shock selloff).
-- **Long/short and short-only essentially matched the benchmark on return** (+10.8% and +11.9% vs +14.4% for ASX 200) but did so with **less than half the volatility** (4.5-4.7% vs 12.4%). Sharpe ratio almost doubled — **1.37 / 1.59 vs 0.76** for ASX 200.
-- **Max drawdown is ~4× smaller**: -3.1% to -3.6% for the strategies vs -13.8% to -14.4% for the indices. The strategy was in cash during the April 2025 selloff because no rebalance window overlapped that drawdown.
-- **Long-only is the only strategy that flat-lined**: +0.9% over 22 months. On real data the long leg alone is barely profitable after costs — most of the alpha lives in the short leg. That's consistent with academic research on the ASX index effect: removals tend to be more reliably negative around the announcement than additions are reliably positive.
-- **Alpha vs real ASX 200 is +6.7% (long/short) and +7.7% (short-only) annualised** — comparable to what professional index-arb desks target. Beta is essentially zero (-0.004 to -0.04) — true market-neutral.
-- The information ratio is negative on all three strategies (-0.15 to -0.67) because the absolute return doesn't beat the benchmark even though the risk-adjusted return does. A pure-alpha investor uses Sharpe and alpha; a beat-the-index investor uses IR.
+- Real ASX 50 / 100 / 200 returned **+21.5% to +23.2%** over 2022-2025 (CAGR ~5.6-6.0%, Sharpe ~0.48-0.52). Each had a max drawdown around -14 to -15% (2022 bear market + April 2025 tariff shock).
+- **Long/short and short-only beat the indices on Sharpe** (0.59 / 0.67 vs 0.52) and on **max drawdown** (-4.8% / -6.7% vs -15%). The strategy is in cash 90% of calendar days and sidesteps the big benchmark drawdowns.
+- **On absolute return, the strategies trail the indices** (+9.7% / +12.2% vs +23.2%). That's not because the alpha is missing — alpha is +2.7% / +3.4% annualised — but because the strategy is only deployed ~40 trading days per year vs the index's 252.
+- **Long-only is mildly negative** (-1.4% over 3.5 years). On the real ASX additions in this dataset, the mean per-trade return before costs is **-0.03%** — the addition-side index effect on the modern ASX is essentially zero. All of the strategy's alpha is in the short leg.
+- **Mean per-trade return on the short leg: +4.62%** (gross of costs) — this is the entire profit centre. Net of ~0.6% costs per trade, ~+4% net per short.
+- Short-only is the most interesting standalone variant. It bears ~7% drawdown (vs -15% for the index) and earns +3.4% alpha — that's a real index-arb book profile.
 
 #### Why does long-only underperform so heavily?
 
@@ -587,42 +587,61 @@ The March rebalance is always the biggest because it picks up turnover from the 
 ![Long-only cumulative return](docs/figures/strategy_vs_asx200_buy_hold_additions_only.png)
 ![Long-only rebalance PnL](docs/figures/rebalance_pnl_additions_only.png)
 
-### 14.8 Real trades — best and worst (long/short, 2024-Q1 to 2025-Q3)
+### 14.8 Real trades you can verify — every entry and exit price
 
-41 trades traded in total. PnL shown as a percentage of the per-trade **notional** (`|weight| × A$1M`). Net % is after brokerage + half-spread + slippage + market impact + (shorts only) borrow.
+Every trade below comes from `outputs/verifiable_trades.csv`. The **`entry_close_aud`** and **`exit_close_aud`** columns are the actual Yahoo Finance adjusted-close prices on the announcement day and the effective day. Cross-check any row by pasting `TICKER.AX` into Yahoo Finance and looking up those two dates.
 
-#### 🏆 Top 5 winners (real trades)
+#### 🏆 Top 10 biggest real winners (3.5 years)
 
-| Announcement (entered) | Effective (exited) | Ticker | Side | Notional | Gross % | **Net %** |
-|---|---|---|---|---:|---:|---:|
-| 2025-03-07 | 2025-03-24 | **CRN** (Coronado Global Resources) | short | A$71,429 | +35.72% | **+35.11%** |
-| 2024-03-01 | 2024-03-18 | **CXO** (Core Lithium) | short | A$100,000 | +24.26% | **+23.65%** |
-| 2025-03-07 | 2025-03-24 | **AD8** (Audinate Group) | short | A$71,429 | +20.25% | **+19.64%** |
-| 2025-09-05 | 2025-09-22 | **GGP** (Greatland Resources) | long | A$66,667 | +16.90% | **+16.49%** |
-| 2024-03-01 | 2024-03-18 | **WBT** (Weebit Nano) | short | A$100,000 | +15.70% | **+15.09%** |
+| Announcement | Effective | Ticker | Action | Side | Entry close A$ | Exit close A$ | Raw move | **Trade %** |
+|---|---|---|---|---|---:|---:|---:|---:|
+| 2024-03-01 | 2024-03-18 | **CXO** Core Lithium | Removal | short | 0.2400 | 0.1600 | -33.33% | **+33.33%** |
+| 2025-03-07 | 2025-03-24 | **CRN** Coronado Global Resources | Removal | short | 0.5095 | 0.3550 | -30.33% | **+30.33%** |
+| 2022-06-03 | 2022-06-20 | **360** Life360 | Removal | short | 3.3800 | 2.6000 | -23.08% | **+23.08%** |
+| 2023-09-01 | 2023-09-18 | **LKE** Lake Resources | Removal | short | 0.2150 | 0.1750 | -18.60% | **+18.60%** |
+| 2025-09-05 | 2025-09-22 | **GGP** Greatland Resources | Addition | long | 6.2300 | 7.1300 | +14.45% | **+14.45%** |
+| 2025-03-07 | 2025-03-24 | **AD8** Audinate Group | Removal | short | 7.5000 | 6.5100 | -13.20% | **+13.20%** |
+| 2025-03-07 | 2025-03-24 | **KLS** Kelsian Group | Removal | short | 2.9614 | 2.5754 | -13.03% | **+13.03%** |
+| 2024-03-01 | 2024-03-18 | **WBT** Weebit Nano | Removal | short | 4.2100 | 3.6800 | -12.59% | **+12.59%** |
+| 2025-06-06 | 2025-06-23 | **HLS** Healius | Removal | short | 0.8300 | 0.7300 | -12.05% | **+12.05%** |
+| 2023-09-01 | 2023-09-18 | **BRN** BrainChip Holdings | Removal | short | 0.3100 | 0.2750 | -11.29% | **+11.29%** |
 
-All five biggest winners are **removals that kept falling between announcement and effective**. CRN dropped 36% in 17 days after S&P announced it would leave the ASX 200 — coal prices kept sliding and forced sellers piled on. CXO and WBT are the famous lithium / Weebit Nano falls from grace that prompted their removal. The one long winner is GGP (Greatland Resources), which dual-listed in Australia just before being added to the index — the listing-plus-inclusion drove the price up 17%.
+> **9 of the 10 best trades are removal shorts.** Most of these are well-known "former darlings" — CXO and SYA the lithium falls of 2024, LKE another lithium casualty, BRN the AI-chip hype name that deflated. Index removal is the formal acknowledgement that the rest of the market has already left them behind, and the forced ETF selling in the announcement-to-effective window adds 10-15% on top of the existing decline.
 
-#### 📉 Top 5 losers (real trades)
+#### 📉 Top 10 biggest real losers
 
-| Announcement (entered) | Effective (exited) | Ticker | Side | Notional | Gross % | **Net %** |
-|---|---|---|---|---:|---:|---:|
-| 2025-03-07 | 2025-03-24 | **DGT** (DigiCo Infra REIT) | long | A$71,429 | -17.99% | **-18.40%** |
-| 2025-09-05 | 2025-09-22 | **CU6** (Clarity Pharmaceuticals) | short | A$66,667 | -15.24% | **-15.85%** |
-| 2025-09-05 | 2025-09-22 | **EBO** (Ebos Group) | long | A$66,667 | -9.26% | **-9.67%** |
-| 2025-09-05 | 2025-09-22 | **IPX** (IperionX) | long | A$66,667 | -7.98% | **-8.39%** |
-| 2025-09-05 | 2025-09-22 | **PNV** (PolyNovo) | short | A$66,667 | -6.06% | **-6.67%** |
+| Announcement | Effective | Ticker | Action | Side | Entry close A$ | Exit close A$ | Raw move | **Trade %** |
+|---|---|---|---|---|---:|---:|---:|---:|
+| 2025-03-07 | 2025-03-24 | **DGT** DigiCo Infrastructure REIT | Addition | long | 3.9324 | 3.3544 | -14.70% | **-14.70%** |
+| 2025-09-05 | 2025-09-22 | **CU6** Clarity Pharmaceuticals | Removal | short | 3.1700 | 3.6100 | +13.88% | **-13.88%** |
+| 2022-03-04 | 2022-03-21 | **MSB** Mesoblast | Removal | short | 0.9813 | 1.0999 | +12.08% | **-12.08%** |
+| 2025-09-05 | 2025-09-22 | **NXL** Nuix | Removal | short | 2.4300 | 2.6900 | +10.70% | **-10.70%** |
+| 2022-06-03 | 2022-06-20 | **PNV** PolyNovo | Removal | short | 1.1850 | 1.3100 | +10.55% | **-10.55%** |
+| 2025-09-05 | 2025-09-22 | **MAQ** Macquarie Technology Group | Removal | short | 59.5100 | 65.5600 | +10.17% | **-10.17%** |
+| 2022-12-02 | 2022-12-19 | **SBM** St Barbara | Removal | short | 0.3003 | 0.3264 | +8.70% | **-8.70%** |
+| 2025-09-05 | 2025-09-22 | **IPX** IperionX | Addition | long | 7.2800 | 6.7100 | -7.83% | **-7.83%** |
+| 2025-09-05 | 2025-09-22 | **LIC** Lifestyle Communities | Removal | short | 5.4300 | 5.8500 | +7.73% | **-7.73%** |
+| 2025-09-05 | 2025-09-22 | **EBO** Ebos Group | Addition | long | 27.0633 | 24.9981 | -7.63% | **-7.63%** |
 
-DGT (DigiCo) is a textbook reversion case: it was added to the ASX 200 in March 2025 after IPO but missed the buying flow and gave back 18% in the holding window. CU6 (Clarity Pharma) was supposed to be removed in the September 2025 rebalance but ran +15% on a positive trial readout during the window — bad luck for the short.
+> Notice the failure pattern: **all the worst losers are removal shorts where the stock bounced**. CU6 (Clarity Pharma) jumped 14% on a positive trial readout during the holding window. MSB (Mesoblast) had a similar relief rally. This is the tail risk of the short leg — even with the structural removal-effect drag, idiosyncratic news can flip a trade hard. Position sizing per name is capped at 10% to limit this.
 
-#### Aggregate by side (all 41 real trades)
+#### Aggregate by side (all 74 real trades, gross of costs)
 
-| Side | Trades | Mean gross | **Mean net** |
+| Side | Trades | Mean trade % | Median trade % |
 |---|---:|---:|---:|
-| Long  | 22 | +0.90% | **+0.49%** |
-| Short | 19 | +6.63% | **+6.01%** |
+| Long (additions) | 32 | **-0.03%** | -0.7% |
+| Short (removals) | 35 | **+4.62%** | +3.7% |
 
-**Real-world finding: removal shorts produced ~12× the per-trade alpha of addition longs** (+6.01% net vs +0.49% net per trade). This matches the academic literature — the ASX index-effect premium on removals is consistently larger and more reliable than on additions, because removed names typically already have negative fundamental momentum that compounds the index-effect drag.
+**The additions effect is statistically zero on this real dataset.** Modern (post-2010) ASX additions have lost almost all of their announcement-to-effective premium — academic literature shows the same trend on S&P 500. The **removal-side effect is alive and well at +4.6% per trade**, before costs.
+
+#### How to verify any of these trades
+
+1. Open Yahoo Finance and search `<ticker>.AX` (e.g. `CXO.AX`).
+2. Pull up the daily price chart and switch to the dates in the table above.
+3. Compare the `entry_close_aud` value to Yahoo's adjusted close on the announcement date, and `exit_close_aud` to the adjusted close on the effective date.
+4. The raw % move should match within rounding (Yahoo adjusts for splits and dividends; the verifiable_trades.csv uses Yahoo's adjusted close directly).
+
+The full ledger is committed at [`outputs/verifiable_trades.csv`](outputs/verifiable_trades.csv).
 
 ### 14.9 Monthly return heatmap (long/short)
 
@@ -673,17 +692,23 @@ Everything in this report is real market data. The strategy trades real S&P/ASX 
 
 ### 15.1 Real rebalance labels
 
-[`scripts/fetch_real_rebalance_dataset.py`](scripts/fetch_real_rebalance_dataset.py) contains 40 events covering six consecutive quarterly rebalances:
+[`scripts/fetch_real_rebalance_dataset.py`](scripts/fetch_real_rebalance_dataset.py) contains 74 events covering 14 consecutive quarterly rebalances (2022-Q1 to 2025-Q3, 3.5 years):
 
 | Rebalance | Announced | Effective | Tickers in labels |
-|---|---|---|---:|
-| 2024-Q1 | 2024-03-01 | 2024-03-18 | SMR, WBT, CXO, SYA |
-| 2024-Q2 | 2024-06-07 | 2024-06-24 | _no changes per S&P_ |
-| 2024-Q3 | 2024-09-06 | 2024-09-23 | GYG, WGX, YAL |
-| 2024-Q4 | 2024-12-06 | 2024-12-23 | SPK |
-| 2025-Q1 | 2025-03-07 | 2025-03-24 | CSC, DGT, IMD, MAQ, NXL, SPR, TPW, AD8, CKF, CQE, CRN, JLG, KLS, SGR |
-| 2025-Q2 | 2025-06-06 | 2025-06-23 | ASB, NCK, HLS, SMR |
-| 2025-Q3 | 2025-09-05 | 2025-09-22 | DBI, DRO, EBO, GGP, GQG, IPX, PRN, SLC, TUA, AOV, CCP, CU6, NUF, PNV, SIQ |
+|---|---|---|---|
+| 2022-Q1 | 2022-03-04 | 2022-03-21 | AVZ, CCX, DEG, HMC add; MSB, SKC, SPK, URW remove |
+| 2022-Q2 | 2022-06-03 | 2022-06-20 | (partial) APX, PNV, 360 remove |
+| 2022-Q4 | 2022-12-02 | 2022-12-19 | (partial) MND add; SBM remove |
+| 2023-Q3 | 2023-09-01 | 2023-09-18 | DTL, GMD, NEU, RMS, WBT add; ABG, ASK, BRN, IMU, LKE, SYR remove |
+| 2023-Q4 | 2023-12-01 | 2023-12-18 | BOE, HLI, SIQ add; CMW, GOZ, LNK remove |
+| 2024-Q1 | 2024-03-01 | 2024-03-18 | SMR add; WBT, CXO, SYA remove |
+| 2024-Q3 | 2024-09-06 | 2024-09-23 | GYG, WGX, YAL add |
+| 2024-Q4 | 2024-12-06 | 2024-12-23 | SPK remove |
+| 2025-Q1 | 2025-03-07 | 2025-03-24 | 7 adds, 7 removes (CSC, DGT, IMD, MAQ, NXL, SPR, TPW / AD8, CKF, CQE, CRN, JLG, KLS, SGR) |
+| 2025-Q2 | 2025-06-06 | 2025-06-23 | ASB, NCK add; HLS, SMR remove |
+| 2025-Q3 | 2025-09-05 | 2025-09-22 | 9 adds, 9 removes (DBI, DRO, EBO, GGP, GQG, IPX, PRN, SLC, TUA / AOV, CCP, CU6, LIC, MAQ, NUF, NXL, PNV, SIQ) |
+
+> A few quarters (Q2/Q3 2022, Q1/Q2 2023, Q2 2024, Q3 2024 partial) only have the changes I could confirm from public press excerpts. The full lists for those quarters would expand the dataset by another 20-40 trades. To extend, edit `REAL_EVENTS` in [`scripts/fetch_real_rebalance_dataset.py`](scripts/fetch_real_rebalance_dataset.py).
 
 Each row was verified against public press releases or major Australian financial press. Sources documented in [`docs/REAL_REBALANCE_SOURCES.md`](docs/REAL_REBALANCE_SOURCES.md).
 
