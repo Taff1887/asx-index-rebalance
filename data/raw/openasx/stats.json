@@ -1,0 +1,27 @@
+{
+  "total_dates": 28,
+  "date_range": {
+    "start": "2008-07-18",
+    "end": "2025-09-26"
+  },
+  "total_unique_tickers": 583,
+  "sectors": [
+    "Telecommunication Services",
+    "",
+    "Health Care",
+    "Energy",
+    "Industrials",
+    "Utilities",
+    "Materials",
+    "Financials",
+    "Property Trusts",
+    "Unassigned",
+    "Financial-X-Property Trusts",
+    "Communication Services",
+    "Information Technology",
+    "Consumer Staples",
+    "Real Estate",
+    "Consumer Discretionary",
+    "Healthcare"
+  ]
+}
