@@ -162,6 +162,26 @@ announcement_date,effective_date,index,action,ticker,company_name
 2019-09-06,2019-09-23,ASX200,Removal,EHL,Emeco Holdings Limited
 2019-09-06,2019-09-23,ASX200,Removal,PGH,Pact Group Holdings Ltd
 2019-09-06,2019-09-23,ASX200,Removal,SIG,Sigma Healthcare Limited
+2020-09-04,2020-09-21,ALLAUS200,Addition,KGN,Kogan.Com Ltd
+2020-09-04,2020-09-21,ALLAUS200,Addition,Z1P,Zip Co Limited
+2020-09-04,2020-09-21,ALLAUS200,Removal,HSN,Hansen Technologies Limited
+2020-09-04,2020-09-21,ALLAUS200,Removal,JIN,Jumbo Interactive Limited
+2020-09-04,2020-09-21,ALLTECH,Addition,BRN,Brainchip Holdings Ltd
+2020-09-04,2020-09-21,ALLTECH,Addition,DDR,Dicker Data Limited
+2020-09-04,2020-09-21,ALLTECH,Addition,EVS,Envirosuite Limited
+2020-09-04,2020-09-21,ALLTECH,Addition,M7T,Mach7 Technologies Limited
+2020-09-04,2020-09-21,ALLTECH,Addition,NVX,Novonix Limited
+2020-09-04,2020-09-21,ALLTECH,Addition,SPT,Splitit Payments Ltd
+2020-09-04,2020-09-21,ALLTECH,Addition,SZL,Sezzle Inc.
+2020-09-04,2020-09-21,ALLTECH,Addition,WSP,Whispir Limited
+2020-09-04,2020-09-21,ASX100,Addition,APX,Appen Limited
+2020-09-04,2020-09-21,ASX100,Addition,FPH,Fisher & Paykel Healthcare Corporation Limited
+2020-09-04,2020-09-21,ASX100,Removal,CIM,Cimic Group Limited
+2020-09-04,2020-09-21,ASX100,Removal,VUK,Virgin Money Uk PLC
+2020-09-04,2020-09-21,ASX20,Addition,COL,Coles Group Limited
+2020-09-04,2020-09-21,ASX20,Addition,FMG,Fortescue Metals Group Ltd
+2020-09-04,2020-09-21,ASX20,Removal,SCG,Scentre Group
+2020-09-04,2020-09-21,ASX20,Removal,SUN,Suncorp Group Limited
 2020-09-04,2020-09-21,ASX200,Addition,AIA,Auckland International Airport Limited
 2020-09-04,2020-09-21,ASX200,Addition,AUB,AUB Group Limited
 2020-09-04,2020-09-21,ASX200,Addition,RMS,Ramelius Resources Limited
@@ -172,6 +192,19 @@ announcement_date,effective_date,index,action,ticker,company_name
 2020-09-04,2020-09-21,ASX200,Removal,OML,Ooh!Media Limited
 2020-09-04,2020-09-21,ASX200,Removal,ORE,Orocobre Limited
 2020-09-04,2020-09-21,ASX200,Removal,SXL,Southern Cross Media Group Limited
+2020-09-04,2020-09-21,ASX300,Addition,ALK,Alkane Resources Limited
+2020-09-04,2020-09-21,ASX300,Addition,CMM,Capricorn Metals Ltd
+2020-09-04,2020-09-21,ASX300,Addition,DDR,Dicker Data Limited
+2020-09-04,2020-09-21,ASX300,Addition,DEG,De Grey Mining Limited
+2020-09-04,2020-09-21,ASX300,Addition,EVT,Event Hospitality and Entertainment Ltd
+2020-09-04,2020-09-21,ASX300,Addition,REH,Reece Limited
+2020-09-04,2020-09-21,ASX300,Addition,TPW,Temple & Webster Group Ltd
+2020-09-04,2020-09-21,ASX300,Removal,FAR,FAR Limited
+2020-09-04,2020-09-21,ASX300,Removal,IGL,Ive Group Limited
+2020-09-04,2020-09-21,ASX300,Removal,JHC,Japara Healthcare Limited
+2020-09-04,2020-09-21,ASX300,Removal,MYR,Myer Holdings Limited
+2020-09-04,2020-09-21,ASX300,Removal,REG,Regis Healthcare Limited
+2020-09-04,2020-09-21,ASX300,Removal,SGF,SG Fleet Group Limited
 2021-09-03,2021-09-20,ASX200,Addition,LIC,Lifestyle Communities Limited
 2021-09-03,2021-09-20,ASX200,Addition,PNI,Pinnacle Investment Management Group Limited
 2021-09-03,2021-09-20,ASX200,Addition,SLK,Sealink Travel Group Limited

@@ -24,12 +24,19 @@ def first_friday(year: int, month: int) -> date:
 
 
 def main() -> None:
+    # Announcement dates vary across years: usually first or second Friday of
+    # the rebalance month, sometimes Wednesday/Thursday. Probe ALL Fridays
+    # and weekdays in the first half of each rebalance month.
     candidates: list[date] = []
-    for year in range(2009, 2026):
+    for year in range(2009, 2027):
         for month in (3, 6, 9, 12):
-            candidates.append(first_friday(year, month))
+            ff = first_friday(year, month)
+            # Try first Friday, +/- 1 day, +1 week, +2 weeks.
+            for offset in (-1, 0, 1, 7, 8, 14):
+                candidates.append(ff + timedelta(days=offset))
 
     hits, misses = [], []
+    seen_eff = set()
     for d in candidates:
         ymd = d.strftime("%Y%m%d")
         # Try a few naming variants the site has used over time.
@@ -51,6 +58,9 @@ def main() -> None:
                 continue
             if r.status_code == 200 and len(r.content) > 5000:
                 target = OUT / f"{ymd}-asx200-rebalance.pdf"
+                if target.exists() and target.stat().st_size == len(r.content):
+                    got = True
+                    break
                 target.write_bytes(r.content)
                 hits.append((str(d), len(r.content), v))
                 print(f"  OK  {d}  {v}  ({len(r.content):,} bytes)")
