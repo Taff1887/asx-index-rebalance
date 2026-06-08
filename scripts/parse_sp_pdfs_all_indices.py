@@ -22,7 +22,7 @@ import pypdf
 
 from asxrebalance.paths import OUTPUTS_DIR, PROCESSED_LABELS_DIR, REPO_ROOT
 
-PDF_DIR = REPO_ROOT / "data" / "raw" / "marketindex"
+PDF_DIR = REPO_ROOT / "data" / "raw" / "marketindex" / "multi"
 
 # Header dates
 ANNOUNCEMENT_RE = re.compile(
@@ -42,16 +42,23 @@ EFFECTIVE_RE = re.compile(
     re.IGNORECASE,
 )
 
-# Section header: "S&P/ASX <N> Index – Effective ... on Month Day, Year"
-# Captures the index name and the effective date inside that section header.
+# Section header: "S&P/ASX <N> Index – ..." (rest of line varies year to year).
+# Some headers carry "Effective ... on Month Day, Year", some carry
+# "Month Day, Year After Market Close", some say "No Change". We capture
+# the index name; the date is extracted with a separate regex on the
+# header text if present.
 INDEX_HEADER_RE = re.compile(
-    r"S&P/ASX\s*(?P<idx>20|50|100|200|300|All\s+Australian\s+\d+|All\s+Technology|All\s+Ordinaries)"
-    r"\s*(?:Index)?\s*[\-–—]\s*"
-    r"(?:Effective[^\n]*?(?:on\s+(?:\w+,\s*)?|after[^,]*?on\s+)"
-    r"(?P<month>January|February|March|April|May|June|July|August|September|October|November|December|"
+    r"S&P/ASX\s*(?P<idx>300|200|100|50|20|All\s+Australian\s+200|All\s+Australian\s+50|"
+    r"All\s+Technology|All\s+Ordinaries)\b"
+    r"\s*Index\s*[^\w\s][\s]*(?P<rest>[^\n]*)",
+    re.IGNORECASE,
+)
+
+# Pull a date out of a section header line.
+SECTION_DATE_RE = re.compile(
+    r"(January|February|March|April|May|June|July|August|September|October|November|December|"
     r"Jan\.?|Feb\.?|Mar\.?|Apr\.?|May\.?|Jun\.?|Jul\.?|Aug\.?|Sep\.?|Oct\.?|Nov\.?|Dec\.?)"
-    r"\s+(?P<day>\d{1,2}),?\s*(?P<year>\d{4})"
-    r"|No\s+Change)",
+    r"\s+(\d{1,2}),?\s*(\d{4})",
     re.IGNORECASE,
 )
 
@@ -137,8 +144,10 @@ def parse_pdf(path: Path) -> dict:
 
         # Section-specific effective date (preferred), falling back to header.
         section_eff = default_eff
-        if h.group("month") and h.group("day") and h.group("year"):
-            section_eff = _parse_date(h.group("month"), h.group("day"), h.group("year"))
+        rest = h.group("rest") or ""
+        date_m = SECTION_DATE_RE.search(rest)
+        if date_m:
+            section_eff = _parse_date(date_m.group(1), date_m.group(2), date_m.group(3))
 
         if section_eff is None:
             continue
@@ -171,8 +180,11 @@ def _norm_action(raw: str) -> str:
 
 
 def main() -> None:
-    pdfs = sorted(PDF_DIR.glob("*-asx200-rebalance.pdf"))
-    print(f"Parsing {len(pdfs)} PDFs...")
+    pdfs = sorted(PDF_DIR.glob("*-rebalance-*.pdf"))
+    if not pdfs:
+        # Older naming
+        pdfs = sorted(PDF_DIR.glob("*-rebalance.pdf"))
+    print(f"Parsing {len(pdfs)} PDFs from {PDF_DIR}...")
     rows = []
     report = []
     for p in pdfs:
