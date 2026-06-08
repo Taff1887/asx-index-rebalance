@@ -37,6 +37,36 @@ from asxrebalance.paths import PROCESSED_LABELS_DIR, RAW_FMP_DIR, RAW_YAHOO_DIR
 
 # (announcement_date, effective_date, index, action, ticker, company_name)
 REAL_EVENTS: list[tuple[str, str, str, str, str, str]] = [
+    # ---------- March 2019 rebalance (announced 2019-03-08, eff 2019-03-18) ---------
+    ("2019-03-08", "2019-03-18", "ASX200", "Addition", "PNI", "Pinnacle Investment Mgmt"),
+    ("2019-03-08", "2019-03-18", "ASX200", "Addition", "HUB", "HUB24"),
+    ("2019-03-08", "2019-03-18", "ASX200", "Removal",  "IFN", "Infigen Energy"),
+    ("2019-03-08", "2019-03-18", "ASX200", "Removal",  "AHG", "Automotive Holdings Group"),
+
+    # ---------- June 2019 rebalance (announced 2019-06-07, eff 2019-06-24) ----------
+    ("2019-06-07", "2019-06-24", "ASX200", "Addition", "ASB", "Austal"),
+    ("2019-06-07", "2019-06-24", "ASX200", "Addition", "CUV", "Clinuvel Pharmaceuticals"),
+    ("2019-06-07", "2019-06-24", "ASX200", "Addition", "SSM", "Service Stream"),
+    ("2019-06-07", "2019-06-24", "ASX200", "Removal",  "NVT", "Navitas"),
+    ("2019-06-07", "2019-06-24", "ASX200", "Removal",  "SWM", "Seven West Media"),
+    ("2019-06-07", "2019-06-24", "ASX200", "Removal",  "SYR", "Syrah Resources"),
+
+    # ---------- September 2019 rebalance (announced 2019-09-06, eff 2019-09-23) -----
+    # Additions confirmed; removals not published in the press excerpts I could verify.
+    ("2019-09-06", "2019-09-23", "ASX200", "Addition", "CKF", "Collins Foods"),
+    ("2019-09-06", "2019-09-23", "ASX200", "Addition", "GOR", "Gold Road Resources"),
+    ("2019-09-06", "2019-09-23", "ASX200", "Addition", "JIN", "Jumbo Interactive"),
+    ("2019-09-06", "2019-09-23", "ASX200", "Addition", "NWL", "Netwealth Group"),
+    ("2019-09-06", "2019-09-23", "ASX200", "Addition", "PNV", "PolyNovo"),
+    ("2019-09-06", "2019-09-23", "ASX200", "Addition", "SLR", "Silver Lake Resources"),
+
+    # ---------- December 2020 rebalance (announced 2020-12-04, eff 2020-12-21) ------
+    ("2020-12-04", "2020-12-21", "ASX200", "Addition", "KGN", "Kogan.com"),
+    ("2020-12-04", "2020-12-21", "ASX200", "Addition", "REH", "Reece"),
+    ("2020-12-04", "2020-12-21", "ASX200", "Removal",  "AVH", "Avita Therapeutics"),
+    ("2020-12-04", "2020-12-21", "ASX200", "Removal",  "COE", "Cooper Energy"),
+    ("2020-12-04", "2020-12-21", "ASX200", "Removal",  "WSA", "Western Areas"),
+
     # ---------- March 2022 rebalance (announced 2022-03-04, eff 2022-03-21) ----------
     ("2022-03-04", "2022-03-21", "ASX200", "Addition", "AVZ", "AVZ Minerals"),
     ("2022-03-04", "2022-03-21", "ASX200", "Addition", "CCX", "City Chic Collective"),
