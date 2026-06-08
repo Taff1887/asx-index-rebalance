@@ -67,6 +67,32 @@ REAL_EVENTS: list[tuple[str, str, str, str, str, str]] = [
     ("2020-12-04", "2020-12-21", "ASX200", "Removal",  "COE", "Cooper Energy"),
     ("2020-12-04", "2020-12-21", "ASX200", "Removal",  "WSA", "Western Areas"),
 
+    # ---------- March 2021 rebalance (announced 2021-03-05, eff 2021-03-22) ---------
+    ("2021-03-05", "2021-03-22", "ASX200", "Addition", "CIA", "Champion Iron"),
+    ("2021-03-05", "2021-03-22", "ASX200", "Addition", "NIC", "Nickel Mines"),
+    ("2021-03-05", "2021-03-22", "ASX200", "Addition", "PLS", "Pilbara Minerals"),
+
+    # ---------- June 2021 rebalance (announced 2021-06-04, eff 2021-06-21) ----------
+    ("2021-06-04", "2021-06-21", "ASX200", "Addition", "CHN", "Chalice Mining"),
+    ("2021-06-04", "2021-06-21", "ASX200", "Addition", "ORE", "Orocobre"),
+    ("2021-06-04", "2021-06-21", "ASX200", "Addition", "UWL", "Uniti Group"),
+    ("2021-06-04", "2021-06-21", "ASX200", "Removal",  "ASB", "Austal"),
+    ("2021-06-04", "2021-06-21", "ASX200", "Removal",  "PRN", "Perenti"),
+    ("2021-06-04", "2021-06-21", "ASX200", "Removal",  "RSG", "Resolute Mining"),
+
+    # ---------- September 2021 rebalance (announced 2021-09-03, eff 2021-09-20) -----
+    ("2021-09-03", "2021-09-20", "ASX200", "Addition", "LIC", "Lifestyle Communities"),
+    ("2021-09-03", "2021-09-20", "ASX200", "Addition", "PNI", "Pinnacle Investment Mgmt"),
+    ("2021-09-03", "2021-09-20", "ASX200", "Addition", "SLK", "Sealink Travel Group"),
+    ("2021-09-03", "2021-09-20", "ASX200", "Addition", "TYR", "Tyro Payments"),
+    ("2021-09-03", "2021-09-20", "ASX200", "Removal",  "GEM", "G8 Education"),
+    ("2021-09-03", "2021-09-20", "ASX200", "Removal",  "NWH", "NRW Holdings"),
+    ("2021-09-03", "2021-09-20", "ASX200", "Removal",  "NXL", "Nuix"),
+    ("2021-09-03", "2021-09-20", "ASX200", "Removal",  "WGX", "Westgold Resources"),
+
+    # ---------- December 2021 rebalance (announced 2021-12-03, eff 2021-12-20) ------
+    ("2021-12-03", "2021-12-20", "ASX200", "Addition", "360", "Life360"),
+
     # ---------- March 2022 rebalance (announced 2022-03-04, eff 2022-03-21) ----------
     ("2022-03-04", "2022-03-21", "ASX200", "Addition", "AVZ", "AVZ Minerals"),
     ("2022-03-04", "2022-03-21", "ASX200", "Addition", "CCX", "City Chic Collective"),
@@ -83,9 +109,17 @@ REAL_EVENTS: list[tuple[str, str, str, str, str, str]] = [
     ("2022-06-03", "2022-06-20", "ASX200", "Removal",  "PNV", "PolyNovo"),
     ("2022-06-03", "2022-06-20", "ASX200", "Removal",  "360", "Life360"),
 
+    # ---------- September 2022 rebalance (announced 2022-09-02, eff 2022-09-19) -----
+    # Partial — only one confirmed addition.
+    ("2022-09-02", "2022-09-19", "ASX200", "Addition", "SYA", "Sayona Mining"),
+
     # ---------- December 2022 rebalance (announced 2022-12-02, eff 2022-12-19) ------
     ("2022-12-02", "2022-12-19", "ASX200", "Addition", "MND", "Monadelphous Group"),
     ("2022-12-02", "2022-12-19", "ASX200", "Removal",  "SBM", "St Barbara"),
+
+    # ---------- March 2023 rebalance (announced 2023-03-03, eff 2023-03-20) ---------
+    # Partial — only one confirmed removal.
+    ("2023-03-03", "2023-03-20", "ASX200", "Removal",  "NVX", "Novonix"),
 
     # ---------- September 2023 rebalance (announced 2023-09-01, eff 2023-09-18) ----
     ("2023-09-01", "2023-09-18", "ASX200", "Addition", "DTL", "Data#3"),

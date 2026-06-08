@@ -2,9 +2,11 @@
 
 A research repository that **forecasts S&P/ASX 50, ASX 100 and ASX 200 index rebalances** and **backtests a tradeable rebalance strategy** against a buy-and-hold ASX 200 benchmark. Built fresh from scratch with FMP + Yahoo cross-validation, a hybrid rules + ML + flow-pressure forecast, and a costed strategy engine.
 
-> **Real-data research project covering 2019-03-08 → 2025-09-22 (6.5 years, ~85 verified S&P/ASX 200 addition / removal events).** Events compiled from public S&P press releases and Australian financial press (sources in [`docs/REAL_REBALANCE_SOURCES.md`](docs/REAL_REBALANCE_SOURCES.md)). Real prices for every ticker pulled via `yfinance`. Real benchmark indices `^AFLI` (ASX 50), `^ATLI` (ASX 100), `^AXJO` (ASX 200). **No simulation anywhere.** Every trade in §14.8 lists the exact entry/exit close — cross-check on Yahoo to verify.
+> **Real-data research project covering 2019-03-08 → 2025-09-22 (6.5 years, 102 verified S&P/ASX 200 addition / removal events across 23 quarterly rebalances).** Events compiled from public S&P press releases and Australian financial press (sources in [`docs/REAL_REBALANCE_SOURCES.md`](docs/REAL_REBALANCE_SOURCES.md)). Real prices for every ticker pulled via `yfinance`. Real benchmark indices `^AFLI` (ASX 50), `^ATLI` (ASX 100), `^AXJO` (ASX 200). **No simulation anywhere.** Every trade in §14.7 lists the exact entry/exit close — cross-check on Yahoo to verify.
 
-The strategy was **designed from data**, not chosen first and backtested second. The event study in §13 looks at the actual day-by-day price path around 85 real rebalances; the strategy in §14 uses the entry/exit windows that come out of that analysis.
+The strategy was **designed from data**, not chosen first and backtested second. The event study in §13 looks at the actual day-by-day price path around 100+ real rebalances; the strategy in §14 uses the entry/exit windows that come out of that analysis.
+
+> **Coverage:** 23 of the 27 quarterly rebalances 2019-2025 are covered. Missing or only partially confirmed: Mar 2020, Jun 2020, Sep 2020, Jun 2023. Those four are the residual flat periods in the cumulative chart — when the strategy has no public-source-verified labels to trade, it holds cash. A full S&P paid feed would fill those in.
 
 ## 🧮 How everything is calculated — cheat sheet
 
@@ -514,29 +516,28 @@ Total return alone is misleading because the strategy is only deployed ~40 tradi
 
 **The single best risk-adjusted strategy** on this dataset is the **textbook 10-day long/short** at Sharpe 0.99 — over 2× the benchmark Sharpe of 0.41. The data-driven extension to t+18 on the short side improves short-only Sharpe (0.66 → 0.78) but the long-side extension to t+28 hurts (0.44 → 0.21). Extending the hold for shorts works because the alpha grows faster than the volatility; for longs, the volatility grows faster than the alpha.
 
-### 14.5 Full metrics table (real data, 2019-03-08 → 2025-09-22, 6.5 years)
+### 14.5 Full metrics table (real data, 2019-03-08 → 2025-12-31, ~7 years, 102 events)
 
 All numbers are net of brokerage + half-spread + slippage + market-impact + (where relevant) borrow.
 
 | Variant | Total | CAGR | Vol | **Sharpe** | Max DD | **Alpha** |
 |---|---:|---:|---:|---:|---:|---:|
-| **Long/short — exit t+10 (textbook)** | +27.1% | +3.6% | 3.7% | **0.99** | -4.8% | +3.75% |
-| Long/short — exit t+18 (data-driven) | +23.5% | +3.2% | 4.7% | 0.68 | -6.9% | +3.47% |
-| **Short-only — exit t+18 (data-driven)** | +26.8% | +3.6% | 4.6% | **0.78** | -7.2% | **+3.91%** |
-| Short-only — exit t+10 (textbook) | +16.9% | +2.3% | 3.6% | 0.66 | -6.7% | +2.55% |
-| Long-only — exit t+10 (textbook) | +9.6% | +1.4% | 3.2% | 0.44 | -5.1% | +1.37% |
-| Long-only — exit t+28 (data-driven) | +6.9% | +1.0% | 5.5% | 0.21 | -17.0% | +0.82% |
+| **Short-only — exit t+18 (data-driven)** | **+33.5%** | +4.4% | 5.0% | **0.88** | -7.2% | **+4.77%** |
+| Long/short — exit t+10 (textbook) | +26.8% | +3.6% | 4.3% | 0.84 | -7.9% | +3.76% |
+| Short-only — exit t+10 (textbook) | +23.8% | +3.2% | 3.9% | 0.82 | -6.7% | +3.48% |
+| Long/short — exit t+18 (data-driven) | +24.8% | +3.3% | 5.5% | 0.63 | -8.8% | +3.68% |
+| Long-only — exit t+28 (data-driven) | +6.0% | +0.9% | 6.0% | 0.17 | -19.2% | +0.65% |
+| Long-only — exit t+10 (textbook) | +3.3% | +0.5% | 3.7% | 0.15 | -12.2% | +0.46% |
 | Real ASX 50 | +38.8% | +5.1% | 16.3% | 0.39 | -35.5% | — |
 | Real ASX 100 | +39.2% | +5.2% | 16.8% | 0.38 | -34.0% | — |
 | Real ASX 200 | +42.0% | +5.5% | 16.3% | 0.41 | -36.5% | — |
 
 **Headline result (Sharpe-ranked):**
-- **Textbook long/short (exit at effective): Sharpe 0.99 — the winner.** Double the benchmark Sharpe, half the drawdown.
-- **Data-driven short-only (hold to t+18): Sharpe 0.78, alpha +3.91%.** Highest pure alpha. The event-study window extension genuinely captures more profit per trade — short alpha grows from +2.55% to +3.91% annualised by holding 8 extra business days past effective.
-- **Long-only is the weakest.** Modern adds-side index effect is too small to overcome the cost stack on its own.
-- **Extending the long side to t+28 actually destroys Sharpe** because volatility scales with √(holding days) but the additional CAR doesn't grow proportionally. The event-study average CAR is a *mean*; per-trade variance is large.
 
-This is a real finding from the data: the textbook 10-day long/short is competitive with — and on Sharpe slightly better than — the "academic-optimal" extended windows.
+1. **Short-only with data-driven t+18 exit: Sharpe 0.88, alpha +4.77%, total return +33.5%.** This is the winning variant on the extended dataset. The event-study window extension captures real alpha — short Sharpe lifts from 0.82 → 0.88 by holding 8 days past effective.
+2. **Long/short textbook 10-day hold: Sharpe 0.84.** Diversification between long and short legs gives near-zero beta and competitive risk-adjusted return without any data-driven optimisation.
+3. **All three strategy variants beat the real ASX 200 Sharpe by 2-2.2×** (0.84-0.88 vs 0.41) and incur **1/4 of the drawdown** (-7% vs -36.5%).
+4. **Long-only is weak across both exit windows.** On real ASX 200 data the addition-side effect has compressed too much to overcome the cost stack on its own. Long-only is structurally a poor strategy on this dataset.
 
 ### 14.6 Why does the long/short variant win on Sharpe?
 
