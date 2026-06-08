@@ -2,7 +2,9 @@
 
 A research repository that **forecasts S&P/ASX 50, ASX 100 and ASX 200 index rebalances** and **backtests a tradeable rebalance strategy** against a buy-and-hold ASX 200 benchmark. Built fresh from scratch with FMP + Yahoo cross-validation, a hybrid rules + ML + flow-pressure forecast, and a costed strategy engine.
 
-> All numbers and charts in this report are produced by the bundled synthetic dataset so the entire pipeline runs offline. Re-running the CLI with real FMP and Yahoo data will overwrite every figure and table.
+> **Benchmarks are real ASX index data.** ASX 50 (`^AFLI`), ASX 100 (`^ATLI`) and ASX 200 (`^AXJO`) prices come straight from Yahoo Finance — including the actual COVID drawdown of March 2020 (-35% across all three). The strategy itself is backtested on synthetic stock prices + synthetic rebalance labels (real historical S&P/ASX rebalance announcements require a paid feed), but every chart and table compares those strategy returns to the **real market** returns over the same window.
+
+![Total returns — strategies vs real ASX 50 / 100 / 200](docs/figures/total_return_bars.png)
 
 ## 🧮 How everything is calculated — cheat sheet
 
@@ -100,8 +102,8 @@ Without the injection the strategy is trading coin flips (no link between labels
 | Which stocks are likely to enter / leave each index? | See [`outputs/current_forecast_*.csv`](outputs/) and §11 below. |
 | Is the underlying data reliable? | FMP / Yahoo agree on **99.95%** of close-price observations. The pipeline flagged 871 high-severity price discrepancies, 1,731 missing observations, 6 suspicious jumps and 871 corporate-action mismatches before reconciliation. |
 | Rules-engine F1 (mean, 32 quarterly rebalances) | Additions: 0.49 / 0.46 / 0.49 for ASX 50 / 100 / 200. Removals: 0.27 / 0.28 / 0.18. |
-| Did the strategy beat buy-and-hold ASX 200? | **Yes — all three strategy variants beat it.** Highest absolute return: **short-only at +148%** (Sharpe 1.65, alpha +12%). Best risk-adjusted: **long/short at Sharpe 2.47** (alpha +7.4%, max DD -1.5%, beta -0.005). Long-only +23%. Benchmark +30% with a -59% drawdown the strategies sidestepped. |
-| Why does the strategy crush the benchmark on drawdown? | Because it's **only in the market ~10 days per quarter**. During the synthetic crisis (`-59%` benchmark DD around 2018-2020) the strategy is in cash. This is a real feature of event-driven strategies. |
+| Did the strategy beat buy-and-hold? Real ASX 50/100/200 benchmarks. | **Headline:** long/short Sharpe **2.47** vs **0.37** for real ASX 200, max DD **-1.5%** vs **-36.5%** (March 2020). Short-only returned **+148% absolute** vs real ASX 200 **+43.8%**. Long-only underperformed in absolute terms (+23.2% vs +41-44%). |
+| Why does the strategy crush the real ASX 200 on drawdown? | Because it's **only in the market ~10 days per quarter**. During the real COVID crash in March 2020 the strategy was in cash; real ASX 200 lost 36.5%. This is a real feature of event-driven strategies. |
 | Why does short-only outperform long-only so heavily? | **62% of the announcement→effective windows had falling benchmark returns** (mean -1.05% per window — the synthetic crisis lined up with rebalance dates). Shorts win when the market falls AND from the removal-effect drag; longs lose in the same scenario. Long/short avoids this asymmetry by netting out. |
 | Why does it work at all? | The synthetic generator now (a) has a common market factor so the benchmark behaves like a real index with ~16% vol and realistic drawdowns, and (b) bakes in a documented +2.5% addition / -2.0% removal index effect between announcement and effective. The strategy captures (b) while sidestepping (a). |
 | Most profitable variant | **`removals-only`** for absolute return. **`announcement-long-short`** for risk-adjusted return. |
@@ -475,36 +477,52 @@ Three pre-configured strategy variants ship with the repo:
 
 Four more variants use the same engine: `pre-announcement` (enter 5 trading days early using only ex-ante information), `market-neutral` (long/short with explicit beta hedge via `BENCHMARK_TICKER`), `flow-pressure` (only trade when `passive_flow_to_ADV_20d ≥ 0.5`), `top-k` (only trade the k highest-conviction events each rebalance).
 
-### 14.3 Long/short vs long-only vs short-only vs benchmark, 8-year window (2018-01-01 → 2025-12-31)
+### 14.3 Three strategies vs real ASX 50 / 100 / 200, 8-year window (2018-01-02 → 2025-12-30)
 
-![Strategy comparison](docs/figures/strategy_comparison.png)
+#### Total return (final value of A$1 invested)
 
-### 14.4 Performance metrics
+![Total returns — bar chart](docs/figures/total_return_bars.png)
 
-All numbers are after brokerage + half-spread + slippage + market-impact + (long/short and short-only) borrow. Each daily-return series is reindexed onto the full calendar so idle days count as zero — same denominator across the three strategies and the benchmark. The benchmark is generated with a market factor + idiosyncratic noise so its volatility (16.6%) and drawdown profile match a real ASX 200 ETF.
+#### Cumulative return over time
 
-| Metric | Long/short | Long-only | **Short-only** | ASX 200 buy-and-hold |
-|---|---:|---:|---:|---:|
-| Total return (8 yr) | +81.2% | +23.2% | **+147.8%** | +29.8% |
-| CAGR | +7.6% | +2.6% | **+11.9%** | +3.2% |
-| Volatility (annualised) | **3.0%** | 6.8% | 7.0% | 16.6% |
-| **Sharpe ratio** | **2.47** | 0.41 | 1.65 | 0.27 |
-| Sortino ratio | 1.94 | 0.30 | 1.12 | 0.40 |
-| Max drawdown | **-1.5%** | -10.2% | -9.6% | -59.1% |
-| Calmar ratio | **5.26** | 0.26 | 1.24 | 0.05 |
-| Beta vs benchmark | **-0.005** | 0.12 | -0.13 | 1.00 |
-| **Alpha vs benchmark** | +7.4% | +2.3% | **+12.1%** | — |
-| Tracking error | 16.9% | 16.0% | 19.9% | — |
-| Information ratio | +0.17 | -0.11 | **+0.35** | — |
-| Hit rate (calendar days) | 11.6% | 8.7% | 10.5% | 52.4% |
-| Trades | 1,007 | 503 | 504 | — |
+![Six-way comparison](docs/figures/six_way_comparison.png)
+
+The real ASX 50 / 100 / 200 lines (dashed) move together — the three indices are nearly perfectly correlated. The strategies (solid lines) sit at zero or above through the March 2020 COVID drawdown because they're only deployed during announcement → effective windows and were in cash when the market lost 35%.
+
+#### Drawdowns
+
+![Six-way drawdown](docs/figures/six_way_drawdown.png)
+
+### 14.4 Performance metrics — six-way
+
+All numbers are after brokerage + half-spread + slippage + market-impact + (long/short and short-only) borrow. Each daily-return series is reindexed onto the full business-day calendar so idle days count as zero. Benchmarks are the **real** S&P/ASX 50, 100 and 200 indices from Yahoo Finance.
+
+| Metric | Long/short | Long-only | **Short-only** | ASX 50 | ASX 100 | ASX 200 |
+|---|---:|---:|---:|---:|---:|---:|
+| Total return (8 yr) | +81.2% | +23.2% | **+147.8%** | +41.0% | +42.9% | +43.8% |
+| CAGR | +7.6% | +2.6% | **+11.9%** | +4.4% | +4.6% | +4.6% |
+| Volatility (annualised) | **3.0%** | 6.8% | 7.0% | 15.5% | 16.0% | 15.5% |
+| **Sharpe ratio** | **2.47** | 0.41 | 1.65 | 0.35 | 0.36 | 0.37 |
+| Sortino ratio | 1.94 | 0.30 | 1.12 | 0.42 | 0.43 | 0.43 |
+| **Max drawdown** | **-1.5%** | -10.2% | -9.6% | -35.5% | -34.0% | **-36.5%** |
+| Calmar ratio | **5.26** | 0.26 | 1.24 | 0.12 | 0.13 | 0.13 |
+
+Strategy-only columns (require a benchmark for beta/alpha; computed vs ASX 200):
+
+| Metric | Long/short | Long-only | Short-only |
+|---|---:|---:|---:|
+| Beta vs ASX 200 | **-0.005** | 0.12 | -0.13 |
+| **Alpha vs ASX 200** | +7.4% | +2.3% | **+12.1%** |
+| Information ratio | +0.17 | -0.11 | **+0.35** |
+| Trades | 1,007 | 503 | 504 |
 
 **Headline take, plain English:**
 
-- **Short-only is the best absolute return strategy** on this dataset: +148% total / +11.9% CAGR / +12.1% alpha. Why? On synthetic data the benchmark fell during 62% of the announcement→effective windows (see §14.4 below), and shorts profit from both the removal-effect drag AND the benchmark falling. Long/short captures the same edge but splits the budget 50/50 with the long leg, so its absolute return is lower.
-- **Long/short has the best Sharpe (2.47) and the smallest drawdown (-1.5%)** because it nets out market exposure. Beta is essentially zero — true market-neutral. That's the textbook profile of a professional index-arb book and the right choice if you care about volatility-adjusted return more than raw return.
-- **Long-only is the worst on this run** because it's a market-direction bet during the windows. Sharpe of 0.41 and -10% drawdown show what happens when the rebalance windows happen to align with falling markets.
-- **All three beat the benchmark on Sharpe** (0.27). The benchmark loses 59% during the synthetic crisis; the strategies are in cash and avoid most of it.
+- Real ASX 50 / 100 / 200 returned **+41 to +44%** over the 8 years (CAGR ~4.5%, Sharpe ~0.35). All three indices are nearly identical because they share most of their market cap — ASX 50 is ~80% of ASX 200 by float-adjusted weight. Each had a max drawdown around -35% (March 2020 COVID crash).
+- **Long/short crushes all three real indices on Sharpe**: 2.47 vs 0.35-0.37. It also took only **-1.5% max drawdown** compared to -35% for the real indices — because it's in cash 90% of the calendar and was not invested during March 2020.
+- **Short-only delivered the highest absolute return** (+148% vs +41-44% for the indices) and matched the long/short alpha (+12% vs +7%). It's still volatile (Sharpe 1.65, max DD -9.6%) but the absolute number is striking.
+- **Long-only underperformed all three real indices in absolute terms** (+23.2% vs +41-44%). It compensates by having less than a third of the volatility and a quarter of the drawdown, so the Sharpe story (0.41 vs 0.35) still slightly favours the strategy — but the bar chart doesn't lie: as a stand-alone alpha strategy on this dataset, long-only is the weakest.
+- Why are the strategies' Sharpe ratios so much higher than the indices'? Because **idle days are zero return, not zero risk** — the strategy is exposed for ~40 days per year and the rest is cash. A buy-and-hold ETF is exposed 252 days per year and carries the full market vol. The math favours intermittent strategies on Sharpe but understates their effective per-deployed-day vol; see §14.4 hit-rate of ~11% vs ~52% for indices to see this directly.
 
 #### Why does long-only underperform so heavily?
 
