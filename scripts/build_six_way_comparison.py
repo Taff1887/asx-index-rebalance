@@ -69,6 +69,17 @@ def main() -> None:
         "ASX 200":         (_load_benchmark("ASX200"),                 PALETTE["asx200"]),
     }
 
+    # Restrict every series to the strategy's date window so metrics are
+    # apples-to-apples.
+    strategy_returns = series["Long/short"][0]
+    if not strategy_returns.empty:
+        win_start = strategy_returns.index.min()
+        win_end = strategy_returns.index.max()
+        for name, (s, color) in list(series.items()):
+            if s.empty:
+                continue
+            series[name] = (s.loc[(s.index >= win_start) & (s.index <= win_end)], color)
+
     # ---- Metrics table ------------------------------------------------------
     rows = []
     for name, (s, _) in series.items():
@@ -113,7 +124,9 @@ def main() -> None:
                 va="bottom" if bar.get_height() >= 0 else "top",
                 fontweight="bold")
     ax.axhline(0, color="black", linewidth=0.5)
-    ax.set_ylabel("Total return over 2018-01-02 to 2025-12-30 (%)")
+    win_start = strategy_returns.index.min().date()
+    win_end = strategy_returns.index.max().date()
+    ax.set_ylabel(f"Total return over {win_start} to {win_end} (%)")
     ax.set_title("Total return — 3 rebalance strategies vs real ASX 50 / 100 / 200")
     ax.grid(True, axis="y", alpha=0.3)
     fig.tight_layout()
