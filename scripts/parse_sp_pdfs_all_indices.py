@@ -145,6 +145,14 @@ def parse_pdf(path: Path) -> dict:
         # Section-specific effective date (preferred), falling back to header.
         section_eff = default_eff
         rest = h.group("rest") or ""
+
+        # "No change" sections have ZERO events. Critically, a stray action
+        # line from a mangled later header (e.g. an "All Australian 50"
+        # removal) can sit inside a "No change" section's text region; we must
+        # not absorb it. Skip the whole section. (Fixes the ORI 2018-12 bug.)
+        if re.match(r"\s*no\s+change", rest, re.IGNORECASE):
+            continue
+
         date_m = SECTION_DATE_RE.search(rest)
         if date_m:
             section_eff = _parse_date(date_m.group(1), date_m.group(2), date_m.group(3))
