@@ -105,15 +105,21 @@ def event_study_long():
             continue
         m = pd.concat(paths[action], axis=1).mean(axis=1).cumsum() * 100
         ax.plot(m.index, m.values, color=c, lw=2, label=f"{action}s (n={len(paths[action])})")
+    # shade the window where passive/super funds are forced to trade (into & just
+    # past the effective date) — this is the demand shock the study measures.
+    ax.axvspan(8, 12, color="#fff3e0", zorder=0)
+    ax.annotate("PASSIVE / SUPER FUNDS\nmust buy adds & sell removals here\n(around the effective date)",
+                (10, ax.get_ylim()[0] * 0.6 if ax.get_ylim()[0] < 0 else 1),
+                ha="center", va="center", fontsize=8.5, color="#e65100", fontweight="bold")
     ax.axvline(0, color="black", ls="--", lw=1.2, label="Announcement (t=0)")
-    ax.axvline(1, color="#1f4e79", ls=":", lw=1.5, label="Strategy entry (t+1)")
-    ax.axvline(10, color="grey", ls=":", lw=1.2, label="Effective (~t+10)")
+    ax.axvline(1, color="#1f4e79", ls=":", lw=1.5, label="Earliest you can trade (t+1)")
+    ax.axvline(10, color="#e65100", ls="-", lw=1.4, label="Effective date (≈t+10): forced flow")
     ax.axhline(0, color="black", lw=0.5)
-    ax.set_xlabel("Trading days from announcement")
+    ax.set_xlabel("Trading days from announcement (t=0)")
     ax.set_ylabel("Mean cumulative abnormal return vs ASX 200 (%)")
-    ax.set_title("Extended ASX 200 event study (t-5 → t+45)\n"
-                 "Do additions recover as super funds keep buying? (the long-side question)")
-    ax.legend(fontsize=9); ax.grid(True, alpha=0.3)
+    ax.set_title("Extended ASX 200 event study — average PRICE PATH of the stocks (not a strategy)\n"
+                 "Additions (green) pop then fade; removals (red) crater into the forced-buying window")
+    ax.legend(fontsize=8.5, loc="upper left"); ax.grid(True, alpha=0.3)
     _save(fig, "v3_event_study_long.png")
 
 
@@ -166,7 +172,7 @@ def overlay_vs_benchmark_chart():
 def main():
     horizon_chart()
     event_study_long()
-    overlay_vs_benchmark_chart()
+    # overlay_vs_benchmark_chart()  # removed: the 'switch into the index' overlay is gone
 
 
 if __name__ == "__main__":

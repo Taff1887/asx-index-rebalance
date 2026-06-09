@@ -42,17 +42,17 @@ out:
 **Verdict (independently verified, robust to an estimated-beta market model and
 to Bonferroni across all 24 tests):**
 
-1. **The alpha is real.** Scheduled additions earn a ~**+2% risk-adjusted
+1. **The alpha is real.** Scheduled additions earn a ≈**+2% risk-adjusted
    abnormal return** around the announcement — huge t-stats, beats the luck null,
-   survives a proper beta-adjusted model (~+1.3%, still p<0.005).
+   survives a proper beta-adjusted model (≈+1.3%, still p<0.005).
 2. **It is *not* capturable after the announcement.** The entire pop lands **on
    day +1** (offset +1 alone = +1.47%, t=4.65) — by the time you can trade on the
    public confirmation it is gone, and it then **fully reverses** over the next
-   ~8 days, netting **zero** by +10. This is the textbook *price-pressure +
+   ≈8 days, netting **zero** by +10. This is the textbook *price-pressure +
    reversal* / *"disappearing index effect."*
-3. **Removals are the only persistent side** (a real but weaker ~−1% to −2.5%
+3. **Removals are the only persistent side** (a real but weaker ≈−1% to −2.5%
    downward drift), which is why — when we *do* build a tradeable strategy
-   (§4–8) — shorting removals (held ~eff+5 to eff+10) is the only edge with any
+   (§4–8) — shorting removals (held ≈eff+5 to eff+10) is the only edge with any
    net-of-cost life: ≈**+2.2% median / 61% win**, but only **borderline
    significant** after realistic costs (Wilcoxon p≈0.05–0.09). Real in size,
    marginal in significance — not a slam dunk.
@@ -76,21 +76,41 @@ statistically rock-solid, but it is a fast-reversing, pre-positioning phenomenon
 > a real trader entering at that open would capture *more* — our next-day-*close*
 > entry deliberately gives that up to stay clean. The event-study `[-1,+1]` window
 > *measures* the full announcement effect (including the un-tradeable on-the-day
-> move); the tradeable part is reported separately and nets to ~0.
+> move); the tradeable part is reported separately and nets to ≈0.
 
 ---
 
 ## 2. The alpha event study — full results
 
 [`scripts/run_alpha_eventstudy.py`](scripts/run_alpha_eventstudy.py) computes a
-textbook market-adjusted event study. For every event we align to `t0` = the
-first trading bar on/after the announcement, form the daily abnormal return
-`AR_t = R_stock,t − R_ASX200,t`, and cumulate it (`CAR`) over event windows. We
-split four ways because the mechanism differs:
+textbook **event study** — the standard way to isolate the price impact of a
+single event. For every change we line up the stock on the announcement day
+(call it **day 0**) and each day compute its **abnormal return** = the stock's
+return *minus* the ASX 200's return that day (so we strip out the market and keep
+only the stock-specific move). We then add those abnormal returns up over a
+**window**.
 
-- **Scheduled** = quarterly rank-review changes → the *pure index-demand* signal.
-- **Off-cycle** = M&A / demerger driven → the price already reflects a takeover
-  premium, so these are held out of the pure-alpha claim.
+> **What "window `[a,b]`" means.** It is a span of trading days measured *relative
+> to the announcement day (0)*. `[-1,+1]` = the day **before**, the day **of**, and
+> the day **after** the announcement (3 days); `[0,+1]` = announcement day plus the
+> next day; `[+2,+10]` = days 2 through 10 *after*. The number in the table is the
+> **cumulative abnormal return (CAR)** over that window — for an addition, a
+> positive CAR means it beat the market over those days.
+
+We split four ways because the *reason* for the change matters:
+
+- **Scheduled** = the regular **quarterly review**. Four times a year S&P ranks
+  every stock by (float-adjusted) size and swaps the ones that have grown or shrunk
+  past the ASX-200 boundary. This is the **pure index-demand** signal — the only
+  news is "you're in / you're out."
+- **Off-cycle** = a change forced *mid-quarter* by a corporate action — almost
+  always a **takeover** (the company is being acquired so it must leave the index)
+  or a demerger. These are **contaminated**: the share price already jumped to the
+  takeover offer, so an off-cycle *removal* shows up as a big **gain**, not an
+  index-demand drop. We hold them out of the pure-alpha claim.
+
+The chart shows, for **scheduled** changes only, the mean abnormal return in each
+window — additions (green) and removals (red), with significance stars:
 
 ![Scheduled abnormal return by window](docs/figures/alpha_car_windows.png)
 
@@ -107,20 +127,20 @@ split four ways because the mechanism differs:
 
 How to read it:
 
-- **Additions: a real pop that reverses to nothing.** +2.34% abnormal return in
-  the 3-day announcement window (72% positive, t=4.7), then a *significant*
-  −2.01% reversal over the next ~8 days. Net over `[0,+10]` is **−0.09% — zero.**
-  The whole move lands on day +1 (offset +1 alone = +1.47%, t=4.65), so a trader
-  entering at the t+1 *close* has already missed it.
-- **Removals: smaller, noisier, but more persistent.** ~−1% at the announcement
-  (Wilcoxon p=0.04, beats placebo p=0.023) and a downward drift to −2.5% by +20
-  days (Wilcoxon p=0.039). This is the one side with a residual short-able edge.
+- **Additions: a real pop that reverses to nothing.** +1.78% abnormal return in
+  the 3-day announcement window `[-1,+1]` (70% positive, t=3.1), then a
+  *significant* −1.50% reversal over days `[+2,+10]`. Net over `[0,+10]` is
+  **−0.09% — essentially zero.** The move concentrates right at the announcement,
+  so a trader entering the day *after* has already missed it.
+- **Removals: smaller, noisier, but more persistent.** −1.35% in the announcement
+  window (t=−2.4, beats placebo p=0.002) and a downward drift to −1.9% by day +20.
+  This is the one side with a residual short-able edge.
 - **Off-cycle removals rise** (takeover premium) — a fat-tailed +5% driven by a
-  few scheme blow-ups — confirming they must be excluded.
+  few scheme blow-ups — confirming they must be excluded from the pure signal.
 
 > **Verified.** A 4-agent workflow independently recomputed every figure from raw
 > prices. It confirmed the addition pop and reversal exactly, confirmed they
-> survive an *estimated-beta* market model (~+1.3%, p<0.005) and **Bonferroni
+> survive an *estimated-beta* market model (≈+1.3%, p<0.005) and **Bonferroni
 > across all 24 tests**, and **caught two real bugs** now fixed: a zero-imputation
 > bug that had faked the removal sign-test p-values, and a stale-`t0` bug on 21
 > events with price gaps. The corrected numbers are the ones above.
@@ -161,13 +181,10 @@ Woolworths, …).
 > generators have been deleted. On a price fetch failure the loader returns an
 > *empty* series, never a made-up one; missing names are simply dropped (and
 > listed), not filled. The only non-raw quantities are clearly-labelled *modelling
-> choices*, not data: (1) a ±12% winsorisation applied **only** to the §8
-> switching daily series; (2) the ASX 100 **total-return** benchmark in §8 is
-> reconstructed (price index × ASX 200 dividend factor) — the alpha study itself
-> uses the **real** ASX 200 price index; (3) the §7 cost model assumes order-clip
-> sizes and a vol floor (it is a *cost* model, not price data). The placebo/
-> bootstrap randomness is the statistical null (random *dates* in real series), not
-> fabricated returns.
+> choices*, not data: (1) the §7 cost model assumes order-clip sizes and a vol
+> floor (it is a *cost* model, not price data); (2) the §8 Sharpe assumes a 2.5%/yr
+> risk-free rate on idle cash. The placebo/bootstrap randomness is the statistical
+> null (random *dates* in real series), not fabricated returns.
 
 **99 tickers remain unpriced on any free feed** — the hunt list you asked for, in
 [`outputs/missing_delisted.csv`](outputs/missing_delisted.csv) with company names
@@ -251,9 +268,18 @@ sits in the tail, the edge is about the **event**, not the stocks.
 
 ![The luck test](docs/figures/placebo_null.png)
 
-A low placebo p **with a ✅ means it is NOT luck** — the real, rebalance-timed
-return beats what random timing in the same stocks would give, so the edge comes
-from the *event*. (A high p with no ✅ would mean "indistinguishable from luck.")
+A low placebo p **with a ✅ means the result is REAL, not luck** — the actual,
+rebalance-timed return is far from what you'd get by trading the same stocks on
+*random* dates, so it's driven by the **event**, not chance. The label then just
+says *which direction* the real effect goes:
+
+- **"not luck"** → a real, repeatable **gain** (e.g. shorting removals genuinely makes money).
+- **"real loss"** → a real, repeatable **loss** (buying additions genuinely *loses* —
+  it underperforms random-date entries, so the −0.6% is a true edge-against-you, not
+  bad luck you could shrug off).
+
+Both pass the same test (the number is real, not random); they differ only in sign.
+A *high* p with no ✅ would mean "indistinguishable from luck."
 
 | Tier · side · exit | n | median | win | t-test (mean) | Wilcoxon (median) | sign (win) | **placebo (luck)** |
 |---|--:|--:|--:|--:|--:|--:|--:|
@@ -267,24 +293,29 @@ Reading it:
 
 - **The short-removal edge is real (not luck).** At `eff5` the typical short earns
   **+2.8% (median)**, wins **65%** of the time, and **beats the random-timing null
-  at p = 0.014** — i.e. only a ~1.4% chance of doing this well by random timing. It
+  at p = 0.014** — i.e. only a ≈1.4% chance of doing this well by random timing. It
   is real, but it is a *median / win-rate / timing* edge — **not** a robust mean
   edge (mean t-test p=0.13, dragged by a handful of acquired names).
 - **Buying additions is a real loser, not bad luck.** Additions *underperform*
   random-timed entries in the same names (placebo p=0.015 — the loss is real, not
   variance). Entering the day after the announcement buys the pop.
 - **You must hold past the effective date.** At `eff` (effective close) nothing is
-  significant; the removal keeps falling for ~a week as passive funds finish selling.
+  significant; the removal keeps falling for ≈a week as passive funds finish selling.
 
 ---
 
 ## 6. Does holding longer help? (the super-fund question)
 
+**Short answer: yes — hold from about eff+5 to eff+10 (≈1–2 weeks *past* the
+effective date), then get out.** That window is shaded on the chart and is where
+the short return is highest; holding longer than that gives it back.
+
 ![ASX 200 per-trade return vs holding period](docs/figures/v3_horizon.png)
 
-The chart plots **median (solid)** and **mean (dashed)** — they disagree because a
-few acquired names create fat tails, so the median (the *typical* trade) is the
-one to trust.
+The x-axis is the **exit point in trading days past the effective date** (`eff` =
+exit on the effective date, `eff+5` = five days later, …). The chart plots
+**median (solid)** and **mean (dashed)** — they disagree because a few acquired
+names create fat tails, so the median (the *typical* trade) is the one to trust.
 
 - **Short (red):** the sweet spot is **eff+5 to eff+10** (≈1–2 weeks past the
   effective date), shaded on the chart. By **median** the two are tied
@@ -292,14 +323,31 @@ one to trust.
   (**64%** vs 58%); by **mean** eff+10 peaks (+1.4% vs +0.5%, because the mean is
   dragged by outliers). So "eff+5" isn't uniquely best — **eff+5…eff+10 is the
   band.** It stays median-positive at every horizon, but the *mean* turns negative
-  past ~eff+20 as some names recover and borrow cost piles up.
+  past ≈eff+20 as some names recover and borrow cost piles up.
 - **Long (green):** at `eff` the addition is ≈−0.7% median; holding 6–8 weeks only
   drags it back to roughly breakeven. The super-fund flow is real (additions *do*
   recover) but you entered at the pop, so the best holding longer does is undo the
   loss. It never becomes an edge.
 
-The extended event study shows the full path (additions pop then fade; removals
-crater and stay down):
+> **Why a "super-fund / passive-buying" effect should even exist.** Hundreds of
+> billions of dollars track the S&P/ASX 200 (industry super funds, index ETFs,
+> passive mandates). Those funds **don't get a choice** — to keep matching the
+> index they *must* buy a new addition and *must* sell a removal, and they do it
+> around the **effective date** (the third Friday of the rebalance month), when the
+> change officially takes effect. That forced, price-insensitive buying/selling is
+> the demand shock this whole study is measuring: it should push additions **up**
+> and removals **down** into the effective date, then fade once the funds are done.
+> The data says the *announcement* already prices most of it in (§2), and the
+> residual forced-flow drift is what the short-removal hold in this section harvests.
+
+**What the "extended event study" chart shows.** It is the **average price path of
+the stocks themselves** (not a strategy), lined up on the announcement day (t=0)
+and averaged across all additions (green) and removals (red), out to 45 trading
+days. The y-axis is cumulative abnormal return vs the ASX 200 (so 0 = "moved with
+the market"). The dotted lines mark the announcement (t=0), the strategy entry
+(t+1), and the **effective date (≈t+10) — where the passive funds must trade.**
+You can see additions pop at the announcement then fade, and removals crater into
+and just past the effective date before levelling off:
 
 ![Extended ASX 200 event study](docs/figures/v3_event_study_long.png)
 
@@ -319,7 +367,7 @@ How much does that wait cost? Same eff+5 exit, entry at the open vs the close:
   overnight gap that's already in by the open, so open vs close is a wash.
 
 So the conservative next-day-*close* entry materially understates the short edge;
-a desk that can hit the **open** recovers ~+0.9%/trade — roughly the size of the
+a desk that can hit the **open** recovers ≈+0.9%/trade — roughly the size of the
 round-trip cost. (Caveat: opening auctions have wider spreads and you're trading
 into the same flow, so the realisable share is less than the gross +0.9%.)
 
@@ -363,70 +411,50 @@ median +0.6%, p≈0.97); the **long** side (more negative after costs); and the
 ASX 100 / pooled shorts.
 
 **Conclusion:** the only candidate with net-of-cost life is **short ASX 200
-removals, held ~eff+5 to eff+10** — ≈ **+2.2% net median, 61% win** — but on the
+removals, held ≈eff+5 to eff+10** — ≈ **+2.2% net median, 61% win** — but on the
 complete data it is **only borderline-significant after costs** (p≈0.05–0.09).
 A real, modest edge at the margin of tradeability, not a reliable money machine.
 
 ---
 
-## 8. "Hold the index instead of cash" — the switching strategy
+## 8. The standalone strategy (cash at 2.5% between trades) — Sharpe ratios
 
-The standalone trade is in cash ~85% of the time, so this variant holds the ASX
-200 **total-return** index by default and switches into the trade only during the
-~10-day rebalance windows (no leverage). Benchmarks are dividend-inclusive
-(STW.AX / SFY.AX; ASX 100 reconstructed). Span 2012-09 → 2026-01:
-
-![Switching strategy vs total-return benchmarks](docs/figures/v3_switch_vs_benchmark.png)
-
-| Strategy / benchmark | Gross | Ex-2013-outlier (robust) |
-|---|---:|---:|
-| **ASX 200 total return (buy & hold)** | **+235%** | — |
-| Hold ASX 200, switch to SHORT removals | +153% | **+97%** |
-| Hold ASX 200, switch to LONG additions | +155% | +155% |
-| Hold ASX 200, switch to LONG/SHORT | +109% | +64% |
-
-**This is the "disappearing index effect" in one table.** On the *old, survivorship-biased*
-data the short switch looked like +594% (driven ~half by one 2013 trade). On the
-*cleaned* data — delisted names restored, outlier removed — **no switching variant
-beats simply holding the index.** A real per-trade edge (§4–6) does **not**
-compound into index-beating wealth here, because it fires only a few times a
-quarter on a small slice of capital and the per-trade edge is modest after costs.
-
-### What the "outlier" is, and why Sharpe is the fairer test
-
-The outlier is **one real trade: Perseus Mining (PRU)**, removed from the ASX 100
-in June 2013 (gold miners were collapsing). Shorting it returned **+20.9% by the
-effective date and +55.6% by eff+5** — genuine, not a data error. It's flagged
-only because the 2013 switching book is nearly empty, so this *one* short drives
-~half the compounded total — fragile for a *total-return* headline. It is **fully
-included** in the per-trade and alpha analysis (1 of 130 trades); only §8's
-compounding is sensitive to it.
-
-But removing it to "clean up" the total is itself a choice — so judge it on
-**Sharpe**, where a big winner must pay for its volatility (rf = 2.5%/yr):
+Forget any "switch into the index" overlay. The honest standalone strategy is:
+**trade the rebalance events, and sit in CASH at the 2.5% risk-free rate the rest
+of the time** (you're only deployed ≈19% of trading days). Each trade is held to
+its exit; idle cash earns 2.5%/yr. How does that compare, *risk-adjusted*, to just
+buying and holding the ASX 200 — or to doing nothing and holding cash?
 
 ![Sharpe ratios](docs/figures/sharpe_ratios.png)
 
-| Strategy | CAGR | Vol | **Sharpe (with PRU)** | Sharpe (ex-PRU) |
+| Strategy (ASX 200, eff+5, gross) | CAGR | Vol | **Sharpe** | Sharpe (ex-PRU) |
 |---|--:|--:|--:|--:|
-| **ASX 200 buy & hold (NOT switching)** | 9.5% | 14.2% | **0.53** | 0.53 |
-| Switch → SHORT removals | 5.9% | 21.1% | 0.26 | 0.17 |
-| Switch → LONG additions | 6.7% | 17.9% | 0.31 | 0.31 |
-| Switch → LONG/SHORT | 4.1% | 23.1% | 0.18 | 0.11 |
-| Hold risk-free (2.5%/yr) | 2.5% | 0% | 0.00 | 0.00 |
+| **ASX 200 buy & hold** | 9.5% | 14.2% | **+0.54** | +0.54 |
+| Hold risk-free (cash, 2.5%/yr) | 2.5% | 0% | 0.00 | 0.00 |
+| Short removals + cash between | 0.3% | 5.7% | **−0.35** | −0.35 |
+| Long additions + cash between | −0.3% | 4.0% | −0.68 | −0.73 |
+| Long + short + cash between | −0.4% | 4.0% | −0.70 | −0.72 |
 
-Three things fall out:
+**The verdict is blunt: buy-and-hold wins, and the standalone strategy doesn't
+even beat cash.** Sharpe is *excess return over the 2.5% risk-free rate*, so a
+negative Sharpe means the strategy returned **less than just holding cash**. Why?
+You sit in cash ≈80% of the time, so a handful of small (≈10/yr), fat-tailed
+trades simply can't lift the annual return above 2.5% — let alone above the
+index's 9.5%. The per-trade edge of §4–7 is **real but too thin and too rare to
+build a standalone strategy on.**
 
-1. **NOT switching wins.** Plain buy-and-hold of the ASX 200 has the **best Sharpe
-   (0.53)** by a wide margin. Every switching variant is *worse* — switching into
-   concentrated single-name trades adds idiosyncratic volatility (17–23% vs 14%)
-   without enough extra return.
-2. **The outlier should NOT be removed.** Including PRU *raises* the short book's
-   Sharpe (0.26 vs 0.17) — it's a big winner that more than pays for its vol. So
-   the "robust, ex-outlier" version is the *pessimistic* one; dropping the trade
-   makes the strategy look worse, not cleaner. The honest read keeps it in.
-3. **Everything still beats cash** (risk-free Sharpe = 0 by definition), but that's
-   the floor, not the benchmark. The benchmark is the index, and the index wins.
+> **The "outlier" (PRU), and why removing it is the wrong instinct.** The outlier
+> is **one real trade: Perseus Mining (PRU)**, removed from the ASX 100 in June
+> 2013 (gold miners were collapsing). Shorting it returned **+20.9% by the
+> effective date, +55.6% by eff+5** — genuine, not a data error. It's fully
+> included in the per-trade and alpha analysis (1 of ≈130 trades). On a **Sharpe**
+> basis — where a big winner must pay for its volatility — keeping PRU *helps*
+> (the short book's Sharpe is no worse, and removing it makes the long/short
+> *worse*: −0.70 → −0.72). So the honest read is to **keep it in**; dropping a real
+> winner to look "robust" just flatters the downside.
+
+So even before costs, on a risk-adjusted basis, **the best thing to do with the
+index-rebalance effect is… own the index.**
 
 ---
 
@@ -471,11 +499,11 @@ python scripts/build_asx200_master.py           # merged 544-event master + miss
 python scripts/run_alpha_eventstudy.py          # market-adjusted CAR: real alpha vs luck
 # --- the tradeable-strategy supporting analysis ---
 python scripts/run_strategy_v2.py               # validated per-trade backtest (gross)
-python scripts/run_strategy_v3.py               # longer holds + switching strategy
+python scripts/run_strategy_v3.py               # longer holds (horizon) + cash daily series
 python scripts/build_frequency_chart.py         # trades per quarter / coverage
 python scripts/run_significance.py              # t-test / Wilcoxon / sign / bootstrap / placebo
 python scripts/run_friction_backtest.py         # gross vs net of liquidity + borrow costs
-python scripts/run_sharpe_analysis.py           # Sharpe: switching vs buy-and-hold vs risk-free
+python scripts/run_sharpe_analysis.py           # Sharpe: strategy(+cash) vs buy-and-hold vs cash
 python scripts/run_open_vs_close.py             # entry at the open vs the close
 python scripts/build_v2_charts.py && python scripts/build_v3_charts.py
 ```
@@ -491,18 +519,18 @@ Outputs: `outputs/asx200_events_master.csv` (544 deduped events),
 ## 11. Limitations
 
 - **Capturability, not existence, is the catch.** The addition alpha is
-  statistically rock-solid but reverses to ~0 by +10 days, so it is not a tradeable
+  statistically rock-solid but reverses to ≈0 by +10 days, so it is not a tradeable
   edge for anyone acting on the public announcement (§1–2).
 - **No archival gap remains.** All quarterly rebalances 2011→2026 are present,
   including the 2020-2021 quarters that were only on the iguana2 newswire
   (recovered from company IR-page mirrors). The 102 still-missing tickers are
   delisted names absent from every free price feed, not missing events.
-- **Removal sample is censored.** ~99 of 370 tickers (largely delistings,
+- **Removal sample is censored.** ≈99 of 370 tickers (largely delistings,
   collapses, takeovers) have no price on any free feed, so the removal CAR sits on
   a survivorship-biased subsample — treat the removal numbers as the weaker result.
   The full hunt list is [`outputs/missing_delisted.csv`](outputs/missing_delisted.csv).
 - **Market model.** Abnormal returns use a market-adjusted (beta=1) model; the
-  verifier confirmed the addition result survives an estimated-beta model (~+1.3%,
+  verifier confirmed the addition result survives an estimated-beta model (≈+1.3%,
   p<0.005) and Bonferroni across all 24 tests.
 - **Off-cycle ≠ index demand.** M&A-driven removals carry a takeover premium and
   are reported separately, not pooled into the alpha claim.

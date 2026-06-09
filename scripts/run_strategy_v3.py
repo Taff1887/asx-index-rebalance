@@ -162,12 +162,14 @@ def main() -> None:
     horizon = pd.DataFrame(hrows)
     horizon.to_csv(OUTPUTS_DIR / "v3_horizon.csv", index=False)
 
-    # ---- switching daily series (no leverage) ----
-    # Per day, the equal-weight mean raw return of all OPEN long trades and of
-    # all open short trades. On days with an open trade the portfolio switches
-    # out of ASX 200 and into the trade book; otherwise it holds ASX 200 TR.
+    # ---- daily series: trade book during windows, CASH (risk-free) otherwise ----
+    # Per day, the equal-weight mean raw return of all OPEN long trades and of all
+    # open short trades. On days with an open trade the portfolio is in the trade
+    # book; on all other days it sits in CASH earning the risk-free rate (2.5%/yr).
+    # (No 'switch into the index' overlay — the standalone strategy holds cash.)
     idx = tr_ret.index
-    CAP = 0.12  # winsorise daily book return; a real constituent rarely moves >12%/day
+    CAP = 0.12          # winsorise daily book return; a constituent rarely moves >12%/day
+    RF_DAILY = 0.025 / 252.0  # 2.5%/yr risk-free earned on idle (cash) days
 
     # The verification pass found a SINGLE 2013 trade (PRU, which fell 55.6% in
     # a near-empty early book) accounts for roughly half the gross short total.
@@ -188,11 +190,11 @@ def main() -> None:
                 ss_ = ss_.add(w.fillna(0.0), fill_value=0.0); sc_ = sc_.add(mask.astype(float), fill_value=0.0)
         lr = (ls_ / lc_).where(lc_ > 0).clip(-CAP, CAP)
         sr = (ss_ / sc_).where(sc_ > 0).clip(-CAP, CAP)
-        d = pd.DataFrame({"asx200_tr": tr_ret}, index=idx)
-        d["strat_long"] = lr.where(lc_ > 0, d["asx200_tr"])
-        d["strat_short"] = (-sr).where(sc_ > 0, d["asx200_tr"])
+        d = pd.DataFrame({"asx200_tr": tr_ret}, index=idx)   # buy & hold benchmark
+        d["strat_long"] = lr.where(lc_ > 0, RF_DAILY)         # else CASH
+        d["strat_short"] = (-sr).where(sc_ > 0, RF_DAILY)     # else CASH
         anyopen = (lc_ > 0) | (sc_ > 0)
-        d["strat_ls"] = (lr.fillna(0.0) - sr.fillna(0.0)).where(anyopen, d["asx200_tr"])
+        d["strat_ls"] = (lr.fillna(0.0) - sr.fillna(0.0)).where(anyopen, RF_DAILY)
         return d, anyopen
 
     daily, any_open = build_books(set())     # all trades
@@ -213,18 +215,18 @@ def main() -> None:
         {"series": "ASX 200 buy & hold (total return)",
          "all_trades_pct": round(total(daily, "asx200_tr"), 1),
          "robust_ex_outlier_pct": round(total(daily_robust, "asx200_tr"), 1)},
-        {"series": "Hold ASX200, switch to LONG additions",
+        {"series": "Trade LONG additions, cash (2.5%) between",
          "all_trades_pct": round(total(daily, "strat_long"), 1),
          "robust_ex_outlier_pct": round(total(daily_robust, "strat_long"), 1)},
-        {"series": "Hold ASX200, switch to SHORT removals",
+        {"series": "Trade SHORT removals, cash (2.5%) between",
          "all_trades_pct": round(total(daily, "strat_short"), 1),
          "robust_ex_outlier_pct": round(total(daily_robust, "strat_short"), 1)},
-        {"series": "Hold ASX200, switch to LONG/SHORT",
+        {"series": "Trade LONG/SHORT, cash (2.5%) between",
          "all_trades_pct": round(total(daily, "strat_ls"), 1),
          "robust_ex_outlier_pct": round(total(daily_robust, "strat_ls"), 1)},
     ])
     ov.to_csv(OUTPUTS_DIR / "v3_overlay.csv", index=False)
-    print(f"\n(switched into a trade on {deployed:.1f}% of days; held ASX 200 the rest)")
+    print(f"\n(in a trade on {deployed:.1f}% of days; in CASH at 2.5% the rest)")
 
     print("HORIZON — ASX200 mean per-trade % by exit (superfund test):")
     piv = (horizon[horizon.tier == "ASX200"]
@@ -236,7 +238,7 @@ def main() -> None:
             .pivot_table(index="exit", columns="side", values="win_rate_pct")
             .reindex([e[0] for e in EXITS]))
     print(pivw.to_string())
-    print("\nHOLD-ASX200-INSTEAD-OF-CASH total return (switching, no leverage):")
+    print("\nTRADE-BOOK + CASH(2.5%) total return (no leverage, no index overlay):")
     print(ov.to_string(index=False))
     print(f"\nDaily span: {daily.index.min().date()} -> {daily.index.max().date()}  ({len(daily)} days)")
 
