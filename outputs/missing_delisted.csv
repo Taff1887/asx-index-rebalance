@@ -1,100 +1,103 @@
-ticker,company_name,actions,first_ann,last_ann,n_events,likely_source
-LTM,,"Addition,Removal",2023-12-19,2025-02-28,2,recent — likely on Bloomberg/Refinitiv/Norgate
-PDL,,Removal,2023-01-06,2023-01-06,1,recent — likely on Bloomberg/Refinitiv/Norgate
-UWL,,Removal,2022-07-15,2022-07-15,1,recent — likely on Bloomberg/Refinitiv/Norgate
-CWN,,Removal,2022-05-19,2022-06-15,2,recent — likely on Bloomberg/Refinitiv/Norgate
-CIM,,Removal,2022-04-07,2022-04-07,1,recent — likely on Bloomberg/Refinitiv/Norgate
-SYD,,Removal,2022-02-03,2022-02-03,1,recent — likely on Bloomberg/Refinitiv/Norgate
-AST,,Removal,2022-02-01,2022-02-01,1,recent — likely on Bloomberg/Refinitiv/Norgate
-APT,Afterpay Touch Group Limited,"Addition,Removal",2018-06-08,2022-01-14,2,recent — likely on Bloomberg/Refinitiv/Norgate
-OSH,,Removal,2021-12-07,2021-12-07,1,recent — likely on Bloomberg/Refinitiv/Norgate
-SKI,,Removal,2021-11-24,2021-11-24,1,recent — likely on Bloomberg/Refinitiv/Norgate
-BIN,Bingo Industries Limited,"Addition,Removal",2018-09-07,2021-07-08,2,recent — likely on Bloomberg/Refinitiv/Norgate
-VOC,Vocus Communications Limited,"Addition,Removal",2014-12-05,2021-06-22,2,recent — likely on Bloomberg/Refinitiv/Norgate
-TGR,Tassal Group Limited,"Addition,Removal",2014-06-06,2021-03-12,2,recent — likely on Bloomberg/Refinitiv/Norgate
-SAR,Saracen Mineral Holdings Limited,"Addition,Removal",2013-03-01,2021-01-27,3,recent — likely on Bloomberg/Refinitiv/Norgate
-TPM,,Addition,2020-06-25,2020-06-25,1,recent — likely on Bloomberg/Refinitiv/Norgate
-GXY,Galaxy Resources Limited,"Addition,Removal",2016-09-02,2019-12-13,2,mid — try Norgate/premium FMP/Sharepad
-SDA,Speedcast International Limited,"Addition,Removal",2017-06-09,2019-12-13,2,mid — try Norgate/premium FMP/Sharepad
-AOG,,Removal,2019-11-07,2019-11-07,1,mid — try Norgate/premium FMP/Sharepad
-API,Australian Pharmaceutical Industries Limited,"Addition,Removal",2015-12-04,2019-09-06,2,mid — try Norgate/premium FMP/Sharepad
-DLX,,Removal,2019-07-31,2019-07-31,1,mid — try Norgate/premium FMP/Sharepad
-NVT,,Removal,2019-06-14,2019-06-14,1,mid — try Norgate/premium FMP/Sharepad
-NEA,,Addition,2019-04-15,2019-04-15,1,mid — try Norgate/premium FMP/Sharepad
-MYO,MYOB Group Limited,"Addition,Removal",2015-09-04,2019-04-15,2,mid — try Norgate/premium FMP/Sharepad
-AHG,Automotive Holdings Group Limited,Removal,2019-03-08,2019-03-08,1,mid — try Norgate/premium FMP/Sharepad
-GXL,Greencross Limited,"Addition,Removal",2014-07-14,2018-09-07,2,mid — try Norgate/premium FMP/Sharepad
-GMA,Genworth Mortgage Insurance Australia Limited,"Addition,Removal",2014-08-15,2018-09-07,2,mid — try Norgate/premium FMP/Sharepad
-IOF,,Removal,2018-08-31,2018-08-31,1,mid — try Norgate/premium FMP/Sharepad
-AHY,Asaleo Care Limited,"Addition,Removal",2014-09-05,2018-06-08,2,mid — try Norgate/premium FMP/Sharepad
-WFD,,Removal,2018-05-24,2018-05-24,1,mid — try Norgate/premium FMP/Sharepad
-MTR,Mantra Group Limited,"Addition,Removal",2015-09-04,2018-05-18,2,mid — try Norgate/premium FMP/Sharepad
-BAL,Bellamy's Australia Limited,"Addition,Removal",2016-03-11,2018-03-09,3,mid — try Norgate/premium FMP/Sharepad
-JHC,Japara Healthcare Limited,"Addition,Removal",2014-07-07,2017-12-08,2,mid — try Norgate/premium FMP/Sharepad
-FXL,FlexiGroup Limited,"Addition,Removal",2012-07-20,2017-12-08,2,mid — try Norgate/premium FMP/Sharepad
-TTS,,Removal,2017-12-06,2017-12-06,1,mid — try Norgate/premium FMP/Sharepad
-VRT,Virtus Health Limited,"Addition,Removal",2013-12-06,2017-09-01,2,mid — try Norgate/premium FMP/Sharepad
-ISD,Isentia Group Limited,"Addition,Removal",2015-12-04,2017-09-01,2,mid — try Norgate/premium FMP/Sharepad
-SPO,,"Addition,Removal",2014-08-08,2017-07-28,2,mid — try Norgate/premium FMP/Sharepad
-DUE,,Removal,2017-04-21,2017-04-21,1,mid — try Norgate/premium FMP/Sharepad
-SAI,SAI Global Limited,"Addition,Removal",2012-09-07,2016-12-05,2,mid — try Norgate/premium FMP/Sharepad
-VVR,,Addition,2016-12-05,2016-12-05,1,mid — try Norgate/premium FMP/Sharepad
-CVO,Cover-More Group Limited,"Addition,Removal",2014-03-07,2016-09-02,2,mid — try Norgate/premium FMP/Sharepad
-AIO,,Removal,2016-07-22,2016-07-22,1,mid — try Norgate/premium FMP/Sharepad
-PBG,,Removal,2016-06-21,2016-06-21,1,mid — try Norgate/premium FMP/Sharepad
-APN,APN News & Media Limited,"Addition,Removal",2012-12-07,2016-06-17,3,mid — try Norgate/premium FMP/Sharepad
-LNG,Liquefied Natural Gas Limited,"Addition,Removal",2014-09-05,2016-06-10,2,mid — try Norgate/premium FMP/Sharepad
-BRS,,Removal,2016-05-03,2016-05-03,1,mid — try Norgate/premium FMP/Sharepad
-CAB,Cabcharge Australia Limited,Removal,2016-03-11,2016-03-11,1,mid — try Norgate/premium FMP/Sharepad
-TEN,Ten Network Holdings Limited,Removal,2016-03-11,2016-03-11,1,mid — try Norgate/premium FMP/Sharepad
-VED,Veda Group Limited,"Addition,Removal",2014-03-07,2016-02-04,2,mid — try Norgate/premium FMP/Sharepad
-MTU,M2 Telecommunications Group Limited,"Addition,Removal",2012-06-01,2016-02-01,2,mid — try Norgate/premium FMP/Sharepad
-DSH,Dick Smith Holdings Limited,"Addition,Removal",2015-03-06,2015-12-04,2,"old — often delisted-data only (Norgate Premium, ASX archives)"
-DLS,Drillsearch Energy Limited,"Addition,Removal",2012-09-07,2015-12-04,2,"old — often delisted-data only (Norgate Premium, ASX archives)"
-UGL,UGL Limited,Removal,2015-09-04,2015-09-04,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-BKN,Bradken Limited,Removal,2015-09-04,2015-09-04,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-SXY,Senex Energy Limited,"Addition,Removal",2012-04-05,2015-09-04,2,"old — often delisted-data only (Norgate Premium, ASX archives)"
-SIR,Sirius Resources NL,"Addition,Removal",2013-06-07,2015-09-03,2,"old — often delisted-data only (Norgate Premium, ASX archives)"
-IIN,iiNet Limited,"Addition,Removal",2012-12-07,2015-08-20,2,"old — often delisted-data only (Norgate Premium, ASX archives)"
-BTT,,Addition,2015-08-20,2015-08-20,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-SKE,Skilled Group Limited,"Addition,Removal",2012-09-07,2015-06-05,2,"old — often delisted-data only (Norgate Premium, ASX archives)"
-SGN,STW Communications Group Limited,"Addition,Removal",2013-09-06,2015-06-05,2,"old — often delisted-data only (Norgate Premium, ASX archives)"
-NVN,,Removal,2015-05-22,2015-05-22,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-PNA,,Removal,2015-05-15,2015-05-15,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-TOL,,Removal,2015-05-07,2015-05-07,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-BDR,Beadell Resources Limited,Removal,2015-03-06,2015-03-06,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-GFF,,Removal,2015-02-24,2015-02-24,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-HSO,,Addition,2014-10-08,2014-10-08,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-WTF,,Removal,2014-10-08,2014-10-08,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-ALZ,,Removal,2014-08-15,2014-08-15,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-DJS,,Removal,2014-07-14,2014-07-14,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-AQA,,Removal,2014-07-07,2014-07-07,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-FOX,,Removal,2014-04-23,2014-04-23,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-VAH,Virgin Australia Holdings Limited,Removal,2014-03-07,2014-03-07,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-AQG,Alacer Gold Corp.,Removal,2014-03-07,2014-03-07,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-ARP,ARB Corporation Limited,Addition,2014-03-07,2014-03-07,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-FGE,Forge Group Limited,"Addition,Removal",2013-09-06,2014-02-12,2,"old — often delisted-data only (Norgate Premium, ASX archives)"
-OGC,OceanaGold Corporation,Removal,2013-12-06,2013-12-06,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-FKP,FKP Property Group,Removal,2013-09-06,2013-09-06,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-DML,Discovery Metals Limited,Removal,2013-09-06,2013-09-06,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-MBN,Mirabela Nickel Limited,Removal,2013-06-07,2013-06-07,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-AIX,Australian Infrastructure Fund Limited,Removal,2013-06-07,2013-06-07,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-CPL,Coalspur Mines Limited,Removal,2013-06-07,2013-06-07,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-GRY,Gryphon Minerals Limited,Removal,2013-03-01,2013-03-01,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-BTU,Bathurst Resources Limited,Removal,2013-03-01,2013-03-01,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-GBG,Gindalbie Metals Limited,Removal,2013-03-01,2013-03-01,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-TME,Trade Me Group Limited,Addition,2013-03-01,2013-03-01,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-IAU,Intrepid Mines Limited,Removal,2012-12-07,2012-12-07,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-AQP,Aquarius Platinum Limited,Removal,2012-09-07,2012-09-07,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-GCL,,Removal,2012-06-20,2012-06-20,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-DTE,Dart Energy Limited,Removal,2012-06-01,2012-06-01,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-CQO,,Removal,2012-04-12,2012-04-12,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-KZL,Kagara Limited,Removal,2012-03-02,2012-03-02,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-CRF,Centro Retail Australia,Addition,2012-03-02,2012-03-02,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-MMX,Murchison Metals Ltd,Removal,2011-12-16,2011-12-16,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-GNS,Gunns Limited,Removal,2011-12-16,2011-12-16,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-IGR,Integra Mining Limited,Addition,2011-12-16,2011-12-16,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-TEL,,Addition,2011-11-11,2011-11-11,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-MCC,,Removal,2011-10-26,2011-10-26,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-IDL,,Addition,2011-10-26,2011-10-26,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
-HIL,Hills Holdings Limited,Removal,2011-09-16,2011-09-16,1,"old — often delisted-data only (Norgate Premium, ASX archives)"
+ticker,n_events,actions,first_ann,last_ann,company_name,in_yahoo,in_fmp,has_price
+BAL,3,"Addition,Removal",2016-03-11,2018-03-09,Bellamy's Australia Limited,False,False,False
+APN,3,"Addition,Removal",2012-12-07,2016-06-17,APN News & Media Limited,False,False,False
+SAR,3,"Addition,Removal",2013-03-01,2021-01-27,Saracen Mineral Holdings Limited,False,False,False
+API,2,"Addition,Removal",2015-12-04,2019-09-06,Australian Pharmaceutical Industries Limited,False,False,False
+AHY,2,"Addition,Removal",2014-09-05,2018-06-08,Asaleo Care Limited,False,False,False
+APT,2,"Addition,Removal",2018-06-08,2022-01-14,Afterpay Touch Group Limited,False,False,False
+DSH,2,"Addition,Removal",2015-03-06,2015-12-04,Dick Smith Holdings Limited,False,False,False
+FGE,2,"Addition,Removal",2013-09-06,2014-02-12,Forge Group Limited,False,False,False
+DLS,2,"Addition,Removal",2012-09-07,2015-12-04,Drillsearch Energy Limited,False,False,False
+CWN,2,Removal,2022-05-19,2022-06-15,,False,False,False
+CVO,2,"Addition,Removal",2014-03-07,2016-09-02,Cover-More Group Limited,False,False,False
+MYO,2,"Addition,Removal",2015-09-04,2019-04-15,MYOB Group Limited,False,False,False
+MTR,2,"Addition,Removal",2015-09-04,2018-05-18,Mantra Group Limited,False,False,False
+SIR,2,"Addition,Removal",2013-06-07,2015-09-03,Sirius Resources NL,False,False,False
+VED,2,"Addition,Removal",2014-03-07,2016-02-04,Veda Group Limited,False,False,False
+VOC,2,"Addition,Removal",2014-12-05,2021-06-22,Vocus Communications Limited,False,False,False
+UWL,2,"Addition,Removal",2021-06-11,2022-07-15,Uniti Group Limited,False,False,False
+VRT,2,"Addition,Removal",2013-12-06,2017-09-01,Virtus Health Limited,False,False,False
+TGR,2,"Addition,Removal",2014-06-06,2021-03-12,Tassal Group Limited,False,False,False
+SXY,2,"Addition,Removal",2012-04-05,2015-09-04,Senex Energy Limited,False,False,False
+SPO,2,"Addition,Removal",2014-08-08,2017-07-28,,False,False,False
+SKE,2,"Addition,Removal",2012-09-07,2015-06-05,Skilled Group Limited,False,False,False
+ISD,2,"Addition,Removal",2015-12-04,2017-09-01,Isentia Group Limited,False,False,False
+SAI,2,"Addition,Removal",2012-09-07,2016-12-05,SAI Global Limited,False,False,False
+SDA,2,"Addition,Removal",2017-06-09,2019-12-13,Speedcast International Limited,False,False,False
+SGN,2,"Addition,Removal",2013-09-06,2015-06-05,STW Communications Group Limited,False,False,False
+MTU,2,"Addition,Removal",2012-06-01,2016-02-01,M2 Telecommunications Group Limited,False,False,False
+GXL,2,"Addition,Removal",2014-07-14,2018-09-07,Greencross Limited,False,False,False
+FXL,2,"Addition,Removal",2012-07-20,2017-12-08,FlexiGroup Limited,False,False,False
+LTM,2,"Addition,Removal",2023-12-19,2025-02-28,,False,False,False
+GXY,2,"Addition,Removal",2016-09-02,2019-12-13,Galaxy Resources Limited,False,False,False
+JHC,2,"Addition,Removal",2014-07-07,2017-12-08,Japara Healthcare Limited,False,False,False
+LNG,2,"Addition,Removal",2014-09-05,2016-06-10,Liquefied Natural Gas Limited,False,False,False
+IIN,2,"Addition,Removal",2012-12-07,2015-08-20,iiNet Limited,False,False,False
+GMA,2,"Addition,Removal",2014-08-15,2018-09-07,Genworth Mortgage Insurance Australia Limited,False,False,False
+BIN,2,"Addition,Removal",2018-09-07,2021-07-08,Bingo Industries Limited,False,False,False
+AIX,1,Removal,2013-06-07,2013-06-07,Australian Infrastructure Fund Limited,False,False,False
+AHG,1,Removal,2019-03-08,2019-03-08,Automotive Holdings Group Limited,False,False,False
+FOX,1,Removal,2014-04-23,2014-04-23,,False,False,False
+FKP,1,Removal,2013-09-06,2013-09-06,FKP Property Group,False,False,False
+DUE,1,Removal,2017-04-21,2017-04-21,,False,False,False
+DTE,1,Removal,2012-06-01,2012-06-01,Dart Energy Limited,False,False,False
+DLX,1,Removal,2019-07-31,2019-07-31,,False,False,False
+DML,1,Removal,2013-09-06,2013-09-06,Discovery Metals Limited,False,False,False
+CPL,1,Removal,2013-06-07,2013-06-07,Coalspur Mines Limited,False,False,False
+DJS,1,Removal,2014-07-14,2014-07-14,,False,False,False
+CIM,1,Removal,2022-04-07,2022-04-07,,False,False,False
+CRF,1,Addition,2012-03-02,2012-03-02,Centro Retail Australia,False,False,False
+CQO,1,Removal,2012-04-12,2012-04-12,,False,False,False
+BKN,1,Removal,2015-09-04,2015-09-04,Bradken Limited,False,False,False
+BRS,1,Removal,2016-05-03,2016-05-03,,False,False,False
+BTT,1,Addition,2015-08-20,2015-08-20,,False,False,False
+BTU,1,Removal,2013-03-01,2013-03-01,Bathurst Resources Limited,False,False,False
+CAB,1,Removal,2016-03-11,2016-03-11,Cabcharge Australia Limited,False,False,False
+AQA,1,Removal,2014-07-07,2014-07-07,,False,False,False
+AQG,1,Removal,2014-03-07,2014-03-07,Alacer Gold Corp.,False,False,False
+AQP,1,Removal,2012-09-07,2012-09-07,Aquarius Platinum Limited,False,False,False
+AST,1,Removal,2022-02-01,2022-02-01,,False,False,False
+ARP,1,Addition,2014-03-07,2014-03-07,ARB Corporation Limited,False,False,False
+BDR,1,Removal,2015-03-06,2015-03-06,Beadell Resources Limited,False,False,False
+ALZ,1,Removal,2014-08-15,2014-08-15,,False,False,False
+AOG,1,Removal,2019-11-07,2019-11-07,,False,False,False
+AIO,1,Removal,2016-07-22,2016-07-22,,False,False,False
+IOF,1,Removal,2018-08-31,2018-08-31,,False,False,False
+IDL,1,Addition,2011-10-26,2011-10-26,,False,False,False
+IGR,1,Addition,2011-12-16,2011-12-16,Integra Mining Limited,False,False,False
+GRY,1,Removal,2013-03-01,2013-03-01,Gryphon Minerals Limited,False,False,False
+GCL,1,Removal,2012-06-20,2012-06-20,,False,False,False
+GFF,1,Removal,2015-02-24,2015-02-24,,False,False,False
+GBG,1,Removal,2013-03-01,2013-03-01,Gindalbie Metals Limited,False,False,False
+OSH,1,Removal,2021-12-07,2021-12-07,,False,False,False
+OGC,1,Removal,2013-12-06,2013-12-06,OceanaGold Corporation,False,False,False
+NVT,1,Removal,2019-06-14,2019-06-14,,False,False,False
+NVN,1,Removal,2015-05-22,2015-05-22,,False,False,False
+NEA,1,Addition,2019-04-15,2019-04-15,,False,False,False
+MBN,1,Removal,2013-06-07,2013-06-07,Mirabela Nickel Limited,False,False,False
+MCC,1,Removal,2011-10-26,2011-10-26,,False,False,False
+MMX,1,Removal,2011-12-16,2011-12-16,Murchison Metals Ltd,False,False,False
+KZL,1,Removal,2012-03-02,2012-03-02,Kagara Limited,False,False,False
+GNS,1,Removal,2011-12-16,2011-12-16,Gunns Limited,False,False,False
+HSO,1,Addition,2014-10-08,2014-10-08,,False,False,False
+HIL,1,Removal,2011-09-16,2011-09-16,Hills Holdings Limited,False,False,False
+IAU,1,Removal,2012-12-07,2012-12-07,Intrepid Mines Limited,False,False,False
+PDL,1,Removal,2023-01-06,2023-01-06,,False,False,False
+PNA,1,Removal,2015-05-15,2015-05-15,,False,False,False
+PBG,1,Removal,2016-06-21,2016-06-21,,False,False,False
+TEN,1,Removal,2016-03-11,2016-03-11,Ten Network Holdings Limited,False,False,False
+TEL,1,Addition,2011-11-11,2011-11-11,,False,False,False
+SYD,1,Removal,2022-02-03,2022-02-03,,False,False,False
+SLK,1,Addition,2021-09-03,2021-09-03,Sealink Travel Group Limited,False,False,False
+SKI,1,Removal,2021-11-24,2021-11-24,,False,False,False
+TPM,1,Addition,2020-06-25,2020-06-25,,False,False,False
+TOL,1,Removal,2015-05-07,2015-05-07,,False,False,False
+TME,1,Addition,2013-03-01,2013-03-01,Trade Me Group Limited,False,False,False
+VAH,1,Removal,2014-03-07,2014-03-07,Virgin Australia Holdings Limited,False,False,False
+UGL,1,Removal,2015-09-04,2015-09-04,UGL Limited,False,False,False
+TTS,1,Removal,2017-12-06,2017-12-06,,False,False,False
+VVR,1,Addition,2016-12-05,2016-12-05,,False,False,False
+WFD,1,Removal,2018-05-24,2018-05-24,,False,False,False
+WSA,1,Removal,2020-12-11,2020-12-11,Western Areas Limited,False,False,False
+WTF,1,Removal,2014-10-08,2014-10-08,,False,False,False
+Z1P,1,Addition,2020-09-04,2020-09-04,Zip Co Limited,False,False,False

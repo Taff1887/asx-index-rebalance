@@ -16,6 +16,7 @@ AGO,1,Removal,2015-03-06,2015-03-06,Atlas Iron Limited,True,True,True
 AHE,1,Addition,2013-06-07,2013-06-07,Automotive Holdings Group Limited,True,True,True
 AHG,1,Removal,2019-03-08,2019-03-08,Automotive Holdings Group Limited,False,False,False
 AHY,2,"Addition,Removal",2014-09-05,2018-06-08,Asaleo Care Limited,False,False,False
+AIA,1,Addition,2020-09-04,2020-09-04,Auckland International Airport Limited,True,True,True
 AIO,1,Removal,2016-07-22,2016-07-22,,False,False,False
 AIX,1,Removal,2013-06-07,2013-06-07,Australian Infrastructure Fund Limited,False,False,False
 AKE,1,Removal,2023-12-19,2023-12-19,,True,True,True
@@ -38,13 +39,14 @@ AQP,1,Removal,2012-09-07,2012-09-07,Aquarius Platinum Limited,False,False,False
 ARF,1,Addition,2022-02-01,2022-02-01,,True,True,True
 ARI,1,Removal,2015-12-04,2015-12-04,Arrium Limited,True,True,True
 ARP,1,Addition,2014-03-07,2014-03-07,ARB Corporation Limited,False,False,False
-ASB,4,"Addition,Removal",2015-09-04,2025-06-06,Austal Limited,True,True,True
+ASB,5,"Addition,Removal",2015-09-04,2025-06-06,Austal Limited,True,True,True
 ASK,1,Removal,2023-09-01,2023-09-01,Abacus Storage King,True,True,True
 ASL,2,"Addition,Removal",2014-03-07,2018-03-09,Ausdrill Limited,True,True,True
 AST,1,Removal,2022-02-01,2022-02-01,,False,False,False
+AUB,1,Addition,2020-09-04,2020-09-04,AUB Group Limited,True,True,True
 AUN,1,Removal,2012-04-05,2012-04-05,,True,True,True
 AUT,1,Removal,2014-05-20,2014-05-20,,True,True,True
-AVH,1,Addition,2019-11-07,2019-11-07,,True,True,True
+AVH,2,"Addition,Removal",2019-11-07,2020-12-11,"Avita Therapeutics, Inc.",True,True,True
 AVZ,2,"Addition,Removal",2022-03-04,2022-09-02,AVZ Minerals Limited,True,True,True
 AWC,1,Removal,2024-07-19,2024-07-19,,True,True,True
 AWE,1,Removal,2016-03-11,2016-03-11,AWE Limited,True,True,True
@@ -78,7 +80,7 @@ CDA,3,"Addition,Removal",2021-03-12,2024-09-18,Codan Limited,True,True,True
 CDD,2,"Addition,Removal",2012-06-01,2015-12-04,Cardno Limited,True,True,True
 CDU,1,Removal,2013-12-06,2013-12-06,Cudeco Limited,True,True,True
 CGC,2,"Addition,Removal",2015-12-04,2024-02-01,Costa Group Holdings Limited,True,True,True
-CHN,2,"Addition,Removal",2021-12-08,2024-03-01,Chalice Mining Limited,True,True,True
+CHN,3,"Addition,Removal",2021-06-11,2024-03-01,Chalice Mining Limited,True,True,True
 CIA,1,Addition,2021-03-12,2021-03-12,Champion Iron Limited,True,True,True
 CIM,1,Removal,2022-04-07,2022-04-07,,False,False,False
 CIP,1,Addition,2020-06-12,2020-06-12,Centuria Industrial REIT,True,True,True
@@ -88,6 +90,7 @@ CMM,1,Addition,2022-09-02,2022-09-02,Capricorn Metals Limited,True,True,True
 CMW,2,"Addition,Removal",2013-09-06,2023-12-01,Cromwell Property Group,True,True,True
 CNI,1,Addition,2021-07-08,2021-07-08,,True,True,True
 CNU,2,"Addition,Removal",2011-12-16,2017-04-21,Chorus Limited,True,True,True
+COE,1,Removal,2020-12-11,2020-12-11,Cooper Energy Limited,True,True,True
 CPL,1,Removal,2013-06-07,2013-06-07,Coalspur Mines Limited,False,False,False
 CQE,2,"Addition,Removal",2022-09-02,2025-03-07,Charter Hall Social Infrastructure REIT,True,True,True
 CQO,1,Removal,2012-04-12,2012-04-12,,False,False,False
@@ -143,7 +146,7 @@ FXL,2,"Addition,Removal",2012-07-20,2017-12-08,FlexiGroup Limited,False,False,Fa
 GBG,1,Removal,2013-03-01,2013-03-01,Gindalbie Metals Limited,False,False,False
 GCL,1,Removal,2012-06-20,2012-06-20,,False,False,False
 GDG,1,Addition,2025-04-16,2025-04-16,,True,True,True
-GEM,1,Addition,2013-06-07,2013-06-07,G8 Education Limited,True,True,True
+GEM,2,"Addition,Removal",2013-06-07,2021-09-03,G8 Education Limited,True,True,True
 GFF,1,Removal,2015-02-24,2015-02-24,,False,False,False
 GGP,1,Addition,2025-09-05,2025-09-05,Greatland Resources Limited,True,True,True
 GMA,2,"Addition,Removal",2014-08-15,2018-09-07,Genworth Mortgage Insurance Australia Limited,False,False,False
@@ -193,10 +196,11 @@ JIN,2,"Addition,Removal",2019-09-06,2020-06-12,Jumbo Interactive Limited,True,Tr
 JLG,2,"Addition,Removal",2022-09-02,2025-03-07,Johns Lyng Group Limited,True,True,True
 KAR,2,"Addition,Removal",2016-03-11,2022-09-02,Karoon Gas Australia Limited,True,True,True
 KCN,2,"Addition,Removal",2013-12-06,2026-06-05,Kingsgate Consolidated Limited,True,True,True
+KGN,1,Addition,2020-12-11,2020-12-11,Kogan.Com Ltd,True,True,True
 KLS,1,Removal,2025-03-07,2025-03-07,Kelsian Group Limited,True,True,True
 KMD,2,"Addition,Removal",2013-11-08,2015-09-04,Kathmandu Holdings Limited,True,True,True
 KZL,1,Removal,2012-03-02,2012-03-02,Kagara Limited,False,False,False
-LIC,1,Removal,2025-09-05,2025-09-05,Lifestyle Communities Limited,True,True,True
+LIC,2,"Addition,Removal",2021-09-03,2025-09-05,Lifestyle Communities Limited,True,True,True
 LKE,2,"Addition,Removal",2022-06-03,2023-09-01,Lake Resources N.L.,True,True,True
 LNC,3,"Addition,Removal",2012-12-07,2013-11-08,Linc Energy Ltd,True,True,True
 LNG,2,"Addition,Removal",2014-09-05,2016-06-10,Liquefied Natural Gas Limited,False,False,False
@@ -215,7 +219,7 @@ MFG,1,Addition,2013-03-01,2013-03-01,Magellan Financial Group Limited,True,True,
 MGX,1,Removal,2015-03-06,2015-03-06,Mount Gibson Iron Limited,True,True,True
 MI6,1,Addition,2026-06-05,2026-06-05,Minerals 260 Limited,True,True,True
 MML,1,Removal,2014-12-05,2014-12-05,Medusa Mining Limited,True,True,True
-MMS,1,Addition,2012-12-07,2012-12-07,McMillan Shakespeare Limited,True,True,True
+MMS,2,"Addition,Removal",2012-12-07,2020-09-04,McMillan Shakespeare Limited,True,True,True
 MMX,1,Removal,2011-12-16,2011-12-16,Murchison Metals Ltd,False,False,False
 MND,1,Addition,2022-12-02,2022-12-02,Monadelphous Group Limited,True,True,True
 MP1,1,Addition,2020-06-12,2020-06-12,Megaport Limited,True,True,True
@@ -235,7 +239,7 @@ NEA,1,Addition,2019-04-15,2019-04-15,,False,False,False
 NEC,1,Addition,2014-02-12,2014-02-12,,True,True,True
 NEM,1,Addition,2023-10-24,2023-10-24,,True,True,True
 NEU,1,Addition,2023-09-01,2023-09-01,Neuren Pharmaceuticals Limited,True,True,True
-NHC,2,Addition,2018-11-29,2022-06-03,New Hope Corporation Limited,True,True,True
+NHC,3,"Addition,Removal",2018-11-29,2022-06-03,New Hope Corporation Limited,True,True,True
 NHF,1,Addition,2017-09-01,2017-09-01,NIB Holdings Limited,True,True,True
 NIC,1,Addition,2021-03-12,2021-03-12,Nickel Mines Limited,True,True,True
 NSR,2,"Addition,Removal",2015-06-05,2026-04-15,National Storage REIT,True,True,True
@@ -243,18 +247,18 @@ NUF,1,Removal,2025-09-05,2025-09-05,Nufarm Limited,True,True,True
 NVN,1,Removal,2015-05-22,2015-05-22,,False,False,False
 NVT,1,Removal,2019-06-14,2019-06-14,,False,False,False
 NVX,1,Removal,2023-03-03,2023-03-03,Novonix Limited,True,True,True
-NWH,2,"Addition,Removal",2014-09-05,2023-03-03,NRW Holdings Limited,True,True,True
+NWH,3,"Addition,Removal",2014-09-05,2023-03-03,NRW Holdings Limited,True,True,True
 NWL,1,Addition,2019-09-06,2019-09-06,Netwealth Group Limited,True,True,True
 NXG,1,Addition,2025-12-05,2025-12-05,NexGen Energy (Canada) Limited,True,True,True
-NXL,3,"Addition,Removal",2021-03-12,2025-09-05,Nuix Limited,True,True,True
+NXL,4,"Addition,Removal",2021-03-12,2025-09-05,Nuix Limited,True,True,True
 NXT,1,Addition,2016-09-02,2016-09-02,Nextdc Limited,True,True,True
 OBL,1,Addition,2020-06-12,2020-06-12,Omni Bridgeway Limited,True,True,True
 OBM,1,Addition,2025-12-05,2025-12-05,Ora Banda Mining Limited,True,True,True
 OFX,2,"Addition,Removal",2014-03-07,2016-12-09,Ozforex Group Limited,True,True,True
 OGC,1,Removal,2013-12-06,2013-12-06,OceanaGold Corporation,False,False,False
 OMH,1,Removal,2011-12-16,2011-12-16,OM Holdings Limited,True,True,True
-OML,1,Addition,2017-07-28,2017-07-28,,True,True,True
-ORE,1,Addition,2016-09-02,2016-09-02,Orocobre Limited,True,True,True
+OML,2,"Addition,Removal",2017-07-28,2020-09-04,Ooh!Media Limited,True,True,True
+ORE,3,"Addition,Removal",2016-09-02,2021-06-11,Orocobre Limited,True,True,True
 OSH,1,Removal,2021-12-07,2021-12-07,,False,False,False
 OZL,1,Removal,2023-04-13,2023-04-13,,True,True,True
 PAN,1,Removal,2012-09-07,2012-09-07,Panoramic Resources Limited,True,True,True
@@ -268,11 +272,11 @@ PLS,3,"Addition,Removal",2017-12-08,2021-03-12,Pilbara Minerals Limited,True,Tru
 PME,1,Addition,2019-07-31,2019-07-31,,True,True,True
 PMV,1,Addition,2013-03-01,2013-03-01,Premier Investments Limited,True,True,True
 PNA,1,Removal,2015-05-15,2015-05-15,,False,False,False
-PNI,2,"Addition,Removal",2019-03-08,2020-06-12,Pinnacle Investment Management Group Limited,True,True,True
+PNI,3,"Addition,Removal",2019-03-08,2021-09-03,Pinnacle Investment Management Group Limited,True,True,True
 PNR,1,Addition,2025-12-05,2025-12-05,Pantoro Gold Limited,True,True,True
 PNV,4,"Addition,Removal",2019-09-06,2025-09-05,Polynovo Limited,True,True,True
 PRG,2,"Addition,Removal",2015-12-04,2016-09-02,Programmed Maintenance Services Limited,True,True,True
-PRN,1,Addition,2025-09-05,2025-09-05,Perenti Limited,True,True,True
+PRN,2,"Addition,Removal",2021-06-11,2025-09-05,Perenti Limited,True,True,True
 PRU,1,Addition,2020-06-12,2020-06-12,Perseus Mining Limited,True,True,True
 PTM,1,Removal,2022-06-03,2022-06-03,Platinum Asset Management Limited,True,True,True
 PXA,1,Addition,2023-01-06,2023-01-06,,True,True,True
@@ -281,9 +285,10 @@ REA,1,Addition,2013-06-07,2013-06-07,REA Group Ltd,True,True,True
 REC,1,Removal,2016-04-14,2016-04-14,,True,True,True
 RED,1,Addition,2024-03-01,2024-03-01,Red 5 Limited,True,True,True
 REG,2,"Addition,Removal",2015-03-06,2017-12-08,Regis Healthcare Limited,True,True,True
+REH,1,Addition,2020-12-11,2020-12-11,Reece Limited,True,True,True
 RFG,2,"Addition,Removal",2013-12-06,2018-06-08,Retail Food Group Limited,True,True,True
-RMS,4,"Addition,Removal",2011-12-16,2023-09-01,Ramelius Resources Limited,True,True,True
-RSG,3,"Addition,Removal",2014-12-05,2025-12-05,Resolute Mining Limited,True,True,True
+RMS,5,"Addition,Removal",2011-12-16,2023-09-01,Ramelius Resources Limited,True,True,True
+RSG,4,"Addition,Removal",2014-12-05,2025-12-05,Resolute Mining Limited,True,True,True
 RWC,1,Addition,2016-07-22,2016-07-22,,True,True,True
 SAI,2,"Addition,Removal",2012-09-07,2016-12-05,SAI Global Limited,False,False,False
 SAR,3,"Addition,Removal",2013-03-01,2021-01-27,Saracen Mineral Holdings Limited,False,False,False
@@ -306,6 +311,7 @@ SKE,2,"Addition,Removal",2012-09-07,2015-06-05,Skilled Group Limited,False,False
 SKI,1,Removal,2021-11-24,2021-11-24,,False,False,False
 SKT,2,"Addition,Removal",2013-09-06,2017-09-01,Sky Network Television Limited,True,True,True
 SLC,1,Addition,2025-09-05,2025-09-05,Superloop Limited,True,True,True
+SLK,1,Addition,2021-09-03,2021-09-03,Sealink Travel Group Limited,False,False,False
 SLR,4,"Addition,Removal",2011-12-16,2024-05-31,Silver Lake Resources Limited,True,True,True
 SLX,1,Addition,2025-12-05,2025-12-05,Silex Systems Limited,True,True,True
 SMR,2,"Addition,Removal",2024-03-01,2025-06-06,Stanmore Resources Limited,True,True,True
@@ -322,6 +328,7 @@ SSM,2,"Addition,Removal",2019-06-14,2021-03-12,Service Stream Limited,True,True,
 STX,2,"Addition,Removal",2024-02-01,2024-09-06,Strike Energy Limited,True,True,True
 SUL,1,Addition,2012-03-21,2012-03-21,,True,True,True
 SWM,1,Removal,2019-06-14,2019-06-14,Seven West Media Limited,True,True,True
+SXL,1,Removal,2020-09-04,2020-09-04,Southern Cross Media Group Limited,True,True,True
 SXY,2,"Addition,Removal",2012-04-05,2015-09-04,Senex Energy Limited,False,False,False
 SYA,2,"Addition,Removal",2022-09-02,2024-03-01,Sayona Mining Limited,True,True,True
 SYD,1,Removal,2022-02-03,2022-02-03,,False,False,False
@@ -341,11 +348,11 @@ TRS,1,Removal,2014-09-05,2014-09-05,The Reject Shop Limited,True,True,True
 TRY,2,"Addition,Removal",2012-04-12,2013-06-07,Troy Resources Limited,True,True,True
 TTS,1,Removal,2017-12-06,2017-12-06,,False,False,False
 TUA,2,"Addition,Removal",2020-06-30,2025-09-05,Tuas Limited,True,True,True
-TYR,1,Removal,2022-06-03,2022-06-03,Tyro Payments Limited,True,True,True
+TYR,2,"Addition,Removal",2021-09-03,2022-06-03,Tyro Payments Limited,True,True,True
 UGL,1,Removal,2015-09-04,2015-09-04,UGL Limited,False,False,False
 UMG,1,Removal,2023-10-13,2023-10-13,,True,True,True
 URW,1,Removal,2022-03-04,2022-03-04,Unibail-Rodamco-Westfield,True,True,True
-UWL,1,Removal,2022-07-15,2022-07-15,,False,False,False
+UWL,2,"Addition,Removal",2021-06-11,2022-07-15,Uniti Group Limited,False,False,False
 VAH,1,Removal,2014-03-07,2014-03-07,Virgin Australia Holdings Limited,False,False,False
 VEA,1,Addition,2018-09-10,2018-09-10,,True,True,True
 VED,2,"Addition,Removal",2014-03-07,2016-02-04,Veda Group Limited,False,False,False
@@ -362,10 +369,12 @@ WEB,2,"Addition,Removal",2016-09-02,2026-06-05,Webjet Limited,True,True,True
 WEC,1,Removal,2012-03-02,2012-03-02,White Energy Company Limited,True,True,True
 WES,1,Addition,2018-11-14,2018-11-14,,True,True,True
 WFD,1,Removal,2018-05-24,2018-05-24,,False,False,False
-WGX,1,Addition,2024-09-06,2024-09-06,Westgold Resources Limited,True,True,True
+WGX,3,"Addition,Removal",2020-09-04,2024-09-06,Westgold Resources Limited,True,True,True
 WOW,1,Addition,2021-06-18,2021-06-18,,True,True,True
+WSA,1,Removal,2020-12-11,2020-12-11,Western Areas Limited,False,False,False
 WTC,1,Addition,2017-12-08,2017-12-08,WiseTech Global Limited,True,True,True
 WTF,1,Removal,2014-10-08,2014-10-08,,False,False,False
 XRO,1,Addition,2018-03-09,2018-03-09,Xero Limited,True,True,True
 YAL,1,Addition,2024-09-06,2024-09-06,Yancoal Australia Limited,True,True,True
+Z1P,1,Addition,2020-09-04,2020-09-04,Zip Co Limited,False,False,False
 ZIP,1,Removal,2022-09-02,2022-09-02,ZIP Co Limited,True,True,True

@@ -1946,6 +1946,305 @@ announcement_date,effective_date,index,action,ticker,company_name
 2020-06-12,2020-06-22,ASX300,Removal,WPP,WPP Aunz Ltd
 2020-06-12,2020-06-22,ASX50,Addition,A2M,The A2 Milk Company Limited
 2020-06-12,2020-06-22,ASX50,Removal,AMP,AMP Limited
+2020-09-04,2020-09-21,ALLAUS200,Addition,KGN,Kogan.Com Ltd
+2020-09-04,2020-09-21,ALLAUS200,Addition,Z1P,Zip Co Limited
+2020-09-04,2020-09-21,ALLAUS200,Removal,HSN,Hansen Technologies Limited
+2020-09-04,2020-09-21,ALLAUS200,Removal,JIN,Jumbo Interactive Limited
+2020-09-04,2020-09-21,ALLTECH,Addition,BRN,Brainchip Holdings Ltd
+2020-09-04,2020-09-21,ALLTECH,Addition,DDR,Dicker Data Limited
+2020-09-04,2020-09-21,ALLTECH,Addition,EVS,Envirosuite Limited
+2020-09-04,2020-09-21,ALLTECH,Addition,M7T,Mach7 Technologies Limited
+2020-09-04,2020-09-21,ALLTECH,Addition,NVX,Novonix Limited
+2020-09-04,2020-09-21,ALLTECH,Addition,SPT,Splitit Payments Ltd
+2020-09-04,2020-09-21,ALLTECH,Addition,SZL,Sezzle Inc.
+2020-09-04,2020-09-21,ALLTECH,Addition,WSP,Whispir Limited
+2020-09-04,2020-09-21,ASX100,Addition,APX,Appen Limited
+2020-09-04,2020-09-21,ASX100,Addition,FPH,Fisher & Paykel Healthcare Corporation Limited
+2020-09-04,2020-09-21,ASX100,Removal,CIM,Cimic Group Limited
+2020-09-04,2020-09-21,ASX100,Removal,VUK,Virgin Money Uk PLC
+2020-09-04,2020-09-21,ASX20,Addition,COL,Coles Group Limited
+2020-09-04,2020-09-21,ASX20,Addition,FMG,Fortescue Metals Group Ltd
+2020-09-04,2020-09-21,ASX20,Removal,SCG,Scentre Group
+2020-09-04,2020-09-21,ASX20,Removal,SUN,Suncorp Group Limited
+2020-09-04,2020-09-21,ASX200,Addition,AIA,Auckland International Airport Limited
+2020-09-04,2020-09-21,ASX200,Addition,AUB,AUB Group Limited
+2020-09-04,2020-09-21,ASX200,Addition,RMS,Ramelius Resources Limited
+2020-09-04,2020-09-21,ASX200,Addition,WGX,Westgold Resources Limited
+2020-09-04,2020-09-21,ASX200,Addition,Z1P,Zip Co Limited
+2020-09-04,2020-09-21,ASX200,Removal,MMS,McMillan Shakespeare Limited
+2020-09-04,2020-09-21,ASX200,Removal,NHC,New Hope Corporation Limited
+2020-09-04,2020-09-21,ASX200,Removal,OML,Ooh!Media Limited
+2020-09-04,2020-09-21,ASX200,Removal,ORE,Orocobre Limited
+2020-09-04,2020-09-21,ASX200,Removal,SXL,Southern Cross Media Group Limited
+2020-09-04,2020-09-21,ASX300,Addition,ALK,Alkane Resources Limited
+2020-09-04,2020-09-21,ASX300,Addition,CMM,Capricorn Metals Ltd
+2020-09-04,2020-09-21,ASX300,Addition,DDR,Dicker Data Limited
+2020-09-04,2020-09-21,ASX300,Addition,DEG,De Grey Mining Limited
+2020-09-04,2020-09-21,ASX300,Addition,EVT,Event Hospitality and Entertainment Ltd
+2020-09-04,2020-09-21,ASX300,Addition,REH,Reece Limited
+2020-09-04,2020-09-21,ASX300,Addition,TPW,Temple & Webster Group Ltd
+2020-09-04,2020-09-21,ASX300,Removal,FAR,FAR Limited
+2020-09-04,2020-09-21,ASX300,Removal,IGL,Ive Group Limited
+2020-09-04,2020-09-21,ASX300,Removal,JHC,Japara Healthcare Limited
+2020-09-04,2020-09-21,ASX300,Removal,MYR,Myer Holdings Limited
+2020-09-04,2020-09-21,ASX300,Removal,REG,Regis Healthcare Limited
+2020-09-04,2020-09-21,ASX300,Removal,SGF,SG Fleet Group Limited
+2020-12-11,2020-12-21,ALLTECH,Addition,3DP,Pointerra Limited
+2020-12-11,2020-12-21,ALLTECH,Addition,4DX,4Dmedical Limited
+2020-12-11,2020-12-21,ALLTECH,Addition,BID,Bidenergy Limited
+2020-12-11,2020-12-21,ALLTECH,Addition,DTC,Damstra Holdings Limited
+2020-12-11,2020-12-21,ALLTECH,Addition,FDV,Frontier Digital Ventures Limited
+2020-12-11,2020-12-21,ALLTECH,Addition,FZO,Family Zone Cyber Safety Limited
+2020-12-11,2020-12-21,ALLTECH,Addition,HTG,Harvest Technology Group Ltd
+2020-12-11,2020-12-21,ALLTECH,Addition,LBY,Laybuy Group Holdings Limited
+2020-12-11,2020-12-21,ALLTECH,Addition,MMM,Marley Spoon Ag
+2020-12-11,2020-12-21,ALLTECH,Addition,OTW,Over The Wire Holdings Limited
+2020-12-11,2020-12-21,ALLTECH,Addition,TNT,Tesserent Limited
+2020-12-11,2020-12-21,ALLTECH,Addition,WBT,Weebit Nano Ltd
+2020-12-11,2020-12-21,ALLTECH,Addition,YOJ,Yojee Limited
+2020-12-11,2020-12-21,ALLTECH,Removal,RAP,Resapp Health Limited
+2020-12-11,2020-12-21,ASX100,Addition,IEL,Idp Education Limited
+2020-12-11,2020-12-21,ASX100,Addition,MIN,Mineral Resources Limited
+2020-12-11,2020-12-21,ASX100,Addition,REH,Reece Limited
+2020-12-11,2020-12-21,ASX100,Removal,FLT,Flight Centre Travel Group Limited
+2020-12-11,2020-12-21,ASX100,Removal,ILU,Iluka Resources Limited
+2020-12-11,2020-12-21,ASX100,Removal,NHF,NIB Holdings Limited
+2020-12-11,2020-12-21,ASX20,Addition,APT,Afterpay Limited
+2020-12-11,2020-12-21,ASX20,Removal,IAG,Insurance Australia Group Limited
+2020-12-11,2020-12-21,ASX200,Addition,KGN,Kogan.Com Ltd
+2020-12-11,2020-12-21,ASX200,Addition,REH,Reece Limited
+2020-12-11,2020-12-21,ASX200,Removal,AVH,"Avita Therapeutics, Inc."
+2020-12-11,2020-12-21,ASX200,Removal,COE,Cooper Energy Limited
+2020-12-11,2020-12-21,ASX200,Removal,WSA,Western Areas Limited
+2020-12-11,2020-12-21,ASX50,Addition,APT,Afterpay Limited
+2020-12-11,2020-12-21,ASX50,Addition,XRO,Xero Limited
+2020-12-11,2020-12-21,ASX50,Removal,OSH,Oil Search Limited
+2020-12-11,2020-12-21,ASX50,Removal,VCX,Vicinity Centres
+2021-03-12,2021-03-22,ALLTECH,Addition,4DS,4Ds Memory Limited
+2021-03-12,2021-03-22,ALLTECH,Addition,ABY,Adore Beauty Group Limited
+2021-03-12,2021-03-22,ALLTECH,Addition,IOU,Ioupay Limited
+2021-03-12,2021-03-22,ALLTECH,Addition,MYQ,Myfiziq Limited
+2021-03-12,2021-03-22,ALLTECH,Addition,NXL,Nuix Limited
+2021-03-12,2021-03-22,ALLTECH,Addition,RDY,Readytech Holdings Limited
+2021-03-12,2021-03-22,ALLTECH,Addition,SLX,Silex Systems Limited
+2021-03-12,2021-03-22,ALLTECH,Addition,SMP,Smartpay Holdings Limited
+2021-03-12,2021-03-22,ALLTECH,Removal,PCK,Painchek Ltd
+2021-03-12,2021-03-22,ALLTECH,Removal,WEB,Webjet Limited
+2021-03-12,2021-03-22,ASX200,Addition,CDA,Codan Limited
+2021-03-12,2021-03-22,ASX200,Addition,CIA,Champion Iron Limited
+2021-03-12,2021-03-22,ASX200,Addition,HUB,HUB24 Limited
+2021-03-12,2021-03-22,ASX200,Addition,NIC,Nickel Mines Limited
+2021-03-12,2021-03-22,ASX200,Addition,NXL,Nuix Limited
+2021-03-12,2021-03-22,ASX200,Addition,PLS,Pilbara Minerals Limited
+2021-03-12,2021-03-22,ASX200,Removal,BVS,Bravura Solutions Limited
+2021-03-12,2021-03-22,ASX200,Removal,GWA,GWA Group Limited
+2021-03-12,2021-03-22,ASX200,Removal,SFR,Sandfire Resources Limited
+2021-03-12,2021-03-22,ASX200,Removal,SIQ,Smartgroup Corporation Ltd
+2021-03-12,2021-03-22,ASX200,Removal,SSM,Service Stream Limited
+2021-03-12,2021-03-22,ASX200,Removal,TGR,Tassal Group Limited
+2021-03-12,2021-03-22,ASX300,Addition,360,Life360 Inc.
+2021-03-12,2021-03-22,ASX300,Addition,3DP,Pointerra Limited
+2021-03-12,2021-03-22,ASX300,Addition,4DX,4Dmedical Limited
+2021-03-12,2021-03-22,ASX300,Addition,A4N,Alpha Hpa Limited
+2021-03-12,2021-03-22,ASX300,Addition,ABB,Aussie Broadband Limited
+2021-03-12,2021-03-22,ASX300,Addition,ABR,American Pacific Borates Limited
+2021-03-12,2021-03-22,ASX300,Addition,ABY,Adore Beauty Group Limited
+2021-03-12,2021-03-22,ASX300,Addition,ADH,Adairs Limited
+2021-03-12,2021-03-22,ASX300,Addition,ADN,Andromeda Metals Limited
+2021-03-12,2021-03-22,ASX300,Addition,ADO,Anteotech Ltd
+2021-03-12,2021-03-22,ASX300,Addition,ARX,Aroa Biosurgery Limited
+2021-03-12,2021-03-22,ASX300,Addition,ASM,Australian Strategic Materials Limited
+2021-03-12,2021-03-22,ASX300,Addition,AUT,Auteco Minerals Ltd
+2021-03-12,2021-03-22,ASX300,Addition,BET,Betmakers Technology Group Ltd
+2021-03-12,2021-03-22,ASX300,Addition,BKG,Booktopia Group Limited
+2021-03-12,2021-03-22,ASX300,Addition,BRN,Brainchip Holdings Ltd
+2021-03-12,2021-03-22,ASX300,Addition,BRN,Brainchip Holdings Ltd
+2021-03-12,2021-03-22,ASX300,Addition,CAI,Calidus Resources Limited
+2021-03-12,2021-03-22,ASX300,Addition,CHN,Chalice Mining Limited
+2021-03-12,2021-03-22,ASX300,Addition,CRN,Coronado Global Resources Inc.
+2021-03-12,2021-03-22,ASX300,Addition,CSX,Cleanspace Holdings Limited
+2021-03-12,2021-03-22,ASX300,Addition,CTM,Centaurus Metals Limited
+2021-03-12,2021-03-22,ASX300,Addition,CTT,Cettire Limited
+2021-03-12,2021-03-22,ASX300,Addition,CYC,Cyclopharm Limited
+2021-03-12,2021-03-22,ASX300,Addition,DBI,Dalrymple Bay Infrastructure Limited
+2021-03-12,2021-03-22,ASX300,Addition,DBI,Dalrymple Bay Infrastructure Limited
+2021-03-12,2021-03-22,ASX300,Addition,DGO,DGO Gold Limited
+2021-03-12,2021-03-22,ASX300,Addition,DOC,Doctor Care Anywhere Group PLC
+2021-03-12,2021-03-22,ASX300,Addition,EMV,Emvision Medical Devices Ltd
+2021-03-12,2021-03-22,ASX300,Addition,FCL,Fineos Corporation Holdings PLC
+2021-03-12,2021-03-22,ASX300,Addition,GPR,Geopacific Resources Ltd
+2021-03-12,2021-03-22,ASX300,Addition,HAS,Hastings Technology Metals Ltd
+2021-03-12,2021-03-22,ASX300,Addition,HMC,Home Consortium
+2021-03-12,2021-03-22,ASX300,Addition,HMY,Harmoney Corp Limited
+2021-03-12,2021-03-22,ASX300,Addition,HPG,Hipages Group Holdings Ltd
+2021-03-12,2021-03-22,ASX300,Addition,IMM,Immutep Limited
+2021-03-12,2021-03-22,ASX300,Addition,IMR,"Imricor Medical Systems, Inc."
+2021-03-12,2021-03-22,ASX300,Addition,IMU,Imugene Limited
+2021-03-12,2021-03-22,ASX300,Addition,JRV,Jervois Mining Limited
+2021-03-12,2021-03-22,ASX300,Addition,KCN,Kingsgate Consolidated Limited
+2021-03-12,2021-03-22,ASX300,Addition,LBY,Laybuy Group Holdings Limited
+2021-03-12,2021-03-22,ASX300,Addition,LFG,Liberty Financial Group
+2021-03-12,2021-03-22,ASX300,Addition,M7T,Mach7 Technologies Limited
+2021-03-12,2021-03-22,ASX300,Addition,MGH,Maas Group Holdings Limited
+2021-03-12,2021-03-22,ASX300,Addition,MGV,Musgrave Minerals Limited
+2021-03-12,2021-03-22,ASX300,Addition,MMM,Marley Spoon Ag
+2021-03-12,2021-03-22,ASX300,Addition,MMM,Marley Spoon Ag
+2021-03-12,2021-03-22,ASX300,Addition,MYD,Mydeal.Com.Au Limited
+2021-03-12,2021-03-22,ASX300,Addition,NTU,Northern Minerals Limited
+2021-03-12,2021-03-22,ASX300,Addition,NVA,Nova Minerals Limited
+2021-03-12,2021-03-22,ASX300,Addition,NVX,Novonix Limited
+2021-03-12,2021-03-22,ASX300,Addition,NXL,Nuix Limited
+2021-03-12,2021-03-22,ASX300,Addition,NXL,Nuix Limited
+2021-03-12,2021-03-22,ASX300,Addition,OBM,Ora Banda Mining Ltd
+2021-03-12,2021-03-22,ASX300,Addition,OPY,Openpay Group Ltd
+2021-03-12,2021-03-22,ASX300,Addition,PAN,Panoramic Resources Limited
+2021-03-12,2021-03-22,ASX300,Addition,PLL,Piedmont Lithium Ltd
+2021-03-12,2021-03-22,ASX300,Addition,PLL,Piedmont Lithium Ltd
+2021-03-12,2021-03-22,ASX300,Addition,PLT,Plenti Group Limited
+2021-03-12,2021-03-22,ASX300,Addition,POS,Poseidon Nickel Limited
+2021-03-12,2021-03-22,ASX300,Addition,RAC,Race Oncology Ltd
+2021-03-12,2021-03-22,ASX300,Addition,RBL,Redbubble Limited
+2021-03-12,2021-03-22,ASX300,Addition,RCE,Recce Pharmaceuticals Ltd
+2021-03-12,2021-03-22,ASX300,Addition,SMR,Stanmore Coal Limited
+2021-03-12,2021-03-22,ASX300,Addition,ST1,Spirit Technology Solutions Ltd
+2021-03-12,2021-03-22,ASX300,Addition,SVL,Silver Mines Limited
+2021-03-12,2021-03-22,ASX300,Addition,TIE,Tietto Minerals Limited
+2021-03-12,2021-03-22,ASX300,Addition,TLG,Talga Group Ltd
+2021-03-12,2021-03-22,ASX300,Addition,TLX,Telix Pharmaceuticals Limited
+2021-03-12,2021-03-22,ASX300,Addition,TNT,Tesserent Limited
+2021-03-12,2021-03-22,ASX300,Addition,UNI,Universal Store Holdings Limited
+2021-03-12,2021-03-22,ASX300,Addition,VUL,Vulcan Energy Resources Limited
+2021-03-12,2021-03-22,ASX300,Addition,WBT,Weebit Nano Ltd
+2021-03-12,2021-03-22,ASX300,Addition,WMX,Wiluna Mining Corporation Limited
+2021-03-12,2021-03-22,ASX300,Addition,YOJ,Yojee Limited
+2021-03-12,2021-03-22,ASX300,Removal,A2B,A2B Australia Limited
+2021-03-12,2021-03-22,ASX300,Removal,AGI,Ainsworth Game Technology Limited
+2021-03-12,2021-03-22,ASX300,Removal,ALC,Alcidion Group Limited
+2021-03-12,2021-03-22,ASX300,Removal,ALG,Ardent Leisure Group Limited
+2021-03-12,2021-03-22,ASX300,Removal,AMS,Atomos Limited
+2021-03-12,2021-03-22,ASX300,Removal,AMX,Aerometrex Limited
+2021-03-12,2021-03-22,ASX300,Removal,APD,Apn Property Group
+2021-03-12,2021-03-22,ASX300,Removal,AT1,Atomo Diagnostics Limited
+2021-03-12,2021-03-22,ASX300,Removal,ATU,Atrum Coal Limited
+2021-03-12,2021-03-22,ASX300,Removal,BRL,Bathurst Resources Limited
+2021-03-12,2021-03-22,ASX300,Removal,BSA,BSA Limited
+2021-03-12,2021-03-22,ASX300,Removal,CDD,Cardno Limited
+2021-03-12,2021-03-22,ASX300,Removal,D2O,Duxton Water Limited
+2021-03-12,2021-03-22,ASX300,Removal,DCN,Dacian Gold Limited
+2021-03-12,2021-03-22,ASX300,Removal,DNK,Danakali Limited
+2021-03-12,2021-03-22,ASX300,Removal,EGG,Enero Group Limited
+2021-03-12,2021-03-22,ASX300,Removal,EGN,Engenco Limited
+2021-03-12,2021-03-22,ASX300,Removal,ELO,Elmo Software Limited
+2021-03-12,2021-03-22,ASX300,Removal,ENN,Elanor Investors Group
+2021-03-12,2021-03-22,ASX300,Removal,EP1,E&P Financial Group Limited
+2021-03-12,2021-03-22,ASX300,Removal,ERF,Elanor Retail Property Fund
+2021-03-12,2021-03-22,ASX300,Removal,FAR,FAR Limited
+2021-03-12,2021-03-22,ASX300,Removal,FAR,FAR Limited
+2021-03-12,2021-03-22,ASX300,Removal,FLC,Fluence Corporation Limited
+2021-03-12,2021-03-22,ASX300,Removal,FNP,Freedom Foods Group Limited
+2021-03-12,2021-03-22,ASX300,Removal,FNP,Freedom Foods Group Limited
+2021-03-12,2021-03-22,ASX300,Removal,FSA,FSA Group Limited
+2021-03-12,2021-03-22,ASX300,Removal,GNE,Genesis Energy Limited
+2021-03-12,2021-03-22,ASX300,Removal,GTN,GTN Limited
+2021-03-12,2021-03-22,ASX300,Removal,IGL,Ive Group Limited
+2021-03-12,2021-03-22,ASX300,Removal,IMA,Image Resources NL
+2021-03-12,2021-03-22,ASX300,Removal,ITG,Intega Group Limited
+2021-03-12,2021-03-22,ASX300,Removal,JHC,Japara Healthcare Limited
+2021-03-12,2021-03-22,ASX300,Removal,KLL,Kalium Lakes Limited
+2021-03-12,2021-03-22,ASX300,Removal,KMD,Kathmandu Holdings Limited
+2021-03-12,2021-03-22,ASX300,Removal,KSC,K & S Corporation Limited
+2021-03-12,2021-03-22,ASX300,Removal,MAD,Mader Group Limited
+2021-03-12,2021-03-22,ASX300,Removal,MAH,Macmahon Holdings Limited
+2021-03-12,2021-03-22,ASX300,Removal,MCY,Mercury NZ Limited
+2021-03-12,2021-03-22,ASX300,Removal,MMI,Metro Mining Limited
+2021-03-12,2021-03-22,ASX300,Removal,MML,Medusa Mining Limited
+2021-03-12,2021-03-22,ASX300,Removal,MOZ,Mosaic Brands Limited
+2021-03-12,2021-03-22,ASX300,Removal,MVF,Monash IVF Group Limited
+2021-03-12,2021-03-22,ASX300,Removal,NET,Netlinkz Limited
+2021-03-12,2021-03-22,ASX300,Removal,NEU,Neuren Pharmaceuticals Limited
+2021-03-12,2021-03-22,ASX300,Removal,NGI,Navigator Global Investments Limited
+2021-03-12,2021-03-22,ASX300,Removal,NXS,Next Science Limited
+2021-03-12,2021-03-22,ASX300,Removal,OFX,OFX Group Limited
+2021-03-12,2021-03-22,ASX300,Removal,OGC,OceanaGold Corporation
+2021-03-12,2021-03-22,ASX300,Removal,ONT,1300 Smiles Limited
+2021-03-12,2021-03-22,ASX300,Removal,PBP,Probiotec Limited
+2021-03-12,2021-03-22,ASX300,Removal,PCG,Pengana Capital Group Limited
+2021-03-12,2021-03-22,ASX300,Removal,PCK,Painchek Ltd
+2021-03-12,2021-03-22,ASX300,Removal,PET,Phoslock Environmental Technologies Limited
+2021-03-12,2021-03-22,ASX300,Removal,PET,Phoslock Environmental Technologies Limited
+2021-03-12,2021-03-22,ASX300,Removal,PFT,Pure Foods Tasmania Limited
+2021-03-12,2021-03-22,ASX300,Removal,PGL,Prospa Group Limited
+2021-03-12,2021-03-22,ASX300,Removal,QIP,Qantm Intellectual Property Limited
+2021-03-12,2021-03-22,ASX300,Removal,RAP,Resapp Health Limited
+2021-03-12,2021-03-22,ASX300,Removal,RDC,Redcape Hotel Group
+2021-03-12,2021-03-22,ASX300,Removal,RFG,Retail Food Group Limited
+2021-03-12,2021-03-22,ASX300,Removal,SHJ,Shine Justice Ltd
+2021-03-12,2021-03-22,ASX300,Removal,SLC,Superloop Limited
+2021-03-12,2021-03-22,ASX300,Removal,SOM,SomnoMed Limited
+2021-03-12,2021-03-22,ASX300,Removal,SRG,SRG Global Limited
+2021-03-12,2021-03-22,ASX300,Removal,TER,Terracom Limited
+2021-03-12,2021-03-22,ASX300,Removal,TOT,360 Capital REIT
+2021-03-12,2021-03-22,ASX300,Removal,URF,US Masters Residential Property Fund
+2021-03-12,2021-03-22,ASX300,Removal,VTG,Vita Group Limited
+2021-03-12,2021-03-22,ASX300,Removal,VTH,Vitalharvest Freehold Trust
+2021-06-11,2021-06-21,ALLTECH,Addition,ART,Airtasker Limited
+2021-06-11,2021-06-21,ALLTECH,Addition,CRO,Cirralto Limited
+2021-06-11,2021-06-21,ALLTECH,Addition,CTT,Cettire Limited
+2021-06-11,2021-06-21,ALLTECH,Addition,DW8,Digital Wine Ventures Limited
+2021-06-11,2021-06-21,ASX100,Addition,HVN,Harvey Norman Holdings Limited
+2021-06-11,2021-06-21,ASX100,Addition,MTS,Metcash Limited
+2021-06-11,2021-06-21,ASX100,Removal,APX,Appen Limited
+2021-06-11,2021-06-21,ASX100,Removal,TPG,TPG Telecom Limited
+2021-06-11,2021-06-21,ASX200,Addition,CHN,Chalice Mining Limited
+2021-06-11,2021-06-21,ASX200,Addition,ORE,Orocobre Limited
+2021-06-11,2021-06-21,ASX200,Addition,UWL,Uniti Group Limited
+2021-06-11,2021-06-21,ASX200,Removal,ASB,Austal Limited
+2021-06-11,2021-06-21,ASX200,Removal,PRN,Perenti Global Limited
+2021-06-11,2021-06-21,ASX200,Removal,RSG,Resolute Mining Limited
+2021-06-11,2021-06-21,ASX50,Addition,NST,Northern Star Resources Limited
+2021-06-11,2021-06-21,ASX50,Removal,ORI,Orica Limited
+2021-09-03,2021-09-20,ALLTECH,Addition,HPG,Hipages Group Holdings Limited
+2021-09-03,2021-09-20,ALLTECH,Addition,NOV,Novatti Group Limited
+2021-09-03,2021-09-20,ALLTECH,Addition,ONE,Oneview Healthcare PLC
+2021-09-03,2021-09-20,ALLTECH,Removal,SMP,Smartpay Holdings Limited
+2021-09-03,2021-09-20,ASX100,Addition,VUK,Virgin Money UK PLC
+2021-09-03,2021-09-20,ASX100,Removal,BLD,Boral Limited
+2021-09-03,2021-09-20,ASX100,Removal,BPT,Beach Energy Limited
+2021-09-03,2021-09-20,ASX200,Addition,LIC,Lifestyle Communities Limited
+2021-09-03,2021-09-20,ASX200,Addition,PNI,Pinnacle Investment Management Group Limited
+2021-09-03,2021-09-20,ASX200,Addition,SLK,Sealink Travel Group Limited
+2021-09-03,2021-09-20,ASX200,Addition,TYR,Tyro Payments Limited
+2021-09-03,2021-09-20,ASX200,Removal,GEM,G8 Education Limited
+2021-09-03,2021-09-20,ASX200,Removal,NWH,NRW Holdings Limited
+2021-09-03,2021-09-20,ASX200,Removal,NXL,Nuix Limited
+2021-09-03,2021-09-20,ASX200,Removal,WGX,Westgold Resources Limited
+2021-09-03,2021-09-20,ASX300,Addition,ASM,Australian Strategic Materials Limited
+2021-09-03,2021-09-20,ASX300,Addition,BET,Betmakers Technology Group Limited
+2021-09-03,2021-09-20,ASX300,Addition,DUB,Dubber Corporation Limited
+2021-09-03,2021-09-20,ASX300,Addition,HDN,Homeco Daily Needs REIT
+2021-09-03,2021-09-20,ASX300,Addition,IMU,Imugene Limited
+2021-09-03,2021-09-20,ASX300,Addition,JLG,Johns Lyng Group Limited
+2021-09-03,2021-09-20,ASX300,Addition,LTR,Liontown Resources Limited
+2021-09-03,2021-09-20,ASX300,Addition,NVX,Novonix Limited
+2021-09-03,2021-09-20,ASX300,Addition,PDN,Paladin Energy Limited
+2021-09-03,2021-09-20,ASX300,Addition,PPK,PPK Group Limited
+2021-09-03,2021-09-20,ASX300,Addition,STX,Strike Energy Limited
+2021-09-03,2021-09-20,ASX300,Addition,SZL,Sezzle Inc.
+2021-09-03,2021-09-20,ASX300,Addition,VUL,Vulcan Energy Resources Limited
+2021-09-03,2021-09-20,ASX300,Removal,ALK,Alkane Resources Limited
+2021-09-03,2021-09-20,ASX300,Removal,AVH,Avita Medical Inc.
+2021-09-03,2021-09-20,ASX300,Removal,BUB,Bubs Australia Limited
+2021-09-03,2021-09-20,ASX300,Removal,HUM,Humm Group Limited
+2021-09-03,2021-09-20,ASX300,Removal,IRI,Integrated Research Limited
+2021-09-03,2021-09-20,ASX300,Removal,JMS,Jupiter Mines Limited
+2021-09-03,2021-09-20,ASX300,Removal,MLD,MACA Limited
+2021-09-03,2021-09-20,ASX300,Removal,MVP,Medical Developments International Limited
+2021-09-03,2021-09-20,ASX300,Removal,SM1,Synlait Milk Limited
+2021-09-03,2021-09-20,ASX50,Addition,RMD,ResMed Inc.
+2021-09-03,2021-09-20,ASX50,Addition,TAH,TABCORP Holdings Limited
+2021-09-03,2021-09-20,ASX50,Removal,A2M,The A2 Milk Company Limited
+2021-09-03,2021-09-20,ASX50,Removal,AGL,AGL Energy Limited
+2021-09-03,2021-09-20,ASX50,Removal,ALD,Ampol Limited
 2022-03-04,2022-03-21,ALLTECH,Addition,SDR,Siteminder Limited
 2022-03-04,2022-03-21,ALLTECH,Addition,SYM,Symbio Holdings Limited
 2022-03-04,2022-03-21,ALLTECH,Addition,VR1,Vection Technologies Limited
