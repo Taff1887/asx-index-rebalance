@@ -1,0 +1,550 @@
+announcement_date,effective_date,index,action,ticker,company_name,source_type,source_file
+2011-04-15,,ASX200,Removal,TAL,,removal,20110415-asx200-removal.pdf
+2011-04-15,,ASX200,Addition,MSB,,removal-replacement,20110415-asx200-removal.pdf
+2011-05-02,,ASX200,Removal,FGL,,addition,20110502-asx200-addition.pdf
+2011-05-27,,ASX200,Addition,TAH,,addition,20110527-asx200-addition.pdf
+2011-06-02,,ASX200,Removal,EQN,,removal,20110602-asx200-removal.pdf
+2011-09-16,2011-09-16,ASX200,Addition,ACR,Acrux Limited,rebalance,20110902-asx200-rebalance.pdf
+2011-09-16,2011-09-16,ASX200,Removal,IFN,Infigen Energy,rebalance,20110902-asx200-rebalance.pdf
+2011-09-16,2011-09-16,ASX200,Removal,HIL,Hills Holdings Limited,rebalance,20110902-asx200-rebalance.pdf
+2011-10-26,,ASX200,Removal,MCC,,removal,20111026-asx200-removal.pdf
+2011-10-26,,ASX200,Addition,IDL,,removal-replacement,20111026-asx200-removal.pdf
+2011-11-11,,ASX200,Addition,TEL,,addition,20111111-asx200-addition.pdf
+2011-11-25,,ASX200,Removal,FGL,,removal,20111125-asx200-removal.pdf
+2011-12-16,2011-12-16,ASX200,Addition,IGR,Integra Mining Limited,rebalance,20111202-asx200-rebalance.pdf
+2011-12-16,2011-12-16,ASX200,Addition,IMD,Imdex Limited,rebalance,20111202-asx200-rebalance.pdf
+2011-12-16,2011-12-16,ASX200,Addition,RMS,Ramelius Resources Limited,rebalance,20111202-asx200-rebalance.pdf
+2011-12-16,2011-12-16,ASX200,Addition,SLR,Silver Lake Resources Limited,rebalance,20111202-asx200-rebalance.pdf
+2011-12-16,2011-12-16,ASX200,Removal,CNU,Chorus Limited,rebalance,20111202-asx200-rebalance.pdf
+2011-12-16,2011-12-16,ASX200,Removal,GNS,Gunns Limited,rebalance,20111202-asx200-rebalance.pdf
+2011-12-16,2011-12-16,ASX200,Removal,MMX,Murchison Metals Ltd,rebalance,20111202-asx200-rebalance.pdf
+2011-12-16,2011-12-16,ASX200,Removal,OMH,OM Holdings Limited,rebalance,20111202-asx200-rebalance.pdf
+2012-03-02,,ASX200,Addition,CRF,Centro Retail Australia,rebalance,20120302-asx200-rebalance.pdf
+2012-03-02,,ASX200,Addition,EVN,Evolution Mining Limited,rebalance,20120302-asx200-rebalance.pdf
+2012-03-02,,ASX200,Removal,KZL,Kagara Limited,rebalance,20120302-asx200-rebalance.pdf
+2012-03-02,,ASX200,Removal,WEC,White Energy Company Limited,rebalance,20120302-asx200-rebalance.pdf
+2012-03-21,,ASX200,Removal,EXT,,removal,20120321-asx200-removal.pdf
+2012-03-21,,ASX200,Addition,SUL,,removal-replacement,20120321-asx200-removal.pdf
+2012-04-05,,ASX200,Removal,AUN,,removal,20120405-asx200-removal.pdf
+2012-04-05,,ASX200,Addition,SXY,,removal-replacement,20120405-asx200-removal.pdf
+2012-04-12,,ASX200,Removal,CQO,,removal,20120412-asx200-removal.pdf
+2012-04-12,,ASX200,Addition,TRY,,removal-replacement,20120412-asx200-removal.pdf
+2012-06-01,,ASX200,Addition,CDD,Cardno Limited,rebalance,20120601-asx200-rebalance.pdf
+2012-06-01,,ASX200,Addition,MTU,M2 Telecommunications Group Limited,rebalance,20120601-asx200-rebalance.pdf
+2012-06-01,,ASX200,Removal,DTE,Dart Energy Limited,rebalance,20120601-asx200-rebalance.pdf
+2012-06-01,,ASX200,Removal,ERA,Energy Resources of Australia Limited,rebalance,20120601-asx200-rebalance.pdf
+2012-06-20,,ASX200,Removal,GCL,,removal,20120620-asx200-removal.pdf
+2012-07-20,,ASX200,Removal,SPT,,removal,20120720-asx200-removal.pdf
+2012-07-20,,ASX200,Addition,FXL,,removal-replacement,20120720-asx200-removal.pdf
+2012-09-07,2012-09-21,ASX200,Addition,DLS,Drillsearch Energy Limited,rebalance,20120907-asx200-rebalance.pdf
+2012-09-07,2012-09-21,ASX200,Addition,SAI,SAI Global Limited,rebalance,20120907-asx200-rebalance.pdf
+2012-09-07,2012-09-21,ASX200,Addition,SKE,Skilled Group Limited,rebalance,20120907-asx200-rebalance.pdf
+2012-09-07,2012-09-21,ASX200,Removal,AQP,Aquarius Platinum Limited,rebalance,20120907-asx200-rebalance.pdf
+2012-09-07,2012-09-21,ASX200,Removal,PAN,Panoramic Resources Limited,rebalance,20120907-asx200-rebalance.pdf
+2012-09-07,2012-09-21,ASX200,Removal,RMS,Ramelius Resources Limited,rebalance,20120907-asx200-rebalance.pdf
+2012-12-07,2012-12-21,ASX200,Addition,IIN,iiNet Limited,rebalance,20121207-asx200-rebalance.pdf
+2012-12-07,2012-12-21,ASX200,Addition,MAD,Maverick Drilling and Exploration Limited,rebalance,20121207-asx200-rebalance.pdf
+2012-12-07,2012-12-21,ASX200,Addition,MMS,McMillan Shakespeare Limited,rebalance,20121207-asx200-rebalance.pdf
+2012-12-07,2012-12-21,ASX200,Removal,APN,APN News & Media Limited,rebalance,20121207-asx200-rebalance.pdf
+2012-12-07,2012-12-21,ASX200,Removal,IAU,Intrepid Mines Limited,rebalance,20121207-asx200-rebalance.pdf
+2012-12-07,2012-12-21,ASX200,Removal,LNC,Linc Energy Ltd,rebalance,20121207-asx200-rebalance.pdf
+2012-12-07,2012-12-21,ASX200,Removal,MAH,Macmahon Holdings Limited,rebalance,20121207-asx200-rebalance.pdf
+2013-03-01,2013-03-15,ASX200,Addition,HZN,Horizon Oil Limited,rebalance,20130301-asx200-rebalance.pdf
+2013-03-01,2013-03-15,ASX200,Addition,MFG,Magellan Financial Group Limited,rebalance,20130301-asx200-rebalance.pdf
+2013-03-01,2013-03-15,ASX200,Addition,PMV,Premier Investments Limited,rebalance,20130301-asx200-rebalance.pdf
+2013-03-01,2013-03-15,ASX200,Addition,TME,Trade Me Group Limited,rebalance,20130301-asx200-rebalance.pdf
+2013-03-01,2013-03-15,ASX200,Removal,BTU,Bathurst Resources Limited,rebalance,20130301-asx200-rebalance.pdf
+2013-03-01,2013-03-15,ASX200,Removal,GBG,Gindalbie Metals Limited,rebalance,20130301-asx200-rebalance.pdf
+2013-03-01,2013-03-15,ASX200,Removal,GRY,Gryphon Minerals Limited,rebalance,20130301-asx200-rebalance.pdf
+2013-03-01,2013-03-15,ASX200,Removal,SAR,Saracen Mineral Holdings Limited,rebalance,20130301-asx200-rebalance.pdf
+2013-06-07,2013-06-21,ASX200,Addition,AHE,Automotive Holdings Group Limited,rebalance,20130607-asx200-rebalance.pdf
+2013-06-07,2013-06-21,ASX200,Addition,DMP,Domino's Pizza Enterprises Limited,rebalance,20130607-asx200-rebalance.pdf
+2013-06-07,2013-06-21,ASX200,Addition,GEM,G8 Education Limited,rebalance,20130607-asx200-rebalance.pdf
+2013-06-07,2013-06-21,ASX200,Addition,LNC,Linc Energy Ltd,rebalance,20130607-asx200-rebalance.pdf
+2013-06-07,2013-06-21,ASX200,Addition,REA,REA Group Ltd,rebalance,20130607-asx200-rebalance.pdf
+2013-06-07,2013-06-21,ASX200,Addition,SIR,Sirius Resources NL,rebalance,20130607-asx200-rebalance.pdf
+2013-06-07,2013-06-21,ASX200,Removal,AIX,Australian Infrastructure Fund Limited,rebalance,20130607-asx200-rebalance.pdf
+2013-06-07,2013-06-21,ASX200,Removal,CPL,Coalspur Mines Limited,rebalance,20130607-asx200-rebalance.pdf
+2013-06-07,2013-06-21,ASX200,Removal,IMD,Imdex Limited,rebalance,20130607-asx200-rebalance.pdf
+2013-06-07,2013-06-21,ASX200,Removal,MAD,Maverick Drilling and Exploration Limited,rebalance,20130607-asx200-rebalance.pdf
+2013-06-07,2013-06-21,ASX200,Removal,MBN,Mirabela Nickel Limited,rebalance,20130607-asx200-rebalance.pdf
+2013-06-07,2013-06-21,ASX200,Removal,TRY,Troy Resources Limited,rebalance,20130607-asx200-rebalance.pdf
+2013-09-06,2013-09-20,ASX200,Addition,CMW,Cromwell Property Group,rebalance,20130906-asx200-rebalance.pdf
+2013-09-06,2013-09-20,ASX200,Addition,FGE,Forge Group Limited,rebalance,20130906-asx200-rebalance.pdf
+2013-09-06,2013-09-20,ASX200,Addition,SGN,STW Communications Group Limited,rebalance,20130906-asx200-rebalance.pdf
+2013-09-06,2013-09-20,ASX200,Addition,SKT,Sky Network Television Limited,rebalance,20130906-asx200-rebalance.pdf
+2013-09-06,2013-09-20,ASX200,Removal,BBG,Billabong International Limited,rebalance,20130906-asx200-rebalance.pdf
+2013-09-06,2013-09-20,ASX200,Removal,DML,Discovery Metals Limited,rebalance,20130906-asx200-rebalance.pdf
+2013-09-06,2013-09-20,ASX200,Removal,EHL,Emeco Holdings Limited,rebalance,20130906-asx200-rebalance.pdf
+2013-09-06,2013-09-20,ASX200,Removal,FKP,FKP Property Group,rebalance,20130906-asx200-rebalance.pdf
+2013-09-06,2013-09-20,ASX200,Removal,MDL,Mineral Deposits Limited,rebalance,20130906-asx200-rebalance.pdf
+2013-11-08,,ASX200,Removal,LNC,,removal,20131108-asx200-removal.pdf
+2013-11-08,,ASX200,Addition,KMD,,removal-replacement,20131108-asx200-removal.pdf
+2013-12-02,,ASX200,Addition,BXB,,no,20131202-asx200-no-change.pdf
+2013-12-06,2013-12-20,ASX200,Addition,BCI,BC Iron Limited,rebalance,20131206-asx200-rebalance.pdf
+2013-12-06,2013-12-20,ASX200,Addition,RFG,Retail Food Group Limited,rebalance,20131206-asx200-rebalance.pdf
+2013-12-06,2013-12-20,ASX200,Addition,SGH,Slater & Gordon Limited,rebalance,20131206-asx200-rebalance.pdf
+2013-12-06,2013-12-20,ASX200,Addition,SKC,Skycity Entertainment Group Limited,rebalance,20131206-asx200-rebalance.pdf
+2013-12-06,2013-12-20,ASX200,Addition,VRL,Village Roadshow Limited,rebalance,20131206-asx200-rebalance.pdf
+2013-12-06,2013-12-20,ASX200,Addition,VRT,Virtus Health Limited,rebalance,20131206-asx200-rebalance.pdf
+2013-12-06,2013-12-20,ASX200,Removal,BLY,Boart Longyear Limited,rebalance,20131206-asx200-rebalance.pdf
+2013-12-06,2013-12-20,ASX200,Removal,CDU,Cudeco Limited,rebalance,20131206-asx200-rebalance.pdf
+2013-12-06,2013-12-20,ASX200,Removal,FWD,Fleetwood Corporation Limited,rebalance,20131206-asx200-rebalance.pdf
+2013-12-06,2013-12-20,ASX200,Removal,KCN,Kingsgate Consolidated Limited,rebalance,20131206-asx200-rebalance.pdf
+2013-12-06,2013-12-20,ASX200,Removal,OGC,OceanaGold Corporation,rebalance,20131206-asx200-rebalance.pdf
+2013-12-06,2013-12-20,ASX200,Removal,SBM,St Barbara Limited,rebalance,20131206-asx200-rebalance.pdf
+2013-12-06,2013-12-20,ASX200,Removal,SDL,Sundance Resources Limited,rebalance,20131206-asx200-rebalance.pdf
+2013-12-10,,ASX200,Addition,AMC,,addition,20131210-asx200-addition.pdf
+2014-02-12,,ASX200,Removal,FGE,,removal,20140212-asx200-removal.pdf
+2014-02-12,,ASX200,Addition,NEC,,removal-replacement,20140212-asx200-removal.pdf
+2014-03-07,2014-03-21,ASX200,Addition,AGI,Ainsworth Game Technology Limited,rebalance,20140307-asx200-rebalance.pdf
+2014-03-07,2014-03-21,ASX200,Addition,ARP,ARB Corporation Limited,rebalance,20140307-asx200-rebalance.pdf
+2014-03-07,2014-03-21,ASX200,Addition,BGA,Bega Cheese Limited,rebalance,20140307-asx200-rebalance.pdf
+2014-03-07,2014-03-21,ASX200,Addition,CVO,Cover-More Group Limited,rebalance,20140307-asx200-rebalance.pdf
+2014-03-07,2014-03-21,ASX200,Addition,OFX,Ozforex Group Limited,rebalance,20140307-asx200-rebalance.pdf
+2014-03-07,2014-03-21,ASX200,Addition,PGH,Pact Group Holdings Ltd,rebalance,20140307-asx200-rebalance.pdf
+2014-03-07,2014-03-21,ASX200,Addition,VED,Veda Group Limited,rebalance,20140307-asx200-rebalance.pdf
+2014-03-07,2014-03-21,ASX200,Removal,AQG,Alacer Gold Corp.,rebalance,20140307-asx200-rebalance.pdf
+2014-03-07,2014-03-21,ASX200,Removal,ASL,Ausdrill Limited,rebalance,20140307-asx200-rebalance.pdf
+2014-03-07,2014-03-21,ASX200,Removal,DCG,Decmil Group Limited,rebalance,20140307-asx200-rebalance.pdf
+2014-03-07,2014-03-21,ASX200,Removal,EWC,Energy World Corporation Ltd,rebalance,20140307-asx200-rebalance.pdf
+2014-03-07,2014-03-21,ASX200,Removal,SLR,Silver Lake Resources Limited,rebalance,20140307-asx200-rebalance.pdf
+2014-03-07,2014-03-21,ASX200,Removal,SMX,SMS Management & Technology Limited,rebalance,20140307-asx200-rebalance.pdf
+2014-03-07,2014-03-21,ASX200,Removal,VAH,Virgin Australia Holdings Limited,rebalance,20140307-asx200-rebalance.pdf
+2014-04-23,,ASX200,Removal,FOX,,removal,20140423-asx200-removal.pdf
+2014-04-23,,ASX200,Addition,SEA,,removal-replacement,20140423-asx200-removal.pdf
+2014-05-20,,ASX200,Removal,AUT,,removal,20140520-asx200-removal.pdf
+2014-05-20,,ASX200,Addition,SDF,,removal-replacement,20140520-asx200-removal.pdf
+2014-06-06,2014-06-20,ASX200,Addition,TGR,Tassal Group Limited,rebalance,20140606-asx200-rebalance.pdf
+2014-06-06,2014-06-20,ASX200,Removal,ACR,Acrux Limited,rebalance,20140606-asx200-rebalance.pdf
+2014-07-07,,ASX200,Removal,AQA,,removal,20140707-asx200-removal.pdf
+2014-07-07,,ASX200,Addition,JHC,,removal-replacement,20140707-asx200-removal.pdf
+2014-07-14,,ASX200,Removal,DJS,,removal,20140714-asx200-removal.pdf
+2014-07-14,,ASX200,Addition,GXL,,removal-replacement,20140714-asx200-removal.pdf
+2014-08-08,,ASX200,Removal,ENV,,removal,20140808-asx200-removal.pdf
+2014-08-08,,ASX200,Addition,SPO,,removal-replacement,20140808-asx200-removal.pdf
+2014-08-15,,ASX200,Removal,ALZ,,removal,20140815-asx200-removal.pdf
+2014-08-15,,ASX200,Addition,GMA,,removal-replacement,20140815-asx200-removal.pdf
+2014-09-05,2014-09-19,ASX200,Addition,AHY,Asaleo Care Limited,rebalance,20140905-asx200-rebalance.pdf
+2014-09-05,2014-09-19,ASX200,Addition,LNG,Liquefied Natural Gas Limited,rebalance,20140905-asx200-rebalance.pdf
+2014-09-05,2014-09-19,ASX200,Addition,TNE,Technology One Limited,rebalance,20140905-asx200-rebalance.pdf
+2014-09-05,2014-09-19,ASX200,Removal,BRU,Buru Energy Limited,rebalance,20140905-asx200-rebalance.pdf
+2014-09-05,2014-09-19,ASX200,Removal,NWH,NRW Holdings Limited,rebalance,20140905-asx200-rebalance.pdf
+2014-09-05,2014-09-19,ASX200,Removal,TRS,The Reject Shop Limited,rebalance,20140905-asx200-rebalance.pdf
+2014-10-08,,ASX200,Removal,WTF,,removal,20141008-asx200-removal.pdf
+2014-10-08,,ASX200,Addition,HSO,,removal-replacement,20141008-asx200-removal.pdf
+2014-12-05,2014-12-19,ASX200,Addition,APN,APN News & Media Limited,rebalance,20141205-asx200-rebalance.pdf
+2014-12-05,2014-12-19,ASX200,Addition,VOC,Vocus Communications Limited,rebalance,20141205-asx200-rebalance.pdf
+2014-12-05,2014-12-19,ASX200,Removal,MML,Medusa Mining Limited,rebalance,20141205-asx200-rebalance.pdf
+2014-12-05,2014-12-19,ASX200,Removal,RSG,Resolute Mining Limited,rebalance,20141205-asx200-rebalance.pdf
+2015-02-24,,ASX200,Removal,GFF,,removal,20150224-asx200-removal.pdf
+2015-02-24,,ASX200,Addition,MPL,,removal-replacement,20150224-asx200-removal.pdf
+2015-03-06,2015-03-20,ASX200,Addition,AAC,Australian Agricultural Company Limited,rebalance,20150306-asx200-rebalance.pdf
+2015-03-06,2015-03-20,ASX200,Addition,CTD,Corporate Travel Management Limited,rebalance,20150306-asx200-rebalance.pdf
+2015-03-06,2015-03-20,ASX200,Addition,DSH,Dick Smith Holdings Limited,rebalance,20150306-asx200-rebalance.pdf
+2015-03-06,2015-03-20,ASX200,Addition,EHE,Estia Health Limited,rebalance,20150306-asx200-rebalance.pdf
+2015-03-06,2015-03-20,ASX200,Addition,REG,Regis Healthcare Limited,rebalance,20150306-asx200-rebalance.pdf
+2015-03-06,2015-03-20,ASX200,Addition,SYR,Syrah Resources Limited,rebalance,20150306-asx200-rebalance.pdf
+2015-03-06,2015-03-20,ASX200,Removal,AGO,Atlas Iron Limited,rebalance,20150306-asx200-rebalance.pdf
+2015-03-06,2015-03-20,ASX200,Removal,BCI,BC Iron Limited,rebalance,20150306-asx200-rebalance.pdf
+2015-03-06,2015-03-20,ASX200,Removal,BDR,Beadell Resources Limited,rebalance,20150306-asx200-rebalance.pdf
+2015-03-06,2015-03-20,ASX200,Removal,HZN,Horizon Oil Limited,rebalance,20150306-asx200-rebalance.pdf
+2015-03-06,2015-03-20,ASX200,Removal,LYC,Lynas Corporation Limited,rebalance,20150306-asx200-rebalance.pdf
+2015-03-06,2015-03-20,ASX200,Removal,MGX,Mount Gibson Iron Limited,rebalance,20150306-asx200-rebalance.pdf
+2015-05-07,,ASX200,Removal,TOL,,removal,20150507-asx200-removal.pdf
+2015-05-07,,ASX200,Addition,MYX,,removal-replacement,20150507-asx200-removal.pdf
+2015-05-15,,ASX200,Removal,PNA,,removal,20150515-asx200-removal.pdf
+2015-05-22,2015-05-29,ASX200,Removal,NVN,,removal,20150522-asx200-removal.pdf
+2015-05-22,2015-05-29,ASX200,Addition,FPH,,removal-replacement,20150522-asx200-removal.pdf
+2015-06-05,2015-06-19,ASX200,Addition,CCP,Credit Corp Group Limited,rebalance,20150605-asx200-rebalance.pdf
+2015-06-05,2015-06-19,ASX200,Addition,GOZ,Growthpoint Properties Australia,rebalance,20150605-asx200-rebalance.pdf
+2015-06-05,2015-06-19,ASX200,Addition,NSR,National Storage REIT,rebalance,20150605-asx200-rebalance.pdf
+2015-06-05,2015-06-19,ASX200,Removal,SEA,Sundance Energy Australia Limited,rebalance,20150605-asx200-rebalance.pdf
+2015-06-05,2015-06-19,ASX200,Removal,SGN,STW Communications Group Limited,rebalance,20150605-asx200-rebalance.pdf
+2015-06-05,2015-06-19,ASX200,Removal,SKE,Skilled Group Limited,rebalance,20150605-asx200-rebalance.pdf
+2015-08-20,,ASX200,Removal,IIN,,removal,20150820-asx200-removal.pdf
+2015-08-20,,ASX200,Addition,BTT,,removal-replacement,20150820-asx200-removal.pdf
+2015-09-03,,ASX200,Removal,SIR,,removal,20150903-asx200-removal.pdf
+2015-09-03,,ASX200,Addition,BKL,,removal-replacement,20150903-asx200-removal.pdf
+2015-09-04,2015-09-18,ASX200,Addition,ALU,Altium Limited,rebalance,20150904-asx200-rebalance.pdf
+2015-09-04,2015-09-18,ASX200,Addition,ASB,Austal Limited,rebalance,20150904-asx200-rebalance.pdf
+2015-09-04,2015-09-18,ASX200,Addition,BAP,Burson Group Limited,rebalance,20150904-asx200-rebalance.pdf
+2015-09-04,2015-09-18,ASX200,Addition,GTY,Gateway Lifestyle Group,rebalance,20150904-asx200-rebalance.pdf
+2015-09-04,2015-09-18,ASX200,Addition,MTR,Mantra Group Limited,rebalance,20150904-asx200-rebalance.pdf
+2015-09-04,2015-09-18,ASX200,Addition,MYO,MYOB Group Limited,rebalance,20150904-asx200-rebalance.pdf
+2015-09-04,2015-09-18,ASX200,Removal,AGI,Ainsworth Game Technology Limited,rebalance,20150904-asx200-rebalance.pdf
+2015-09-04,2015-09-18,ASX200,Removal,BKN,Bradken Limited,rebalance,20150904-asx200-rebalance.pdf
+2015-09-04,2015-09-18,ASX200,Removal,KMD,Kathmandu Holdings Limited,rebalance,20150904-asx200-rebalance.pdf
+2015-09-04,2015-09-18,ASX200,Removal,MRM,MMA Offshore Limited,rebalance,20150904-asx200-rebalance.pdf
+2015-09-04,2015-09-18,ASX200,Removal,SXY,Senex Energy Limited,rebalance,20150904-asx200-rebalance.pdf
+2015-09-04,2015-09-18,ASX200,Removal,UGL,UGL Limited,rebalance,20150904-asx200-rebalance.pdf
+2015-12-04,2015-12-18,ASX200,Addition,API,Australian Pharmaceutical Industries Limited,rebalance,20151204-asx200-rebalance.pdf
+2015-12-04,2015-12-18,ASX200,Addition,APO,APN Outdoor Group Limited,rebalance,20151204-asx200-rebalance.pdf
+2015-12-04,2015-12-18,ASX200,Addition,CGC,Costa Group Holdings Limited,rebalance,20151204-asx200-rebalance.pdf
+2015-12-04,2015-12-18,ASX200,Addition,ISD,Isentia Group Limited,rebalance,20151204-asx200-rebalance.pdf
+2015-12-04,2015-12-18,ASX200,Addition,PRG,Programmed Maintenance Services Limited,rebalance,20151204-asx200-rebalance.pdf
+2015-12-04,2015-12-18,ASX200,Removal,ARI,Arrium Limited,rebalance,20151204-asx200-rebalance.pdf
+2015-12-04,2015-12-18,ASX200,Removal,CDD,Cardno Limited,rebalance,20151204-asx200-rebalance.pdf
+2015-12-04,2015-12-18,ASX200,Removal,DLS,Drillsearch Energy Limited,rebalance,20151204-asx200-rebalance.pdf
+2015-12-04,2015-12-18,ASX200,Removal,DSH,Dick Smith Holdings Limited,rebalance,20151204-asx200-rebalance.pdf
+2015-12-04,2015-12-18,ASX200,Removal,PDN,Paladin Energy Ltd,rebalance,20151204-asx200-rebalance.pdf
+2016-01-25,,ASX200,Addition,NAB,,demerger,20160125-asx200-demerger.pdf
+2016-02-01,,ASX200,Removal,MTU,,removal,20160201-asx200-removal.pdf
+2016-02-04,,ASX200,Removal,VED,,removal,20160204-asx200-removal.pdf
+2016-02-04,,ASX200,Addition,LNK,,removal-replacement,20160204-asx200-removal.pdf
+2016-03-11,2016-03-18,ASX200,Addition,ACX,Aconex Limited,rebalance,20160311-asx200-rebalance.pdf
+2016-03-11,2016-03-18,ASX200,Addition,BAL,Bellamy'S Australia Limited,rebalance,20160311-asx200-rebalance.pdf
+2016-03-11,2016-03-18,ASX200,Addition,BKW,Brickworks Limited,rebalance,20160311-asx200-rebalance.pdf
+2016-03-11,2016-03-18,ASX200,Addition,IPH,IPH Limited,rebalance,20160311-asx200-rebalance.pdf
+2016-03-11,2016-03-18,ASX200,Addition,SBM,St Barbara Limited,rebalance,20160311-asx200-rebalance.pdf
+2016-03-11,2016-03-18,ASX200,Removal,AWE,AWE Limited,rebalance,20160311-asx200-rebalance.pdf
+2016-03-11,2016-03-18,ASX200,Removal,CAB,Cabcharge Australia Limited,rebalance,20160311-asx200-rebalance.pdf
+2016-03-11,2016-03-18,ASX200,Removal,KAR,Karoon Gas Australia Limited,rebalance,20160311-asx200-rebalance.pdf
+2016-03-11,2016-03-18,ASX200,Removal,SGH,Slater & Gordon Limited,rebalance,20160311-asx200-rebalance.pdf
+2016-03-11,2016-03-18,ASX200,Removal,TEN,Ten Network Holdings Limited,rebalance,20160311-asx200-rebalance.pdf
+2016-04-14,,ASX200,Removal,REC,,removal,20160414-asx200-removal.pdf
+2016-04-14,,ASX200,Addition,INM,,removal-replacement,20160414-asx200-removal.pdf
+2016-05-03,,ASX200,Removal,BRS,,removal,20160503-asx200-removal.pdf
+2016-05-03,,ASX200,Addition,SAR,,removal-replacement,20160503-asx200-removal.pdf
+2016-06-10,2016-06-17,ASX200,Addition,A2M,The A2 Milk Company Limited,rebalance,20160610-asx200-rebalance.pdf
+2016-06-10,2016-06-17,ASX200,Removal,LNG,Liquefied Natural Gas Limited,rebalance,20160610-asx200-rebalance.pdf
+2016-06-17,,ASX200,Addition,APN,,demerger,20160617-asx200-demerger.pdf
+2016-06-21,,ASX200,Removal,PBG,,removal,20160621-asx200-removal.pdf
+2016-06-21,,ASX200,Addition,ECX,,removal-replacement,20160621-asx200-removal.pdf
+2016-07-22,,ASX200,Removal,AIO,,removal,20160722-asx200-removal.pdf
+2016-07-22,,ASX200,Addition,RWC,,removal-replacement,20160722-asx200-removal.pdf
+2016-09-02,2016-09-16,ASX200,Addition,GXY,Galaxy Resources Limited,rebalance,20160902-asx200-rebalance.pdf
+2016-09-02,2016-09-16,ASX200,Addition,IFN,Infigen Energy,rebalance,20160902-asx200-rebalance.pdf
+2016-09-02,2016-09-16,ASX200,Addition,NXT,Nextdc Limited,rebalance,20160902-asx200-rebalance.pdf
+2016-09-02,2016-09-16,ASX200,Addition,ORE,Orocobre Limited,rebalance,20160902-asx200-rebalance.pdf
+2016-09-02,2016-09-16,ASX200,Addition,RSG,Resolute Mining Limited,rebalance,20160902-asx200-rebalance.pdf
+2016-09-02,2016-09-16,ASX200,Addition,WEB,Webjet Limited,rebalance,20160902-asx200-rebalance.pdf
+2016-09-02,2016-09-16,ASX200,Removal,ASB,Austal Limited,rebalance,20160902-asx200-rebalance.pdf
+2016-09-02,2016-09-16,ASX200,Removal,CVO,Cover-More Group Limited,rebalance,20160902-asx200-rebalance.pdf
+2016-09-02,2016-09-16,ASX200,Removal,MSB,Mesoblast Limited,rebalance,20160902-asx200-rebalance.pdf
+2016-09-02,2016-09-16,ASX200,Removal,PRG,Programmed Maintenance Services Limited,rebalance,20160902-asx200-rebalance.pdf
+2016-09-02,2016-09-16,ASX200,Removal,SHV,Select Harvests Limited,rebalance,20160902-asx200-rebalance.pdf
+2016-09-02,2016-09-16,ASX200,Removal,VRL,Village Roadshow Limited,rebalance,20160902-asx200-rebalance.pdf
+2016-12-05,,ASX200,Removal,SAI,,removal,20161205-asx200-removal.pdf
+2016-12-05,,ASX200,Addition,VVR,,removal-replacement,20161205-asx200-removal.pdf
+2016-12-09,2016-12-16,ASX200,Addition,NAN,Nanosonics Limited,rebalance,20161209-asx200-rebalance.pdf
+2016-12-09,2016-12-16,ASX200,Removal,OFX,OFX Group Limited,rebalance,20161209-asx200-rebalance.pdf
+2017-04-21,,ASX200,Removal,DUE,,removal,20170421-asx200-removal.pdf
+2017-04-21,,ASX200,Addition,CNU,,removal-replacement,20170421-asx200-removal.pdf
+2017-06-09,,ASX200,Addition,SDA,Speedcast International Limited,rebalance,20170609-asx200-rebalance.pdf
+2017-06-09,,ASX200,Removal,BAL,Bellamy's Australia Limited,rebalance,20170609-asx200-rebalance.pdf
+2017-07-28,,ASX200,Removal,SPO,,removal,20170728-asx200-removal.pdf
+2017-07-28,,ASX200,Addition,OML,,removal-replacement,20170728-asx200-removal.pdf
+2017-09-01,,ASX200,Addition,CLW,Charter Hall Long Wale REIT,rebalance,20170901-asx200-rebalance.pdf
+2017-09-01,,ASX200,Addition,NHF,NIB Holdings Limited,rebalance,20170901-asx200-rebalance.pdf
+2017-09-01,,ASX200,Addition,SOL,Washington H Soul Pattinson & Company Limited,rebalance,20170901-asx200-rebalance.pdf
+2017-09-01,,ASX200,Removal,ISD,Isentia Group Limited,rebalance,20170901-asx200-rebalance.pdf
+2017-09-01,,ASX200,Removal,SKT,Sky Network Television Limited,rebalance,20170901-asx200-rebalance.pdf
+2017-09-01,,ASX200,Removal,VRT,Virtus Health Limited,rebalance,20170901-asx200-rebalance.pdf
+2017-11-07,,ASX200,Addition,FXJ,,addition,20171107-asx200-addition.pdf
+2017-12-06,,ASX200,Removal,TTS,,removal,20171206-asx200-removal.pdf
+2017-12-08,,ASX200,Addition,LYC,Lynas Corporation Limited,rebalance,20171208-asx200-rebalance.pdf
+2017-12-08,,ASX200,Addition,PLS,Pilbara Minerals Limited,rebalance,20171208-asx200-rebalance.pdf
+2017-12-08,,ASX200,Addition,WTC,WiseTech Global Limited,rebalance,20171208-asx200-rebalance.pdf
+2017-12-08,,ASX200,Removal,FXL,FlexiGroup Limited,rebalance,20171208-asx200-rebalance.pdf
+2017-12-08,,ASX200,Removal,JHC,Japara Healthcare Limited,rebalance,20171208-asx200-rebalance.pdf
+2017-12-08,,ASX200,Removal,REG,Regis Healthcare Limited,rebalance,20171208-asx200-rebalance.pdf
+2018-03-09,,ASX200,Addition,ASL,Ausdrill Limited,rebalance,20180309-asx200-rebalance.pdf
+2018-03-09,,ASX200,Addition,BAL,Bellamy's Australia Limited,rebalance,20180309-asx200-rebalance.pdf
+2018-03-09,,ASX200,Addition,SIQ,Smartgroup Corporation Ltd,rebalance,20180309-asx200-rebalance.pdf
+2018-03-09,,ASX200,Addition,XRO,Xero Limited,rebalance,20180309-asx200-rebalance.pdf
+2018-03-09,,ASX200,Removal,AAC,Australian Agricultural Company Limited,rebalance,20180309-asx200-rebalance.pdf
+2018-03-09,,ASX200,Removal,HT1,HT&E Limited,rebalance,20180309-asx200-rebalance.pdf
+2018-03-09,,ASX200,Removal,MYR,Myer Holdings Limited,rebalance,20180309-asx200-rebalance.pdf
+2018-05-03,,ASX200,Removal,SRX,,removal,20180503-asx200-removal.pdf
+2018-05-03,,ASX200,Addition,IEL,,removal-replacement,20180503-asx200-removal.pdf
+2018-05-07,,ASX200,Removal,SRX,,update,20180507-asx200-update.pdf
+2018-05-18,,ASX200,Removal,MTR,,removal,20180518-asx200-removal.pdf
+2018-05-18,,ASX200,Addition,IEL,,removal-replacement,20180518-asx200-removal.pdf
+2018-05-24,,ASX200,Removal,WFD,,demerger,20180524-asx200-demerger.pdf
+2018-06-08,,ASX200,Addition,APT,Afterpay Touch Group Limited,rebalance,20180608-asx200-rebalance.pdf
+2018-06-08,,ASX200,Addition,APX,Appen Limited,rebalance,20180608-asx200-rebalance.pdf
+2018-06-08,,ASX200,Addition,ING,Inghams Group Limited,rebalance,20180608-asx200-rebalance.pdf
+2018-06-08,,ASX200,Removal,AHY,Asaleo Care Limited,rebalance,20180608-asx200-rebalance.pdf
+2018-06-08,,ASX200,Removal,INM,Iron Mountain Incorporated,rebalance,20180608-asx200-rebalance.pdf
+2018-06-08,,ASX200,Removal,RFG,Retail Food Group Limited,rebalance,20180608-asx200-rebalance.pdf
+2018-08-31,,ASX200,Removal,IOF,,removal,20180831-asx200-removal.pdf
+2018-08-31,,ASX200,Addition,ELD,,removal-replacement,20180831-asx200-removal.pdf
+2018-09-05,,ASX200,Removal,IOF,,update,20180905-asx200-update.pdf
+2018-09-07,,ASX200,Addition,BIN,Bingo Industries Limited,rebalance,20180907-asx200-rebalance.pdf
+2018-09-07,,ASX200,Addition,ELD,Elders Limited,rebalance,20180907-asx200-rebalance.pdf
+2018-09-07,,ASX200,Removal,GMA,Genworth Mortgage Insurance Australia Limited,rebalance,20180907-asx200-rebalance.pdf
+2018-09-07,,ASX200,Removal,GXL,Greencross Limited,rebalance,20180907-asx200-rebalance.pdf
+2018-09-10,,ASX200,Removal,SRX,,removal,20180910-asx200-removal.pdf
+2018-09-10,,ASX200,Addition,VEA,,removal-replacement,20180910-asx200-removal.pdf
+2018-10-04,,ASX200,Removal,GTY,,removal,20181004-asx200-removal.pdf
+2018-10-04,,ASX200,Addition,EHL,,removal-replacement,20181004-asx200-removal.pdf
+2018-10-11,,ASX200,Removal,APO,,removal,20181011-asx200-removal.pdf
+2018-10-11,,ASX200,Addition,BVS,,removal-replacement,20181011-asx200-removal.pdf
+2018-11-14,,ASX200,Addition,WES,,demerger,20181114-asx200-demerger.pdf
+2018-11-21,,ASX200,Removal,FXJ,,removal,20181121-asx200-removal.pdf
+2018-11-29,,ASX200,Removal,IOF,,removal,20181129-asx200-removal.pdf
+2018-11-29,,ASX200,Addition,NHC,,removal-replacement,20181129-asx200-removal.pdf
+2019-03-08,,ASX200,Addition,PNI,Pinnacle Investment Management Group Limited,rebalance,20190308-asx200-rebalance.pdf
+2019-03-08,,ASX200,Addition,HUB,HUB24 Limited,rebalance,20190308-asx200-rebalance.pdf
+2019-03-08,,ASX200,Removal,IFN,Infigen Energy,rebalance,20190308-asx200-rebalance.pdf
+2019-03-08,,ASX200,Removal,AHG,Automotive Holdings Group Limited,rebalance,20190308-asx200-rebalance.pdf
+2019-04-15,2019-04-24,ASX200,Removal,MYO,,removal,20190415-asx200-removal.pdf
+2019-04-15,2019-04-24,ASX200,Addition,NEA,,removal-replacement,20190415-asx200-removal.pdf
+2019-06-14,,ASX200,Removal,NVT,,rebalance,20190614-asx200-rebalance.pdf
+2019-06-14,,ASX200,Addition,ASB,,rebalance-replacement,20190614-asx200-rebalance.pdf
+2019-07-31,,ASX200,Removal,DLX,,removal,20190731-asx200-removal.pdf
+2019-07-31,,ASX200,Addition,PME,,removal-replacement,20190731-asx200-removal.pdf
+2019-09-06,,ASX200,Addition,CKF,Collins Foods Limited,rebalance,20190906-asx200-rebalance.pdf
+2019-09-06,,ASX200,Addition,GOR,Gold Road Resources Limited,rebalance,20190906-asx200-rebalance.pdf
+2019-09-06,,ASX200,Addition,JIN,Jumbo Interactive Limited,rebalance,20190906-asx200-rebalance.pdf
+2019-09-06,,ASX200,Addition,NWL,Netwealth Group Limited,rebalance,20190906-asx200-rebalance.pdf
+2019-09-06,,ASX200,Addition,PNV,Polynovo Limited,rebalance,20190906-asx200-rebalance.pdf
+2019-09-06,,ASX200,Addition,SLR,Silver Lake Resources Limited,rebalance,20190906-asx200-rebalance.pdf
+2019-09-06,,ASX200,Removal,ALG,Ardent Leisure Group Limited,rebalance,20190906-asx200-rebalance.pdf
+2019-09-06,,ASX200,Removal,API,Australian Pharmaceutical Industries Limited,rebalance,20190906-asx200-rebalance.pdf
+2019-09-06,,ASX200,Removal,ECX,Eclipx Group Limited,rebalance,20190906-asx200-rebalance.pdf
+2019-09-06,,ASX200,Removal,EHL,Emeco Holdings Limited,rebalance,20190906-asx200-rebalance.pdf
+2019-09-06,,ASX200,Removal,PGH,Pact Group Holdings Ltd,rebalance,20190906-asx200-rebalance.pdf
+2019-09-06,,ASX200,Removal,SIG,Sigma Healthcare Limited,rebalance,20190906-asx200-rebalance.pdf
+2019-11-07,,ASX200,Removal,AOG,,removal,20191107-asx200-removal.pdf
+2019-11-07,,ASX200,Addition,AVH,,removal-replacement,20191107-asx200-removal.pdf
+2019-12-05,,ASX200,Removal,BAL,,removal,20191205-asx200-removal.pdf
+2019-12-05,,ASX200,Addition,EML,,removal-replacement,20191205-asx200-removal.pdf
+2019-12-13,,ASX200,Addition,APE,AP Eagers Limited,rebalance,20191213-asx200-rebalance.pdf
+2019-12-13,,ASX200,Addition,INA,Ingenia Communities Group,rebalance,20191213-asx200-rebalance.pdf
+2019-12-13,,ASX200,Removal,GXY,Galaxy Resources Limited,rebalance,20191213-asx200-rebalance.pdf
+2019-12-13,,ASX200,Removal,SDA,Speedcast International Limited,rebalance,20191213-asx200-rebalance.pdf
+2020-03-16,,ASX200,Addition,GNC,,demerger,20200316-asx200-demerger.pdf
+2020-06-12,,ASX200,Addition,CIP,Centuria Industrial REIT,rebalance,20200612-asx200-rebalance.pdf
+2020-06-12,,ASX200,Addition,MP1,Megaport Limited,rebalance,20200612-asx200-rebalance.pdf
+2020-06-12,,ASX200,Addition,MSB,Mesoblast Limited,rebalance,20200612-asx200-rebalance.pdf
+2020-06-12,,ASX200,Addition,OBL,Omni Bridgeway Limited,rebalance,20200612-asx200-rebalance.pdf
+2020-06-12,,ASX200,Addition,PRU,Perseus Mining Limited,rebalance,20200612-asx200-rebalance.pdf
+2020-06-12,,ASX200,Removal,EHE,Estia Health Limited,rebalance,20200612-asx200-rebalance.pdf
+2020-06-12,,ASX200,Removal,HUB,HUB24 Limited,rebalance,20200612-asx200-rebalance.pdf
+2020-06-12,,ASX200,Removal,JIN,Jumbo Interactive Limited,rebalance,20200612-asx200-rebalance.pdf
+2020-06-12,,ASX200,Removal,MYX,Mayne Pharma Group Limited,rebalance,20200612-asx200-rebalance.pdf
+2020-06-12,,ASX200,Removal,PLS,Pilbara Minerals Limited,rebalance,20200612-asx200-rebalance.pdf
+2020-06-12,,ASX200,Removal,PNI,Pinnacle Investment Management Group Limited,rebalance,20200612-asx200-rebalance.pdf
+2020-06-25,2020-07-02,ASX200,Addition,TPM,,demerger,20200625-asx200-demerger.pdf
+2020-06-30,,ASX200,Removal,TUA,,removal,20200630-asx200-removal.pdf
+2021-01-27,2021-02-04,ASX200,Removal,SAR,,removal,20210127-asx200-removal.pdf
+2021-01-27,2021-02-04,ASX200,Addition,PBH,,removal-replacement,20210127-asx200-removal.pdf
+2021-03-12,2021-03-22,ASX200,Addition,CDA,Codan Limited,quarterly,20210312-asx200-quarterly-march2021.pdf
+2021-03-12,2021-03-22,ASX200,Addition,CIA,Champion Iron Limited,quarterly,20210312-asx200-quarterly-march2021.pdf
+2021-03-12,2021-03-22,ASX200,Addition,HUB,HUB24 Limited,quarterly,20210312-asx200-quarterly-march2021.pdf
+2021-03-12,2021-03-22,ASX200,Addition,NIC,Nickel Mines Limited,quarterly,20210312-asx200-quarterly-march2021.pdf
+2021-03-12,2021-03-22,ASX200,Addition,NXL,Nuix Limited,quarterly,20210312-asx200-quarterly-march2021.pdf
+2021-03-12,2021-03-22,ASX200,Addition,PLS,Pilbara Minerals Limited,quarterly,20210312-asx200-quarterly-march2021.pdf
+2021-03-12,2021-03-22,ASX200,Removal,BVS,Bravura Solutions Limited,quarterly,20210312-asx200-quarterly-march2021.pdf
+2021-03-12,2021-03-22,ASX200,Removal,GWA,GWA Group Limited,quarterly,20210312-asx200-quarterly-march2021.pdf
+2021-03-12,2021-03-22,ASX200,Removal,SFR,Sandfire Resources Limited,quarterly,20210312-asx200-quarterly-march2021.pdf
+2021-03-12,2021-03-22,ASX200,Removal,SIQ,Smartgroup Corporation Ltd,quarterly,20210312-asx200-quarterly-march2021.pdf
+2021-03-12,2021-03-22,ASX200,Removal,SSM,Service Stream Limited,quarterly,20210312-asx200-quarterly-march2021.pdf
+2021-03-12,2021-03-22,ASX200,Removal,TGR,Tassal Group Limited,quarterly,20210312-asx200-quarterly-march2021.pdf
+2021-04-16,2021-04-22,ASX200,Removal,CCL,,removal,20210416-asx200-removal.pdf
+2021-04-16,2021-04-22,ASX200,Addition,RBL,,removal-replacement,20210416-asx200-removal.pdf
+2021-06-18,,ASX200,Addition,WOW,,demerger,20210618-asx200-demerger.pdf
+2021-06-22,,ASX200,Removal,VOC,,removal,20210622-asx200-removal.pdf
+2021-07-08,2021-07-16,ASX200,Removal,BIN,,removal,20210708-asx200-removal.pdf
+2021-07-08,2021-07-16,ASX200,Addition,CNI,,removal-replacement,20210708-asx200-removal.pdf
+2021-11-24,2021-11-30,ASX200,Removal,SKI,,removal,20211124-asx200-removal.pdf
+2021-11-24,2021-11-30,ASX200,Addition,SFR,,removal-replacement,20211124-asx200-removal.pdf
+2021-12-07,2021-12-13,ASX200,Removal,OSH,,removal,20211207-asx200-removal.pdf
+2021-12-07,2021-12-13,ASX200,Addition,360,,removal-replacement,20211207-asx200-removal.pdf
+2021-12-08,2021-12-10,ASX200,Addition,CHN,,removal,20211208-asx200-removal.pdf
+2022-01-14,2022-01-20,ASX200,Removal,APT,,removal,20220114-asx200-removal.pdf
+2022-01-14,2022-01-20,ASX200,Addition,SQ2,,removal-replacement,20220114-asx200-removal.pdf
+2022-02-01,2022-02-07,ASX200,Removal,AST,,removal,20220201-asx200-removal.pdf
+2022-02-01,2022-02-07,ASX200,Addition,ARF,,removal-replacement,20220201-asx200-removal.pdf
+2022-02-03,2022-02-10,ASX200,Removal,SYD,,removal,20220203-asx200-removal.pdf
+2022-02-03,2022-02-10,ASX200,Addition,TLX,,removal-replacement,20220203-asx200-removal.pdf
+2022-03-04,2022-03-21,ASX200,Addition,AVZ,AVZ Minerals Limited,rebalance,20220304-asx200-rebalance.pdf
+2022-03-04,2022-03-21,ASX200,Addition,CCX,City Chic Collective Limited,rebalance,20220304-asx200-rebalance.pdf
+2022-03-04,2022-03-21,ASX200,Addition,DEG,De Grey Mining Limited,rebalance,20220304-asx200-rebalance.pdf
+2022-03-04,2022-03-21,ASX200,Addition,HMC,Home Consortium Limited,rebalance,20220304-asx200-rebalance.pdf
+2022-03-04,2022-03-21,ASX200,Removal,MSB,Mesoblast Limited,rebalance,20220304-asx200-rebalance.pdf
+2022-03-04,2022-03-21,ASX200,Removal,SKC,Skycity Entertainment Group Limited,rebalance,20220304-asx200-rebalance.pdf
+2022-03-04,2022-03-21,ASX200,Removal,SPK,Spark New Zealand Limited,rebalance,20220304-asx200-rebalance.pdf
+2022-03-04,2022-03-21,ASX200,Removal,URW,Unibail-Rodamco-Westfield,rebalance,20220304-asx200-rebalance.pdf
+2022-04-07,2022-04-12,ASX200,Removal,CIM,,removal,20220407-asx200-removal.pdf
+2022-04-07,2022-04-12,ASX200,Addition,HDN,,removal-replacement,20220407-asx200-removal.pdf
+2022-05-17,2022-05-24,ASX200,Addition,TAH,,demerger,20220517-asx200-demerger.pdf
+2022-05-19,,ASX200,Removal,CWN,,removal,20220519-asx200-removal.pdf
+2022-05-20,2022-05-25,ASX200,Removal,CWN,,adjournment,20220520-asx200-adjournment.pdf
+2022-06-03,2022-06-20,ASX200,Addition,BRN,Brainchip Holdings Limited,rebalance,20220603-asx200-rebalance.pdf
+2022-06-03,2022-06-20,ASX200,Addition,CXO,Core Lithium Limited,rebalance,20220603-asx200-rebalance.pdf
+2022-06-03,2022-06-20,ASX200,Addition,LKE,Lake Resources N.L.,rebalance,20220603-asx200-rebalance.pdf
+2022-06-03,2022-06-20,ASX200,Addition,NHC,New Hope Corporation Limited,rebalance,20220603-asx200-rebalance.pdf
+2022-06-03,2022-06-20,ASX200,Removal,APX,Appen Limited,rebalance,20220603-asx200-rebalance.pdf
+2022-06-03,2022-06-20,ASX200,Removal,CDA,Codan Limited,rebalance,20220603-asx200-rebalance.pdf
+2022-06-03,2022-06-20,ASX200,Removal,PNV,Polynovo Limited,rebalance,20220603-asx200-rebalance.pdf
+2022-06-03,2022-06-20,ASX200,Removal,PTM,Platinum Asset Management Limited,rebalance,20220603-asx200-rebalance.pdf
+2022-06-03,2022-06-20,ASX200,Removal,TYR,Tyro Payments Limited,rebalance,20220603-asx200-rebalance.pdf
+2022-06-15,2022-06-20,ASX200,Removal,CWN,,removal,20220615-asx200-removal.pdf
+2022-06-15,2022-06-20,ASX200,Addition,CRN,,removal-replacement,20220615-asx200-removal.pdf
+2022-07-15,2022-07-22,ASX200,Removal,UWL,,removal,20220715-asx200-removal.pdf
+2022-07-15,2022-07-22,ASX200,Addition,WAF,,removal-replacement,20220715-asx200-removal.pdf
+2022-07-25,2022-07-27,ASX200,Addition,ILU,,demerger,20220725-asx200-demerger.pdf
+2022-09-02,2022-09-19,ASX200,Addition,CMM,Capricorn Metals Limited,rebalance,20220902-asx200-rebalance.pdf
+2022-09-02,2022-09-19,ASX200,Addition,CQE,Charter Hall Social Infrastructure REIT,rebalance,20220902-asx200-rebalance.pdf
+2022-09-02,2022-09-19,ASX200,Addition,JLG,Johns Lyng Group Limited,rebalance,20220902-asx200-rebalance.pdf
+2022-09-02,2022-09-19,ASX200,Addition,KAR,Karoon Energy Limited,rebalance,20220902-asx200-rebalance.pdf
+2022-09-02,2022-09-19,ASX200,Addition,LOV,Lovisa Holdings Limited,rebalance,20220902-asx200-rebalance.pdf
+2022-09-02,2022-09-19,ASX200,Addition,SIQ,Smartgroup Corporation Limited,rebalance,20220902-asx200-rebalance.pdf
+2022-09-02,2022-09-19,ASX200,Addition,SPK,Spark New Zealand Limited,rebalance,20220902-asx200-rebalance.pdf
+2022-09-02,2022-09-19,ASX200,Addition,SYA,Sayona Mining Limited,rebalance,20220902-asx200-rebalance.pdf
+2022-09-02,2022-09-19,ASX200,Removal,360,Life360 Inc.,rebalance,20220902-asx200-rebalance.pdf
+2022-09-02,2022-09-19,ASX200,Removal,AVZ,AVZ Minerals Limited,rebalance,20220902-asx200-rebalance.pdf
+2022-09-02,2022-09-19,ASX200,Removal,CCX,City Chic Collective Limited,rebalance,20220902-asx200-rebalance.pdf
+2022-09-02,2022-09-19,ASX200,Removal,CUV,Clinuvel Pharmaceuticals Limited,rebalance,20220902-asx200-rebalance.pdf
+2022-09-02,2022-09-19,ASX200,Removal,EML,EML Payments Limited,rebalance,20220902-asx200-rebalance.pdf
+2022-09-02,2022-09-19,ASX200,Removal,JHG,Janus Henderson Group PLC,rebalance,20220902-asx200-rebalance.pdf
+2022-09-02,2022-09-19,ASX200,Removal,PBH,Pointsbet Holdings Limited,rebalance,20220902-asx200-rebalance.pdf
+2022-09-02,2022-09-19,ASX200,Removal,ZIP,ZIP Co Limited,rebalance,20220902-asx200-rebalance.pdf
+2022-12-02,2022-12-19,ASX200,Addition,MND,Monadelphous Group Limited,rebalance,20221202-asx200-rebalance.pdf
+2022-12-02,2022-12-19,ASX200,Removal,SBM,St Barbara Limited,rebalance,20221202-asx200-rebalance.pdf
+2023-01-06,2023-01-13,ASX200,Removal,PDL,,removal,20230106-asx200-removal.pdf
+2023-01-06,2023-01-13,ASX200,Addition,PXA,,removal-replacement,20230106-asx200-removal.pdf
+2023-03-03,2023-03-20,ASX200,Addition,360,Life360 Inc.,rebalance,20230303-asx200-rebalance.pdf
+2023-03-03,2023-03-20,ASX200,Addition,NWH,NRW Holdings Limited,rebalance,20230303-asx200-rebalance.pdf
+2023-03-03,2023-03-20,ASX200,Addition,PNV,Polynovo Limited,rebalance,20230303-asx200-rebalance.pdf
+2023-03-03,2023-03-20,ASX200,Addition,SYR,Syrah Resources Limited,rebalance,20230303-asx200-rebalance.pdf
+2023-03-03,2023-03-20,ASX200,Removal,ABC,Adbri Limited,rebalance,20230303-asx200-rebalance.pdf
+2023-03-03,2023-03-20,ASX200,Removal,NVX,Novonix Limited,rebalance,20230303-asx200-rebalance.pdf
+2023-03-03,2023-03-20,ASX200,Removal,RMS,Ramelius Resources Limited,rebalance,20230303-asx200-rebalance.pdf
+2023-03-03,2023-03-20,ASX200,Removal,SIQ,Smartgroup Corporation Limited,rebalance,20230303-asx200-rebalance.pdf
+2023-04-13,2023-04-19,ASX200,Removal,OZL,,removal,20230413-asx200-removal.pdf
+2023-04-13,2023-04-19,ASX200,Addition,BGL,,removal-replacement,20230413-asx200-removal.pdf
+2023-07-18,2023-07-24,ASX200,Removal,BKL,,removal,20230718-asx200-removal.pdf
+2023-07-18,2023-07-24,ASX200,Addition,VNT,,removal-replacement,20230718-asx200-removal.pdf
+2023-07-27,,ASX200,Addition,ABP,,demerger,20230728-asx200-demerger.pdf
+2023-09-01,2023-09-18,ASX200,Addition,DTL,Data#3 Limited,rebalance,20230901-asx200-rebalance.pdf
+2023-09-01,2023-09-18,ASX200,Addition,GMD,Genesis Minerals Limited,rebalance,20230901-asx200-rebalance.pdf
+2023-09-01,2023-09-18,ASX200,Addition,NEU,Neuren Pharmaceuticals Limited,rebalance,20230901-asx200-rebalance.pdf
+2023-09-01,2023-09-18,ASX200,Addition,RMS,Ramelius Resources Limited,rebalance,20230901-asx200-rebalance.pdf
+2023-09-01,2023-09-18,ASX200,Addition,WBT,Weebit Nano Limited,rebalance,20230901-asx200-rebalance.pdf
+2023-09-01,2023-09-18,ASX200,Removal,ABG,Abacus Group,rebalance,20230901-asx200-rebalance.pdf
+2023-09-01,2023-09-18,ASX200,Removal,ASK,Abacus Storage King,rebalance,20230901-asx200-rebalance.pdf
+2023-09-01,2023-09-18,ASX200,Removal,BRN,BrainChip Holdings Limited,rebalance,20230901-asx200-rebalance.pdf
+2023-09-01,2023-09-18,ASX200,Removal,IMU,Imugene Limited,rebalance,20230901-asx200-rebalance.pdf
+2023-09-01,2023-09-18,ASX200,Removal,LKE,Lake Resources N.L.,rebalance,20230901-asx200-rebalance.pdf
+2023-09-01,2023-09-18,ASX200,Removal,SYR,Syrah Resources Limited,rebalance,20230901-asx200-rebalance.pdf
+2023-10-13,2023-10-18,ASX200,Removal,UMG,,removal,20231013-asx200-removal.pdf
+2023-10-13,2023-10-18,ASX200,Addition,LNW,,removal-replacement,20231013-asx200-removal.pdf
+2023-10-24,2023-10-27,ASX200,Removal,NCM,,removal,20231024-asx200-removal.pdf
+2023-10-24,2023-10-27,ASX200,Addition,NEM,,removal-replacement,20231024-asx200-removal.pdf
+2023-12-01,2023-12-18,ASX200,Addition,BOE,Boss Energy Limited,rebalance,20231201-asx200-rebalance.pdf
+2023-12-01,2023-12-18,ASX200,Addition,HLI,Helia Group Limited,rebalance,20231201-asx200-rebalance.pdf
+2023-12-01,2023-12-18,ASX200,Addition,SIQ,Smartgroup Corporation Limited,rebalance,20231201-asx200-rebalance.pdf
+2023-12-01,2023-12-18,ASX200,Removal,CMW,Cromwell Property Group,rebalance,20231201-asx200-rebalance.pdf
+2023-12-01,2023-12-18,ASX200,Removal,GOZ,Growthpoint Properties Australia,rebalance,20231201-asx200-rebalance.pdf
+2023-12-01,2023-12-18,ASX200,Removal,LNK,Link Administration Holdings Limited,rebalance,20231201-asx200-rebalance.pdf
+2023-12-19,2023-12-22,ASX200,Removal,AKE,,removal,20231219-asx200-removal.pdf
+2023-12-19,2023-12-22,ASX200,Addition,LTM,,removal-replacement,20231219-asx200-removal.pdf
+2024-02-01,2024-02-09,ASX200,Removal,CGC,,removal,20240201-asx200-removal.pdf
+2024-02-01,2024-02-09,ASX200,Addition,STX,,removal-replacement,20240201-asx200-removal.pdf
+2024-03-01,2024-03-18,ASX200,Addition,AD8,Audinate Group Limited,rebalance,20240301-asx200-rebalance.pdf
+2024-03-01,2024-03-18,ASX200,Addition,RED,Red 5 Limited,rebalance,20240301-asx200-rebalance.pdf
+2024-03-01,2024-03-18,ASX200,Addition,SDR,Siteminder Limited,rebalance,20240301-asx200-rebalance.pdf
+2024-03-01,2024-03-18,ASX200,Addition,SMR,Stanmore Resources Limited,rebalance,20240301-asx200-rebalance.pdf
+2024-03-01,2024-03-18,ASX200,Removal,CHN,Chalice Mining Limited,rebalance,20240301-asx200-rebalance.pdf
+2024-03-01,2024-03-18,ASX200,Removal,CXO,Core Lithium Limited,rebalance,20240301-asx200-rebalance.pdf
+2024-03-01,2024-03-18,ASX200,Removal,SYA,Sayona Mining Limited,rebalance,20240301-asx200-rebalance.pdf
+2024-03-01,2024-03-18,ASX200,Removal,WBT,Weebit Nano Limited,rebalance,20240301-asx200-rebalance.pdf
+2024-05-02,2024-05-10,ASX200,Removal,BLD,,removal,20240502-asx200-removal.pdf
+2024-05-02,2024-05-10,ASX200,Addition,SIG,,removal-replacement,20240502-asx200-removal.pdf
+2024-05-31,2024-06-11,ASX200,Removal,SLR,,removal,20240531-asx200-removal.pdf
+2024-06-11,2024-06-20,ASX200,Removal,CSR,,removal,20240611-asx200-removal.pdf
+2024-06-11,2024-06-20,ASX200,Addition,JDO,,removal-replacement,20240611-asx200-removal.pdf
+2024-07-19,2024-07-24,ASX200,Removal,AWC,,removal,20240719-asx200-removal.pdf
+2024-07-19,2024-07-24,ASX200,Addition,AAI,,removal-replacement,20240719-asx200-removal.pdf
+2024-09-06,2024-09-23,ASX200,Addition,GYG,Guzman Y Gomez Limited,rebalance,20240906-asx200-rebalance.pdf
+2024-09-06,2024-09-23,ASX200,Addition,WGX,Westgold Resources Limited,rebalance,20240906-asx200-rebalance.pdf
+2024-09-06,2024-09-23,ASX200,Addition,YAL,Yancoal Australia Limited,rebalance,20240906-asx200-rebalance.pdf
+2024-09-06,2024-09-23,ASX200,Removal,DHG,Domain Holdings Australia Limited,rebalance,20240906-asx200-rebalance.pdf
+2024-09-06,2024-09-23,ASX200,Removal,NAN,Nanosonics Limited,rebalance,20240906-asx200-rebalance.pdf
+2024-09-06,2024-09-23,ASX200,Removal,STX,Strike Energy Limited,rebalance,20240906-asx200-rebalance.pdf
+2024-09-18,2024-09-26,ASX200,Removal,VUK,,removal,20240918-asx200-removal.pdf
+2024-09-18,2024-09-26,ASX200,Addition,CDA,,removal-replacement,20240918-asx200-removal.pdf
+2024-12-06,2024-12-23,ASX200,Addition,CU6,Clarity Pharmaceuticals Limited,rebalance,20241206-asx200-rebalance.pdf
+2024-12-06,2024-12-23,ASX200,Removal,SPK,Spark New Zealand Limited,rebalance,20241206-asx200-rebalance.pdf
+2025-02-28,2025-03-06,ASX200,Removal,LTM,,removal,20250228-asx200-removal.pdf
+2025-02-28,2025-03-06,ASX200,Addition,MSB,,removal-replacement,20250228-asx200-removal.pdf
+2025-03-07,2025-03-24,ASX200,Addition,CSC,Capstone Copper Corp.,rebalance,20250307-asx200-rebalance.pdf
+2025-03-07,2025-03-24,ASX200,Addition,DGT,DigiCo Infrastructure REIT,rebalance,20250307-asx200-rebalance.pdf
+2025-03-07,2025-03-24,ASX200,Addition,IMD,Imdex Limited,rebalance,20250307-asx200-rebalance.pdf
+2025-03-07,2025-03-24,ASX200,Addition,MAQ,Macquarie Technology Group Limited,rebalance,20250307-asx200-rebalance.pdf
+2025-03-07,2025-03-24,ASX200,Addition,NXL,Nuix Limited,rebalance,20250307-asx200-rebalance.pdf
+2025-03-07,2025-03-24,ASX200,Addition,SPR,Spartan Resources Limited,rebalance,20250307-asx200-rebalance.pdf
+2025-03-07,2025-03-24,ASX200,Addition,TPW,Temple & Webster Group Limited,rebalance,20250307-asx200-rebalance.pdf
+2025-03-07,2025-03-24,ASX200,Removal,AD8,Audinate Group Limited,rebalance,20250307-asx200-rebalance.pdf
+2025-03-07,2025-03-24,ASX200,Removal,CKF,Collins Foods Limited,rebalance,20250307-asx200-rebalance.pdf
+2025-03-07,2025-03-24,ASX200,Removal,CQE,Charter Hall Social Infrastructure REIT,rebalance,20250307-asx200-rebalance.pdf
+2025-03-07,2025-03-24,ASX200,Removal,CRN,Coronado Global Resources Inc.,rebalance,20250307-asx200-rebalance.pdf
+2025-03-07,2025-03-24,ASX200,Removal,JLG,Johns Lyng Group Limited,rebalance,20250307-asx200-rebalance.pdf
+2025-03-07,2025-03-24,ASX200,Removal,KLS,Kelsian Group Limited,rebalance,20250307-asx200-rebalance.pdf
+2025-03-07,2025-03-24,ASX200,Removal,SGR,The Star Entertainment Group Limited,rebalance,20250307-asx200-rebalance.pdf
+2025-04-16,2025-04-24,ASX200,Removal,DEG,,removal,20250416-asx200-removal.pdf
+2025-04-16,2025-04-24,ASX200,Addition,GDG,,removal-replacement,20250416-asx200-removal.pdf
+2025-06-06,2025-06-23,ASX200,Addition,ASB,Austal Limited,rebalance,20250606-asx200-rebalance.pdf
+2025-06-06,2025-06-23,ASX200,Addition,NCK,Nick Scali Limited,rebalance,20250606-asx200-rebalance.pdf
+2025-06-06,2025-06-23,ASX200,Removal,HLS,Healius Limited,rebalance,20250606-asx200-rebalance.pdf
+2025-06-06,2025-06-23,ASX200,Removal,SMR,Stanmore Resources Limited,rebalance,20250606-asx200-rebalance.pdf
+2025-07-15,2025-07-23,ASX200,Removal,SPR,,removal,20250715-asx200-removal.pdf
+2025-07-15,2025-07-23,ASX200,Addition,IFT,,removal-replacement,20250715-asx200-removal.pdf
+2025-09-05,2025-09-22,ASX200,Addition,DBI,Dalrymple Bay Infrastructure Limited,rebalance,20250905-asx200-rebalance.pdf
+2025-09-05,2025-09-22,ASX200,Addition,DRO,DroneShield Limited,rebalance,20250905-asx200-rebalance.pdf
+2025-09-05,2025-09-22,ASX200,Addition,EBO,Ebos Group Limited,rebalance,20250905-asx200-rebalance.pdf
+2025-09-05,2025-09-22,ASX200,Addition,GGP,Greatland Resources Limited,rebalance,20250905-asx200-rebalance.pdf
+2025-09-05,2025-09-22,ASX200,Addition,GQG,GQG Partners Inc.,rebalance,20250905-asx200-rebalance.pdf
+2025-09-05,2025-09-22,ASX200,Addition,IPX,IperionX Limited,rebalance,20250905-asx200-rebalance.pdf
+2025-09-05,2025-09-22,ASX200,Addition,PRN,Perenti Limited,rebalance,20250905-asx200-rebalance.pdf
+2025-09-05,2025-09-22,ASX200,Addition,SLC,Superloop Limited,rebalance,20250905-asx200-rebalance.pdf
+2025-09-05,2025-09-22,ASX200,Addition,TUA,Tuas Limited,rebalance,20250905-asx200-rebalance.pdf
+2025-09-05,2025-09-22,ASX200,Removal,AOV,Amotiv Limited,rebalance,20250905-asx200-rebalance.pdf
+2025-09-05,2025-09-22,ASX200,Removal,CCP,Credit Corp Group Limited,rebalance,20250905-asx200-rebalance.pdf
+2025-09-05,2025-09-22,ASX200,Removal,CU6,Clarity Pharmaceuticals Limited,rebalance,20250905-asx200-rebalance.pdf
+2025-09-05,2025-09-22,ASX200,Removal,LIC,Lifestyle Communities Limited,rebalance,20250905-asx200-rebalance.pdf
+2025-09-05,2025-09-22,ASX200,Removal,MAQ,Macquarie Technology Group Limited,rebalance,20250905-asx200-rebalance.pdf
+2025-09-05,2025-09-22,ASX200,Removal,NUF,Nufarm Limited,rebalance,20250905-asx200-rebalance.pdf
+2025-09-05,2025-09-22,ASX200,Removal,NXL,Nuix Limited,rebalance,20250905-asx200-rebalance.pdf
+2025-09-05,2025-09-22,ASX200,Removal,PNV,PolyNovo Limited,rebalance,20250905-asx200-rebalance.pdf
+2025-09-05,2025-09-22,ASX200,Removal,SIQ,Smartgroup Corporation Limited,rebalance,20250905-asx200-rebalance.pdf
+2025-09-09,2025-09-16,ASX200,Removal,BKW,,removal,20250909-asx200-removal.pdf
+2025-09-09,2025-09-16,ASX200,Addition,CYL,,removal-replacement,20250909-asx200-removal.pdf
+2025-09-22,2025-09-29,ASX200,Removal,GOR,,removal,20250922-asx200-removal.pdf
+2025-09-22,2025-09-29,ASX200,Addition,CAT,,removal-replacement,20250922-asx200-removal.pdf
+2025-12-05,2025-12-22,ASX200,Addition,ABB,Aussie Broadband Limited,rebalance,20251205-asx200-rebalance.pdf
+2025-12-05,2025-12-22,ASX200,Addition,NXG,Nexgen Energy (Canada) Limited,rebalance,20251205-asx200-rebalance.pdf
+2025-12-05,2025-12-22,ASX200,Addition,OBM,Ora Banda Mining Limited,rebalance,20251205-asx200-rebalance.pdf
+2025-12-05,2025-12-22,ASX200,Addition,PNR,Pantoro Gold Limited,rebalance,20251205-asx200-rebalance.pdf
+2025-12-05,2025-12-22,ASX200,Addition,RSG,Resolute Mining Limited,rebalance,20251205-asx200-rebalance.pdf
+2025-12-05,2025-12-22,ASX200,Addition,SLX,Silex Systems Limited,rebalance,20251205-asx200-rebalance.pdf
+2025-12-05,2025-12-22,ASX200,Removal,CTD,Corporate Travel Management Limited,rebalance,20251205-asx200-rebalance.pdf
+2025-12-05,2025-12-22,ASX200,Removal,BAP,Bapcor Limited,rebalance,20251205-asx200-rebalance.pdf
+2025-12-05,2025-12-22,ASX200,Removal,HMC,HMC Capital Limited,rebalance,20251205-asx200-rebalance.pdf
+2025-12-05,2025-12-22,ASX200,Removal,ING,Inghams Group Limited,rebalance,20251205-asx200-rebalance.pdf
+2025-12-05,2025-12-22,ASX200,Removal,IPH,IPH Limited,rebalance,20251205-asx200-rebalance.pdf
+2025-12-05,2025-12-22,ASX200,Removal,BOE,Boss Energy Limited,rebalance,20251205-asx200-rebalance.pdf
+2026-03-06,2026-03-23,ASX200,Addition,PDI,Predictive Discovery Limited,rebalance,20260306-asx200-rebalance.pdf
+2026-03-06,2026-03-23,ASX200,Addition,SRG,SRG Global Limited,rebalance,20260306-asx200-rebalance.pdf
+2026-03-06,2026-03-23,ASX200,Addition,VUL,Vulcan Energy Resources Limited,rebalance,20260306-asx200-rebalance.pdf
+2026-03-06,2026-03-23,ASX200,Removal,CAT,Catapult Sports Limited,rebalance,20260306-asx200-rebalance.pdf
+2026-03-06,2026-03-23,ASX200,Removal,DGT,DigiCo Infrastructure REIT,rebalance,20260306-asx200-rebalance.pdf
+2026-03-06,2026-03-23,ASX200,Removal,EBO,EBOS Group Limited,rebalance,20260306-asx200-rebalance.pdf
+2026-04-13,2026-04-20,ASX200,Removal,IFL,,removal,20260413-asx200-removal.pdf
+2026-04-13,2026-04-20,ASX200,Addition,4DX,,removal-replacement,20260413-asx200-removal.pdf
+2026-04-15,2026-04-22,ASX200,Removal,NSR,,removal,20260415-asx200-removal.pdf
+2026-04-15,2026-04-22,ASX200,Addition,ALK,,removal-replacement,20260415-asx200-removal.pdf
+2026-06-05,2026-06-22,ASX200,Addition,ELV,Elevra Lithium Limited,rebalance,20260606-asx200-rebalance.pdf
+2026-06-05,2026-06-22,ASX200,Addition,EOS,Electro Optic Systems Holdings Limited,rebalance,20260606-asx200-rebalance.pdf
+2026-06-05,2026-06-22,ASX200,Addition,FFM,FireFly Metals Limited,rebalance,20260606-asx200-rebalance.pdf
+2026-06-05,2026-06-22,ASX200,Addition,KCN,Kingsgate Consolidated Limited,rebalance,20260606-asx200-rebalance.pdf
+2026-06-05,2026-06-22,ASX200,Addition,MI6,Minerals 260 Limited,rebalance,20260606-asx200-rebalance.pdf
+2026-06-05,2026-06-22,ASX200,Removal,GYG,Guzman Y Gomez Limited,rebalance,20260606-asx200-rebalance.pdf
+2026-06-05,2026-06-22,ASX200,Removal,IEL,IDP Education Limited,rebalance,20260606-asx200-rebalance.pdf
+2026-06-05,2026-06-22,ASX200,Removal,SDR,SiteMinder Limited,rebalance,20260606-asx200-rebalance.pdf
+2026-06-05,2026-06-22,ASX200,Removal,TPW,Temple & Webster Group Limited,rebalance,20260606-asx200-rebalance.pdf
+2026-06-05,2026-06-22,ASX200,Removal,WEB,WEB Travel Group Limited,rebalance,20260606-asx200-rebalance.pdf

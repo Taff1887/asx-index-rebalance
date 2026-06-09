@@ -1,85 +1,175 @@
 # ASX Index-Rebalance Effect — Real-Data Study
 
 A clean, fully real-data study of the S&P/ASX index-rebalance effect: when a
-stock is **added to** or **removed from** the ASX 20 / 50 / 100 / 200, does
-trading around the change make money — is the edge **real or just luck** — and
-**does it survive trading costs?**
+stock is **added to** or **removed from** the ASX 200, is there a **real,
+risk-adjusted alpha signal** — and can a trader actually capture it?
 
-**Everything here is real.** Rebalance events come from the official S&P Dow
-Jones Indices announcement PDFs. Prices come from Yahoo Finance, with delisted
-names recovered from FMP Premium. Benchmarks are the real S&P/ASX 50, 100, 200
-indices — including a **dividend-inclusive total-return** version. Nothing is
-simulated. Every return is a percentage.
+**Everything here is real.** Index events come from the official S&P Dow Jones
+Indices announcement PDFs (the quarterly multi-tier PDFs **and** the full dated
+ASX 200 archive of off-cycle changes). Prices come from Yahoo Finance, with
+delisted names recovered from FMP Premium. The market benchmark is the real
+S&P/ASX 200 index. Nothing is simulated. Every return is a percentage.
 
-> **The repo has been rebuilt through several adversarial audits.** Earlier
-> versions reported large positive returns that were **data artifacts**
-> (a price-lookup bug, ticker reuse, zero-volume windows, a single 2013 outlier
-> driving half a compounded total, and **survivorship bias** from missing
-> delisted names). All are fixed and documented. This version adds the three
-> things that actually settle the question: a **data-coverage audit**, a
-> **statistical-significance test against a luck/placebo null**, and a
-> **gross-then-net-of-costs** backtest.
+> **Rebuilt through several adversarial audits.** Earlier versions reported large
+> returns that were **data artifacts** (a price-lookup bug, ticker reuse,
+> zero-volume windows, a 2013 outlier, survivorship bias, a zero-imputation bug
+> that faked a sign-test p-value, and a stale-`t0` bug). All found by independent
+> verification agents that **recompute every headline from raw prices**, and all
+> fixed and documented.
 
 ---
 
-## 1. TL;DR — one edge survives everything
+## 1. TL;DR — is there a REAL alpha signal?
 
-| Question | Answer |
-|---|---|
-| Is there a tradeable edge? | **Yes — exactly one.** Short ASX 200 **removals**, enter the close *after* the announcement, exit **~5 trading days after the effective date** (`eff5`). |
-| How big? | Gross **+3.4% median / trade** (68.6% win, n=105). **Net of costs ≈ +2.5% median** (63.8% win). |
-| Real or luck? | **Real.** It beats a random-timing placebo null at **p = 0.004**, and the win rate beats 50% at **p = 0.0002**. |
-| Does it survive costs? | **Yes**, at every order size tested (A$250k → A$1m): net median **+2.6% → +2.4%**, Wilcoxon **p = 0.014 → 0.023**. |
-| Anything else work? | **No.** Buying additions is a *real loser* (you buy the announcement pop). Shorting at the effective date (not holding to `eff5`) does **not** survive costs. ASX 50/100 samples are too small. The compounded "switch in/out of the index" strategy **does not beat buy-and-hold** once survivorship and outliers are corrected. |
+**Yes — and it is exactly what the academic literature predicts: a strong,
+statistically real, but *self-reversing and largely un-capturable* announcement
+effect.** Measured as a proper market-adjusted event study (abnormal return =
+stock return − ASX 200 return), on **scheduled** (quarterly rank-review) changes
+only — i.e. the *pure* index-demand signal, with M&A-driven off-cycle events held
+out:
 
-![Are the signals real or luck?](docs/figures/signal_significance.png)
+| | Scheduled **Additions** (n=126) | Scheduled **Removals** (n=121) |
+|---|---|---|
+| Abnormal return, announcement window `[-1,+1]` | **+2.34%** | **−1.05%** |
+| t-stat / Wilcoxon p | t=4.67 · **p<0.0001** | t=−1.71 · **p=0.041** |
+| % in expected direction | **72%** positive | 62% negative |
+| Beats random-date placebo? | **Yes, p=0.009** | **Yes, p=0.023** |
+| What happens next (`+2…+10` days) | **reverses −2.01%** (p=0.008) | drifts to −2.5% by +20d (Wilcoxon p=0.039) |
+| Net abnormal return `[0,+10]` | **−0.09% (≈ zero)** | −0.4% (ns) |
 
-**The honest one-liner:** there is one robust, cost-surviving, statistically-real
-edge — *shorting ASX 200 removals and holding a week past the effective date*.
-Its **mean** is fragile (a few acquired names create fat tails, t-test p=0.059),
-but its **median, win rate, and placebo test are all strongly significant**.
-Every other "edge" in this space is noise, a loser, or disappears after costs.
+![Index-rebalance alpha — market-adjusted CAR](docs/figures/alpha_car_path.png)
 
-374 valid trades · 525 events · 46 active quarters · Sep-2012 → Jan-2026.
+**Verdict (independently verified, robust to an estimated-beta market model and
+to Bonferroni across all 24 tests):**
+
+1. **The alpha is real.** Scheduled additions earn a ~**+2% risk-adjusted
+   abnormal return** around the announcement — huge t-stats, beats the luck null,
+   survives a proper beta-adjusted model (~+1.3%, still p<0.005).
+2. **It is *not* capturable after the announcement.** The entire pop lands **on
+   day +1** (offset +1 alone = +1.47%, t=4.65) — by the time you can trade on the
+   public confirmation it is gone, and it then **fully reverses** over the next
+   ~8 days, netting **zero** by +10. This is the textbook *price-pressure +
+   reversal* / *"disappearing index effect."*
+3. **Removals are the only persistent side** (a real but weaker ~−1% to −2.5%
+   downward drift), which is why — when we *do* build a tradeable strategy
+   (§4–8) — shorting removals is the single edge that survives costs.
+4. **Off-cycle M&A events must be excluded**: their removals *rise* +6%
+   (takeover premium), inverting the sign.
+
+**Bottom line:** a genuine index-addition announcement *effect* exists and is
+statistically rock-solid, but it is a fast-reversing, pre-positioning phenomenon
+— **not a tradeable alpha for anyone acting on the public announcement.**
+
+544 ASX 200 events (2011-04 → 2026-06) · 159 off-cycle · 271/370 tickers priced.
 
 ---
 
-## 2. Get the data in cleanly — coverage & missing data
+## 2. The alpha event study — full results
 
-Every rebalance event is parsed from the S&P Dow Jones Indices quarterly
-announcement PDFs (53 PDFs in [`data/raw/marketindex/multi/`](data/raw/marketindex/multi/)),
-one table per index tier, by
-[`scripts/parse_sp_pdfs_all_indices.py`](scripts/parse_sp_pdfs_all_indices.py).
+[`scripts/run_alpha_eventstudy.py`](scripts/run_alpha_eventstudy.py) computes a
+textbook market-adjusted event study. For every event we align to `t0` = the
+first trading bar on/after the announcement, form the daily abnormal return
+`AR_t = R_stock,t − R_ASX200,t`, and cumulate it (`CAR`) over event windows. We
+split four ways because the mechanism differs:
 
-You asked for **a frequency chart of trades every quarter so you can see if we
-have missing data.** Here it is — every quarter from the first event to the
-last, stacked by valid additions, valid removals, and rejected events:
+- **Scheduled** = quarterly rank-review changes → the *pure index-demand* signal.
+- **Off-cycle** = M&A / demerger driven → the price already reflects a takeover
+  premium, so these are held out of the pure-alpha claim.
+
+![Scheduled abnormal return by window](docs/figures/alpha_car_windows.png)
+
+| Cohort · side | window | n | mean CAR | t | Wilcoxon p | placebo p |
+|---|---|--:|--:|--:|--:|--:|
+| Scheduled · **Addition** | `[-1,+1]` | 126 | **+2.34%** | 4.67 | <0.0001 | — |
+| Scheduled · Addition | `[0,+1]` | 126 | +1.92% | 4.72 | <0.0001 | **0.009** |
+| Scheduled · Addition | `[+2,+10]` | 126 | **−2.01%** | −2.70 | 0.006 | — |
+| Scheduled · Addition | `[0,+10]` | 126 | **−0.09%** | −0.11 | 0.60 | — |
+| Scheduled · **Removal** | `[-1,+1]` | 121 | **−1.05%** | −1.71 | 0.041 | — |
+| Scheduled · Removal | `[0,+1]` | 121 | −0.88% | −1.68 | 0.11 | **0.023** |
+| Scheduled · Removal | `[0,+20]` | 121 | **−2.53%** | −1.24 | 0.039 | — |
+| Off-cycle · Removal | `[+2,+5]` | 22 | +4.99% | 1.17 | 0.56 | — |
+
+How to read it:
+
+- **Additions: a real pop that reverses to nothing.** +2.34% abnormal return in
+  the 3-day announcement window (72% positive, t=4.7), then a *significant*
+  −2.01% reversal over the next ~8 days. Net over `[0,+10]` is **−0.09% — zero.**
+  The whole move lands on day +1 (offset +1 alone = +1.47%, t=4.65), so a trader
+  entering at the t+1 *close* has already missed it.
+- **Removals: smaller, noisier, but more persistent.** ~−1% at the announcement
+  (Wilcoxon p=0.04, beats placebo p=0.023) and a downward drift to −2.5% by +20
+  days (Wilcoxon p=0.039). This is the one side with a residual short-able edge.
+- **Off-cycle removals rise** (takeover premium) — a fat-tailed +5% driven by a
+  few scheme blow-ups — confirming they must be excluded.
+
+> **Verified.** A 4-agent workflow independently recomputed every figure from raw
+> prices. It confirmed the addition pop and reversal exactly, confirmed they
+> survive an *estimated-beta* market model (~+1.3%, p<0.005) and **Bonferroni
+> across all 24 tests**, and **caught two real bugs** now fixed: a zero-imputation
+> bug that had faked the removal sign-test p-values, and a stale-`t0` bug on 21
+> events with price gaps. The corrected numbers are the ones above.
+
+---
+
+## 3. The complete data set + the missing-stock list
+
+Events come from **two** official archives, parsed by
+[`parse_sp_pdfs_all_indices.py`](scripts/parse_sp_pdfs_all_indices.py) (the 53
+quarterly multi-tier PDFs) and
+[`parse_asx200_announcements.py`](scripts/parse_asx200_announcements.py) (the
+**156-PDF dated ASX 200 archive** of off-cycle removals, replacement additions
+and demergers). Merged and de-duplicated by
+[`build_asx200_master.py`](scripts/build_asx200_master.py):
+
+| | events | tickers priced |
+|---|--:|--:|
+| Quarterly-only (old) | 337 | 206 |
+| **+ dated off-cycle archive + recovered names** | **544** | **271 / 370** |
+
+**The 2020-2021 "gap" is recovered.** Those quarterly rebalances were published
+on the iguana2 ASX newswire rather than as marketindex PDFs; the dated archive
+plus a direct S&P/ASX pull fills them. **65 Yahoo-purged delisted names** were
+recovered from FMP Premium (Altium, Alumina, Newcrest, OZ Minerals, Afterpay-era
+names, Boral, Woolworths, …).
+
+**99 tickers remain unpriced on any free feed** — the hunt list you asked for, in
+[`outputs/missing_delisted.csv`](outputs/missing_delisted.csv) with company names
+and a findability tag. The most recent (most recoverable on Bloomberg / Refinitiv
+/ Norgate) are:
+
+| Ticker | Company | Last event | Likely source |
+|---|---|---|---|
+| APT | Afterpay Touch Group | 2022-01 | recent — Bloomberg/Refinitiv |
+| CWN | Crown Resorts | 2022-06 | recent — Bloomberg/Refinitiv |
+| SYD | Sydney Airport | 2022-02 | recent — Bloomberg/Refinitiv |
+| OSH | Oil Search | 2021-12 | recent — Bloomberg/Refinitiv |
+| SAR | Saracen Mineral Holdings | 2021-01 | recent — Bloomberg/Refinitiv |
+| BIN | Bingo Industries | 2021-07 | recent — Bloomberg/Refinitiv |
+| VOC | Vocus Communications | 2021-06 | recent — Bloomberg/Refinitiv |
+| TGR | Tassal Group | 2021-03 | recent — Bloomberg/Refinitiv |
+
+(15 names ≥2020, 35 from 2016-2019, 49 older small-cap collapses — Dick Smith,
+Ten Network, Virgin Australia — often gone from every feed.)
+
+The frequency chart confirms coverage quarter-by-quarter (the shaded band is the
+now-recovered archival gap; "no change" quarters are legitimate):
 
 ![Rebalance events per quarter](docs/figures/frequency_quarterly.png)
 
-Building this chart **surfaced and fixed real data problems**:
-
-1. **A parser bug, now fixed.** Two PDFs (Sep-2013, Jun-2014) were embedded with
-   a font that extracted as *letter-spaced* text (`S y d n e y ,  S e p t e m b e r`),
-   so the date regex silently failed and **both quarters parsed to zero events.**
-   A de-spacing normaliser now recovers them (+83 events, incl. ASX 200).
-2. **Survivorship, partly fixed.** Yahoo purges delisted names. **39 Yahoo-missing
-   delisted constituents were recovered from FMP Premium** (Altium, Alumina,
-   Newcrest, OZ Minerals, CSR, Link, Block/Square, …), turning 52 previously
-   un-tradeable removals/additions into real trades — and, importantly,
-   *correcting the short edge downward* (see §3).
-3. **A genuine archival gap, documented.** **2020-Q3 through 2021-Q4 (6 quarters)**
-   are missing at the source — marketindex never archived them and S&P's own
-   copies sit behind per-document IDs and a 403. The shaded band on the chart
-   marks them. (March-2020 was *postponed* and folded into the large June-2020
-   rebalance; June-2023 was a legitimate *"No change"* for these tiers.)
-
-So the data is now as clean as the public sources allow, and the one real gap is
-labelled rather than hidden.
-
 ---
 
-## 3. The trade, and what survivorship did to it
+## 4. The tradeable trade (does the alpha turn into money?)
+
+The event study (§2) says the addition pop is gone the moment you can trade on
+it. So **can any rule make money?** We test the obvious one across the 20/50/100/
+200 tiers — enter the close of the day *after* the announcement, exit at/after
+the effective date — and find the per-trade picture matches the alpha exactly:
+additions don't pay, removals modestly do.
+
+> **What recovering the delisted names did to it.** Before recovery the ASX 200
+> short looked like +1.8%/trade; adding back the *acquired* removals (which gap
+> **up** on takeover) pulled it to +0.5% mean / +1.6% median — survivorship caught
+> in the act.
 
 | Step | Rule |
 |---|---|
@@ -110,7 +200,7 @@ ASX 200 is the only robust sample (107 shorts / 113 longs); ASX 20/50 are tiny.
 
 ---
 
-## 4. Is it real, or just luck?
+## 5. Is the per-trade edge real, or just luck?
 
 Per-trade returns are noisy and fat-tailed, so the **mean** is the wrong thing to
 test. We run five tests per cell and lean on the robust three (median, win rate,
@@ -144,7 +234,7 @@ Reading it:
 
 ---
 
-## 5. Does holding longer help? (the super-fund question)
+## 6. Does holding longer help? (the super-fund question)
 
 ![ASX 200 per-trade return vs holding period](docs/figures/v3_horizon.png)
 
@@ -163,7 +253,7 @@ crater and stay down):
 
 ---
 
-## 6. With frictions — does the edge survive costs?
+## 7. With frictions — does the edge survive costs?
 
 Gross is nice; net is the truth. We build a realistic per-trade cost stack from
 [`config/costs.yaml`](config/costs.yaml):
@@ -198,7 +288,7 @@ significant to A$1m clips.**
 
 ---
 
-## 7. "Hold the index instead of cash" — the switching strategy
+## 8. "Hold the index instead of cash" — the switching strategy
 
 The standalone trade is in cash ~85% of the time, so this variant holds the ASX
 200 **total-return** index by default and switches into the trade only during the
@@ -223,7 +313,7 @@ quarter on a small slice of capital and the per-trade edge is modest after costs
 
 ---
 
-## 8. Data quality — what was thrown out
+## 9. Data quality — what was thrown out
 
 Of 525 ASX 20/50/100/200 events, **374 became valid trades**; **151 were rejected**
 with a recorded reason ([`outputs/v2_rejected.csv`](outputs/v2_rejected.csv)):
@@ -246,15 +336,23 @@ confirmed 2012–2017 membership and caught an earlier parser mis-attribution
 
 ---
 
-## 9. Reproduce
+## 10. Reproduce
 
 ```bash
 pip install -e ".[all]"
-python scripts/fetch_sp_pdfs.py                 # official S&P PDFs
+# --- events: both archives ---
+python scripts/fetch_sp_pdfs.py                 # quarterly multi-tier S&P PDFs
 python scripts/parse_sp_pdfs_all_indices.py     # per-tier events (incl. de-spacer fix)
+python scripts/fetch_asx200_announcements.py    # the 156-PDF dated ASX 200 archive
+python scripts/parse_asx200_announcements.py    # off-cycle removals/additions/demergers
+# --- prices ---
 python scripts/fetch_prices_for_labels.py       # Yahoo prices
 python scripts/fetch_fmp_delisted.py            # recover delisted names (needs FMP_API_KEY in .env)
 python scripts/fetch_tr_benchmarks.py           # dividend-inclusive ASX 50/100/200 TR
+# --- the ALPHA question (the headline) ---
+python scripts/build_asx200_master.py           # merged 544-event master + missing-stock list
+python scripts/run_alpha_eventstudy.py          # market-adjusted CAR: real alpha vs luck
+# --- the tradeable-strategy supporting analysis ---
 python scripts/run_strategy_v2.py               # validated per-trade backtest (gross)
 python scripts/run_strategy_v3.py               # longer holds + switching strategy
 python scripts/build_frequency_chart.py         # trades per quarter / coverage
@@ -263,28 +361,34 @@ python scripts/run_friction_backtest.py         # gross vs net of liquidity + bo
 python scripts/build_v2_charts.py && python scripts/build_v3_charts.py
 ```
 
-Outputs: `outputs/v2_trades.csv` (every valid trade with prices — cross-check on
-Yahoo), `v2_rejected.csv`, `quarterly_counts.csv`, `signal_stats.csv`,
-`friction_pertrade.csv`, `friction_summary.csv`, `v3_horizon.csv`, `v3_overlay.csv`.
+Outputs: `outputs/asx200_events_master.csv` (544 deduped events),
+`alpha_car.csv` / `alpha_events.csv` (event-study results — cross-check on Yahoo),
+`missing_delisted.csv` (the 99-name hunt list), plus `v2_trades.csv`,
+`signal_stats.csv`, `friction_summary.csv`, etc.
 `FMP_API_KEY` lives in a git-ignored `.env` — no key is committed.
 
 ---
 
-## 10. Limitations
+## 11. Limitations
 
-- **Archival gap**: 2020-Q3 → 2021-Q4 (6 quarters) missing at source; documented,
-  not patched over.
-- **Residual survivorship**: 91 of 525 events are on names gone from every public
-  feed; recovery moved the short edge *down*, so what remains likely still mildly
-  *overstates* it.
-- **Costs are a model**, not fills: a square-root impact law with a fixed clip and
-  realised vol. The headline survives A$250k–A$1m; a much larger book would erode it.
-- **Sample**: ASX 200 (≈107 shorts) is robust; ASX 20/50 (13–20) are not. Means
-  are fat-tailed — the median / win-rate / placebo tests are the primary evidence.
-- **Borrow availability**: small-cap removals can be hard or impossible to borrow;
-  the 3%/yr assumption is optimistic for the thinnest names.
-- Every headline number was independently re-derived from raw prices by a separate
-  verification agent.
+- **Capturability, not existence, is the catch.** The addition alpha is
+  statistically rock-solid but reverses to ~0 by +10 days, so it is not a tradeable
+  edge for anyone acting on the public announcement (§1–2).
+- **Removal sample is censored.** ~99 of 370 tickers (largely delistings,
+  collapses, takeovers) have no price on any free feed, so the removal CAR sits on
+  a survivorship-biased subsample — treat the removal numbers as the weaker result.
+  The full hunt list is [`outputs/missing_delisted.csv`](outputs/missing_delisted.csv).
+- **Market model.** Abnormal returns use a market-adjusted (beta=1) model; the
+  verifier confirmed the addition result survives an estimated-beta model (~+1.3%,
+  p<0.005) and Bonferroni across all 24 tests.
+- **Off-cycle ≠ index demand.** M&A-driven removals carry a takeover premium and
+  are reported separately, not pooled into the alpha claim.
+- **Costs (strategy sections) are a model**, not fills: square-root impact on real
+  turnover/vol + borrow; the short-removal net edge survives A$250k–A$1m clips.
+- **Two bugs were caught by verification and fixed** in this version: a
+  zero-imputation bug that had faked removal sign-test p-values, and a stale-`t0`
+  bug on 21 price-gapped events. Every headline is independently re-derived from
+  raw prices by separate verification agents.
 
 ## License
 
