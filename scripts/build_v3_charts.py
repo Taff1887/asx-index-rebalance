@@ -32,22 +32,32 @@ def _save(fig, name):
 def horizon_chart():
     h = pd.read_csv(OUTPUTS_DIR / "v3_horizon.csv")
     a = h[h.tier == "ASX200"]
-    fig, ax = plt.subplots(figsize=(11, 6.5))
+    fig, ax = plt.subplots(figsize=(11.5, 6.8))
     xs = [EXIT_DAYS[e] for e in EXIT_ORDER]
+    # x-axis ticks labelled by the exit (days PAST the effective date) for clarity
+    eff_x = EXIT_DAYS["eff"]
     for side, c in (("long", "#2e7d32"), ("short", "#c62828")):
         s = a[a.side == side].set_index("exit").reindex(EXIT_ORDER)
-        ax.plot(xs, s["mean_pct"], marker="o", color=c, lw=2, label=f"{side} (mean/trade)")
-        for x, y, n in zip(xs, s["mean_pct"], s["n"]):
+        # MEDIAN = the robust "typical trade" (solid); MEAN = fat-tail-dragged (dashed)
+        ax.plot(xs, s["median_pct"], marker="o", color=c, lw=2.4, label=f"{side} (MEDIAN/trade)")
+        ax.plot(xs, s["mean_pct"], marker="s", color=c, lw=1.3, ls="--", alpha=0.7,
+                label=f"{side} (mean — fat-tail-dragged)")
+        for x, y in zip(xs, s["median_pct"]):
             if pd.notna(y):
-                ax.annotate(f"{y:+.1f}%", (x, y), textcoords="offset points",
-                            xytext=(0, 8 if side == "short" else -14), ha="center", fontsize=8, color=c)
+                ax.annotate(f"{y:+.1f}", (x, y), textcoords="offset points",
+                            xytext=(0, 8 if side == "short" else -13), ha="center", fontsize=8,
+                            color=c, fontweight="bold")
     ax.axhline(0, color="black", lw=0.6)
-    ax.axvline(10, color="grey", ls=":", label="effective date")
-    ax.set_xlabel("Trading days held (announcement+1 entry → exit)")
-    ax.set_ylabel("ASX 200 mean return per trade (%)")
-    ax.set_title("Does holding longer help?  ASX 200 per-trade return vs holding period\n"
-                 "(tests the 'funds keep buying additions' hypothesis)")
-    ax.legend(); ax.grid(True, alpha=0.3)
+    ax.axvline(eff_x, color="grey", ls=":", lw=1.4, label="effective date (eff)")
+    ax.axvspan(EXIT_DAYS["eff5"] - 0.5, EXIT_DAYS["eff10"] + 0.5, color="#fff3e0", zorder=0,
+               label="sweet spot (eff+5 → eff+10)")
+    ax.set_xticks(xs)
+    ax.set_xticklabels(["eff\n(0)", "eff+5", "eff+10", "eff+20", "eff+30", "eff+40"])
+    ax.set_xlabel("Exit point (trading days PAST the effective date)")
+    ax.set_ylabel("ASX 200 return per trade (%)")
+    ax.set_title("Does holding longer help?  ASX 200 per-trade return vs exit horizon\n"
+                 "Solid = median (typical trade) · dashed = mean (a few acquired names drag it down)")
+    ax.legend(fontsize=8, ncol=2); ax.grid(True, alpha=0.3)
     _save(fig, "v3_horizon.png")
 
 

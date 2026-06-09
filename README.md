@@ -52,7 +52,10 @@ to Bonferroni across all 24 tests):**
    reversal* / *"disappearing index effect."*
 3. **Removals are the only persistent side** (a real but weaker ~−1% to −2.5%
    downward drift), which is why — when we *do* build a tradeable strategy
-   (§4–8) — shorting removals is the single edge that survives costs.
+   (§4–8) — shorting removals (held ~eff+5 to eff+10) is the only edge with any
+   net-of-cost life: ≈**+2.2% median / 61% win**, but only **borderline
+   significant** after realistic costs (Wilcoxon p≈0.05–0.09). Real in size,
+   marginal in significance — not a slam dunk.
 4. **Off-cycle M&A events must be excluded**: their removals *rise* +6%
    (takeover premium), inverting the sign.
 
@@ -263,10 +266,18 @@ Reading it:
 
 ![ASX 200 per-trade return vs holding period](docs/figures/v3_horizon.png)
 
-- **Short (red):** best at **eff+5 (+3.3% median, 68% win)** and stays
-  median-positive at *every* horizon out to +40 days — removals stay depressed as
-  passive funds keep dumping them.
-- **Long (green):** at `eff` the addition is −0.7% median; holding 6–8 weeks only
+The chart plots **median (solid)** and **mean (dashed)** — they disagree because a
+few acquired names create fat tails, so the median (the *typical* trade) is the
+one to trust.
+
+- **Short (red):** the sweet spot is **eff+5 to eff+10** (≈1–2 weeks past the
+  effective date), shaded on the chart. By **median** the two are tied
+  (**+2.75%** at eff+5 vs **+2.72%** at eff+10); by **win rate** eff+5 is best
+  (**64%** vs 58%); by **mean** eff+10 peaks (+1.4% vs +0.5%, because the mean is
+  dragged by outliers). So "eff+5" isn't uniquely best — **eff+5…eff+10 is the
+  band.** It stays median-positive at every horizon, but the *mean* turns negative
+  past ~eff+20 as some names recover and borrow cost piles up.
+- **Long (green):** at `eff` the addition is ≈−0.7% median; holding 6–8 weeks only
   drags it back to roughly breakeven. The super-fund flow is real (additions *do*
   recover) but you entered at the pop, so the best holding longer does is undo the
   loss. It never becomes an edge.
@@ -294,22 +305,31 @@ Gross is nice; net is the truth. We build a realistic per-trade cost stack from
 
 ![Gross vs net per-trade](docs/figures/gross_vs_net.png)
 
-The headline cell, ASX 200 short · `eff5`, across order sizes:
+The headline cell, ASX 200 short · `eff5` (n=127), across order sizes:
 
-| | mean | median | win | avg cost | survives? (Wilcoxon) |
+| | mean | median | win | avg cost | Wilcoxon p |
 |---|--:|--:|--:|--:|--:|
-| **Gross** | +2.69% | +3.36% | 68.6% | — | — |
-| Net (A$250k clip) | +1.86% | +2.58% | 63.8% | 83 bp | **p = 0.014 ✅** |
-| Net (A$500k clip) | +1.75% | +2.50% | 63.8% | 93 bp | **p = 0.016 ✅** |
-| Net (A$1m clip) | +1.60% | +2.40% | 63.8% | 108 bp | **p = 0.023 ✅** |
+| **Gross** | +1.85% | +2.83% | 65% | — | 0.010 |
+| Net (A$250k clip) | +1.05% | +2.22% | 61% | 80 bp | 0.053 |
+| Net (A$500k clip) | +0.95% | +2.18% | 61% | 90 bp | 0.063 |
+| Net (A$1m clip) | +0.81% | +2.12% | 61% | 104 bp | 0.085 |
 
-What does **not** survive: shorting at the **effective** date (net median +0.58%,
-p=0.93); the **long** side (net median −1.2%, more negative after costs); and
-the ASX 100 / pooled shorts (edges wiped out or insignificant after costs).
+**Honest update on the complete data:** the net median edge is still real in
+size (**≈+2.2%/trade, 61% win**), but after costs its significance is now
+**borderline, not clean** — Wilcoxon p ≈ **0.05–0.09** depending on clip, i.e. it
+*just misses* the 5% bar. (On the smaller earlier sample it cleared it at p=0.016;
+adding the recovered acquired names widened the fat tails and pushed it to the
+margin.) So the fair read is: **a real, economically-meaningful short edge that
+is only marginally significant once you pay realistic costs** — not a slam dunk.
 
-**Conclusion:** the *only* signal that is statistically real **and** cost-surviving
-is **short ASX 200 removals, hold to ~eff+5** — ≈ **+2.5% net median, 64% win,
-significant to A$1m clips.**
+What is clearly *gone* after costs: shorting only to the **effective** date (net
+median +0.6%, p≈0.97); the **long** side (more negative after costs); and the
+ASX 100 / pooled shorts.
+
+**Conclusion:** the only candidate with net-of-cost life is **short ASX 200
+removals, held ~eff+5 to eff+10** — ≈ **+2.2% net median, 61% win** — but on the
+complete data it is **only borderline-significant after costs** (p≈0.05–0.09).
+A real, modest edge at the margin of tradeability, not a reliable money machine.
 
 ---
 
