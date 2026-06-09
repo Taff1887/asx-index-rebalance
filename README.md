@@ -62,12 +62,18 @@ statistically rock-solid, but it is a fast-reversing, pre-positioning phenomenon
 
 583 ASX 200 events (2011-04 → 2026-06) · 159 off-cycle · 279/381 tickers priced.
 
-> **No look-ahead.** The tradeable strategy enters at the **close of the trading
-> day *after*** the S&P announcement — across all 441 trades, **0** have
-> `entry ≤ announcement` (S&P releases after market close, so the next-day-close
-> entry never touches pre-announcement information). The event-study `[-1,+1]`
-> window *measures* the announcement effect (including the un-tradeable on-the-day
-> move); the tradeable `[+1,…]` part is shown separately and nets to ~0.
+> **No look-ahead — and why we *can't* trade on the announcement day.** S&P
+> releases each quarterly announcement **after the ASX market close** on the
+> announcement date (confirmed by S&P: changes are "first visible to clients after
+> the market close" that day). So the announcement-day close is **not** a valid
+> entry — the news isn't public yet at 16:00. The first fully-public point is the
+> **next session**, so the strategy enters at the **next trading day's close**;
+> across all 441 trades **0** have `entry ≤ announcement`. This is the conservative
+> choice: the event study shows the move actually lands at the next-day *open*, so
+> a real trader entering at that open would capture *more* — our next-day-*close*
+> entry deliberately gives that up to stay clean. The event-study `[-1,+1]` window
+> *measures* the full announcement effect (including the un-tradeable on-the-day
+> move); the tradeable part is reported separately and nets to ~0.
 
 ---
 
@@ -210,7 +216,7 @@ Per-trade returns at exit = effective date (the conservative, shortest hold):
 > act: the missing names were disproportionately *losing* shorts. The edge is
 > smaller and more honest on the complete data.
 
-ASX 200 is the only robust sample (107 shorts / 113 longs); ASX 20/50 are tiny.
+ASX 200 is the only robust sample (129 shorts / 134 longs); ASX 20/50 are tiny.
 
 ---
 
@@ -226,23 +232,28 @@ sits in the tail, the edge is about the **event**, not the stocks.
 
 ![The luck test](docs/figures/placebo_null.png)
 
+A low placebo p **with a ✅ means it is NOT luck** — the real, rebalance-timed
+return beats what random timing in the same stocks would give, so the edge comes
+from the *event*. (A high p with no ✅ would mean "indistinguishable from luck.")
+
 | Tier · side · exit | n | median | win | t-test (mean) | Wilcoxon (median) | sign (win) | **placebo (luck)** |
 |---|--:|--:|--:|--:|--:|--:|--:|
-| **ASX 200 short · eff5** | 105 | **+3.36%** | **68.6%** | 0.059 | **0.002** | **0.0002** | **0.004 ✅** |
-| ASX 200 short · eff10 | 107 | +3.65% | 62.6% | 0.196 | **0.023** | **0.012** | **0.018 ✅** |
-| ASX 200 short · eff | 107 | +1.60% | 52.3% | 0.686 | 0.302 | 0.699 | — |
-| ASX 200 long · eff5 | 112 | −0.65% | 43.8% | 0.264 | 0.169 | 0.219 | **0.018 ✅ (real loss)** |
-| ALL tiers short · eff5 | 184 | +1.47% | 59.8% | 0.264 | **0.029** | **0.010** | **0.020 ✅** |
+| **ASX 200 short · eff5** | 127 | **+2.83%** | **64.6%** | 0.128 | **0.010** | **0.001** | **0.014 ✅ not luck** |
+| ASX 200 short · eff10 | 129 | +2.69% | 58.1% | 0.386 | 0.083 | 0.078 | **0.045 ✅ not luck** |
+| ASX 200 short · eff | 129 | +1.44% | 53.5% | 0.693 | 0.314 | 0.481 | — |
+| ASX 200 long · eff5 | 133 | −0.59% | 44.4% | 0.253 | 0.171 | 0.225 | **0.015 ✅ real loss** |
+| ALL tiers short · eff5 | 217 | +0.95% | 56.7% | 0.480 | 0.114 | 0.057 | **0.049 ✅ not luck** |
 
 Reading it:
 
-- **The short-removal edge is real.** At `eff5` the typical short earns **+3.4%
-  (median)**, wins **68.6%** of the time, and **beats the random-timing null at
-  p = 0.004.** It is real, but it is a *median / win-rate / timing* edge — **not**
-  a robust mean edge (mean t-test p=0.059, dragged by a handful of acquired names).
+- **The short-removal edge is real (not luck).** At `eff5` the typical short earns
+  **+2.8% (median)**, wins **65%** of the time, and **beats the random-timing null
+  at p = 0.014** — i.e. only a ~1.4% chance of doing this well by random timing. It
+  is real, but it is a *median / win-rate / timing* edge — **not** a robust mean
+  edge (mean t-test p=0.13, dragged by a handful of acquired names).
 - **Buying additions is a real loser, not bad luck.** Additions *underperform*
-  random-timed entries in the same names (real −1.24% vs null **+1.45%**,
-  placebo p=0.018). Entering the day after the announcement buys the pop.
+  random-timed entries in the same names (placebo p=0.015 — the loss is real, not
+  variance). Entering the day after the announcement buys the pop.
 - **You must hold past the effective date.** At `eff` (effective close) nothing is
   significant; the removal keeps falling for ~a week as passive funds finish selling.
 
