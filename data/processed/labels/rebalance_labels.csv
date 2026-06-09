@@ -240,6 +240,79 @@ announcement_date,effective_date,index,action,ticker,company_name
 2013-06-07,2013-06-21,ASX200,Removal,TRY,Troy Resources Limited
 2013-06-07,2013-06-21,ASX50,Addition,APA,APA Group
 2013-06-07,2013-06-21,ASX50,Removal,LEI,Leighton Holdings Limited
+2013-09-06,2013-09-20,ALLAUS200,Addition,AGI,Ainsworth Game Technology Limited
+2013-09-06,2013-09-20,ALLAUS200,Addition,CCP,Credit Corp Group Limited
+2013-09-06,2013-09-20,ALLAUS200,Addition,CMW,Cromwell Property Group
+2013-09-06,2013-09-20,ALLAUS200,Addition,VRT,Virtus Health Limited
+2013-09-06,2013-09-20,ALLAUS200,Removal,CPL,Coalspur Mines Limited
+2013-09-06,2013-09-20,ALLAUS200,Removal,DML,Discovery Metals Limited
+2013-09-06,2013-09-20,ALLAUS200,Removal,MAH,Macmahon Holdings Limited
+2013-09-06,2013-09-20,ALLAUS200,Removal,MBN,Mirabela Nickel Limited
+2013-09-06,2013-09-20,ASX100,Addition,NVT,Navitas Limited
+2013-09-06,2013-09-20,ASX100,Addition,PPT,Perpetual Limited
+2013-09-06,2013-09-20,ASX100,Removal,AGO,Atlas Iron Limited
+2013-09-06,2013-09-20,ASX100,Removal,LYC,Lynas Corporation Limited
+2013-09-06,2013-09-20,ASX100,Removal,NWS,News Corporation
+2013-09-06,2013-09-20,ASX200,Addition,CMW,Cromwell Property Group
+2013-09-06,2013-09-20,ASX200,Addition,FGE,Forge Group Limited
+2013-09-06,2013-09-20,ASX200,Addition,SGN,STW Communications Group Limited
+2013-09-06,2013-09-20,ASX200,Addition,SKT,Sky Network Television Limited
+2013-09-06,2013-09-20,ASX200,Removal,BBG,Billabong International Limited
+2013-09-06,2013-09-20,ASX200,Removal,DML,Discovery Metals Limited
+2013-09-06,2013-09-20,ASX200,Removal,EHL,Emeco Holdings Limited
+2013-09-06,2013-09-20,ASX200,Removal,FKP,FKP Property Group
+2013-09-06,2013-09-20,ASX200,Removal,MDL,Mineral Deposits Limited
+2013-09-06,2013-09-20,ASX300,Addition,AIA,Auckland International Airport Limited
+2013-09-06,2013-09-20,ASX300,Addition,API,Australian Pharmaceutical Industries Limited
+2013-09-06,2013-09-20,ASX300,Addition,ARF,Arena REIT
+2013-09-06,2013-09-20,ASX300,Addition,CLH,Collection House Limited
+2013-09-06,2013-09-20,ASX300,Addition,CRH,Crowe Horwath Australasia Ltd
+2013-09-06,2013-09-20,ASX300,Addition,CTD,Corporate Travel Management Limited
+2013-09-06,2013-09-20,ASX300,Addition,CWP,Cedar Woods Properties Limited
+2013-09-06,2013-09-20,ASX300,Addition,FSF,Fonterra Shareholders' Fund
+2013-09-06,2013-09-20,ASX300,Addition,GXL,Greencross Limited
+2013-09-06,2013-09-20,ASX300,Addition,INA,Ingenia Communities Group
+2013-09-06,2013-09-20,ASX300,Addition,ISU,Iselect Limited
+2013-09-06,2013-09-20,ASX300,Addition,MOC,Mortgage Choice Limited
+2013-09-06,2013-09-20,ASX300,Addition,MXI,MaxiTRANS Industries Limited
+2013-09-06,2013-09-20,ASX300,Addition,MYT,Mighty River Power Limited
+2013-09-06,2013-09-20,ASX300,Addition,MYX,Mayne Pharma Group Limited
+2013-09-06,2013-09-20,ASX300,Addition,NWT,Newsat Limited
+2013-09-06,2013-09-20,ASX300,Addition,SGH,Slater & Gordon Limited
+2013-09-06,2013-09-20,ASX300,Addition,SHV,Select Harvests Limited
+2013-09-06,2013-09-20,ASX300,Addition,SIV,Silver Chef Limited
+2013-09-06,2013-09-20,ASX300,Addition,SKC,Skycity Entertainment Group Limited
+2013-09-06,2013-09-20,ASX300,Addition,SKT,Sky Network Television Limited
+2013-09-06,2013-09-20,ASX300,Addition,TGR,Tassal Group Limited
+2013-09-06,2013-09-20,ASX300,Addition,TIX,360 Capital Industrial Fund
+2013-09-06,2013-09-20,ASX300,Addition,TRG,Treasury Group Limited
+2013-09-06,2013-09-20,ASX300,Addition,VRL,Village Roadshow Limited
+2013-09-06,2013-09-20,ASX300,Addition,VRT,Virtus Health Limited
+2013-09-06,2013-09-20,ASX300,Removal,ABU,Abm Resources NL
+2013-09-06,2013-09-20,ASX300,Removal,AMX,Ampella Mining Limited
+2013-09-06,2013-09-20,ASX300,Removal,BND,Bandanna Energy Limited
+2013-09-06,2013-09-20,ASX300,Removal,BSE,Base Resources Limited
+2013-09-06,2013-09-20,ASX300,Removal,BTR,Blackthorn Resources Limited
+2013-09-06,2013-09-20,ASX300,Removal,CFE,Cape Lambert Resources Limited
+2013-09-06,2013-09-20,ASX300,Removal,COK,Cockatoo Coal Limited
+2013-09-06,2013-09-20,ASX300,Removal,DTE,Dart Energy Limited
+2013-09-06,2013-09-20,ASX300,Removal,FML,Focus Minerals Ltd
+2013-09-06,2013-09-20,ASX300,Removal,FMS,Flinders Mines Limited
+2013-09-06,2013-09-20,ASX300,Removal,GRR,Grange Resources Limited
+2013-09-06,2013-09-20,ASX300,Removal,GRY,Gryphon Minerals Limited
+2013-09-06,2013-09-20,ASX300,Removal,GXY,Galaxy Resources Limited
+2013-09-06,2013-09-20,ASX300,Removal,HGO,Hillgrove Resources Limited
+2013-09-06,2013-09-20,ASX300,Removal,IVA,Inova Resources Limited
+2013-09-06,2013-09-20,ASX300,Removal,MCE,Matrix Composites & Engineering Limited
+2013-09-06,2013-09-20,ASX300,Removal,MIO,Miclyn Express Offshore Limited
+2013-09-06,2013-09-20,ASX300,Removal,MNC,Metminco Limited
+2013-09-06,2013-09-20,ASX300,Removal,MPO,Molopo Energy Limited
+2013-09-06,2013-09-20,ASX300,Removal,NFE,Northern Iron Limited
+2013-09-06,2013-09-20,ASX300,Removal,PEM,Perilya Limited
+2013-09-06,2013-09-20,ASX300,Removal,PXS,Pharmaxis Ltd
+2013-09-06,2013-09-20,ASX300,Removal,RED,Red 5 Limited
+2013-09-06,2013-09-20,ASX300,Removal,RMS,Ramelius Resources Limited
+2013-09-06,2013-09-20,ASX300,Removal,RXM,Rex Minerals Limited
 2013-12-06,2013-12-20,ALLAUS200,Addition,BCI,BC Iron Limited
 2013-12-06,2013-12-20,ALLAUS200,Addition,RFG,Retail Food Group Limited
 2013-12-06,2013-12-20,ALLAUS200,Addition,SDF,Steadfast Group Limited
@@ -473,6 +546,16 @@ announcement_date,effective_date,index,action,ticker,company_name
 2014-03-07,2014-03-21,ASX300,Removal,WEC,White Energy Company Limited
 2014-03-07,2014-03-21,ASX50,Addition,JHX,James Hardie Industries PLC
 2014-03-07,2014-03-21,ASX50,Removal,QAN,Qantas Airways Limited
+2014-06-06,2014-06-20,ALLAUS200,Addition,GXL,Greencross Limited
+2014-06-06,2014-06-20,ALLAUS200,Addition,MYX,Mayne Pharma Group Limited
+2014-06-06,2014-06-20,ALLAUS200,Addition,TGR,Tassal Group Limited
+2014-06-06,2014-06-20,ALLAUS200,Removal,ASL,Ausdrill Limited
+2014-06-06,2014-06-20,ALLAUS200,Removal,EWC,Energy World Corporation Ltd
+2014-06-06,2014-06-20,ALLAUS200,Removal,SLR,Silver Lake Resources Limited
+2014-06-06,2014-06-20,ASX100,Addition,TPI,Transpacific Industries Group Ltd
+2014-06-06,2014-06-20,ASX100,Removal,RRL,Regis Resources Limited
+2014-06-06,2014-06-20,ASX200,Addition,TGR,Tassal Group Limited
+2014-06-06,2014-06-20,ASX200,Removal,ACR,Acrux Limited
 2014-09-05,2014-09-19,ALLAUS200,Addition,AHY,Asaleo Care Limited
 2014-09-05,2014-09-19,ALLAUS200,Addition,APN,APN News & Media Limited
 2014-09-05,2014-09-19,ALLAUS200,Addition,LNG,Liquefied Natural Gas Limited

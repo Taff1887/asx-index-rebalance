@@ -2,248 +2,289 @@
 
 A clean, fully real-data study of the S&P/ASX index-rebalance effect: when a
 stock is **added to** or **removed from** the ASX 20 / 50 / 100 / 200, does
-trading around the change make money — and what's the best way to hold it?
+trading around the change make money — is the edge **real or just luck** — and
+**does it survive trading costs?**
 
 **Everything here is real.** Rebalance events come from the official S&P Dow
-Jones Indices announcement PDFs. Prices come from Yahoo Finance. Benchmarks are
-the real S&P/ASX 50, 100, 200 indices — including a **dividend-inclusive
-total-return** version. Nothing is simulated. Every return is a percentage.
+Jones Indices announcement PDFs. Prices come from Yahoo Finance, with delisted
+names recovered from FMP Premium. Benchmarks are the real S&P/ASX 50, 100, 200
+indices — including a **dividend-inclusive total-return** version. Nothing is
+simulated. Every return is a percentage.
 
-> **The repo was rebuilt after an adversarial audit.** Earlier versions
-> reported large positive returns that were **data artifacts**. A multi-agent
-> verification pass found a price-lookup bug fabricating 33 fake 0% trades,
-> Yahoo ticker-reuse serving the wrong company, frozen zero-volume windows, and
-> a PDF-parser mis-attribution. All fixed and documented in
-> [§6](#6-data-quality--what-was-thrown-out).
-
----
-
-## 1. TL;DR
-
-Rule: **buy additions / short removals at the close of the day *after* the
-announcement; exit after the index funds have finished buying** (effective
-date, and we test holding longer). 314 valid trades, 43 quarterly rebalances,
-Sep-2012 → Dec-2025.
-
-![Average per-trade return by tier and side](docs/figures/v2_mean_per_trade.png)
-
-1. **Shorting removals works; buying additions (at announcement+1) does not.**
-   ASX 200 removals fall ~1.8% by the effective date and keep falling — shorting
-   them returns **+1.8%/trade** at effective, **+4.5%/trade (70% win)** if you
-   hold 5 days past effective. ASX 200 additions *lose* −1.1%/trade.
-2. **Why the long side loses, and your "funds keep buying" intuition** — see
-   [§4](#4-does-holding-longer-help-the-super-fund-question). The addition pop
-   happens *on announcement day*; entering the next day buys the peak. Holding
-   longer **does** let additions recover (super/index funds keep accumulating),
-   but only back to roughly **breakeven** (+0.4%/trade by ~7 weeks), because you
-   started at the top.
-3. **"Hold ASX 200 instead of cash"** — the standalone strategy is in cash ~84%
-   of the time, so this version holds the ASX 200 total-return index and
-   switches into the trades during rebalance windows (no leverage). **Only the
-   short-removal version robustly beats the index** (+297% vs +236% after
-   removing one outlier trade); the long/short and long-only variants actually
-   *lag* the index. See [§5](#5-hold-asx-200-instead-of-cash-the-switching-strategy)
-   — the gross numbers are large but driven by one 2013 trade and are
-   survivorship-biased.
-
-The honest one-liner: **there is a real per-trade edge in shorting ASX 200
-removals (median-positive at every horizon); there is no usable edge in buying
-ASX 200 additions; and no variant reliably beats simply holding the index by a
-wide margin once outliers and survivorship are accounted for.**
+> **The repo has been rebuilt through several adversarial audits.** Earlier
+> versions reported large positive returns that were **data artifacts**
+> (a price-lookup bug, ticker reuse, zero-volume windows, a single 2013 outlier
+> driving half a compounded total, and **survivorship bias** from missing
+> delisted names). All are fixed and documented. This version adds the three
+> things that actually settle the question: a **data-coverage audit**, a
+> **statistical-significance test against a luck/placebo null**, and a
+> **gross-then-net-of-costs** backtest.
 
 ---
 
-## 2. The data source — official S&P PDFs
+## 1. TL;DR — one edge survives everything
+
+| Question | Answer |
+|---|---|
+| Is there a tradeable edge? | **Yes — exactly one.** Short ASX 200 **removals**, enter the close *after* the announcement, exit **~5 trading days after the effective date** (`eff5`). |
+| How big? | Gross **+3.4% median / trade** (68.6% win, n=105). **Net of costs ≈ +2.5% median** (63.8% win). |
+| Real or luck? | **Real.** It beats a random-timing placebo null at **p = 0.004**, and the win rate beats 50% at **p = 0.0002**. |
+| Does it survive costs? | **Yes**, at every order size tested (A$250k → A$1m): net median **+2.6% → +2.4%**, Wilcoxon **p = 0.014 → 0.023**. |
+| Anything else work? | **No.** Buying additions is a *real loser* (you buy the announcement pop). Shorting at the effective date (not holding to `eff5`) does **not** survive costs. ASX 50/100 samples are too small. The compounded "switch in/out of the index" strategy **does not beat buy-and-hold** once survivorship and outliers are corrected. |
+
+![Are the signals real or luck?](docs/figures/signal_significance.png)
+
+**The honest one-liner:** there is one robust, cost-surviving, statistically-real
+edge — *shorting ASX 200 removals and holding a week past the effective date*.
+Its **mean** is fragile (a few acquired names create fat tails, t-test p=0.059),
+but its **median, win rate, and placebo test are all strongly significant**.
+Every other "edge" in this space is noise, a loser, or disappears after costs.
+
+374 valid trades · 525 events · 46 active quarters · Sep-2012 → Jan-2026.
+
+---
+
+## 2. Get the data in cleanly — coverage & missing data
 
 Every rebalance event is parsed from the S&P Dow Jones Indices quarterly
-announcement PDFs (53 PDFs, 2011-Q3 → 2025-Q4, in
-[`data/raw/marketindex/multi/`](data/raw/marketindex/multi/)), one table per
-index tier. [`scripts/parse_sp_pdfs_all_indices.py`](scripts/parse_sp_pdfs_all_indices.py)
-extracts every Addition/Removal with its tier, ticker and effective date:
+announcement PDFs (53 PDFs in [`data/raw/marketindex/multi/`](data/raw/marketindex/multi/)),
+one table per index tier, by
+[`scripts/parse_sp_pdfs_all_indices.py`](scripts/parse_sp_pdfs_all_indices.py).
 
-| Tier | Events parsed |
-|---|---:|
-| ASX 20 | 29 |
-| ASX 50 | 41 |
-| ASX 100 | 111 |
-| ASX 200 | 326 |
+You asked for **a frequency chart of trades every quarter so you can see if we
+have missing data.** Here it is — every quarter from the first event to the
+last, stacked by valid additions, valid removals, and rejected events:
 
-> marketindex.com.au's announcements page just links to these same S&P PDFs, so
-> it is **the** source, not an independent one. The genuine independent check is
-> OpenASX (ETF-holdings snapshots); see §6.
+![Rebalance events per quarter](docs/figures/frequency_quarterly.png)
+
+Building this chart **surfaced and fixed real data problems**:
+
+1. **A parser bug, now fixed.** Two PDFs (Sep-2013, Jun-2014) were embedded with
+   a font that extracted as *letter-spaced* text (`S y d n e y ,  S e p t e m b e r`),
+   so the date regex silently failed and **both quarters parsed to zero events.**
+   A de-spacing normaliser now recovers them (+83 events, incl. ASX 200).
+2. **Survivorship, partly fixed.** Yahoo purges delisted names. **39 Yahoo-missing
+   delisted constituents were recovered from FMP Premium** (Altium, Alumina,
+   Newcrest, OZ Minerals, CSR, Link, Block/Square, …), turning 52 previously
+   un-tradeable removals/additions into real trades — and, importantly,
+   *correcting the short edge downward* (see §3).
+3. **A genuine archival gap, documented.** **2020-Q3 through 2021-Q4 (6 quarters)**
+   are missing at the source — marketindex never archived them and S&P's own
+   copies sit behind per-document IDs and a 403. The shaded band on the chart
+   marks them. (March-2020 was *postponed* and folded into the large June-2020
+   rebalance; June-2023 was a legitimate *"No change"* for these tiers.)
+
+So the data is now as clean as the public sources allow, and the one real gap is
+labelled rather than hidden.
 
 ---
 
-## 3. The trade
+## 3. The trade, and what survivorship did to it
 
 | Step | Rule |
 |---|---|
 | **Signal** | An ASX 20/50/100/200 Addition or Removal in an S&P PDF. |
-| **Entry** | Close of the **next trading day after** the announcement (so you trade on confirmed info, after the announcement). |
-| **Exit** | Close of the **effective date** — and we test +5/+10/+20/+30/+40 trading days, i.e. *after the index funds have had to complete their buying/selling*. |
-| **Long** | Buy the **Additions**. **Short** | Short the **Removals**. |
+| **Entry** | Close of the **next trading day after** the announcement (trade on confirmed info). |
+| **Exit** | Close of the **effective date**, and we test +5/+10/+20/+30/+40 trading days *after the index funds finish trading*. |
+| **Long** = buy Additions · **Short** = short Removals. |
 
-Per-trade returns and win rate at exit = effective close:
+Per-trade returns at exit = effective date (the conservative, shortest hold):
 
-| Tier | Long mean | Long win | Short mean | Short win |
-|---|---:|---:|---:|---:|
-| ASX 20 | +1.27% | 67% | +2.22% | 64% |
-| ASX 50 | −3.51% | 25% | +0.70% | 67% |
-| ASX 100 | +0.50% | 49% | −0.78% | 43% |
-| ASX 200 | **−1.15%** | 42% | **+1.83%** | 54% |
+| Tier | Long median | Long win | Short median | Short win | n (L/S) |
+|---|---:|---:|---:|---:|---:|
+| ASX 20 | +1.66% | 62% | +1.65% | 63% | 13 / 16 |
+| ASX 50 | −2.78% | 25% | +0.35% | 67% | 20 / 18 |
+| ASX 100 | +0.33% | 51% | −0.36% | 44% | 41 / 46 |
+| ASX 200 | **−0.69%** | 44% | **+1.60%** | 52% | 113 / 107 |
 
-![Win rate by tier and side](docs/figures/v2_win_rate.png)
+![Average per-trade return by tier and side](docs/figures/v2_mean_per_trade.png)
 
-(ASX 200 is the robust sample at 181 trades; ASX 20/50 are small, ~26–35 trades.)
+> **What recovering the delisted names did.** Before recovery, the ASX 200 short
+> mean at `eff` looked like **+1.8%/trade**. Adding back the *acquired* removals
+> — which gapped **up** on takeover (Newcrest, OZ Minerals, Alumina…) — pulled it
+> down to **+0.5% mean / +1.6% median**. That is survivorship bias caught in the
+> act: the missing names were disproportionately *losing* shorts. The edge is
+> smaller and more honest on the complete data.
+
+ASX 200 is the only robust sample (107 shorts / 113 longs); ASX 20/50 are tiny.
 
 ---
 
-## 4. Does holding longer help? (the super-fund question)
+## 4. Is it real, or just luck?
 
-You asked: *the super funds and index funds have to keep pouring money in — so
-holding the additions longer should fix the long side.* The data says **you're
-partly right.**
+Per-trade returns are noisy and fat-tailed, so the **mean** is the wrong thing to
+test. We run five tests per cell and lean on the robust three (median, win rate,
+placebo). The decisive one is the **placebo / luck test**: keep the same stock,
+the same side, and the same holding length, but slide the entry to a **random**
+date in that stock's history. Repeat 5,000 times → a null distribution of "what
+you'd earn shorting these names at random." If the real, rebalance-timed return
+sits in the tail, the edge is about the **event**, not the stocks.
+
+![The luck test](docs/figures/placebo_null.png)
+
+| Tier · side · exit | n | median | win | t-test (mean) | Wilcoxon (median) | sign (win) | **placebo (luck)** |
+|---|--:|--:|--:|--:|--:|--:|--:|
+| **ASX 200 short · eff5** | 105 | **+3.36%** | **68.6%** | 0.059 | **0.002** | **0.0002** | **0.004 ✅** |
+| ASX 200 short · eff10 | 107 | +3.65% | 62.6% | 0.196 | **0.023** | **0.012** | **0.018 ✅** |
+| ASX 200 short · eff | 107 | +1.60% | 52.3% | 0.686 | 0.302 | 0.699 | — |
+| ASX 200 long · eff5 | 112 | −0.65% | 43.8% | 0.264 | 0.169 | 0.219 | **0.018 ✅ (real loss)** |
+| ALL tiers short · eff5 | 184 | +1.47% | 59.8% | 0.264 | **0.029** | **0.010** | **0.020 ✅** |
+
+Reading it:
+
+- **The short-removal edge is real.** At `eff5` the typical short earns **+3.4%
+  (median)**, wins **68.6%** of the time, and **beats the random-timing null at
+  p = 0.004.** It is real, but it is a *median / win-rate / timing* edge — **not**
+  a robust mean edge (mean t-test p=0.059, dragged by a handful of acquired names).
+- **Buying additions is a real loser, not bad luck.** Additions *underperform*
+  random-timed entries in the same names (real −1.24% vs null **+1.45%**,
+  placebo p=0.018). Entering the day after the announcement buys the pop.
+- **You must hold past the effective date.** At `eff` (effective close) nothing is
+  significant; the removal keeps falling for ~a week as passive funds finish selling.
+
+---
+
+## 5. Does holding longer help? (the super-fund question)
 
 ![ASX 200 per-trade return vs holding period](docs/figures/v3_horizon.png)
 
-- **Long (green):** at the effective date the addition is −1.1%/trade; it dips
-  to −1.8% a week later, then **recovers as funds keep buying**, reaching
-  **+0.4%/trade (52% win) by ~50 trading days held.** So the super-fund flow is
-  real — additions *do* drift back up after effective — but because you entered
-  the day after announcement (at the +1.9% pop), the best holding longer does is
-  drag you back to roughly breakeven. It fixes the loss; it doesn't create an
-  edge.
-- **Short (red):** best at **effective + 5 days (+4.5%/trade, 70% win)** — the
-  removal keeps falling as passive funds dump it. The *mean* turns slightly
-  negative if you hold to 50 days (−1.1%), but the **median short trade stays
-  positive (+3.6%) at every horizon** — so the typical short is still profitable
-  even held long; the negative mean is a couple of recovered names.
+- **Short (red):** best at **eff+5 (+3.3% median, 68% win)** and stays
+  median-positive at *every* horizon out to +40 days — removals stay depressed as
+  passive funds keep dumping them.
+- **Long (green):** at `eff` the addition is −0.7% median; holding 6–8 weeks only
+  drags it back to roughly breakeven. The super-fund flow is real (additions *do*
+  recover) but you entered at the pop, so the best holding longer does is undo the
+  loss. It never becomes an edge.
 
-The extended event study shows the full path (t-5 → t+45):
+The extended event study shows the full path (additions pop then fade; removals
+crater and stay down):
 
 ![Extended ASX 200 event study](docs/figures/v3_event_study_long.png)
 
-Additions pop on t=0→t+1, decay to the effective date, then grind back up to
-~+2% by t+36. Removals crater to −4.5% around t+12 and stay depressed for weeks.
+---
 
-**Practical read:** short removals and exit ~a week after effective; if you must
-trade additions, hold ~6–7 weeks just to break even — not worth it on ASX 200.
+## 6. With frictions — does the edge survive costs?
+
+Gross is nice; net is the truth. We build a realistic per-trade cost stack from
+[`config/costs.yaml`](config/costs.yaml):
+
+- **Execution** (both sides): brokerage 5 + half-spread 5 + slippage 10 +
+  exchange 0.5 bp = **41 bp round-trip**.
+- **Liquidity / market impact** (square-root law): `impact = 0.10 · vol · √(clip/ADV)`,
+  using each name's **real** median window turnover (ADV) and **real** trailing
+  60-day volatility. Thin removals cost more to short.
+- **Short borrow**: 300 bp/yr × holding-days/365.
+
+![Where the cost goes](docs/figures/cost_breakdown.png)
+
+![Gross vs net per-trade](docs/figures/gross_vs_net.png)
+
+The headline cell, ASX 200 short · `eff5`, across order sizes:
+
+| | mean | median | win | avg cost | survives? (Wilcoxon) |
+|---|--:|--:|--:|--:|--:|
+| **Gross** | +2.69% | +3.36% | 68.6% | — | — |
+| Net (A$250k clip) | +1.86% | +2.58% | 63.8% | 83 bp | **p = 0.014 ✅** |
+| Net (A$500k clip) | +1.75% | +2.50% | 63.8% | 93 bp | **p = 0.016 ✅** |
+| Net (A$1m clip) | +1.60% | +2.40% | 63.8% | 108 bp | **p = 0.023 ✅** |
+
+What does **not** survive: shorting at the **effective** date (net median +0.58%,
+p=0.93); the **long** side (net median −1.2%, more negative after costs); and
+the ASX 100 / pooled shorts (edges wiped out or insignificant after costs).
+
+**Conclusion:** the *only* signal that is statistically real **and** cost-surviving
+is **short ASX 200 removals, hold to ~eff+5** — ≈ **+2.5% net median, 64% win,
+significant to A$1m clips.**
 
 ---
 
-## 5. "Hold ASX 200 instead of cash" — the switching strategy
+## 7. "Hold the index instead of cash" — the switching strategy
 
-The standalone strategy is in cash ~84% of the time. You asked for a version
-that **holds the ASX 200 instead of cash** and switches into the long/short only
-during the ~10-day rebalance windows. No leverage — you're either in the index
-or in the trade, never both.
-
-Benchmarks here are **dividend-inclusive total return** (ETF adjusted close:
-STW.AX for ASX 200, SFY.AX for ASX 50; ASX 100 reconstructed). Over the strategy
-span 2012-09 → 2026-01:
+The standalone trade is in cash ~85% of the time, so this variant holds the ASX
+200 **total-return** index by default and switches into the trade only during the
+~10-day rebalance windows (no leverage). Benchmarks are dividend-inclusive
+(STW.AX / SFY.AX; ASX 100 reconstructed). Span 2012-09 → 2026-01:
 
 ![Switching strategy vs total-return benchmarks](docs/figures/v3_switch_vs_benchmark.png)
 
-| Strategy / benchmark | Gross total return | Ex-outlier (robust) |
+| Strategy / benchmark | Gross | Ex-2013-outlier (robust) |
 |---|---:|---:|
-| ASX 50 total return | +218% | — |
-| ASX 100 total return | +150% | — |
-| **ASX 200 total return (buy & hold)** | **+236%** | — |
-| Hold ASX 200, switch to LONG additions | +133% | +133% |
-| **Hold ASX 200, switch to SHORT removals** | +594% | **+297%** |
-| Hold ASX 200, switch to LONG/SHORT | +406% | +188% |
+| **ASX 200 total return (buy & hold)** | **+235%** | — |
+| Hold ASX 200, switch to SHORT removals | +153% | **+97%** |
+| Hold ASX 200, switch to LONG additions | +155% | +155% |
+| Hold ASX 200, switch to LONG/SHORT | +109% | +64% |
 
-**This was the riskiest number in the study, so an independent agent re-derived
-it from raw prices. Verdict: the arithmetic is exact and the construction is
-clean, but the +594% gross short is NOT robust.** A *single* 2013 trade — PRU,
-which fell 55.6% in a near-empty early book — accounts for **roughly half** of
-it. Remove that one trade and:
-
-- **Short-removal switch: +297%** — still beats buy-and-hold (+236%), but
-  modestly, not 2.5×.
-- **Long/short switch: +188%** and **long-only: +133%** — both now *lag*
-  buy-and-hold. The long-side drag pulls the combined book below the index.
-
-So the only variant that **robustly** beats holding the index is the
-**short-removal switch**, and even that comes with two caveats:
-
-1. **Gross of costs** (borrow ~3%/yr on the short, spread, slippage, impact).
-2. **Survivorship.** 59 of 165 ASX 200 removal events (**36%**) are on tickers
-   Yahoo no longer carries and are silently excluded. These are mostly failed
-   small-caps that would likely have fallen further (which would *help* the
-   short), but some were acquired and gapped *up* (losing shorts) — so the true
-   number is genuinely untestable on a third of removals.
-
-**Bottom line:** the robust evidence is the per-trade short edge in §3–4
-(+1.8% to +4.5%/trade, 54–70% win, median-positive at every horizon). The
-compounded switching total is real in direction but outlier- and
-survivorship-sensitive in magnitude.
+**This is the "disappearing index effect" in one table.** On the *old, survivorship-biased*
+data the short switch looked like +594% (driven ~half by one 2013 trade). On the
+*cleaned* data — delisted names restored, outlier removed — **no switching variant
+beats simply holding the index.** A real per-trade edge (§4–6) does **not**
+compound into index-beating wealth here, because it fires only a few times a
+quarter on a small slice of capital and the per-trade edge is modest after costs.
 
 ---
 
-## 6. Data quality — what was thrown out
+## 8. Data quality — what was thrown out
 
-Of 507 ASX 20/50/100/200 events, **314 became valid trades**; **193 were
-rejected** with a recorded reason ([`outputs/v2_rejected.csv`](outputs/v2_rejected.csv)):
+Of 525 ASX 20/50/100/200 events, **374 became valid trades**; **151 were rejected**
+with a recorded reason ([`outputs/v2_rejected.csv`](outputs/v2_rejected.csv)):
 
 | Reason | Count | Meaning |
 |---|---:|---|
-| `no_price_file` | 139 | Ticker delisted long ago; Yahoo has no series (survivorship). |
-| `no_history_at_event` | 33 | **The fixed bug.** Yahoo history starts years after the rebalance; old code used the first available bar → fake 0% trade. Now rejected. |
-| `illiquid_or_stale` | 8 | Median window turnover < A$250k — not an index-level series. |
-| `zero_volume_endpoint` | 6 | Entry/exit bar had zero volume. |
+| `no_price_file` | 91 | Delisted name with no series on Yahoo *or* FMP (the oldest failures). |
+| `no_history_at_event` | 37 | Price series starts after the rebalance → old code faked a 0% trade; now rejected. |
+| `illiquid_or_stale` | 9 | Median window turnover < A$250k. |
+| `zero_volume_endpoint` | 7 | Entry/exit bar had zero volume. |
 | `entry_gap` | 4 | No real bar within 5 trading days of entry. |
-| `known_ticker_reuse` | 3 | **AHE, VRL** — Yahoo reassigned the ticker to a different micro-cap. |
+| `known_ticker_reuse` | 3 | **AHE, VRL** — Yahoo reassigned the ticker to a different company. |
 
-The validation gate is in [`scripts/run_strategy_v2.py`](scripts/run_strategy_v2.py)
-(`build_trade()`). An independent OpenASX (ETF-holdings) cross-check confirmed
-2012–2017 membership at 75–100% and caught one parser error: a Dec-2018 "All
-Australian 50" removal of **ORI** mis-attributed to ASX 200 (now fixed via a
-"No change" section guard).
-
-**To recover the 139 delisted names** you need a paid feed (FMP Premium /
-Bloomberg) — Yahoo has purged them and Stooq is CAPTCHA-blocked. Drop an
-`FMP_API_KEY` in `.env` and re-run `scripts/fetch_prices_for_labels.py` to fill
-them in (the loader already supports it).
+The validation gate is `build_trade()` in
+[`scripts/run_strategy_v2.py`](scripts/run_strategy_v2.py). Delisted-name recovery
+is [`scripts/fetch_fmp_delisted.py`](scripts/fetch_fmp_delisted.py) (recovered 39;
+64 of the oldest are gone from every feed). An OpenASX ETF-holdings cross-check
+confirmed 2012–2017 membership and caught an earlier parser mis-attribution
+(ORI), now fixed.
 
 ---
 
-## 7. Reproduce
+## 9. Reproduce
 
 ```bash
 pip install -e ".[all]"
-python scripts/fetch_sp_pdfs.py               # official S&P PDFs
-python scripts/parse_sp_pdfs_all_indices.py   # per-tier add/remove events
-python scripts/fetch_prices_for_labels.py     # real Yahoo prices
-python scripts/fetch_tr_benchmarks.py         # dividend-inclusive ASX 50/100/200 TR
-python scripts/run_strategy_v2.py             # validated per-trade backtest
-python scripts/run_strategy_v3.py             # longer holds + switching strategy
-python scripts/build_v2_charts.py             # per-trade bars, win rate, event study
-python scripts/build_v3_charts.py             # horizon, extended event study, switch vs TR
+python scripts/fetch_sp_pdfs.py                 # official S&P PDFs
+python scripts/parse_sp_pdfs_all_indices.py     # per-tier events (incl. de-spacer fix)
+python scripts/fetch_prices_for_labels.py       # Yahoo prices
+python scripts/fetch_fmp_delisted.py            # recover delisted names (needs FMP_API_KEY in .env)
+python scripts/fetch_tr_benchmarks.py           # dividend-inclusive ASX 50/100/200 TR
+python scripts/run_strategy_v2.py               # validated per-trade backtest (gross)
+python scripts/run_strategy_v3.py               # longer holds + switching strategy
+python scripts/build_frequency_chart.py         # trades per quarter / coverage
+python scripts/run_significance.py              # t-test / Wilcoxon / sign / bootstrap / placebo
+python scripts/run_friction_backtest.py         # gross vs net of liquidity + borrow costs
+python scripts/build_v2_charts.py && python scripts/build_v3_charts.py
 ```
 
-Outputs: [`outputs/v2_trades.csv`](outputs/) (every valid trade with prices —
-cross-check on Yahoo), `v2_rejected.csv` (drops + reason), `v2_summary.csv`,
-`v3_horizon.csv`, `v3_overlay.csv`, `v3_daily.csv`.
+Outputs: `outputs/v2_trades.csv` (every valid trade with prices — cross-check on
+Yahoo), `v2_rejected.csv`, `quarterly_counts.csv`, `signal_stats.csv`,
+`friction_pertrade.csv`, `friction_summary.csv`, `v3_horizon.csv`, `v3_overlay.csv`.
+`FMP_API_KEY` lives in a git-ignored `.env` — no key is committed.
 
 ---
 
-## 8. Limitations
+## 10. Limitations
 
-- **Survivorship** (139 missing delisted names) likely **overstates the short
-  edge** in §5 (acquired removals — losing shorts — are missing).
-- **Gross of costs in the per-trade tables.** A 70%-win +4.5% short survives
-  realistic borrow/spread; a +0.5% long does not.
-- **Total-return benchmarks**: ASX 200/50 from ETF adjusted close (exact); ASX
-  100 reconstructed (price index × ASX 200 dividend factor).
-- **Sample size**: ASX 20/50 are small (26–35 trades); ASX 200 (181) is robust.
-- **Universe**: this study trades only the ASX 20/50/100/200 tiers; the PDFs
-  also contain ASX 300, All Technology and All Australian events (2,000+ rows)
-  that are parsed but not traded here.
-- The compounded/switching totals are **outlier- and sample-sensitive** (one
-  2013 trade drives ~half the gross short); the per-trade mean/median/win-rate
-  are the robust primary metrics. Every headline number in §4–5 was
-  independently re-derived from raw prices by a separate verification agent.
+- **Archival gap**: 2020-Q3 → 2021-Q4 (6 quarters) missing at source; documented,
+  not patched over.
+- **Residual survivorship**: 91 of 525 events are on names gone from every public
+  feed; recovery moved the short edge *down*, so what remains likely still mildly
+  *overstates* it.
+- **Costs are a model**, not fills: a square-root impact law with a fixed clip and
+  realised vol. The headline survives A$250k–A$1m; a much larger book would erode it.
+- **Sample**: ASX 200 (≈107 shorts) is robust; ASX 20/50 (13–20) are not. Means
+  are fat-tailed — the median / win-rate / placebo tests are the primary evidence.
+- **Borrow availability**: small-cap removals can be hard or impossible to borrow;
+  the 3%/yr assumption is optimistic for the thinnest names.
+- Every headline number was independently re-derived from raw prices by a separate
+  verification agent.
 
 ## License
 

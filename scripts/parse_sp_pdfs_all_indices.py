@@ -98,9 +98,33 @@ def _norm_index_name(name: str) -> str:
     return n
 
 
+# Some S&P PDFs (e.g. Sep-2013, Jun-2014) embed a font that pypdf extracts as
+# LETTER-SPACED text: one space between every character within a word, two+
+# spaces between words ("S y d n e y ,  S e p t e m b e r"). Such files silently
+# parsed to zero events because the date/header regexes never matched. Detect
+# letter-spaced lines and collapse them back to normal text.
+_ACTION_WORDS = r"Addition|Removal|Deletion|Inclusion|Exclusion"
+_GLUED_ACTION_RE = re.compile(rf"^({_ACTION_WORDS})([A-Z0-9]{{1,6}})\b", re.IGNORECASE)
+
+
+def _despace_line(line: str) -> str:
+    toks = [t for t in line.split(" ") if t]
+    if len(toks) >= 5 and sum(len(t) == 1 for t in toks) / len(toks) > 0.6:
+        c = re.sub(r" {2,}", "\x00", line)   # word boundaries -> sentinel
+        c = c.replace(" ", "")               # drop intra-word spaces
+        c = c.replace("\x00", " ").strip()   # restore word boundaries
+        c = _GLUED_ACTION_RE.sub(r"\1 \2", c)  # "RemovalAGO" -> "Removal AGO"
+        return c
+    return line
+
+
+def _despace_text(text: str) -> str:
+    return "\n".join(_despace_line(ln) for ln in text.split("\n"))
+
+
 def parse_pdf(path: Path) -> dict:
     reader = pypdf.PdfReader(str(path))
-    full_text = "\n".join((p.extract_text() or "") for p in reader.pages)
+    full_text = _despace_text("\n".join((p.extract_text() or "") for p in reader.pages))
 
     ann_match = ANNOUNCEMENT_RE.search(full_text)
     eff_match = EFFECTIVE_RE.search(full_text)
