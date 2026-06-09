@@ -458,7 +458,57 @@ index-rebalance effect is… own the index.**
 
 ---
 
-## 9. Data quality — what was thrown out
+## 9. Next step (exploratory): can we PREDICT the changes and front-run them?
+
+The whole problem (§2) is that the alpha lands *at* the announcement and is gone
+by the time it's public. The only way to capture it is to **predict** the change
+and be positioned **before** S&P announces. S&P's rule is mechanical — float-
+adjusted **market-cap rank** — so a stock that has climbed past the ≈200th-largest
+boundary should be added, and one that has slipped below it removed.
+[`scripts/run_predictor.py`](scripts/run_predictor.py) tests exactly that:
+
+- **10 trading days before** each quarterly announcement, rank the boundary
+  universe (every ASX 200/300 name, real FMP market caps) by size.
+- **Predict additions** = the 5 largest names *not* currently in the index but
+  near the boundary; **predict removals** = the 5 smallest current members.
+- **Pre-position**: long the predicted adds / short the predicted removals at that
+  close, and measure the return to the announcement (and through the next day).
+
+![Predictor — hit rate and pre-positioning return](docs/figures/predictor.png)
+
+| Side | predictions | hits | **precision** | random baseline | pre-position return (P→announce) |
+|---|--:|--:|--:|--:|--:|
+| **Additions** | 225 | 12 | **5.3%** | 0.7% | **+0.71%** |
+| **Removals** | 225 | 43 | **19.1%** | 13.5% | **+1.06%** |
+
+How to read it, honestly:
+
+- **There IS real predictability.** Predicting *additions* from size alone is
+  **≈7.6× better than chance** (5.3% vs 0.7% random — the addition pool is large,
+  so random is tiny). Removals are 19.1% vs a 13.5% random baseline (only ≈1.4×:
+  the member pool near the boundary is small, so even random guessing scores high).
+- **But it's weak and noisy.** You're *wrong* on ≈80–95% of individual picks, and
+  the captured pre-positioning return is **small (+0.7% to +1.1% gross per name,
+  over 10 days)** — and you'd be trading a basket where most names never change.
+- **It's still the right *direction*.** Pre-positioning earns the move *before*
+  the announcement, exactly where §2 said the alpha lives — so unlike the
+  post-announcement trader, a predictor is at least on the correct side of the
+  effect.
+
+**Caveats (why a real desk would do better, or this is an upper-ish bound):** our
+membership map and boundary are approximate (we don't have S&P's exact
+float-adjusted universe or the precise cutoff); 319 delisted boundary names have
+no market cap (survivorship); and we use raw market cap, not S&P's float-adjusted
+methodology. A proper index-arb model with the real methodology and full universe
+would lift the hit rate. **Bottom line:** the index-rebalance effect is *partly
+front-runnable* — size-rank predicts changes well above chance and pre-positioning
+catches a modest edge — but on this public-data proxy it's a small, noisy signal,
+not a money machine. A clean next step would be to rebuild the predictor on S&P's
+actual float-adjusted market-cap ranks.
+
+---
+
+## 10. Data quality — what was thrown out
 
 Of 525 ASX 20/50/100/200 events, **374 became valid trades**; **151 were rejected**
 with a recorded reason ([`outputs/v2_rejected.csv`](outputs/v2_rejected.csv)):
@@ -481,7 +531,7 @@ confirmed 2012–2017 membership and caught an earlier parser mis-attribution
 
 ---
 
-## 10. Reproduce
+## 11. Reproduce
 
 ```bash
 pip install -e ".[all]"
@@ -505,6 +555,8 @@ python scripts/run_significance.py              # t-test / Wilcoxon / sign / boo
 python scripts/run_friction_backtest.py         # gross vs net of liquidity + borrow costs
 python scripts/run_sharpe_analysis.py           # Sharpe: strategy(+cash) vs buy-and-hold vs cash
 python scripts/run_open_vs_close.py             # entry at the open vs the close
+python scripts/fetch_market_caps.py             # FMP market caps for the boundary universe
+python scripts/run_predictor.py                 # PREDICT changes from size rank; pre-position
 python scripts/build_v2_charts.py && python scripts/build_v3_charts.py
 ```
 
@@ -516,7 +568,7 @@ Outputs: `outputs/asx200_events_master.csv` (544 deduped events),
 
 ---
 
-## 11. Limitations
+## 12. Limitations
 
 - **Capturability, not existence, is the catch.** The addition alpha is
   statistically rock-solid but reverses to ≈0 by +10 days, so it is not a tradeable
