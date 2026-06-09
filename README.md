@@ -28,14 +28,14 @@ stock return − ASX 200 return), on **scheduled** (quarterly rank-review) chang
 only — i.e. the *pure* index-demand signal, with M&A-driven off-cycle events held
 out:
 
-| | Scheduled **Additions** (n=136) | Scheduled **Removals** (n=134) |
+| | Scheduled **Additions** (n=141) | Scheduled **Removals** (n=138) |
 |---|---|---|
-| Abnormal return, announcement window `[-1,+1]` | **+2.42%** | **−1.20%** |
-| t-stat / Wilcoxon p | t=5.06 · **p<0.0001** | t=−2.12 · **p=0.014** |
-| % in expected direction | **73%** positive | 63% negative |
-| Beats random-date placebo? | **Yes, p=0.006** | **Yes, p=0.006** |
-| What happens next (`+2…+10` days) | **reverses −1.65%** (p=0.022) | drifts to −1.9% by +20d |
-| Net abnormal return `[0,+10]` | **+0.24% (≈ zero)** | −0.6% (ns) |
+| Abnormal return, announcement window `[-1,+1]` | **+1.78%** | **−1.35%** |
+| t-stat / Wilcoxon p | t=3.11 · **p<0.0001** | t=−2.42 · **p=0.005** |
+| % in expected direction | **70%** positive | 64% negative |
+| Beats random-date placebo? | **Yes, p=0.016** | **Yes, p=0.002** |
+| What happens next (`+2…+10` days) | **reverses −1.50%** (p=0.039) | drifts to −1.9% by +20d |
+| Net abnormal return `[0,+10]` | **−0.09% (≈ zero)** | −0.4% (ns) |
 
 ![Index-rebalance alpha — market-adjusted CAR](docs/figures/alpha_car_path.png)
 
@@ -60,10 +60,10 @@ to Bonferroni across all 24 tests):**
 statistically rock-solid, but it is a fast-reversing, pre-positioning phenomenon
 — **not a tradeable alpha for anyone acting on the public announcement.**
 
-573 ASX 200 events (2011-04 → 2026-06) · 159 off-cycle · 276/379 tickers priced.
+583 ASX 200 events (2011-04 → 2026-06) · 159 off-cycle · 279/381 tickers priced.
 
 > **No look-ahead.** The tradeable strategy enters at the **close of the trading
-> day *after*** the S&P announcement — across all 431 trades, **0** have
+> day *after*** the S&P announcement — across all 441 trades, **0** have
 > `entry ≤ announcement` (S&P releases after market close, so the next-day-close
 > entry never touches pre-announcement information). The event-study `[-1,+1]`
 > window *measures* the announcement effect (including the un-tradeable on-the-day
@@ -87,13 +87,13 @@ split four ways because the mechanism differs:
 
 | Cohort · side | window | n | mean CAR | t | Wilcoxon p | placebo p |
 |---|---|--:|--:|--:|--:|--:|
-| Scheduled · **Addition** | `[-1,+1]` | 136 | **+2.42%** | 5.06 | <0.0001 | — |
-| Scheduled · Addition | `[0,+1]` | 136 | +1.89% | 4.88 | <0.0001 | **0.006** |
-| Scheduled · Addition | `[+2,+10]` | 136 | **−1.65%** | −2.32 | 0.023 | — |
-| Scheduled · Addition | `[0,+10]` | 136 | **+0.24%** | +0.31 | 0.32 | — |
-| Scheduled · **Removal** | `[-1,+1]` | 134 | **−1.20%** | −2.12 | 0.014 | — |
-| Scheduled · Removal | `[0,+1]` | 134 | −1.00% | −2.06 | 0.033 | **0.006** |
-| Scheduled · Removal | `[0,+20]` | 134 | **−1.87%** | −1.00 | 0.092 | — |
+| Scheduled · **Addition** | `[-1,+1]` | 141 | **+1.78%** | 3.11 | <0.0001 | — |
+| Scheduled · Addition | `[0,+1]` | 141 | +1.40% | 2.99 | 0.0001 | **0.016** |
+| Scheduled · Addition | `[+2,+10]` | 141 | **−1.50%** | −2.15 | 0.039 | — |
+| Scheduled · Addition | `[0,+10]` | 141 | **−0.09%** | −0.12 | 0.57 | — |
+| Scheduled · **Removal** | `[-1,+1]` | 138 | **−1.35%** | −2.42 | 0.005 | — |
+| Scheduled · Removal | `[0,+1]` | 138 | −1.18% | −2.45 | 0.011 | **0.002** |
+| Scheduled · Removal | `[0,+20]` | 138 | **−1.92%** | −1.05 | 0.072 | — |
 | Off-cycle · Removal | `[+2,+5]` | 23 | +4.99% | 1.17 | 0.56 | — |
 
 How to read it:
@@ -131,18 +131,18 @@ and demergers). Merged and de-duplicated by
 | | events | tickers priced |
 |---|--:|--:|
 | Quarterly-only (old) | 337 | 206 |
-| **+ dated off-cycle archive + recovered 2020-21 quarters + recovered names** | **573** | **276 / 379** |
+| **+ dated off-cycle archive + recovered 2020-21 quarters + recovered names** | **583** | **279 / 381** |
 
-**The 2020-2021 "gap" is now closed.** Those quarterly rebalances were published
-on the iguana2 ASX newswire (a JS viewer) rather than as marketindex PDFs, so the
-naive CDN scrape missed them. They are recovered from the **same S&P announcement
-mirrored on the investor-relations pages of affected companies** (Iluka for Dec-2020,
-Coles for Sep-2020, Humm for Sep-2021, openbriefing for Jun-2021, ASX for Mar-2021)
-— 5 of the 6 quarters; only the Dec-2021 *scheduled* file still lacks a clean public
-mirror (its off-cycle removals are captured). Verified against the source: e.g.
-**Dec-2020 → ASX 20: +APT −IAG; ASX 50: +APT +XRO −OSH −VCX; ASX 200: +KGN +REH
-−AVH −COE −WSA.** **65 Yahoo-purged delisted names** were also recovered from FMP
-Premium (Altium, Alumina, Newcrest, OZ Minerals, Boral, Woolworths, …).
+**The 2020-2021 "gap" is fully closed — all six quarters recovered.** Those
+quarterly rebalances were published on the iguana2 ASX newswire (a JS viewer)
+rather than as marketindex PDFs, so the naive CDN scrape missed them. They are
+recovered from the **same S&P announcement mirrored on the investor-relations
+pages of affected companies** — Coles (Sep-2020), Iluka (Dec-2020), ASX (Mar-2021),
+openbriefing (Jun-2021), Humm (Sep-2021), **Monadelphous (Dec-2021)** — verified
+against source, e.g. **Dec-2020 → ASX 20: +APT −IAG; ASX 50: +APT +XRO −OSH −VCX;
+ASX 200: +KGN +REH −AVH −COE −WSA.** **65 Yahoo-purged delisted names** were also
+recovered from FMP Premium (Altium, Alumina, Newcrest, OZ Minerals, Boral,
+Woolworths, …).
 
 **99 tickers remain unpriced on any free feed** — the hunt list you asked for, in
 [`outputs/missing_delisted.csv`](outputs/missing_delisted.csv) with company names
@@ -163,9 +163,10 @@ and a findability tag. The most recent (most recoverable on Bloomberg / Refiniti
 (≈15 names ≥2020, ≈35 from 2016-2019, ≈49 older small-cap collapses — Dick Smith,
 Ten Network, Virgin Australia — often gone from every feed.)
 
-The frequency chart now shows near-complete coverage: only **3 zero-event
-quarters remain, and 2 are legitimate** (2020-Q1 was *postponed* into June-2020;
-2023-Q2 was a genuine *"No change"*). Only **2021-Q4 scheduled** is a true gap:
+The frequency chart now shows **complete coverage** — every quarter from 2012-Q3
+to 2025-Q4 has its events, and the only two zero-event quarters are both
+**legitimate** (2020-Q1 was *postponed* into June-2020; 2023-Q2 was a genuine
+*"No change"* for the 20/50/100/200 tiers). No archival gap remains:
 
 ![Rebalance events per quarter](docs/figures/frequency_quarterly.png)
 
@@ -387,9 +388,10 @@ Outputs: `outputs/asx200_events_master.csv` (544 deduped events),
 - **Capturability, not existence, is the catch.** The addition alpha is
   statistically rock-solid but reverses to ~0 by +10 days, so it is not a tradeable
   edge for anyone acting on the public announcement (§1–2).
-- **One residual data gap**: the Dec-2021 *scheduled* quarterly PDF has no clean
-  public mirror (S&P's copy is bot-blocked); its off-cycle removals are captured,
-  so ~6 scheduled events are missing out of 573. Everything else 2011→2026 is in.
+- **No archival gap remains.** All quarterly rebalances 2011→2026 are present,
+  including the 2020-2021 quarters that were only on the iguana2 newswire
+  (recovered from company IR-page mirrors). The 102 still-missing tickers are
+  delisted names absent from every free price feed, not missing events.
 - **Removal sample is censored.** ~99 of 370 tickers (largely delistings,
   collapses, takeovers) have no price on any free feed, so the removal CAR sits on
   a survivorship-biased subsample — treat the removal numbers as the weaker result.

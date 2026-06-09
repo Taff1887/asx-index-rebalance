@@ -36,7 +36,7 @@ quarter,valid_additions,valid_removals,rejected_no_price,rejected_other,total_ev
 2021Q1,6,5,1,0,12,11
 2021Q2,4,5,2,1,12,9
 2021Q3,5,7,4,0,16,12
-2021Q4,0,0,0,0,0,0
+2021Q4,5,5,1,1,12,10
 2022Q1,7,7,0,0,14,14
 2022Q2,5,7,0,0,12,12
 2022Q3,8,8,0,2,18,16

@@ -110,10 +110,13 @@ def main() -> None:
         xs_missing = sorted(qlist.index(q) for q in missing_pdf_q)
         ax.axvspan(min(xs_missing) - 0.5, max(xs_missing) + 0.5,
                    color="#fdecea", zorder=0)
-        ax.annotate("source PDFs never archived\n(S&P 403 / Wayback gap)",
-                    ((min(xs_missing) + max(xs_missing)) / 2, ymax * 0.78),
-                    ha="center", va="top", fontsize=9, color="#b71c1c",
-                    fontweight="bold")
+        qs = ", ".join(str(q) for q in missing_pdf_q)
+        ax.annotate(f"{qs} scheduled PDF\nstill missing (S&P bot-blocked;\noff-cycle changes captured)",
+                    (max(xs_missing) + 0.6, ymax * 0.82),
+                    ha="left", va="top", fontsize=8.5, color="#b71c1c",
+                    fontweight="bold",
+                    arrowprops=dict(arrowstyle="->", color="#b71c1c"),
+                    xytext=(max(xs_missing) + 1.5, ymax * 0.92))
     # "No change" quarters (PDF held, but no 20/50/100/200 change) — legitimate.
     for q in no_change_q:
         xi = qlist.index(q)

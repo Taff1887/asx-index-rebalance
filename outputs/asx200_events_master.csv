@@ -4,271 +4,271 @@ announcement_date,effective_date,index,action,ticker,company_name,source,source_
 2011-05-02,,ASX200,Removal,FGL,,dated_archive,addition,True
 2011-05-27,,ASX200,Addition,TAH,,dated_archive,addition,True
 2011-06-02,,ASX200,Removal,EQN,,dated_archive,removal,True
-2011-09-16,2011-09-16,ASX200,Removal,HIL,Hills Holdings Limited,dated_archive,rebalance,False
-2011-09-16,2011-09-16,ASX200,Addition,ACR,Acrux Limited,dated_archive,rebalance,False
 2011-09-16,2011-09-16,ASX200,Removal,IFN,Infigen Energy,dated_archive,rebalance,False
-2011-10-26,,ASX200,Removal,MCC,,dated_archive,removal,True
+2011-09-16,2011-09-16,ASX200,Addition,ACR,Acrux Limited,dated_archive,rebalance,False
+2011-09-16,2011-09-16,ASX200,Removal,HIL,Hills Holdings Limited,dated_archive,rebalance,False
 2011-10-26,,ASX200,Addition,IDL,,dated_archive,removal-replacement,True
+2011-10-26,,ASX200,Removal,MCC,,dated_archive,removal,True
 2011-11-11,,ASX200,Addition,TEL,,dated_archive,addition,True
-2011-12-16,2011-12-16,ASX200,Removal,CNU,Chorus Limited,dated_archive,rebalance,False
-2011-12-16,2011-12-16,ASX200,Removal,GNS,Gunns Limited,dated_archive,rebalance,False
-2011-12-16,2011-12-16,ASX200,Addition,IMD,Imdex Limited,dated_archive,rebalance,False
+2011-12-16,2011-12-16,ASX200,Removal,OMH,OM Holdings Limited,dated_archive,rebalance,False
 2011-12-16,2011-12-16,ASX200,Addition,IGR,Integra Mining Limited,dated_archive,rebalance,False
+2011-12-16,2011-12-16,ASX200,Removal,MMX,Murchison Metals Ltd,dated_archive,rebalance,False
+2011-12-16,2011-12-16,ASX200,Removal,CNU,Chorus Limited,dated_archive,rebalance,False
+2011-12-16,2011-12-16,ASX200,Addition,IMD,Imdex Limited,dated_archive,rebalance,False
+2011-12-16,2011-12-16,ASX200,Removal,GNS,Gunns Limited,dated_archive,rebalance,False
 2011-12-16,2011-12-16,ASX200,Addition,SLR,Silver Lake Resources Limited,dated_archive,rebalance,False
 2011-12-16,2011-12-16,ASX200,Addition,RMS,Ramelius Resources Limited,dated_archive,rebalance,False
-2011-12-16,2011-12-16,ASX200,Removal,OMH,OM Holdings Limited,dated_archive,rebalance,False
-2011-12-16,2011-12-16,ASX200,Removal,MMX,Murchison Metals Ltd,dated_archive,rebalance,False
 2012-03-02,,ASX200,Removal,KZL,Kagara Limited,dated_archive,rebalance,False
 2012-03-02,,ASX200,Removal,WEC,White Energy Company Limited,dated_archive,rebalance,False
-2012-03-02,,ASX200,Addition,EVN,Evolution Mining Limited,dated_archive,rebalance,False
 2012-03-02,,ASX200,Addition,CRF,Centro Retail Australia,dated_archive,rebalance,False
-2012-03-21,,ASX200,Removal,EXT,,dated_archive,removal,True
+2012-03-02,,ASX200,Addition,EVN,Evolution Mining Limited,dated_archive,rebalance,False
 2012-03-21,,ASX200,Addition,SUL,,dated_archive,removal-replacement,True
-2012-04-05,,ASX200,Addition,SXY,,dated_archive,removal-replacement,True
+2012-03-21,,ASX200,Removal,EXT,,dated_archive,removal,True
 2012-04-05,,ASX200,Removal,AUN,,dated_archive,removal,True
+2012-04-05,,ASX200,Addition,SXY,,dated_archive,removal-replacement,True
 2012-04-12,,ASX200,Removal,CQO,,dated_archive,removal,True
 2012-04-12,,ASX200,Addition,TRY,,dated_archive,removal-replacement,True
 2012-06-01,,ASX200,Addition,CDD,Cardno Limited,dated_archive,rebalance,False
-2012-06-01,,ASX200,Removal,ERA,Energy Resources of Australia Limited,dated_archive,rebalance,False
-2012-06-01,,ASX200,Removal,DTE,Dart Energy Limited,dated_archive,rebalance,False
 2012-06-01,,ASX200,Addition,MTU,M2 Telecommunications Group Limited,dated_archive,rebalance,False
+2012-06-01,,ASX200,Removal,DTE,Dart Energy Limited,dated_archive,rebalance,False
+2012-06-01,,ASX200,Removal,ERA,Energy Resources of Australia Limited,dated_archive,rebalance,False
 2012-06-20,,ASX200,Removal,GCL,,dated_archive,removal,True
 2012-07-20,,ASX200,Removal,SPT,,dated_archive,removal,True
 2012-07-20,,ASX200,Addition,FXL,,dated_archive,removal-replacement,True
-2012-09-07,2012-09-21,ASX200,Removal,AQP,Aquarius Platinum Limited,multi_quarterly,quarterly,False
-2012-09-07,2012-09-21,ASX200,Addition,SAI,SAI Global Limited,multi_quarterly,quarterly,False
-2012-09-07,2012-09-21,ASX200,Removal,RMS,Ramelius Resources Limited,multi_quarterly,quarterly,False
-2012-09-07,2012-09-21,ASX200,Removal,PAN,Panoramic Resources Limited,multi_quarterly,quarterly,False
 2012-09-07,2012-09-21,ASX200,Addition,DLS,Drillsearch Energy Limited,multi_quarterly,quarterly,False
+2012-09-07,2012-09-21,ASX200,Removal,AQP,Aquarius Platinum Limited,multi_quarterly,quarterly,False
 2012-09-07,2012-09-21,ASX200,Addition,SKE,Skilled Group Limited,multi_quarterly,quarterly,False
+2012-09-07,2012-09-21,ASX200,Removal,PAN,Panoramic Resources Limited,multi_quarterly,quarterly,False
+2012-09-07,2012-09-21,ASX200,Removal,RMS,Ramelius Resources Limited,multi_quarterly,quarterly,False
+2012-09-07,2012-09-21,ASX200,Addition,SAI,SAI Global Limited,multi_quarterly,quarterly,False
 2012-12-07,2012-12-21,ASX200,Addition,MMS,McMillan Shakespeare Limited,multi_quarterly,quarterly,False
 2012-12-07,2012-12-21,ASX200,Removal,LNC,Linc Energy Ltd,multi_quarterly,quarterly,False
+2012-12-07,2012-12-21,ASX200,Addition,IIN,iiNet Limited,multi_quarterly,quarterly,False
 2012-12-07,2012-12-21,ASX200,Removal,APN,APN News & Media Limited,multi_quarterly,quarterly,False
 2012-12-07,2012-12-21,ASX200,Removal,IAU,Intrepid Mines Limited,multi_quarterly,quarterly,False
 2012-12-07,2012-12-21,ASX200,Addition,MAD,Maverick Drilling and Exploration Limited,multi_quarterly,quarterly,False
 2012-12-07,2012-12-21,ASX200,Removal,MAH,Macmahon Holdings Limited,multi_quarterly,quarterly,False
-2012-12-07,2012-12-21,ASX200,Addition,IIN,iiNet Limited,multi_quarterly,quarterly,False
-2013-03-01,2013-03-15,ASX200,Removal,GBG,Gindalbie Metals Limited,multi_quarterly,quarterly,False
-2013-03-01,2013-03-15,ASX200,Addition,MFG,Magellan Financial Group Limited,multi_quarterly,quarterly,False
-2013-03-01,2013-03-15,ASX200,Addition,TME,Trade Me Group Limited,multi_quarterly,quarterly,False
-2013-03-01,2013-03-15,ASX200,Addition,HZN,Horizon Oil Limited,multi_quarterly,quarterly,False
-2013-03-01,2013-03-15,ASX200,Addition,PMV,Premier Investments Limited,multi_quarterly,quarterly,False
-2013-03-01,2013-03-15,ASX200,Removal,GRY,Gryphon Minerals Limited,multi_quarterly,quarterly,False
-2013-03-01,2013-03-15,ASX200,Removal,BTU,Bathurst Resources Limited,multi_quarterly,quarterly,False
 2013-03-01,2013-03-15,ASX200,Removal,SAR,Saracen Mineral Holdings Limited,multi_quarterly,quarterly,False
-2013-06-07,2013-06-21,ASX200,Removal,MAD,Maverick Drilling and Exploration Limited,multi_quarterly,quarterly,False
+2013-03-01,2013-03-15,ASX200,Addition,TME,Trade Me Group Limited,multi_quarterly,quarterly,False
+2013-03-01,2013-03-15,ASX200,Addition,PMV,Premier Investments Limited,multi_quarterly,quarterly,False
+2013-03-01,2013-03-15,ASX200,Removal,GBG,Gindalbie Metals Limited,multi_quarterly,quarterly,False
+2013-03-01,2013-03-15,ASX200,Removal,BTU,Bathurst Resources Limited,multi_quarterly,quarterly,False
+2013-03-01,2013-03-15,ASX200,Addition,HZN,Horizon Oil Limited,multi_quarterly,quarterly,False
+2013-03-01,2013-03-15,ASX200,Removal,GRY,Gryphon Minerals Limited,multi_quarterly,quarterly,False
+2013-03-01,2013-03-15,ASX200,Addition,MFG,Magellan Financial Group Limited,multi_quarterly,quarterly,False
+2013-06-07,2013-06-21,ASX200,Addition,LNC,Linc Energy Ltd,multi_quarterly,quarterly,False
 2013-06-07,2013-06-21,ASX200,Addition,GEM,G8 Education Limited,multi_quarterly,quarterly,False
+2013-06-07,2013-06-21,ASX200,Addition,SIR,Sirius Resources NL,multi_quarterly,quarterly,False
+2013-06-07,2013-06-21,ASX200,Removal,TRY,Troy Resources Limited,multi_quarterly,quarterly,False
+2013-06-07,2013-06-21,ASX200,Removal,IMD,Imdex Limited,multi_quarterly,quarterly,False
+2013-06-07,2013-06-21,ASX200,Removal,AIX,Australian Infrastructure Fund Limited,multi_quarterly,quarterly,False
 2013-06-07,2013-06-21,ASX200,Removal,CPL,Coalspur Mines Limited,multi_quarterly,quarterly,False
 2013-06-07,2013-06-21,ASX200,Addition,AHE,Automotive Holdings Group Limited,multi_quarterly,quarterly,False
-2013-06-07,2013-06-21,ASX200,Addition,REA,REA Group Ltd,multi_quarterly,quarterly,False
-2013-06-07,2013-06-21,ASX200,Removal,AIX,Australian Infrastructure Fund Limited,multi_quarterly,quarterly,False
-2013-06-07,2013-06-21,ASX200,Removal,IMD,Imdex Limited,multi_quarterly,quarterly,False
-2013-06-07,2013-06-21,ASX200,Addition,DMP,Domino's Pizza Enterprises Limited,multi_quarterly,quarterly,False
-2013-06-07,2013-06-21,ASX200,Removal,TRY,Troy Resources Limited,multi_quarterly,quarterly,False
-2013-06-07,2013-06-21,ASX200,Addition,SIR,Sirius Resources NL,multi_quarterly,quarterly,False
 2013-06-07,2013-06-21,ASX200,Removal,MBN,Mirabela Nickel Limited,multi_quarterly,quarterly,False
-2013-06-07,2013-06-21,ASX200,Addition,LNC,Linc Energy Ltd,multi_quarterly,quarterly,False
+2013-06-07,2013-06-21,ASX200,Addition,DMP,Domino's Pizza Enterprises Limited,multi_quarterly,quarterly,False
+2013-06-07,2013-06-21,ASX200,Addition,REA,REA Group Ltd,multi_quarterly,quarterly,False
+2013-06-07,2013-06-21,ASX200,Removal,MAD,Maverick Drilling and Exploration Limited,multi_quarterly,quarterly,False
+2013-09-06,2013-09-20,ASX200,Removal,BBG,Billabong International Limited,multi_quarterly,quarterly,False
+2013-09-06,2013-09-20,ASX200,Addition,FGE,Forge Group Limited,multi_quarterly,quarterly,False
 2013-09-06,2013-09-20,ASX200,Removal,EHL,Emeco Holdings Limited,multi_quarterly,quarterly,False
 2013-09-06,2013-09-20,ASX200,Addition,SKT,Sky Network Television Limited,multi_quarterly,quarterly,False
-2013-09-06,2013-09-20,ASX200,Addition,SGN,STW Communications Group Limited,multi_quarterly,quarterly,False
-2013-09-06,2013-09-20,ASX200,Addition,FGE,Forge Group Limited,multi_quarterly,quarterly,False
 2013-09-06,2013-09-20,ASX200,Removal,MDL,Mineral Deposits Limited,multi_quarterly,quarterly,False
-2013-09-06,2013-09-20,ASX200,Removal,FKP,FKP Property Group,multi_quarterly,quarterly,False
-2013-09-06,2013-09-20,ASX200,Removal,BBG,Billabong International Limited,multi_quarterly,quarterly,False
-2013-09-06,2013-09-20,ASX200,Addition,CMW,Cromwell Property Group,multi_quarterly,quarterly,False
 2013-09-06,2013-09-20,ASX200,Removal,DML,Discovery Metals Limited,multi_quarterly,quarterly,False
+2013-09-06,2013-09-20,ASX200,Addition,SGN,STW Communications Group Limited,multi_quarterly,quarterly,False
+2013-09-06,2013-09-20,ASX200,Addition,CMW,Cromwell Property Group,multi_quarterly,quarterly,False
+2013-09-06,2013-09-20,ASX200,Removal,FKP,FKP Property Group,multi_quarterly,quarterly,False
 2013-11-08,,ASX200,Removal,LNC,,dated_archive,removal,True
 2013-11-08,,ASX200,Addition,KMD,,dated_archive,removal-replacement,True
 2013-12-02,,ASX200,Addition,BXB,,dated_archive,no,False
-2013-12-06,2013-12-20,ASX200,Addition,SGH,Slater & Gordon Limited,multi_quarterly,quarterly,False
-2013-12-06,2013-12-20,ASX200,Addition,SKC,Skycity Entertainment Group Limited,multi_quarterly,quarterly,False
-2013-12-06,2013-12-20,ASX200,Removal,OGC,OceanaGold Corporation,multi_quarterly,quarterly,False
-2013-12-06,2013-12-20,ASX200,Removal,FWD,Fleetwood Corporation Limited,multi_quarterly,quarterly,False
-2013-12-06,2013-12-20,ASX200,Removal,SDL,Sundance Resources Limited,multi_quarterly,quarterly,False
-2013-12-06,2013-12-20,ASX200,Removal,SBM,St Barbara Limited,multi_quarterly,quarterly,False
-2013-12-06,2013-12-20,ASX200,Addition,RFG,Retail Food Group Limited,multi_quarterly,quarterly,False
-2013-12-06,2013-12-20,ASX200,Removal,CDU,Cudeco Limited,multi_quarterly,quarterly,False
 2013-12-06,2013-12-20,ASX200,Removal,BLY,Boart Longyear Limited,multi_quarterly,quarterly,False
+2013-12-06,2013-12-20,ASX200,Removal,SBM,St Barbara Limited,multi_quarterly,quarterly,False
+2013-12-06,2013-12-20,ASX200,Removal,FWD,Fleetwood Corporation Limited,multi_quarterly,quarterly,False
 2013-12-06,2013-12-20,ASX200,Removal,KCN,Kingsgate Consolidated Limited,multi_quarterly,quarterly,False
+2013-12-06,2013-12-20,ASX200,Removal,SDL,Sundance Resources Limited,multi_quarterly,quarterly,False
+2013-12-06,2013-12-20,ASX200,Removal,CDU,Cudeco Limited,multi_quarterly,quarterly,False
+2013-12-06,2013-12-20,ASX200,Addition,RFG,Retail Food Group Limited,multi_quarterly,quarterly,False
+2013-12-06,2013-12-20,ASX200,Addition,SKC,Skycity Entertainment Group Limited,multi_quarterly,quarterly,False
 2013-12-06,2013-12-20,ASX200,Addition,BCI,BC Iron Limited,multi_quarterly,quarterly,False
 2013-12-06,2013-12-20,ASX200,Addition,VRT,Virtus Health Limited,multi_quarterly,quarterly,False
 2013-12-06,2013-12-20,ASX200,Addition,VRL,Village Roadshow Limited,multi_quarterly,quarterly,False
+2013-12-06,2013-12-20,ASX200,Removal,OGC,OceanaGold Corporation,multi_quarterly,quarterly,False
+2013-12-06,2013-12-20,ASX200,Addition,SGH,Slater & Gordon Limited,multi_quarterly,quarterly,False
 2013-12-10,,ASX200,Addition,AMC,,dated_archive,addition,True
 2014-02-12,,ASX200,Removal,FGE,,dated_archive,removal,True
 2014-02-12,,ASX200,Addition,NEC,,dated_archive,removal-replacement,True
 2014-03-07,2014-03-21,ASX200,Addition,PGH,Pact Group Holdings Ltd,multi_quarterly,quarterly,False
-2014-03-07,2014-03-21,ASX200,Addition,BGA,Bega Cheese Limited,multi_quarterly,quarterly,False
-2014-03-07,2014-03-21,ASX200,Removal,SMX,SMS Management & Technology Limited,multi_quarterly,quarterly,False
-2014-03-07,2014-03-21,ASX200,Addition,CVO,Cover-More Group Limited,multi_quarterly,quarterly,False
 2014-03-07,2014-03-21,ASX200,Removal,SLR,Silver Lake Resources Limited,multi_quarterly,quarterly,False
-2014-03-07,2014-03-21,ASX200,Removal,VAH,Virgin Australia Holdings Limited,multi_quarterly,quarterly,False
-2014-03-07,2014-03-21,ASX200,Removal,DCG,Decmil Group Limited,multi_quarterly,quarterly,False
-2014-03-07,2014-03-21,ASX200,Addition,AGI,Ainsworth Game Technology Limited,multi_quarterly,quarterly,False
-2014-03-07,2014-03-21,ASX200,Addition,VED,Veda Group Limited,multi_quarterly,quarterly,False
-2014-03-07,2014-03-21,ASX200,Removal,EWC,Energy World Corporation Ltd,multi_quarterly,quarterly,False
-2014-03-07,2014-03-21,ASX200,Addition,ARP,ARB Corporation Limited,multi_quarterly,quarterly,False
-2014-03-07,2014-03-21,ASX200,Addition,OFX,Ozforex Group Limited,multi_quarterly,quarterly,False
-2014-03-07,2014-03-21,ASX200,Removal,AQG,Alacer Gold Corp.,multi_quarterly,quarterly,False
 2014-03-07,2014-03-21,ASX200,Removal,ASL,Ausdrill Limited,multi_quarterly,quarterly,False
-2014-04-23,,ASX200,Removal,FOX,,dated_archive,removal,True
+2014-03-07,2014-03-21,ASX200,Removal,DCG,Decmil Group Limited,multi_quarterly,quarterly,False
+2014-03-07,2014-03-21,ASX200,Removal,VAH,Virgin Australia Holdings Limited,multi_quarterly,quarterly,False
+2014-03-07,2014-03-21,ASX200,Addition,OFX,Ozforex Group Limited,multi_quarterly,quarterly,False
+2014-03-07,2014-03-21,ASX200,Addition,VED,Veda Group Limited,multi_quarterly,quarterly,False
+2014-03-07,2014-03-21,ASX200,Addition,ARP,ARB Corporation Limited,multi_quarterly,quarterly,False
+2014-03-07,2014-03-21,ASX200,Addition,BGA,Bega Cheese Limited,multi_quarterly,quarterly,False
+2014-03-07,2014-03-21,ASX200,Addition,CVO,Cover-More Group Limited,multi_quarterly,quarterly,False
+2014-03-07,2014-03-21,ASX200,Removal,AQG,Alacer Gold Corp.,multi_quarterly,quarterly,False
+2014-03-07,2014-03-21,ASX200,Removal,SMX,SMS Management & Technology Limited,multi_quarterly,quarterly,False
+2014-03-07,2014-03-21,ASX200,Addition,AGI,Ainsworth Game Technology Limited,multi_quarterly,quarterly,False
+2014-03-07,2014-03-21,ASX200,Removal,EWC,Energy World Corporation Ltd,multi_quarterly,quarterly,False
 2014-04-23,,ASX200,Addition,SEA,,dated_archive,removal-replacement,True
+2014-04-23,,ASX200,Removal,FOX,,dated_archive,removal,True
 2014-05-20,,ASX200,Addition,SDF,,dated_archive,removal-replacement,True
 2014-05-20,,ASX200,Removal,AUT,,dated_archive,removal,True
-2014-06-06,2014-06-20,ASX200,Addition,TGR,Tassal Group Limited,multi_quarterly,quarterly,False
 2014-06-06,2014-06-20,ASX200,Removal,ACR,Acrux Limited,multi_quarterly,quarterly,False
-2014-07-07,,ASX200,Addition,JHC,,dated_archive,removal-replacement,True
+2014-06-06,2014-06-20,ASX200,Addition,TGR,Tassal Group Limited,multi_quarterly,quarterly,False
 2014-07-07,,ASX200,Removal,AQA,,dated_archive,removal,True
+2014-07-07,,ASX200,Addition,JHC,,dated_archive,removal-replacement,True
 2014-07-14,,ASX200,Removal,DJS,,dated_archive,removal,True
 2014-07-14,,ASX200,Addition,GXL,,dated_archive,removal-replacement,True
 2014-08-08,,ASX200,Addition,SPO,,dated_archive,removal-replacement,True
 2014-08-08,,ASX200,Removal,ENV,,dated_archive,removal,True
 2014-08-15,,ASX200,Addition,GMA,,dated_archive,removal-replacement,True
 2014-08-15,,ASX200,Removal,ALZ,,dated_archive,removal,True
+2014-09-05,2014-09-19,ASX200,Removal,BRU,Buru Energy Limited,multi_quarterly,quarterly,False
+2014-09-05,2014-09-19,ASX200,Addition,LNG,Liquefied Natural Gas Limited,multi_quarterly,quarterly,False
+2014-09-05,2014-09-19,ASX200,Removal,NWH,NRW Holdings Limited,multi_quarterly,quarterly,False
+2014-09-05,2014-09-19,ASX200,Removal,TRS,The Reject Shop Limited,multi_quarterly,quarterly,False
 2014-09-05,2014-09-19,ASX200,Addition,AHY,Asaleo Care Limited,multi_quarterly,quarterly,False
 2014-09-05,2014-09-19,ASX200,Addition,TNE,Technology One Limited,multi_quarterly,quarterly,False
-2014-09-05,2014-09-19,ASX200,Removal,TRS,The Reject Shop Limited,multi_quarterly,quarterly,False
-2014-09-05,2014-09-19,ASX200,Removal,BRU,Buru Energy Limited,multi_quarterly,quarterly,False
-2014-09-05,2014-09-19,ASX200,Removal,NWH,NRW Holdings Limited,multi_quarterly,quarterly,False
-2014-09-05,2014-09-19,ASX200,Addition,LNG,Liquefied Natural Gas Limited,multi_quarterly,quarterly,False
-2014-10-08,,ASX200,Removal,WTF,,dated_archive,removal,True
 2014-10-08,,ASX200,Addition,HSO,,dated_archive,removal-replacement,True
+2014-10-08,,ASX200,Removal,WTF,,dated_archive,removal,True
+2014-12-05,2014-12-19,ASX200,Removal,MML,Medusa Mining Limited,multi_quarterly,quarterly,False
 2014-12-05,2014-12-19,ASX200,Addition,APN,APN News & Media Limited,multi_quarterly,quarterly,False
 2014-12-05,2014-12-19,ASX200,Removal,RSG,Resolute Mining Limited,multi_quarterly,quarterly,False
 2014-12-05,2014-12-19,ASX200,Addition,VOC,Vocus Communications Limited,multi_quarterly,quarterly,False
-2014-12-05,2014-12-19,ASX200,Removal,MML,Medusa Mining Limited,multi_quarterly,quarterly,False
 2015-02-24,,ASX200,Addition,MPL,,dated_archive,removal-replacement,True
 2015-02-24,,ASX200,Removal,GFF,,dated_archive,removal,True
-2015-03-06,2015-03-20,ASX200,Addition,SYR,Syrah Resources Limited,multi_quarterly,quarterly,False
-2015-03-06,2015-03-20,ASX200,Addition,REG,Regis Healthcare Limited,multi_quarterly,quarterly,False
-2015-03-06,2015-03-20,ASX200,Addition,EHE,Estia Health Limited,multi_quarterly,quarterly,False
 2015-03-06,2015-03-20,ASX200,Removal,BDR,Beadell Resources Limited,multi_quarterly,quarterly,False
-2015-03-06,2015-03-20,ASX200,Removal,MGX,Mount Gibson Iron Limited,multi_quarterly,quarterly,False
-2015-03-06,2015-03-20,ASX200,Addition,CTD,Corporate Travel Management Limited,multi_quarterly,quarterly,False
-2015-03-06,2015-03-20,ASX200,Removal,HZN,Horizon Oil Limited,multi_quarterly,quarterly,False
+2015-03-06,2015-03-20,ASX200,Addition,SYR,Syrah Resources Limited,multi_quarterly,quarterly,False
 2015-03-06,2015-03-20,ASX200,Addition,AAC,Australian Agricultural Company Limited,multi_quarterly,quarterly,False
-2015-03-06,2015-03-20,ASX200,Removal,LYC,Lynas Corporation Limited,multi_quarterly,quarterly,False
-2015-03-06,2015-03-20,ASX200,Addition,DSH,Dick Smith Holdings Limited,multi_quarterly,quarterly,False
+2015-03-06,2015-03-20,ASX200,Removal,MGX,Mount Gibson Iron Limited,multi_quarterly,quarterly,False
+2015-03-06,2015-03-20,ASX200,Addition,REG,Regis Healthcare Limited,multi_quarterly,quarterly,False
 2015-03-06,2015-03-20,ASX200,Removal,BCI,BC Iron Limited,multi_quarterly,quarterly,False
+2015-03-06,2015-03-20,ASX200,Addition,DSH,Dick Smith Holdings Limited,multi_quarterly,quarterly,False
+2015-03-06,2015-03-20,ASX200,Addition,EHE,Estia Health Limited,multi_quarterly,quarterly,False
+2015-03-06,2015-03-20,ASX200,Addition,CTD,Corporate Travel Management Limited,multi_quarterly,quarterly,False
+2015-03-06,2015-03-20,ASX200,Removal,LYC,Lynas Corporation Limited,multi_quarterly,quarterly,False
+2015-03-06,2015-03-20,ASX200,Removal,HZN,Horizon Oil Limited,multi_quarterly,quarterly,False
 2015-03-06,2015-03-20,ASX200,Removal,AGO,Atlas Iron Limited,multi_quarterly,quarterly,False
-2015-05-07,,ASX200,Removal,TOL,,dated_archive,removal,True
 2015-05-07,,ASX200,Addition,MYX,,dated_archive,removal-replacement,True
+2015-05-07,,ASX200,Removal,TOL,,dated_archive,removal,True
 2015-05-15,,ASX200,Removal,PNA,,dated_archive,removal,True
-2015-05-22,2015-05-29,ASX200,Addition,FPH,,dated_archive,removal-replacement,True
 2015-05-22,2015-05-29,ASX200,Removal,NVN,,dated_archive,removal,True
-2015-06-05,2015-06-19,ASX200,Addition,CCP,Credit Corp Group Limited,multi_quarterly,quarterly,False
-2015-06-05,2015-06-19,ASX200,Removal,SGN,STW Communications Group Limited,multi_quarterly,quarterly,False
+2015-05-22,2015-05-29,ASX200,Addition,FPH,,dated_archive,removal-replacement,True
 2015-06-05,2015-06-19,ASX200,Addition,GOZ,Growthpoint Properties Australia,multi_quarterly,quarterly,False
-2015-06-05,2015-06-19,ASX200,Removal,SKE,Skilled Group Limited,multi_quarterly,quarterly,False
+2015-06-05,2015-06-19,ASX200,Addition,CCP,Credit Corp Group Limited,multi_quarterly,quarterly,False
 2015-06-05,2015-06-19,ASX200,Removal,SEA,Sundance Energy Australia Limited,multi_quarterly,quarterly,False
+2015-06-05,2015-06-19,ASX200,Removal,SGN,STW Communications Group Limited,multi_quarterly,quarterly,False
 2015-06-05,2015-06-19,ASX200,Addition,NSR,National Storage REIT,multi_quarterly,quarterly,False
-2015-08-20,,ASX200,Removal,IIN,,dated_archive,removal,True
+2015-06-05,2015-06-19,ASX200,Removal,SKE,Skilled Group Limited,multi_quarterly,quarterly,False
 2015-08-20,,ASX200,Addition,BTT,,dated_archive,removal-replacement,True
-2015-09-03,,ASX200,Removal,SIR,,dated_archive,removal,True
+2015-08-20,,ASX200,Removal,IIN,,dated_archive,removal,True
 2015-09-03,,ASX200,Addition,BKL,,dated_archive,removal-replacement,True
-2015-09-04,2015-09-18,ASX200,Removal,MRM,MMA Offshore Limited,multi_quarterly,quarterly,False
-2015-09-04,2015-09-18,ASX200,Removal,AGI,Ainsworth Game Technology Limited,multi_quarterly,quarterly,False
+2015-09-03,,ASX200,Removal,SIR,,dated_archive,removal,True
+2015-09-04,2015-09-18,ASX200,Removal,UGL,UGL Limited,multi_quarterly,quarterly,False
 2015-09-04,2015-09-18,ASX200,Removal,BKN,Bradken Limited,multi_quarterly,quarterly,False
+2015-09-04,2015-09-18,ASX200,Addition,MYO,MYOB Group Limited,multi_quarterly,quarterly,False
+2015-09-04,2015-09-18,ASX200,Addition,MTR,Mantra Group Limited,multi_quarterly,quarterly,False
+2015-09-04,2015-09-18,ASX200,Removal,AGI,Ainsworth Game Technology Limited,multi_quarterly,quarterly,False
 2015-09-04,2015-09-18,ASX200,Removal,SXY,Senex Energy Limited,multi_quarterly,quarterly,False
 2015-09-04,2015-09-18,ASX200,Addition,BAP,Burson Group Limited,multi_quarterly,quarterly,False
-2015-09-04,2015-09-18,ASX200,Addition,MYO,MYOB Group Limited,multi_quarterly,quarterly,False
-2015-09-04,2015-09-18,ASX200,Addition,ALU,Altium Limited,multi_quarterly,quarterly,False
-2015-09-04,2015-09-18,ASX200,Removal,KMD,Kathmandu Holdings Limited,multi_quarterly,quarterly,False
 2015-09-04,2015-09-18,ASX200,Addition,GTY,Gateway Lifestyle Group,multi_quarterly,quarterly,False
-2015-09-04,2015-09-18,ASX200,Addition,MTR,Mantra Group Limited,multi_quarterly,quarterly,False
-2015-09-04,2015-09-18,ASX200,Removal,UGL,UGL Limited,multi_quarterly,quarterly,False
+2015-09-04,2015-09-18,ASX200,Removal,MRM,MMA Offshore Limited,multi_quarterly,quarterly,False
+2015-09-04,2015-09-18,ASX200,Removal,KMD,Kathmandu Holdings Limited,multi_quarterly,quarterly,False
+2015-09-04,2015-09-18,ASX200,Addition,ALU,Altium Limited,multi_quarterly,quarterly,False
 2015-09-04,2015-09-18,ASX200,Addition,ASB,Austal Limited,multi_quarterly,quarterly,False
 2015-12-04,2015-12-18,ASX200,Addition,ISD,Isentia Group Limited,multi_quarterly,quarterly,False
-2015-12-04,2015-12-18,ASX200,Addition,CGC,Costa Group Holdings Limited,multi_quarterly,quarterly,False
-2015-12-04,2015-12-18,ASX200,Removal,DLS,Drillsearch Energy Limited,multi_quarterly,quarterly,False
-2015-12-04,2015-12-18,ASX200,Removal,PDN,Paladin Energy Ltd,multi_quarterly,quarterly,False
-2015-12-04,2015-12-18,ASX200,Addition,API,Australian Pharmaceutical Industries Limited,multi_quarterly,quarterly,False
 2015-12-04,2015-12-18,ASX200,Addition,PRG,Programmed Maintenance Services Limited,multi_quarterly,quarterly,False
-2015-12-04,2015-12-18,ASX200,Removal,DSH,Dick Smith Holdings Limited,multi_quarterly,quarterly,False
+2015-12-04,2015-12-18,ASX200,Addition,CGC,Costa Group Holdings Limited,multi_quarterly,quarterly,False
+2015-12-04,2015-12-18,ASX200,Addition,APO,APN Outdoor Group Limited,multi_quarterly,quarterly,False
 2015-12-04,2015-12-18,ASX200,Removal,ARI,Arrium Limited,multi_quarterly,quarterly,False
 2015-12-04,2015-12-18,ASX200,Removal,CDD,Cardno Limited,multi_quarterly,quarterly,False
-2015-12-04,2015-12-18,ASX200,Addition,APO,APN Outdoor Group Limited,multi_quarterly,quarterly,False
+2015-12-04,2015-12-18,ASX200,Removal,DSH,Dick Smith Holdings Limited,multi_quarterly,quarterly,False
+2015-12-04,2015-12-18,ASX200,Removal,DLS,Drillsearch Energy Limited,multi_quarterly,quarterly,False
+2015-12-04,2015-12-18,ASX200,Addition,API,Australian Pharmaceutical Industries Limited,multi_quarterly,quarterly,False
+2015-12-04,2015-12-18,ASX200,Removal,PDN,Paladin Energy Ltd,multi_quarterly,quarterly,False
 2016-01-25,,ASX200,Addition,NAB,,dated_archive,demerger,True
 2016-02-01,,ASX200,Removal,MTU,,dated_archive,removal,True
 2016-02-04,,ASX200,Addition,LNK,,dated_archive,removal-replacement,True
 2016-02-04,,ASX200,Removal,VED,,dated_archive,removal,True
+2016-03-11,2016-03-18,ASX200,Removal,KAR,Karoon Gas Australia Limited,multi_quarterly,quarterly,False
+2016-03-11,2016-03-18,ASX200,Removal,TEN,Ten Network Holdings Limited,multi_quarterly,quarterly,False
 2016-03-11,2016-03-18,ASX200,Addition,SBM,St Barbara Limited,multi_quarterly,quarterly,False
 2016-03-11,2016-03-18,ASX200,Addition,IPH,IPH Limited,multi_quarterly,quarterly,False
-2016-03-11,2016-03-18,ASX200,Removal,KAR,Karoon Gas Australia Limited,multi_quarterly,quarterly,False
 2016-03-11,2016-03-18,ASX200,Addition,BKW,Brickworks Limited,multi_quarterly,quarterly,False
-2016-03-11,2016-03-18,ASX200,Addition,ACX,Aconex Limited,multi_quarterly,quarterly,False
-2016-03-11,2016-03-18,ASX200,Removal,SGH,Slater & Gordon Limited,multi_quarterly,quarterly,False
-2016-03-11,2016-03-18,ASX200,Removal,CAB,Cabcharge Australia Limited,multi_quarterly,quarterly,False
-2016-03-11,2016-03-18,ASX200,Removal,TEN,Ten Network Holdings Limited,multi_quarterly,quarterly,False
 2016-03-11,2016-03-18,ASX200,Addition,BAL,Bellamy'S Australia Limited,multi_quarterly,quarterly,False
 2016-03-11,2016-03-18,ASX200,Removal,AWE,AWE Limited,multi_quarterly,quarterly,False
-2016-04-14,,ASX200,Removal,REC,,dated_archive,removal,True
+2016-03-11,2016-03-18,ASX200,Removal,SGH,Slater & Gordon Limited,multi_quarterly,quarterly,False
+2016-03-11,2016-03-18,ASX200,Addition,ACX,Aconex Limited,multi_quarterly,quarterly,False
+2016-03-11,2016-03-18,ASX200,Removal,CAB,Cabcharge Australia Limited,multi_quarterly,quarterly,False
 2016-04-14,,ASX200,Addition,INM,,dated_archive,removal-replacement,True
-2016-05-03,,ASX200,Addition,SAR,,dated_archive,removal-replacement,True
+2016-04-14,,ASX200,Removal,REC,,dated_archive,removal,True
 2016-05-03,,ASX200,Removal,BRS,,dated_archive,removal,True
-2016-06-10,2016-06-17,ASX200,Addition,A2M,The A2 Milk Company Limited,multi_quarterly,quarterly,False
+2016-05-03,,ASX200,Addition,SAR,,dated_archive,removal-replacement,True
 2016-06-10,2016-06-17,ASX200,Removal,LNG,Liquefied Natural Gas Limited,multi_quarterly,quarterly,False
+2016-06-10,2016-06-17,ASX200,Addition,A2M,The A2 Milk Company Limited,multi_quarterly,quarterly,False
 2016-06-17,,ASX200,Addition,APN,,dated_archive,demerger,True
-2016-06-21,,ASX200,Removal,PBG,,dated_archive,removal,True
 2016-06-21,,ASX200,Addition,ECX,,dated_archive,removal-replacement,True
+2016-06-21,,ASX200,Removal,PBG,,dated_archive,removal,True
 2016-07-22,,ASX200,Removal,AIO,,dated_archive,removal,True
 2016-07-22,,ASX200,Addition,RWC,,dated_archive,removal-replacement,True
-2016-09-02,2016-09-16,ASX200,Addition,IFN,Infigen Energy,multi_quarterly,quarterly,False
-2016-09-02,2016-09-16,ASX200,Removal,MSB,Mesoblast Limited,multi_quarterly,quarterly,False
+2016-09-02,2016-09-16,ASX200,Removal,PRG,Programmed Maintenance Services Limited,multi_quarterly,quarterly,False
 2016-09-02,2016-09-16,ASX200,Addition,ORE,Orocobre Limited,multi_quarterly,quarterly,False
 2016-09-02,2016-09-16,ASX200,Addition,WEB,Webjet Limited,multi_quarterly,quarterly,False
-2016-09-02,2016-09-16,ASX200,Removal,CVO,Cover-More Group Limited,multi_quarterly,quarterly,False
-2016-09-02,2016-09-16,ASX200,Removal,PRG,Programmed Maintenance Services Limited,multi_quarterly,quarterly,False
-2016-09-02,2016-09-16,ASX200,Removal,VRL,Village Roadshow Limited,multi_quarterly,quarterly,False
 2016-09-02,2016-09-16,ASX200,Addition,GXY,Galaxy Resources Limited,multi_quarterly,quarterly,False
 2016-09-02,2016-09-16,ASX200,Removal,ASB,Austal Limited,multi_quarterly,quarterly,False
+2016-09-02,2016-09-16,ASX200,Removal,MSB,Mesoblast Limited,multi_quarterly,quarterly,False
 2016-09-02,2016-09-16,ASX200,Addition,RSG,Resolute Mining Limited,multi_quarterly,quarterly,False
+2016-09-02,2016-09-16,ASX200,Removal,VRL,Village Roadshow Limited,multi_quarterly,quarterly,False
+2016-09-02,2016-09-16,ASX200,Removal,CVO,Cover-More Group Limited,multi_quarterly,quarterly,False
+2016-09-02,2016-09-16,ASX200,Addition,IFN,Infigen Energy,multi_quarterly,quarterly,False
 2016-09-02,2016-09-16,ASX200,Addition,NXT,Nextdc Limited,multi_quarterly,quarterly,False
 2016-09-02,2016-09-16,ASX200,Removal,SHV,Select Harvests Limited,multi_quarterly,quarterly,False
 2016-12-05,,ASX200,Removal,SAI,,dated_archive,removal,True
 2016-12-05,,ASX200,Addition,VVR,,dated_archive,removal-replacement,True
-2016-12-09,2016-12-16,ASX200,Removal,OFX,OFX Group Limited,multi_quarterly,quarterly,False
 2016-12-09,2016-12-16,ASX200,Addition,NAN,Nanosonics Limited,multi_quarterly,quarterly,False
+2016-12-09,2016-12-16,ASX200,Removal,OFX,OFX Group Limited,multi_quarterly,quarterly,False
 2017-04-21,,ASX200,Addition,CNU,,dated_archive,removal-replacement,True
 2017-04-21,,ASX200,Removal,DUE,,dated_archive,removal,True
 2017-06-09,2017-06-19,ASX200,Addition,SDA,Speedcast International Limited,multi_quarterly,quarterly,False
 2017-06-09,2017-06-19,ASX200,Removal,BAL,Bellamy's Australia Limited,multi_quarterly,quarterly,False
 2017-07-28,,ASX200,Removal,SPO,,dated_archive,removal,True
 2017-07-28,,ASX200,Addition,OML,,dated_archive,removal-replacement,True
-2017-09-01,2017-09-18,ASX200,Removal,VRT,Virtus Health Limited,multi_quarterly,quarterly,False
-2017-09-01,2017-09-18,ASX200,Removal,ISD,Isentia Group Limited,multi_quarterly,quarterly,False
-2017-09-01,2017-09-18,ASX200,Addition,CLW,Charter Hall Long Wale REIT,multi_quarterly,quarterly,False
 2017-09-01,2017-09-18,ASX200,Removal,SKT,Sky Network Television Limited,multi_quarterly,quarterly,False
-2017-09-01,2017-09-18,ASX200,Addition,SOL,Washington H Soul Pattinson & Company Limited,multi_quarterly,quarterly,False
+2017-09-01,2017-09-18,ASX200,Addition,CLW,Charter Hall Long Wale REIT,multi_quarterly,quarterly,False
+2017-09-01,2017-09-18,ASX200,Removal,VRT,Virtus Health Limited,multi_quarterly,quarterly,False
 2017-09-01,2017-09-18,ASX200,Addition,NHF,NIB Holdings Limited,multi_quarterly,quarterly,False
+2017-09-01,2017-09-18,ASX200,Removal,ISD,Isentia Group Limited,multi_quarterly,quarterly,False
+2017-09-01,2017-09-18,ASX200,Addition,SOL,Washington H Soul Pattinson & Company Limited,multi_quarterly,quarterly,False
 2017-11-07,,ASX200,Addition,FXJ,,dated_archive,addition,True
 2017-12-06,,ASX200,Removal,TTS,,dated_archive,removal,True
-2017-12-08,2017-12-18,ASX200,Addition,PLS,Pilbara Minerals Limited,multi_quarterly,quarterly,False
-2017-12-08,2017-12-18,ASX200,Addition,LYC,Lynas Corporation Limited,multi_quarterly,quarterly,False
 2017-12-08,2017-12-18,ASX200,Addition,WTC,WiseTech Global Limited,multi_quarterly,quarterly,False
-2017-12-08,2017-12-18,ASX200,Removal,FXL,FlexiGroup Limited,multi_quarterly,quarterly,False
-2017-12-08,2017-12-18,ASX200,Removal,JHC,Japara Healthcare Limited,multi_quarterly,quarterly,False
 2017-12-08,2017-12-18,ASX200,Removal,REG,Regis Healthcare Limited,multi_quarterly,quarterly,False
+2017-12-08,2017-12-18,ASX200,Removal,FXL,FlexiGroup Limited,multi_quarterly,quarterly,False
+2017-12-08,2017-12-18,ASX200,Addition,LYC,Lynas Corporation Limited,multi_quarterly,quarterly,False
+2017-12-08,2017-12-18,ASX200,Addition,PLS,Pilbara Minerals Limited,multi_quarterly,quarterly,False
+2017-12-08,2017-12-18,ASX200,Removal,JHC,Japara Healthcare Limited,multi_quarterly,quarterly,False
 2018-03-09,2018-03-19,ASX200,Addition,ASL,Ausdrill Limited,multi_quarterly,quarterly,False
 2018-03-09,2018-03-19,ASX200,Removal,HT1,HT&E Limited,multi_quarterly,quarterly,False
-2018-03-09,2018-03-19,ASX200,Removal,MYR,Myer Holdings Limited,multi_quarterly,quarterly,False
-2018-03-09,2018-03-19,ASX200,Addition,XRO,Xero Limited,multi_quarterly,quarterly,False
 2018-03-09,2018-03-19,ASX200,Removal,AAC,Australian Agricultural Company Limited,multi_quarterly,quarterly,False
-2018-03-09,2018-03-19,ASX200,Addition,SIQ,Smartgroup Corporation Ltd,multi_quarterly,quarterly,False
+2018-03-09,2018-03-19,ASX200,Removal,MYR,Myer Holdings Limited,multi_quarterly,quarterly,False
 2018-03-09,2018-03-19,ASX200,Addition,BAL,Bellamy's Australia Limited,multi_quarterly,quarterly,False
+2018-03-09,2018-03-19,ASX200,Addition,XRO,Xero Limited,multi_quarterly,quarterly,False
+2018-03-09,2018-03-19,ASX200,Addition,SIQ,Smartgroup Corporation Ltd,multi_quarterly,quarterly,False
 2018-05-03,,ASX200,Addition,IEL,,dated_archive,removal-replacement,True
 2018-05-03,,ASX200,Removal,SRX,,dated_archive,removal,True
 2018-05-18,,ASX200,Removal,MTR,,dated_archive,removal,True
 2018-05-24,,ASX200,Removal,WFD,,dated_archive,demerger,True
-2018-06-08,2018-06-18,ASX200,Removal,AHY,Asaleo Care Limited,multi_quarterly,quarterly,False
-2018-06-08,2018-06-18,ASX200,Removal,INM,Iron Mountain Incorporated,multi_quarterly,quarterly,False
 2018-06-08,2018-06-18,ASX200,Addition,ING,Inghams Group Limited,multi_quarterly,quarterly,False
 2018-06-08,2018-06-18,ASX200,Removal,RFG,Retail Food Group Limited,multi_quarterly,quarterly,False
 2018-06-08,2018-06-18,ASX200,Addition,APT,Afterpay Touch Group Limited,multi_quarterly,quarterly,False
+2018-06-08,2018-06-18,ASX200,Removal,AHY,Asaleo Care Limited,multi_quarterly,quarterly,False
 2018-06-08,2018-06-18,ASX200,Addition,APX,Appen Limited,multi_quarterly,quarterly,False
-2018-08-31,,ASX200,Addition,ELD,,dated_archive,removal-replacement,True
+2018-06-08,2018-06-18,ASX200,Removal,INM,Iron Mountain Incorporated,multi_quarterly,quarterly,False
 2018-08-31,,ASX200,Removal,IOF,,dated_archive,removal,True
-2018-09-07,2018-09-24,ASX200,Removal,GXL,Greencross Limited,multi_quarterly,quarterly,False
+2018-08-31,,ASX200,Addition,ELD,,dated_archive,removal-replacement,True
 2018-09-07,2018-09-24,ASX200,Addition,BIN,Bingo Industries Limited,multi_quarterly,quarterly,False
+2018-09-07,2018-09-24,ASX200,Removal,GXL,Greencross Limited,multi_quarterly,quarterly,False
 2018-09-07,2018-09-24,ASX200,Removal,GMA,Genworth Mortgage Insurance Australia Limited,multi_quarterly,quarterly,False
 2018-09-10,,ASX200,Addition,VEA,,dated_archive,removal-replacement,True
 2018-10-04,,ASX200,Addition,EHL,,dated_archive,removal-replacement,True
@@ -278,297 +278,307 @@ announcement_date,effective_date,index,action,ticker,company_name,source,source_
 2018-11-14,,ASX200,Addition,WES,,dated_archive,demerger,True
 2018-11-21,,ASX200,Removal,FXJ,,dated_archive,removal,True
 2018-11-29,,ASX200,Addition,NHC,,dated_archive,removal-replacement,True
+2019-03-08,2019-03-18,ASX200,Addition,HUB,HUB24 Limited,multi_quarterly,quarterly,False
 2019-03-08,2019-03-18,ASX200,Removal,IFN,Infigen Energy,multi_quarterly,quarterly,False
 2019-03-08,2019-03-18,ASX200,Addition,PNI,Pinnacle Investment Management Group Limited,multi_quarterly,quarterly,False
 2019-03-08,2019-03-18,ASX200,Removal,AHG,Automotive Holdings Group Limited,multi_quarterly,quarterly,False
-2019-03-08,2019-03-18,ASX200,Addition,HUB,HUB24 Limited,multi_quarterly,quarterly,False
-2019-04-15,2019-04-24,ASX200,Removal,MYO,,dated_archive,removal,True
 2019-04-15,2019-04-24,ASX200,Addition,NEA,,dated_archive,removal-replacement,True
-2019-06-14,2019-06-24,ASX200,Addition,CUV,Clinuvel Pharmaceuticals Limited,multi_quarterly,quarterly,False
+2019-04-15,2019-04-24,ASX200,Removal,MYO,,dated_archive,removal,True
 2019-06-14,,ASX200,Addition,ASB,,dated_archive,rebalance-replacement,True
-2019-06-14,2019-06-24,ASX200,Removal,SWM,Seven West Media Limited,multi_quarterly,quarterly,False
-2019-06-14,,ASX200,Removal,NVT,,dated_archive,rebalance,False
-2019-06-14,2019-06-24,ASX200,Addition,SSM,Service Stream Limited,multi_quarterly,quarterly,False
 2019-06-14,2019-06-24,ASX200,Removal,SYR,Syrah Resources Limited,multi_quarterly,quarterly,False
+2019-06-14,2019-06-24,ASX200,Addition,SSM,Service Stream Limited,multi_quarterly,quarterly,False
+2019-06-14,,ASX200,Removal,NVT,,dated_archive,rebalance,False
+2019-06-14,2019-06-24,ASX200,Removal,SWM,Seven West Media Limited,multi_quarterly,quarterly,False
+2019-06-14,2019-06-24,ASX200,Addition,CUV,Clinuvel Pharmaceuticals Limited,multi_quarterly,quarterly,False
 2019-07-31,,ASX200,Removal,DLX,,dated_archive,removal,True
 2019-07-31,,ASX200,Addition,PME,,dated_archive,removal-replacement,True
-2019-09-06,2019-09-23,ASX200,Addition,SLR,Silver Lake Resources Limited,multi_quarterly,quarterly,False
-2019-09-06,2019-09-23,ASX200,Removal,ALG,Ardent Leisure Group Limited,multi_quarterly,quarterly,False
-2019-09-06,2019-09-23,ASX200,Removal,EHL,Emeco Holdings Limited,multi_quarterly,quarterly,False
-2019-09-06,2019-09-23,ASX200,Removal,API,Australian Pharmaceutical Industries Limited,multi_quarterly,quarterly,False
-2019-09-06,2019-09-23,ASX200,Removal,SIG,Sigma Healthcare Limited,multi_quarterly,quarterly,False
-2019-09-06,2019-09-23,ASX200,Addition,GOR,Gold Road Resources Limited,multi_quarterly,quarterly,False
-2019-09-06,2019-09-23,ASX200,Addition,JIN,Jumbo Interactive Limited,multi_quarterly,quarterly,False
 2019-09-06,2019-09-23,ASX200,Addition,CKF,Collins Foods Limited,multi_quarterly,quarterly,False
-2019-09-06,2019-09-23,ASX200,Addition,NWL,Netwealth Group Limited,multi_quarterly,quarterly,False
-2019-09-06,2019-09-23,ASX200,Removal,ECX,Eclipx Group Limited,multi_quarterly,quarterly,False
+2019-09-06,2019-09-23,ASX200,Addition,SLR,Silver Lake Resources Limited,multi_quarterly,quarterly,False
+2019-09-06,2019-09-23,ASX200,Addition,JIN,Jumbo Interactive Limited,multi_quarterly,quarterly,False
+2019-09-06,2019-09-23,ASX200,Removal,ALG,Ardent Leisure Group Limited,multi_quarterly,quarterly,False
 2019-09-06,2019-09-23,ASX200,Removal,PGH,Pact Group Holdings Ltd,multi_quarterly,quarterly,False
+2019-09-06,2019-09-23,ASX200,Removal,EHL,Emeco Holdings Limited,multi_quarterly,quarterly,False
+2019-09-06,2019-09-23,ASX200,Addition,NWL,Netwealth Group Limited,multi_quarterly,quarterly,False
+2019-09-06,2019-09-23,ASX200,Removal,SIG,Sigma Healthcare Limited,multi_quarterly,quarterly,False
 2019-09-06,2019-09-23,ASX200,Addition,PNV,Polynovo Limited,multi_quarterly,quarterly,False
-2019-11-07,,ASX200,Removal,AOG,,dated_archive,removal,True
+2019-09-06,2019-09-23,ASX200,Removal,API,Australian Pharmaceutical Industries Limited,multi_quarterly,quarterly,False
+2019-09-06,2019-09-23,ASX200,Addition,GOR,Gold Road Resources Limited,multi_quarterly,quarterly,False
+2019-09-06,2019-09-23,ASX200,Removal,ECX,Eclipx Group Limited,multi_quarterly,quarterly,False
 2019-11-07,,ASX200,Addition,AVH,,dated_archive,removal-replacement,True
+2019-11-07,,ASX200,Removal,AOG,,dated_archive,removal,True
 2019-12-05,,ASX200,Addition,EML,,dated_archive,removal-replacement,True
-2019-12-13,2019-12-23,ASX200,Addition,INA,Ingenia Communities Group,multi_quarterly,quarterly,False
 2019-12-13,2019-12-23,ASX200,Removal,SDA,Speedcast International Limited,multi_quarterly,quarterly,False
-2019-12-13,2019-12-23,ASX200,Addition,APE,AP Eagers Limited,multi_quarterly,quarterly,False
 2019-12-13,2019-12-23,ASX200,Removal,GXY,Galaxy Resources Limited,multi_quarterly,quarterly,False
+2019-12-13,2019-12-23,ASX200,Addition,INA,Ingenia Communities Group,multi_quarterly,quarterly,False
+2019-12-13,2019-12-23,ASX200,Addition,APE,AP Eagers Limited,multi_quarterly,quarterly,False
 2020-03-16,,ASX200,Addition,GNC,,dated_archive,demerger,True
 2020-06-12,2020-06-22,ASX200,Addition,MP1,Megaport Limited,multi_quarterly,quarterly,False
-2020-06-12,2020-06-22,ASX200,Removal,JIN,Jumbo Interactive Limited,multi_quarterly,quarterly,False
-2020-06-12,2020-06-22,ASX200,Removal,EHE,Estia Health Limited,multi_quarterly,quarterly,False
-2020-06-12,2020-06-22,ASX200,Removal,PNI,Pinnacle Investment Management Group Limited,multi_quarterly,quarterly,False
-2020-06-12,2020-06-22,ASX200,Addition,CIP,Centuria Industrial REIT,multi_quarterly,quarterly,False
-2020-06-12,2020-06-22,ASX200,Removal,MYX,Mayne Pharma Group Limited,multi_quarterly,quarterly,False
-2020-06-12,2020-06-22,ASX200,Removal,PLS,Pilbara Minerals Limited,multi_quarterly,quarterly,False
 2020-06-12,2020-06-22,ASX200,Addition,PRU,Perseus Mining Limited,multi_quarterly,quarterly,False
-2020-06-12,2020-06-22,ASX200,Removal,HUB,HUB24 Limited,multi_quarterly,quarterly,False
-2020-06-12,2020-06-22,ASX200,Addition,OBL,Omni Bridgeway Limited,multi_quarterly,quarterly,False
+2020-06-12,2020-06-22,ASX200,Removal,EHE,Estia Health Limited,multi_quarterly,quarterly,False
+2020-06-12,2020-06-22,ASX200,Removal,MYX,Mayne Pharma Group Limited,multi_quarterly,quarterly,False
 2020-06-12,2020-06-22,ASX200,Addition,MSB,Mesoblast Limited,multi_quarterly,quarterly,False
+2020-06-12,2020-06-22,ASX200,Removal,JIN,Jumbo Interactive Limited,multi_quarterly,quarterly,False
+2020-06-12,2020-06-22,ASX200,Removal,PLS,Pilbara Minerals Limited,multi_quarterly,quarterly,False
+2020-06-12,2020-06-22,ASX200,Removal,HUB,HUB24 Limited,multi_quarterly,quarterly,False
+2020-06-12,2020-06-22,ASX200,Addition,CIP,Centuria Industrial REIT,multi_quarterly,quarterly,False
+2020-06-12,2020-06-22,ASX200,Addition,OBL,Omni Bridgeway Limited,multi_quarterly,quarterly,False
+2020-06-12,2020-06-22,ASX200,Removal,PNI,Pinnacle Investment Management Group Limited,multi_quarterly,quarterly,False
 2020-06-25,2020-07-02,ASX200,Addition,TPM,,dated_archive,demerger,True
 2020-06-30,,ASX200,Removal,TUA,,dated_archive,removal,True
-2020-09-04,2020-09-21,ASX200,Removal,MMS,McMillan Shakespeare Limited,multi_quarterly,quarterly,False
-2020-09-04,2020-09-21,ASX200,Addition,AIA,Auckland International Airport Limited,multi_quarterly,quarterly,False
-2020-09-04,2020-09-21,ASX200,Addition,AUB,AUB Group Limited,multi_quarterly,quarterly,False
-2020-09-04,2020-09-21,ASX200,Addition,WGX,Westgold Resources Limited,multi_quarterly,quarterly,False
 2020-09-04,2020-09-21,ASX200,Addition,RMS,Ramelius Resources Limited,multi_quarterly,quarterly,False
+2020-09-04,2020-09-21,ASX200,Addition,WGX,Westgold Resources Limited,multi_quarterly,quarterly,False
 2020-09-04,2020-09-21,ASX200,Removal,ORE,Orocobre Limited,multi_quarterly,quarterly,False
-2020-09-04,2020-09-21,ASX200,Removal,NHC,New Hope Corporation Limited,multi_quarterly,quarterly,False
-2020-09-04,2020-09-21,ASX200,Removal,OML,Ooh!Media Limited,multi_quarterly,quarterly,False
 2020-09-04,2020-09-21,ASX200,Addition,Z1P,Zip Co Limited,multi_quarterly,quarterly,False
+2020-09-04,2020-09-21,ASX200,Removal,OML,Ooh!Media Limited,multi_quarterly,quarterly,False
+2020-09-04,2020-09-21,ASX200,Addition,AIA,Auckland International Airport Limited,multi_quarterly,quarterly,False
 2020-09-04,2020-09-21,ASX200,Removal,SXL,Southern Cross Media Group Limited,multi_quarterly,quarterly,False
-2020-12-11,2020-12-21,ASX200,Addition,REH,Reece Limited,multi_quarterly,quarterly,False
-2020-12-11,2020-12-21,ASX200,Removal,AVH,"Avita Therapeutics, Inc.",multi_quarterly,quarterly,False
-2020-12-11,2020-12-21,ASX200,Addition,KGN,Kogan.Com Ltd,multi_quarterly,quarterly,False
+2020-09-04,2020-09-21,ASX200,Removal,NHC,New Hope Corporation Limited,multi_quarterly,quarterly,False
+2020-09-04,2020-09-21,ASX200,Addition,AUB,AUB Group Limited,multi_quarterly,quarterly,False
+2020-09-04,2020-09-21,ASX200,Removal,MMS,McMillan Shakespeare Limited,multi_quarterly,quarterly,False
 2020-12-11,2020-12-21,ASX200,Removal,COE,Cooper Energy Limited,multi_quarterly,quarterly,False
 2020-12-11,2020-12-21,ASX200,Removal,WSA,Western Areas Limited,multi_quarterly,quarterly,False
-2021-01-27,2021-02-04,ASX200,Removal,SAR,,dated_archive,removal,True
+2020-12-11,2020-12-21,ASX200,Addition,REH,Reece Limited,multi_quarterly,quarterly,False
+2020-12-11,2020-12-21,ASX200,Addition,KGN,Kogan.Com Ltd,multi_quarterly,quarterly,False
+2020-12-11,2020-12-21,ASX200,Removal,AVH,"Avita Therapeutics, Inc.",multi_quarterly,quarterly,False
 2021-01-27,2021-02-04,ASX200,Addition,PBH,,dated_archive,removal-replacement,True
+2021-01-27,2021-02-04,ASX200,Removal,SAR,,dated_archive,removal,True
 2021-03-12,2021-03-22,ASX200,Addition,NIC,Nickel Mines Limited,multi_quarterly,quarterly,False
+2021-03-12,2021-03-22,ASX200,Addition,NXL,Nuix Limited,multi_quarterly,quarterly,False
+2021-03-12,2021-03-22,ASX200,Addition,PLS,Pilbara Minerals Limited,multi_quarterly,quarterly,False
+2021-03-12,2021-03-22,ASX200,Removal,BVS,Bravura Solutions Limited,multi_quarterly,quarterly,False
+2021-03-12,2021-03-22,ASX200,Addition,CDA,Codan Limited,multi_quarterly,quarterly,False
 2021-03-12,2021-03-22,ASX200,Removal,SSM,Service Stream Limited,multi_quarterly,quarterly,False
-2021-03-12,2021-03-22,ASX200,Removal,SFR,Sandfire Resources Limited,multi_quarterly,quarterly,False
+2021-03-12,2021-03-22,ASX200,Addition,HUB,HUB24 Limited,multi_quarterly,quarterly,False
+2021-03-12,2021-03-22,ASX200,Removal,TGR,Tassal Group Limited,multi_quarterly,quarterly,False
 2021-03-12,2021-03-22,ASX200,Addition,CIA,Champion Iron Limited,multi_quarterly,quarterly,False
 2021-03-12,2021-03-22,ASX200,Removal,SIQ,Smartgroup Corporation Ltd,multi_quarterly,quarterly,False
-2021-03-12,2021-03-22,ASX200,Removal,TGR,Tassal Group Limited,multi_quarterly,quarterly,False
-2021-03-12,2021-03-22,ASX200,Addition,NXL,Nuix Limited,multi_quarterly,quarterly,False
-2021-03-12,2021-03-22,ASX200,Removal,BVS,Bravura Solutions Limited,multi_quarterly,quarterly,False
-2021-03-12,2021-03-22,ASX200,Addition,HUB,HUB24 Limited,multi_quarterly,quarterly,False
+2021-03-12,2021-03-22,ASX200,Removal,SFR,Sandfire Resources Limited,multi_quarterly,quarterly,False
 2021-03-12,2021-03-22,ASX200,Removal,GWA,GWA Group Limited,multi_quarterly,quarterly,False
-2021-03-12,2021-03-22,ASX200,Addition,PLS,Pilbara Minerals Limited,multi_quarterly,quarterly,False
-2021-03-12,2021-03-22,ASX200,Addition,CDA,Codan Limited,multi_quarterly,quarterly,False
-2021-04-16,2021-04-22,ASX200,Removal,CCL,,dated_archive,removal,True
 2021-04-16,2021-04-22,ASX200,Addition,RBL,,dated_archive,removal-replacement,True
+2021-04-16,2021-04-22,ASX200,Removal,CCL,,dated_archive,removal,True
 2021-06-11,2021-06-21,ASX200,Addition,ORE,Orocobre Limited,multi_quarterly,quarterly,False
-2021-06-11,2021-06-21,ASX200,Removal,ASB,Austal Limited,multi_quarterly,quarterly,False
 2021-06-11,2021-06-21,ASX200,Addition,CHN,Chalice Mining Limited,multi_quarterly,quarterly,False
 2021-06-11,2021-06-21,ASX200,Addition,UWL,Uniti Group Limited,multi_quarterly,quarterly,False
+2021-06-11,2021-06-21,ASX200,Removal,ASB,Austal Limited,multi_quarterly,quarterly,False
 2021-06-11,2021-06-21,ASX200,Removal,PRN,Perenti Global Limited,multi_quarterly,quarterly,False
 2021-06-11,2021-06-21,ASX200,Removal,RSG,Resolute Mining Limited,multi_quarterly,quarterly,False
 2021-06-18,,ASX200,Addition,WOW,,dated_archive,demerger,True
 2021-06-22,,ASX200,Removal,VOC,,dated_archive,removal,True
-2021-07-08,2021-07-16,ASX200,Removal,BIN,,dated_archive,removal,True
 2021-07-08,2021-07-16,ASX200,Addition,CNI,,dated_archive,removal-replacement,True
-2021-09-03,2021-09-20,ASX200,Removal,WGX,Westgold Resources Limited,multi_quarterly,quarterly,False
-2021-09-03,2021-09-20,ASX200,Addition,PNI,Pinnacle Investment Management Group Limited,multi_quarterly,quarterly,False
-2021-09-03,2021-09-20,ASX200,Addition,TYR,Tyro Payments Limited,multi_quarterly,quarterly,False
-2021-09-03,2021-09-20,ASX200,Addition,LIC,Lifestyle Communities Limited,multi_quarterly,quarterly,False
+2021-07-08,2021-07-16,ASX200,Removal,BIN,,dated_archive,removal,True
 2021-09-03,2021-09-20,ASX200,Removal,NWH,NRW Holdings Limited,multi_quarterly,quarterly,False
-2021-09-03,2021-09-20,ASX200,Removal,GEM,G8 Education Limited,multi_quarterly,quarterly,False
+2021-09-03,2021-09-20,ASX200,Addition,PNI,Pinnacle Investment Management Group Limited,multi_quarterly,quarterly,False
 2021-09-03,2021-09-20,ASX200,Removal,NXL,Nuix Limited,multi_quarterly,quarterly,False
+2021-09-03,2021-09-20,ASX200,Removal,GEM,G8 Education Limited,multi_quarterly,quarterly,False
+2021-09-03,2021-09-20,ASX200,Addition,TYR,Tyro Payments Limited,multi_quarterly,quarterly,False
+2021-09-03,2021-09-20,ASX200,Removal,WGX,Westgold Resources Limited,multi_quarterly,quarterly,False
+2021-09-03,2021-09-20,ASX200,Addition,LIC,Lifestyle Communities Limited,multi_quarterly,quarterly,False
 2021-09-03,2021-09-20,ASX200,Addition,SLK,Sealink Travel Group Limited,multi_quarterly,quarterly,False
 2021-11-24,2021-11-30,ASX200,Removal,SKI,,dated_archive,removal,True
 2021-11-24,2021-11-30,ASX200,Addition,SFR,,dated_archive,removal-replacement,True
+2021-12-03,2021-12-20,ASX200,Addition,NVX,Novonix Limited,multi_quarterly,quarterly,False
+2021-12-03,2021-12-20,ASX200,Addition,IMU,Imugene Limited,multi_quarterly,quarterly,False
+2021-12-03,2021-12-20,ASX200,Removal,RBL,Redbubble Limited,multi_quarterly,quarterly,False
+2021-12-03,2021-12-20,ASX200,Addition,PDN,Paladin Energy Ltd,multi_quarterly,quarterly,False
+2021-12-03,2021-12-20,ASX200,Addition,EVT,Event Hospitality and Entertainment Ltd,multi_quarterly,quarterly,False
+2021-12-03,2021-12-20,ASX200,Addition,LTR,Liontown Resources Limited,multi_quarterly,quarterly,False
+2021-12-03,2021-12-20,ASX200,Removal,MND,Monadelphous Group Limited,multi_quarterly,quarterly,False
+2021-12-03,2021-12-20,ASX200,Removal,NEA,Nearmap Ltd,multi_quarterly,quarterly,False
+2021-12-03,2021-12-20,ASX200,Removal,OBL,Omni Bridgeway Limited,multi_quarterly,quarterly,False
+2021-12-03,2021-12-20,ASX200,Removal,KGN,Kogan.Com Ltd,multi_quarterly,quarterly,False
 2021-12-07,2021-12-13,ASX200,Removal,OSH,,dated_archive,removal,True
 2021-12-07,2021-12-13,ASX200,Addition,360,,dated_archive,removal-replacement,True
 2021-12-08,2021-12-10,ASX200,Addition,CHN,,dated_archive,removal,True
-2022-01-14,2022-01-20,ASX200,Removal,APT,,dated_archive,removal,True
 2022-01-14,2022-01-20,ASX200,Addition,SQ2,,dated_archive,removal-replacement,True
-2022-02-01,2022-02-07,ASX200,Addition,ARF,,dated_archive,removal-replacement,True
+2022-01-14,2022-01-20,ASX200,Removal,APT,,dated_archive,removal,True
 2022-02-01,2022-02-07,ASX200,Removal,AST,,dated_archive,removal,True
+2022-02-01,2022-02-07,ASX200,Addition,ARF,,dated_archive,removal-replacement,True
 2022-02-03,2022-02-10,ASX200,Addition,TLX,,dated_archive,removal-replacement,True
 2022-02-03,2022-02-10,ASX200,Removal,SYD,,dated_archive,removal,True
-2022-03-04,2022-03-21,ASX200,Addition,HMC,Home Consortium Limited,multi_quarterly,quarterly,False
+2022-03-04,2022-03-21,ASX200,Removal,URW,Unibail-Rodamco-Westfield,multi_quarterly,quarterly,False
 2022-03-04,2022-03-21,ASX200,Addition,CCX,City Chic Collective Limited,multi_quarterly,quarterly,False
 2022-03-04,2022-03-21,ASX200,Addition,AVZ,AVZ Minerals Limited,multi_quarterly,quarterly,False
-2022-03-04,2022-03-21,ASX200,Removal,URW,Unibail-Rodamco-Westfield,multi_quarterly,quarterly,False
-2022-03-04,2022-03-21,ASX200,Removal,SKC,Skycity Entertainment Group Limited,multi_quarterly,quarterly,False
-2022-03-04,2022-03-21,ASX200,Removal,MSB,Mesoblast Limited,multi_quarterly,quarterly,False
 2022-03-04,2022-03-21,ASX200,Addition,DEG,De Grey Mining Limited,multi_quarterly,quarterly,False
+2022-03-04,2022-03-21,ASX200,Removal,MSB,Mesoblast Limited,multi_quarterly,quarterly,False
 2022-03-04,2022-03-21,ASX200,Removal,SPK,Spark New Zealand Limited,multi_quarterly,quarterly,False
+2022-03-04,2022-03-21,ASX200,Removal,SKC,Skycity Entertainment Group Limited,multi_quarterly,quarterly,False
+2022-03-04,2022-03-21,ASX200,Addition,HMC,Home Consortium Limited,multi_quarterly,quarterly,False
 2022-04-07,2022-04-12,ASX200,Removal,CIM,,dated_archive,removal,True
 2022-04-07,2022-04-12,ASX200,Addition,HDN,,dated_archive,removal-replacement,True
 2022-05-17,2022-05-24,ASX200,Addition,TAH,,dated_archive,demerger,True
 2022-05-19,,ASX200,Removal,CWN,,dated_archive,removal,True
-2022-06-03,2022-06-20,ASX200,Removal,APX,Appen Limited,multi_quarterly,quarterly,False
-2022-06-03,2022-06-20,ASX200,Addition,NHC,New Hope Corporation Limited,multi_quarterly,quarterly,False
-2022-06-03,2022-06-20,ASX200,Addition,LKE,Lake Resources N.L.,multi_quarterly,quarterly,False
-2022-06-03,2022-06-20,ASX200,Removal,PNV,Polynovo Limited,multi_quarterly,quarterly,False
-2022-06-03,2022-06-20,ASX200,Removal,CDA,Codan Limited,multi_quarterly,quarterly,False
-2022-06-03,2022-06-20,ASX200,Removal,PTM,Platinum Asset Management Limited,multi_quarterly,quarterly,False
 2022-06-03,2022-06-20,ASX200,Addition,CXO,Core Lithium Limited,multi_quarterly,quarterly,False
+2022-06-03,2022-06-20,ASX200,Removal,PTM,Platinum Asset Management Limited,multi_quarterly,quarterly,False
+2022-06-03,2022-06-20,ASX200,Addition,LKE,Lake Resources N.L.,multi_quarterly,quarterly,False
+2022-06-03,2022-06-20,ASX200,Removal,APX,Appen Limited,multi_quarterly,quarterly,False
+2022-06-03,2022-06-20,ASX200,Removal,PNV,Polynovo Limited,multi_quarterly,quarterly,False
 2022-06-03,2022-06-20,ASX200,Addition,BRN,Brainchip Holdings Limited,multi_quarterly,quarterly,False
 2022-06-03,2022-06-20,ASX200,Removal,TYR,Tyro Payments Limited,multi_quarterly,quarterly,False
-2022-06-15,2022-06-20,ASX200,Removal,CWN,,dated_archive,removal,True
+2022-06-03,2022-06-20,ASX200,Removal,CDA,Codan Limited,multi_quarterly,quarterly,False
+2022-06-03,2022-06-20,ASX200,Addition,NHC,New Hope Corporation Limited,multi_quarterly,quarterly,False
 2022-06-15,2022-06-20,ASX200,Addition,CRN,,dated_archive,removal-replacement,True
-2022-07-15,2022-07-22,ASX200,Removal,UWL,,dated_archive,removal,True
+2022-06-15,2022-06-20,ASX200,Removal,CWN,,dated_archive,removal,True
 2022-07-15,2022-07-22,ASX200,Addition,WAF,,dated_archive,removal-replacement,True
+2022-07-15,2022-07-22,ASX200,Removal,UWL,,dated_archive,removal,True
 2022-07-25,2022-07-27,ASX200,Addition,ILU,,dated_archive,demerger,True
-2022-09-02,2022-09-19,ASX200,Removal,CCX,City Chic Collective Limited,multi_quarterly,quarterly,False
 2022-09-02,2022-09-19,ASX200,Addition,SPK,Spark New Zealand Limited,multi_quarterly,quarterly,False
-2022-09-02,2022-09-19,ASX200,Removal,EML,EML Payments Limited,multi_quarterly,quarterly,False
-2022-09-02,2022-09-19,ASX200,Removal,AVZ,AVZ Minerals Limited,multi_quarterly,quarterly,False
-2022-09-02,2022-09-19,ASX200,Addition,CMM,Capricorn Metals Limited,multi_quarterly,quarterly,False
 2022-09-02,2022-09-19,ASX200,Addition,SIQ,Smartgroup Corporation Limited,multi_quarterly,quarterly,False
-2022-09-02,2022-09-19,ASX200,Addition,CQE,Charter Hall Social Infrastructure REIT,multi_quarterly,quarterly,False
-2022-09-02,2022-09-19,ASX200,Removal,CUV,Clinuvel Pharmaceuticals Limited,multi_quarterly,quarterly,False
 2022-09-02,2022-09-19,ASX200,Addition,SYA,Sayona Mining Limited,multi_quarterly,quarterly,False
-2022-09-02,2022-09-19,ASX200,Removal,JHG,Janus Henderson Group PLC,multi_quarterly,quarterly,False
 2022-09-02,2022-09-19,ASX200,Removal,ZIP,ZIP Co Limited,multi_quarterly,quarterly,False
-2022-09-02,2022-09-19,ASX200,Addition,LOV,Lovisa Holdings Limited,multi_quarterly,quarterly,False
 2022-09-02,2022-09-19,ASX200,Addition,JLG,Johns Lyng Group Limited,multi_quarterly,quarterly,False
+2022-09-02,2022-09-19,ASX200,Addition,CMM,Capricorn Metals Limited,multi_quarterly,quarterly,False
+2022-09-02,2022-09-19,ASX200,Addition,LOV,Lovisa Holdings Limited,multi_quarterly,quarterly,False
+2022-09-02,2022-09-19,ASX200,Removal,CUV,Clinuvel Pharmaceuticals Limited,multi_quarterly,quarterly,False
+2022-09-02,2022-09-19,ASX200,Removal,AVZ,AVZ Minerals Limited,multi_quarterly,quarterly,False
+2022-09-02,2022-09-19,ASX200,Removal,JHG,Janus Henderson Group PLC,multi_quarterly,quarterly,False
+2022-09-02,2022-09-19,ASX200,Removal,CCX,City Chic Collective Limited,multi_quarterly,quarterly,False
+2022-09-02,2022-09-19,ASX200,Addition,KAR,Karoon Energy Limited,multi_quarterly,quarterly,False
+2022-09-02,2022-09-19,ASX200,Removal,EML,EML Payments Limited,multi_quarterly,quarterly,False
+2022-09-02,2022-09-19,ASX200,Addition,CQE,Charter Hall Social Infrastructure REIT,multi_quarterly,quarterly,False
 2022-09-02,2022-09-19,ASX200,Removal,PBH,Pointsbet Holdings Limited,multi_quarterly,quarterly,False
 2022-09-02,2022-09-19,ASX200,Removal,360,Life360 Inc.,multi_quarterly,quarterly,False
-2022-09-02,2022-09-19,ASX200,Addition,KAR,Karoon Energy Limited,multi_quarterly,quarterly,False
-2022-12-02,2022-12-19,ASX200,Removal,SBM,St Barbara Limited,multi_quarterly,quarterly,False
 2022-12-02,2022-12-19,ASX200,Addition,MND,Monadelphous Group Limited,multi_quarterly,quarterly,False
+2022-12-02,2022-12-19,ASX200,Removal,SBM,St Barbara Limited,multi_quarterly,quarterly,False
 2023-01-06,2023-01-13,ASX200,Addition,PXA,,dated_archive,removal-replacement,True
 2023-01-06,2023-01-13,ASX200,Removal,PDL,,dated_archive,removal,True
-2023-03-03,2023-03-20,ASX200,Removal,RMS,Ramelius Resources Limited,multi_quarterly,quarterly,False
-2023-03-03,2023-03-20,ASX200,Addition,PNV,Polynovo Limited,multi_quarterly,quarterly,False
-2023-03-03,2023-03-20,ASX200,Addition,360,Life360 Inc.,multi_quarterly,quarterly,False
 2023-03-03,2023-03-20,ASX200,Addition,SYR,Syrah Resources Limited,multi_quarterly,quarterly,False
 2023-03-03,2023-03-20,ASX200,Removal,SIQ,Smartgroup Corporation Limited,multi_quarterly,quarterly,False
-2023-03-03,2023-03-20,ASX200,Addition,NWH,NRW Holdings Limited,multi_quarterly,quarterly,False
+2023-03-03,2023-03-20,ASX200,Addition,PNV,Polynovo Limited,multi_quarterly,quarterly,False
 2023-03-03,2023-03-20,ASX200,Removal,NVX,Novonix Limited,multi_quarterly,quarterly,False
+2023-03-03,2023-03-20,ASX200,Addition,360,Life360 Inc.,multi_quarterly,quarterly,False
+2023-03-03,2023-03-20,ASX200,Removal,RMS,Ramelius Resources Limited,multi_quarterly,quarterly,False
 2023-03-03,2023-03-20,ASX200,Removal,ABC,Adbri Limited,multi_quarterly,quarterly,False
+2023-03-03,2023-03-20,ASX200,Addition,NWH,NRW Holdings Limited,multi_quarterly,quarterly,False
 2023-04-13,2023-04-19,ASX200,Addition,BGL,,dated_archive,removal-replacement,True
 2023-04-13,2023-04-19,ASX200,Removal,OZL,,dated_archive,removal,True
 2023-07-18,2023-07-24,ASX200,Addition,VNT,,dated_archive,removal-replacement,True
 2023-07-18,2023-07-24,ASX200,Removal,BKL,,dated_archive,removal,True
 2023-07-27,,ASX200,Addition,ABP,,dated_archive,demerger,True
-2023-09-01,2023-09-18,ASX200,Addition,NEU,Neuren Pharmaceuticals Limited,multi_quarterly,quarterly,False
-2023-09-01,2023-09-18,ASX200,Removal,BRN,BrainChip Holdings Limited,multi_quarterly,quarterly,False
-2023-09-01,2023-09-18,ASX200,Addition,DTL,Data#3 Limited,multi_quarterly,quarterly,False
-2023-09-01,2023-09-18,ASX200,Addition,GMD,Genesis Minerals Limited,multi_quarterly,quarterly,False
-2023-09-01,2023-09-18,ASX200,Removal,ABG,Abacus Group,multi_quarterly,quarterly,False
 2023-09-01,2023-09-18,ASX200,Addition,WBT,Weebit Nano Limited,multi_quarterly,quarterly,False
-2023-09-01,2023-09-18,ASX200,Addition,RMS,Ramelius Resources Limited,multi_quarterly,quarterly,False
-2023-09-01,2023-09-18,ASX200,Removal,ASK,Abacus Storage King,multi_quarterly,quarterly,False
-2023-09-01,2023-09-18,ASX200,Removal,SYR,Syrah Resources Limited,multi_quarterly,quarterly,False
-2023-09-01,2023-09-18,ASX200,Removal,IMU,Imugene Limited,multi_quarterly,quarterly,False
 2023-09-01,2023-09-18,ASX200,Removal,LKE,Lake Resources N.L.,multi_quarterly,quarterly,False
+2023-09-01,2023-09-18,ASX200,Removal,BRN,BrainChip Holdings Limited,multi_quarterly,quarterly,False
+2023-09-01,2023-09-18,ASX200,Removal,SYR,Syrah Resources Limited,multi_quarterly,quarterly,False
+2023-09-01,2023-09-18,ASX200,Removal,ASK,Abacus Storage King,multi_quarterly,quarterly,False
+2023-09-01,2023-09-18,ASX200,Addition,GMD,Genesis Minerals Limited,multi_quarterly,quarterly,False
+2023-09-01,2023-09-18,ASX200,Addition,DTL,Data#3 Limited,multi_quarterly,quarterly,False
+2023-09-01,2023-09-18,ASX200,Addition,NEU,Neuren Pharmaceuticals Limited,multi_quarterly,quarterly,False
+2023-09-01,2023-09-18,ASX200,Removal,ABG,Abacus Group,multi_quarterly,quarterly,False
+2023-09-01,2023-09-18,ASX200,Addition,RMS,Ramelius Resources Limited,multi_quarterly,quarterly,False
+2023-09-01,2023-09-18,ASX200,Removal,IMU,Imugene Limited,multi_quarterly,quarterly,False
 2023-10-13,2023-10-18,ASX200,Removal,UMG,,dated_archive,removal,True
 2023-10-13,2023-10-18,ASX200,Addition,LNW,,dated_archive,removal-replacement,True
 2023-10-24,2023-10-27,ASX200,Addition,NEM,,dated_archive,removal-replacement,True
 2023-10-24,2023-10-27,ASX200,Removal,NCM,,dated_archive,removal,True
-2023-12-01,2023-12-18,ASX200,Addition,HLI,Helia Group Limited,multi_quarterly,quarterly,False
-2023-12-01,2023-12-18,ASX200,Addition,SIQ,Smartgroup Corporation Limited,multi_quarterly,quarterly,False
-2023-12-01,2023-12-18,ASX200,Removal,GOZ,Growthpoint Properties Australia,multi_quarterly,quarterly,False
 2023-12-01,2023-12-18,ASX200,Addition,BOE,Boss Energy Limited,multi_quarterly,quarterly,False
+2023-12-01,2023-12-18,ASX200,Addition,SIQ,Smartgroup Corporation Limited,multi_quarterly,quarterly,False
+2023-12-01,2023-12-18,ASX200,Addition,HLI,Helia Group Limited,multi_quarterly,quarterly,False
 2023-12-01,2023-12-18,ASX200,Removal,LNK,Link Administration Holdings Limited,multi_quarterly,quarterly,False
+2023-12-01,2023-12-18,ASX200,Removal,GOZ,Growthpoint Properties Australia,multi_quarterly,quarterly,False
 2023-12-01,2023-12-18,ASX200,Removal,CMW,Cromwell Property Group,multi_quarterly,quarterly,False
 2023-12-19,2023-12-22,ASX200,Addition,LTM,,dated_archive,removal-replacement,True
 2023-12-19,2023-12-22,ASX200,Removal,AKE,,dated_archive,removal,True
 2024-02-01,2024-02-09,ASX200,Addition,STX,,dated_archive,removal-replacement,True
 2024-02-01,2024-02-09,ASX200,Removal,CGC,,dated_archive,removal,True
+2024-03-01,2024-03-18,ASX200,Removal,CXO,Core Lithium Limited,multi_quarterly,quarterly,False
 2024-03-01,2024-03-18,ASX200,Addition,SMR,Stanmore Resources Limited,multi_quarterly,quarterly,False
+2024-03-01,2024-03-18,ASX200,Removal,SYA,Sayona Mining Limited,multi_quarterly,quarterly,False
+2024-03-01,2024-03-18,ASX200,Addition,SDR,SiteMinder Limited,multi_quarterly,quarterly,False
 2024-03-01,2024-03-18,ASX200,Removal,CHN,Chalice Mining Limited,multi_quarterly,quarterly,False
 2024-03-01,2024-03-18,ASX200,Addition,AD8,Audinate Group Limited,multi_quarterly,quarterly,False
-2024-03-01,2024-03-18,ASX200,Addition,SDR,SiteMinder Limited,multi_quarterly,quarterly,False
-2024-03-01,2024-03-18,ASX200,Removal,CXO,Core Lithium Limited,multi_quarterly,quarterly,False
-2024-03-01,2024-03-18,ASX200,Removal,SYA,Sayona Mining Limited,multi_quarterly,quarterly,False
 2024-03-01,2024-03-18,ASX200,Addition,RED,Red 5 Limited,multi_quarterly,quarterly,False
 2024-03-01,2024-03-18,ASX200,Removal,WBT,Weebit Nano Limited,multi_quarterly,quarterly,False
-2024-05-02,2024-05-10,ASX200,Addition,SIG,,dated_archive,removal-replacement,True
 2024-05-02,2024-05-10,ASX200,Removal,BLD,,dated_archive,removal,True
+2024-05-02,2024-05-10,ASX200,Addition,SIG,,dated_archive,removal-replacement,True
 2024-05-31,2024-06-11,ASX200,Removal,SLR,,dated_archive,removal,True
-2024-06-11,2024-06-20,ASX200,Removal,CSR,,dated_archive,removal,True
 2024-06-11,2024-06-20,ASX200,Addition,JDO,,dated_archive,removal-replacement,True
+2024-06-11,2024-06-20,ASX200,Removal,CSR,,dated_archive,removal,True
 2024-07-19,2024-07-24,ASX200,Addition,AAI,,dated_archive,removal-replacement,True
 2024-07-19,2024-07-24,ASX200,Removal,AWC,,dated_archive,removal,True
-2024-09-06,2024-09-23,ASX200,Removal,STX,Strike Energy Limited,multi_quarterly,quarterly,False
 2024-09-06,2024-09-23,ASX200,Addition,YAL,Yancoal Australia Limited,multi_quarterly,quarterly,False
-2024-09-06,2024-09-23,ASX200,Addition,GYG,Guzman Y Gomez Limited,multi_quarterly,quarterly,False
 2024-09-06,2024-09-23,ASX200,Addition,WGX,Westgold Resources Limited,multi_quarterly,quarterly,False
-2024-09-06,2024-09-23,ASX200,Removal,DHG,Domain Holdings Australia Limited,multi_quarterly,quarterly,False
 2024-09-06,2024-09-23,ASX200,Removal,NAN,Nanosonics Limited,multi_quarterly,quarterly,False
+2024-09-06,2024-09-23,ASX200,Removal,DHG,Domain Holdings Australia Limited,multi_quarterly,quarterly,False
+2024-09-06,2024-09-23,ASX200,Addition,GYG,Guzman Y Gomez Limited,multi_quarterly,quarterly,False
+2024-09-06,2024-09-23,ASX200,Removal,STX,Strike Energy Limited,multi_quarterly,quarterly,False
 2024-09-18,2024-09-26,ASX200,Removal,VUK,,dated_archive,removal,True
 2024-09-18,2024-09-26,ASX200,Addition,CDA,,dated_archive,removal-replacement,True
-2024-12-06,2024-12-23,ASX200,Removal,SPK,Spark New Zealand Limited,multi_quarterly,quarterly,False
 2024-12-06,2024-12-23,ASX200,Addition,CU6,Clarity Pharmaceuticals Limited,multi_quarterly,quarterly,False
-2025-02-28,2025-03-06,ASX200,Removal,LTM,,dated_archive,removal,True
+2024-12-06,2024-12-23,ASX200,Removal,SPK,Spark New Zealand Limited,multi_quarterly,quarterly,False
 2025-02-28,2025-03-06,ASX200,Addition,MSB,,dated_archive,removal-replacement,True
-2025-03-07,2025-03-24,ASX200,Addition,NXL,Nuix Limited,multi_quarterly,quarterly,False
-2025-03-07,2025-03-24,ASX200,Removal,CQE,Charter Hall Social Infrastructure REIT,multi_quarterly,quarterly,False
+2025-02-28,2025-03-06,ASX200,Removal,LTM,,dated_archive,removal,True
 2025-03-07,2025-03-24,ASX200,Removal,CKF,Collins Foods Limited,multi_quarterly,quarterly,False
-2025-03-07,2025-03-24,ASX200,Removal,JLG,Johns Lyng Group Limited,multi_quarterly,quarterly,False
-2025-03-07,2025-03-24,ASX200,Addition,CSC,Capstone Copper Corp.,multi_quarterly,quarterly,False
-2025-03-07,2025-03-24,ASX200,Addition,IMD,Imdex Limited,multi_quarterly,quarterly,False
-2025-03-07,2025-03-24,ASX200,Removal,KLS,Kelsian Group Limited,multi_quarterly,quarterly,False
-2025-03-07,2025-03-24,ASX200,Removal,AD8,Audinate Group Limited,multi_quarterly,quarterly,False
-2025-03-07,2025-03-24,ASX200,Removal,CRN,Coronado Global Resources Inc.,multi_quarterly,quarterly,False
-2025-03-07,2025-03-24,ASX200,Addition,MAQ,Macquarie Technology Group Limited,multi_quarterly,quarterly,False
-2025-03-07,2025-03-24,ASX200,Addition,DGT,DigiCo Infrastructure REIT,multi_quarterly,quarterly,False
-2025-03-07,2025-03-24,ASX200,Removal,SGR,The Star Entertainment Group Limited,multi_quarterly,quarterly,False
+2025-03-07,2025-03-24,ASX200,Removal,CQE,Charter Hall Social Infrastructure REIT,multi_quarterly,quarterly,False
 2025-03-07,2025-03-24,ASX200,Addition,TPW,Temple & Webster Group Limited,multi_quarterly,quarterly,False
+2025-03-07,2025-03-24,ASX200,Addition,DGT,DigiCo Infrastructure REIT,multi_quarterly,quarterly,False
+2025-03-07,2025-03-24,ASX200,Removal,KLS,Kelsian Group Limited,multi_quarterly,quarterly,False
+2025-03-07,2025-03-24,ASX200,Addition,CSC,Capstone Copper Corp.,multi_quarterly,quarterly,False
+2025-03-07,2025-03-24,ASX200,Addition,NXL,Nuix Limited,multi_quarterly,quarterly,False
+2025-03-07,2025-03-24,ASX200,Removal,AD8,Audinate Group Limited,multi_quarterly,quarterly,False
+2025-03-07,2025-03-24,ASX200,Addition,MAQ,Macquarie Technology Group Limited,multi_quarterly,quarterly,False
+2025-03-07,2025-03-24,ASX200,Removal,SGR,The Star Entertainment Group Limited,multi_quarterly,quarterly,False
+2025-03-07,2025-03-24,ASX200,Removal,JLG,Johns Lyng Group Limited,multi_quarterly,quarterly,False
+2025-03-07,2025-03-24,ASX200,Addition,IMD,Imdex Limited,multi_quarterly,quarterly,False
+2025-03-07,2025-03-24,ASX200,Removal,CRN,Coronado Global Resources Inc.,multi_quarterly,quarterly,False
 2025-03-07,2025-03-24,ASX200,Addition,SPR,Spartan Resources Limited,multi_quarterly,quarterly,False
-2025-04-16,2025-04-24,ASX200,Addition,GDG,,dated_archive,removal-replacement,True
 2025-04-16,2025-04-24,ASX200,Removal,DEG,,dated_archive,removal,True
-2025-06-06,2025-06-23,ASX200,Removal,SMR,Stanmore Resources Limited,multi_quarterly,quarterly,False
-2025-06-06,2025-06-23,ASX200,Addition,NCK,Nick Scali Limited,multi_quarterly,quarterly,False
+2025-04-16,2025-04-24,ASX200,Addition,GDG,,dated_archive,removal-replacement,True
 2025-06-06,2025-06-23,ASX200,Addition,ASB,Austal Limited,multi_quarterly,quarterly,False
 2025-06-06,2025-06-23,ASX200,Removal,HLS,Healius Limited,multi_quarterly,quarterly,False
+2025-06-06,2025-06-23,ASX200,Removal,SMR,Stanmore Resources Limited,multi_quarterly,quarterly,False
+2025-06-06,2025-06-23,ASX200,Addition,NCK,Nick Scali Limited,multi_quarterly,quarterly,False
 2025-07-15,2025-07-23,ASX200,Addition,IFT,,dated_archive,removal-replacement,True
 2025-07-15,2025-07-23,ASX200,Removal,SPR,,dated_archive,removal,True
-2025-09-05,2025-09-22,ASX200,Removal,AOV,Amotiv Limited,multi_quarterly,quarterly,False
 2025-09-05,2025-09-22,ASX200,Addition,TUA,Tuas Limited,multi_quarterly,quarterly,False
-2025-09-05,2025-09-22,ASX200,Removal,NXL,Nuix Limited,multi_quarterly,quarterly,False
-2025-09-05,2025-09-22,ASX200,Addition,SLC,Superloop Limited,multi_quarterly,quarterly,False
-2025-09-05,2025-09-22,ASX200,Addition,IPX,IperionX Limited,multi_quarterly,quarterly,False
-2025-09-05,2025-09-22,ASX200,Removal,LIC,Lifestyle Communities Limited,multi_quarterly,quarterly,False
+2025-09-05,2025-09-22,ASX200,Removal,AOV,Amotiv Limited,multi_quarterly,quarterly,False
 2025-09-05,2025-09-22,ASX200,Removal,CCP,Credit Corp Group Limited,multi_quarterly,quarterly,False
-2025-09-05,2025-09-22,ASX200,Addition,GQG,GQG Partners Inc.,multi_quarterly,quarterly,False
 2025-09-05,2025-09-22,ASX200,Addition,PRN,Perenti Limited,multi_quarterly,quarterly,False
-2025-09-05,2025-09-22,ASX200,Addition,GGP,Greatland Resources Limited,multi_quarterly,quarterly,False
-2025-09-05,2025-09-22,ASX200,Removal,PNV,PolyNovo Limited,multi_quarterly,quarterly,False
-2025-09-05,2025-09-22,ASX200,Removal,MAQ,Macquarie Technology Group Limited,multi_quarterly,quarterly,False
-2025-09-05,2025-09-22,ASX200,Removal,SIQ,Smartgroup Corporation Limited,multi_quarterly,quarterly,False
-2025-09-05,2025-09-22,ASX200,Addition,DRO,DroneShield Limited,multi_quarterly,quarterly,False
-2025-09-05,2025-09-22,ASX200,Addition,EBO,Ebos Group Limited,multi_quarterly,quarterly,False
-2025-09-05,2025-09-22,ASX200,Removal,NUF,Nufarm Limited,multi_quarterly,quarterly,False
-2025-09-05,2025-09-22,ASX200,Addition,DBI,Dalrymple Bay Infrastructure Limited,multi_quarterly,quarterly,False
 2025-09-05,2025-09-22,ASX200,Removal,CU6,Clarity Pharmaceuticals Limited,multi_quarterly,quarterly,False
+2025-09-05,2025-09-22,ASX200,Removal,MAQ,Macquarie Technology Group Limited,multi_quarterly,quarterly,False
+2025-09-05,2025-09-22,ASX200,Removal,LIC,Lifestyle Communities Limited,multi_quarterly,quarterly,False
+2025-09-05,2025-09-22,ASX200,Removal,NXL,Nuix Limited,multi_quarterly,quarterly,False
+2025-09-05,2025-09-22,ASX200,Removal,SIQ,Smartgroup Corporation Limited,multi_quarterly,quarterly,False
+2025-09-05,2025-09-22,ASX200,Addition,IPX,IperionX Limited,multi_quarterly,quarterly,False
+2025-09-05,2025-09-22,ASX200,Addition,SLC,Superloop Limited,multi_quarterly,quarterly,False
+2025-09-05,2025-09-22,ASX200,Addition,GQG,GQG Partners Inc.,multi_quarterly,quarterly,False
+2025-09-05,2025-09-22,ASX200,Addition,GGP,Greatland Resources Limited,multi_quarterly,quarterly,False
+2025-09-05,2025-09-22,ASX200,Removal,NUF,Nufarm Limited,multi_quarterly,quarterly,False
+2025-09-05,2025-09-22,ASX200,Addition,DRO,DroneShield Limited,multi_quarterly,quarterly,False
+2025-09-05,2025-09-22,ASX200,Addition,DBI,Dalrymple Bay Infrastructure Limited,multi_quarterly,quarterly,False
+2025-09-05,2025-09-22,ASX200,Removal,PNV,PolyNovo Limited,multi_quarterly,quarterly,False
+2025-09-05,2025-09-22,ASX200,Addition,EBO,Ebos Group Limited,multi_quarterly,quarterly,False
 2025-09-09,2025-09-16,ASX200,Removal,BKW,,dated_archive,removal,True
 2025-09-09,2025-09-16,ASX200,Addition,CYL,,dated_archive,removal-replacement,True
-2025-09-22,2025-09-29,ASX200,Addition,CAT,,dated_archive,removal-replacement,True
 2025-09-22,2025-09-29,ASX200,Removal,GOR,,dated_archive,removal,True
+2025-09-22,2025-09-29,ASX200,Addition,CAT,,dated_archive,removal-replacement,True
+2025-12-05,2025-12-22,ASX200,Removal,IPH,IPH Limited,multi_quarterly,quarterly,False
+2025-12-05,2025-12-22,ASX200,Removal,ING,Inghams Group Limited,multi_quarterly,quarterly,False
+2025-12-05,2025-12-22,ASX200,Removal,CTD,Corporate Travel Management Limited,multi_quarterly,quarterly,False
+2025-12-05,2025-12-22,ASX200,Addition,OBM,Ora Banda Mining Limited,multi_quarterly,quarterly,False
+2025-12-05,2025-12-22,ASX200,Removal,BAP,Bapcor Limited,multi_quarterly,quarterly,False
+2025-12-05,2025-12-22,ASX200,Addition,NXG,NexGen Energy (Canada) Limited,multi_quarterly,quarterly,False
+2025-12-05,2025-12-22,ASX200,Addition,SLX,Silex Systems Limited,multi_quarterly,quarterly,False
 2025-12-05,2025-12-22,ASX200,Removal,BOE,Boss Energy Limited,multi_quarterly,quarterly,False
 2025-12-05,2025-12-22,ASX200,Addition,RSG,Resolute Mining Limited,multi_quarterly,quarterly,False
-2025-12-05,2025-12-22,ASX200,Addition,NXG,NexGen Energy (Canada) Limited,multi_quarterly,quarterly,False
-2025-12-05,2025-12-22,ASX200,Removal,HMC,HMC Capital Limited,multi_quarterly,quarterly,False
-2025-12-05,2025-12-22,ASX200,Removal,CTD,Corporate Travel Management Limited,multi_quarterly,quarterly,False
-2025-12-05,2025-12-22,ASX200,Removal,ING,Inghams Group Limited,multi_quarterly,quarterly,False
 2025-12-05,2025-12-22,ASX200,Addition,PNR,Pantoro Gold Limited,multi_quarterly,quarterly,False
-2025-12-05,2025-12-22,ASX200,Addition,OBM,Ora Banda Mining Limited,multi_quarterly,quarterly,False
+2025-12-05,2025-12-22,ASX200,Removal,HMC,HMC Capital Limited,multi_quarterly,quarterly,False
 2025-12-05,2025-12-22,ASX200,Addition,ABB,Aussie Broadband Limited,multi_quarterly,quarterly,False
-2025-12-05,2025-12-22,ASX200,Removal,BAP,Bapcor Limited,multi_quarterly,quarterly,False
-2025-12-05,2025-12-22,ASX200,Removal,IPH,IPH Limited,multi_quarterly,quarterly,False
-2025-12-05,2025-12-22,ASX200,Addition,SLX,Silex Systems Limited,multi_quarterly,quarterly,False
-2026-03-06,2026-03-23,ASX200,Addition,PDI,Predictive Discovery Limited,dated_archive,rebalance,False
-2026-03-06,2026-03-23,ASX200,Removal,CAT,Catapult Sports Limited,dated_archive,rebalance,False
-2026-03-06,2026-03-23,ASX200,Addition,VUL,Vulcan Energy Resources Limited,dated_archive,rebalance,False
 2026-03-06,2026-03-23,ASX200,Addition,SRG,SRG Global Limited,dated_archive,rebalance,False
 2026-03-06,2026-03-23,ASX200,Removal,DGT,DigiCo Infrastructure REIT,dated_archive,rebalance,False
+2026-03-06,2026-03-23,ASX200,Addition,PDI,Predictive Discovery Limited,dated_archive,rebalance,False
 2026-03-06,2026-03-23,ASX200,Removal,EBO,EBOS Group Limited,dated_archive,rebalance,False
-2026-04-13,2026-04-20,ASX200,Removal,IFL,,dated_archive,removal,True
+2026-03-06,2026-03-23,ASX200,Removal,CAT,Catapult Sports Limited,dated_archive,rebalance,False
+2026-03-06,2026-03-23,ASX200,Addition,VUL,Vulcan Energy Resources Limited,dated_archive,rebalance,False
 2026-04-13,2026-04-20,ASX200,Addition,4DX,,dated_archive,removal-replacement,True
-2026-04-15,2026-04-22,ASX200,Removal,NSR,,dated_archive,removal,True
+2026-04-13,2026-04-20,ASX200,Removal,IFL,,dated_archive,removal,True
 2026-04-15,2026-04-22,ASX200,Addition,ALK,,dated_archive,removal-replacement,True
-2026-06-05,2026-06-22,ASX200,Removal,TPW,Temple & Webster Group Limited,dated_archive,rebalance,False
-2026-06-05,2026-06-22,ASX200,Addition,ELV,Elevra Lithium Limited,dated_archive,rebalance,False
-2026-06-05,2026-06-22,ASX200,Addition,EOS,Electro Optic Systems Holdings Limited,dated_archive,rebalance,False
-2026-06-05,2026-06-22,ASX200,Addition,FFM,FireFly Metals Limited,dated_archive,rebalance,False
-2026-06-05,2026-06-22,ASX200,Removal,SDR,SiteMinder Limited,dated_archive,rebalance,False
-2026-06-05,2026-06-22,ASX200,Removal,IEL,IDP Education Limited,dated_archive,rebalance,False
-2026-06-05,2026-06-22,ASX200,Removal,WEB,WEB Travel Group Limited,dated_archive,rebalance,False
-2026-06-05,2026-06-22,ASX200,Addition,KCN,Kingsgate Consolidated Limited,dated_archive,rebalance,False
+2026-04-15,2026-04-22,ASX200,Removal,NSR,,dated_archive,removal,True
 2026-06-05,2026-06-22,ASX200,Addition,MI6,Minerals 260 Limited,dated_archive,rebalance,False
+2026-06-05,2026-06-22,ASX200,Removal,WEB,WEB Travel Group Limited,dated_archive,rebalance,False
+2026-06-05,2026-06-22,ASX200,Removal,SDR,SiteMinder Limited,dated_archive,rebalance,False
+2026-06-05,2026-06-22,ASX200,Addition,KCN,Kingsgate Consolidated Limited,dated_archive,rebalance,False
+2026-06-05,2026-06-22,ASX200,Removal,IEL,IDP Education Limited,dated_archive,rebalance,False
 2026-06-05,2026-06-22,ASX200,Removal,GYG,Guzman Y Gomez Limited,dated_archive,rebalance,False
+2026-06-05,2026-06-22,ASX200,Addition,EOS,Electro Optic Systems Holdings Limited,dated_archive,rebalance,False
+2026-06-05,2026-06-22,ASX200,Addition,ELV,Elevra Lithium Limited,dated_archive,rebalance,False
+2026-06-05,2026-06-22,ASX200,Removal,TPW,Temple & Webster Group Limited,dated_archive,rebalance,False
+2026-06-05,2026-06-22,ASX200,Addition,FFM,FireFly Metals Limited,dated_archive,rebalance,False

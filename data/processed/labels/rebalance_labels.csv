@@ -2245,6 +2245,27 @@ announcement_date,effective_date,index,action,ticker,company_name
 2021-09-03,2021-09-20,ASX50,Removal,A2M,The A2 Milk Company Limited
 2021-09-03,2021-09-20,ASX50,Removal,AGL,AGL Energy Limited
 2021-09-03,2021-09-20,ASX50,Removal,ALD,Ampol Limited
+2021-12-03,2021-12-20,ALLTECH,Addition,AXE,Archer Materials Limited
+2021-12-03,2021-12-20,ALLTECH,Addition,CGS,Cogstate Ltd
+2021-12-03,2021-12-20,ALLTECH,Addition,JAN,Janison Education Group Limited
+2021-12-03,2021-12-20,ALLTECH,Removal,BID,Bill Identity Limited
+2021-12-03,2021-12-20,ALLTECH,Removal,HTG,Harvest Technology Group Ltd
+2021-12-03,2021-12-20,ALLTECH,Removal,LBY,Laybuy Group Holdings Limited
+2021-12-03,2021-12-20,ALLTECH,Removal,LVT,Livetiles Limited
+2021-12-03,2021-12-20,ALLTECH,Removal,NET,Netlinkz Limited
+2021-12-03,2021-12-20,ALLTECH,Removal,OTW,Over The Wire Holdings Limited
+2021-12-03,2021-12-20,ASX100,Addition,ORE,Orocobre Limited
+2021-12-03,2021-12-20,ASX100,Removal,LNK,Link Administration Holdings Limited
+2021-12-03,2021-12-20,ASX200,Addition,EVT,Event Hospitality and Entertainment Ltd
+2021-12-03,2021-12-20,ASX200,Addition,IMU,Imugene Limited
+2021-12-03,2021-12-20,ASX200,Addition,LTR,Liontown Resources Limited
+2021-12-03,2021-12-20,ASX200,Addition,NVX,Novonix Limited
+2021-12-03,2021-12-20,ASX200,Addition,PDN,Paladin Energy Ltd
+2021-12-03,2021-12-20,ASX200,Removal,KGN,Kogan.Com Ltd
+2021-12-03,2021-12-20,ASX200,Removal,MND,Monadelphous Group Limited
+2021-12-03,2021-12-20,ASX200,Removal,NEA,Nearmap Ltd
+2021-12-03,2021-12-20,ASX200,Removal,OBL,Omni Bridgeway Limited
+2021-12-03,2021-12-20,ASX200,Removal,RBL,Redbubble Limited
 2022-03-04,2022-03-21,ALLTECH,Addition,SDR,Siteminder Limited
 2022-03-04,2022-03-21,ALLTECH,Addition,SYM,Symbio Holdings Limited
 2022-03-04,2022-03-21,ALLTECH,Addition,VR1,Vection Technologies Limited
