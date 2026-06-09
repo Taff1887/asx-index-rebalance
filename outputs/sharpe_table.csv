@@ -1,0 +1,6 @@
+variant,col,cagr_all_pct,vol_all_pct,sharpe_all,cagr_robust_pct,vol_robust_pct,sharpe_robust
+ASX 200 buy & hold (NOT switching),asx200_tr,9.45,14.24,0.53,9.45,14.24,0.53
+Switch → SHORT removals,strat_short,5.92,21.13,0.261,3.96,21.26,0.173
+Switch → LONG additions,strat_long,6.71,17.89,0.313,6.73,17.88,0.314
+Switch → LONG/SHORT,strat_ls,4.12,23.11,0.183,2.24,23.15,0.105
+Hold risk-free (2.5%/yr),rf,2.5,0.0,0.0,2.5,0.0,0.0

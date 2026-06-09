@@ -303,6 +303,26 @@ crater and stay down):
 
 ![Extended ASX 200 event study](docs/figures/v3_event_study_long.png)
 
+### Entry timing: trade at the OPEN, not the close
+
+Because the announcement is released after-hours, the earliest legal fill is the
+**next-day open** — the main strategy conservatively waits for that day's *close*.
+How much does that wait cost? Same eff+5 exit, entry at the open vs the close:
+
+![Open vs close entry](docs/figures/open_vs_close.png)
+
+- **Short removals: entering at the open captures ≈+0.9% more per trade** (median
+  +2.1% vs +0.9% at the close — it roughly *doubles* the close-entry median; paired
+  t=4.99, p<0.0001). The removal keeps falling intraday on the first session, so
+  waiting for the close forfeits that drop.
+- **Long additions: no benefit** (≈0% difference) — the addition's move is an
+  overnight gap that's already in by the open, so open vs close is a wash.
+
+So the conservative next-day-*close* entry materially understates the short edge;
+a desk that can hit the **open** recovers ~+0.9%/trade — roughly the size of the
+round-trip cost. (Caveat: opening auctions have wider spreads and you're trading
+into the same flow, so the realisable share is less than the gross +0.9%.)
+
 ---
 
 ## 7. With frictions — does the edge survive costs?
@@ -372,6 +392,42 @@ beats simply holding the index.** A real per-trade edge (§4–6) does **not**
 compound into index-beating wealth here, because it fires only a few times a
 quarter on a small slice of capital and the per-trade edge is modest after costs.
 
+### What the "outlier" is, and why Sharpe is the fairer test
+
+The outlier is **one real trade: Perseus Mining (PRU)**, removed from the ASX 100
+in June 2013 (gold miners were collapsing). Shorting it returned **+20.9% by the
+effective date and +55.6% by eff+5** — genuine, not a data error. It's flagged
+only because the 2013 switching book is nearly empty, so this *one* short drives
+~half the compounded total — fragile for a *total-return* headline. It is **fully
+included** in the per-trade and alpha analysis (1 of 130 trades); only §8's
+compounding is sensitive to it.
+
+But removing it to "clean up" the total is itself a choice — so judge it on
+**Sharpe**, where a big winner must pay for its volatility (rf = 2.5%/yr):
+
+![Sharpe ratios](docs/figures/sharpe_ratios.png)
+
+| Strategy | CAGR | Vol | **Sharpe (with PRU)** | Sharpe (ex-PRU) |
+|---|--:|--:|--:|--:|
+| **ASX 200 buy & hold (NOT switching)** | 9.5% | 14.2% | **0.53** | 0.53 |
+| Switch → SHORT removals | 5.9% | 21.1% | 0.26 | 0.17 |
+| Switch → LONG additions | 6.7% | 17.9% | 0.31 | 0.31 |
+| Switch → LONG/SHORT | 4.1% | 23.1% | 0.18 | 0.11 |
+| Hold risk-free (2.5%/yr) | 2.5% | 0% | 0.00 | 0.00 |
+
+Three things fall out:
+
+1. **NOT switching wins.** Plain buy-and-hold of the ASX 200 has the **best Sharpe
+   (0.53)** by a wide margin. Every switching variant is *worse* — switching into
+   concentrated single-name trades adds idiosyncratic volatility (17–23% vs 14%)
+   without enough extra return.
+2. **The outlier should NOT be removed.** Including PRU *raises* the short book's
+   Sharpe (0.26 vs 0.17) — it's a big winner that more than pays for its vol. So
+   the "robust, ex-outlier" version is the *pessimistic* one; dropping the trade
+   makes the strategy look worse, not cleaner. The honest read keeps it in.
+3. **Everything still beats cash** (risk-free Sharpe = 0 by definition), but that's
+   the floor, not the benchmark. The benchmark is the index, and the index wins.
+
 ---
 
 ## 9. Data quality — what was thrown out
@@ -419,6 +475,8 @@ python scripts/run_strategy_v3.py               # longer holds + switching strat
 python scripts/build_frequency_chart.py         # trades per quarter / coverage
 python scripts/run_significance.py              # t-test / Wilcoxon / sign / bootstrap / placebo
 python scripts/run_friction_backtest.py         # gross vs net of liquidity + borrow costs
+python scripts/run_sharpe_analysis.py           # Sharpe: switching vs buy-and-hold vs risk-free
+python scripts/run_open_vs_close.py             # entry at the open vs the close
 python scripts/build_v2_charts.py && python scripts/build_v3_charts.py
 ```
 

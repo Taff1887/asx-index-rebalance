@@ -202,6 +202,8 @@ def main() -> None:
     daily = daily.loc[daily.index >= first]
     daily_robust = daily_robust.loc[daily_robust.index >= first]
     daily.reset_index().rename(columns={"index": "date"}).to_csv(OUTPUTS_DIR / "v3_daily.csv", index=False)
+    daily_robust.reset_index().rename(columns={"index": "date"}).to_csv(
+        OUTPUTS_DIR / "v3_daily_robust.csv", index=False)
 
     def total(d, col):
         return float((1 + d[col].fillna(0)).prod() - 1) * 100
