@@ -153,6 +153,22 @@ ASX 200: +KGN +REH −AVH −COE −WSA.** **65 Yahoo-purged delisted names** we
 recovered from FMP Premium (Altium, Alumina, Newcrest, OZ Minerals, Boral,
 Woolworths, …).
 
+> **Data integrity — real data only, no fabrication.** Every event is from an S&P
+> PDF; every price is a real Yahoo/FMP series or a real index/ETF. There is **no
+> synthetic, simulated, or substituted price data** anywhere the analysis reads —
+> enforced by a guard test ([`tests/test_no_synthetic_data.py`](tests/test_no_synthetic_data.py))
+> that fails if any file carries a `synthetic` tag, and the old fake-data
+> generators have been deleted. On a price fetch failure the loader returns an
+> *empty* series, never a made-up one; missing names are simply dropped (and
+> listed), not filled. The only non-raw quantities are clearly-labelled *modelling
+> choices*, not data: (1) a ±12% winsorisation applied **only** to the §8
+> switching daily series; (2) the ASX 100 **total-return** benchmark in §8 is
+> reconstructed (price index × ASX 200 dividend factor) — the alpha study itself
+> uses the **real** ASX 200 price index; (3) the §7 cost model assumes order-clip
+> sizes and a vol floor (it is a *cost* model, not price data). The placebo/
+> bootstrap randomness is the statistical null (random *dates* in real series), not
+> fabricated returns.
+
 **99 tickers remain unpriced on any free feed** — the hunt list you asked for, in
 [`outputs/missing_delisted.csv`](outputs/missing_delisted.csv) with company names
 and a findability tag. The most recent (most recoverable on Bloomberg / Refinitiv

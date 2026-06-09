@@ -161,7 +161,8 @@ def cmd_validate_data(args: argparse.Namespace) -> None:
     fmp = _load_raw_panel("fmp")
     yahoo = _load_raw_panel("yahoo")
     if fmp.empty and yahoo.empty:
-        log.error("No raw data found. Run scripts/generate_synthetic_data.py first.")
+        log.error("No raw data found. Fetch REAL prices first: "
+                  "scripts/fetch_prices_for_labels.py and scripts/fetch_fmp_delisted.py.")
         sys.exit(1)
     report = generate_data_quality_report(fmp, yahoo)
     cfg_reports = load_validation_config()["reports"]
